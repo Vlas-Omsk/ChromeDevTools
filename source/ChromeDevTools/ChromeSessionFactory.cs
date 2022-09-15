@@ -1,5 +1,4 @@
-﻿#if !NETSTANDARD1_5
-namespace MasterDevs.ChromeDevTools
+﻿namespace MasterDevs.ChromeDevTools
 {
     public class ChromeSessionFactory : IChromeSessionFactory
     {
@@ -21,4 +20,3 @@ namespace MasterDevs.ChromeDevTools
         }
     }
 }
-#endif

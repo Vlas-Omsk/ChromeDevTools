@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.IO;
 
 namespace MasterDevs.ChromeDevTools
 {
@@ -16,27 +14,13 @@ namespace MasterDevs.ChromeDevTools
             ChromePath = chromePath;
         }
 
-        public IChromeProcess Create(int port, bool headless)
+        public IChromeProcess Create(ChromeProcessParametersBuilder parameters)
         {
-            string path = Path.GetRandomFileName();
-            var directoryInfo = Directory.CreateDirectory(Path.Combine(Path.GetTempPath(), path));
-            var remoteDebuggingArg = $"--remote-debugging-port={port}";
-            var userDirectoryArg = $"--user-data-dir=\"{directoryInfo.FullName}\"";
-            const string headlessArg = "--headless --disable-gpu";
-            var chromeProcessArgs = new List<string>
-            {
-                remoteDebuggingArg,
-                userDirectoryArg,
-                "--bwsi",
-                "--no-first-run"
-            };
-            if (headless)
-                chromeProcessArgs.Add(headlessArg);
-            var processStartInfo = new ProcessStartInfo(ChromePath, string.Join(" ", chromeProcessArgs));
+            var processStartInfo = new ProcessStartInfo(ChromePath, parameters.ToString());
             var chromeProcess = Process.Start(processStartInfo);
 
-            string remoteDebuggingUrl = "http://localhost:" + port;
-            return new LocalChromeProcess(new Uri(remoteDebuggingUrl), () => DirectoryCleaner.Delete(directoryInfo), chromeProcess);
+            string remoteDebuggingUrl = "http://localhost:" + parameters.Port;
+            return new LocalChromeProcess(new Uri(remoteDebuggingUrl), () => DirectoryCleaner.Delete(parameters.UserDataDirectory), chromeProcess);
         }
     }
 }

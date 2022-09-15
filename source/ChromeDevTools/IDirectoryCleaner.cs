@@ -4,6 +4,6 @@ namespace MasterDevs.ChromeDevTools
 {
     public interface IDirectoryCleaner
     {
-        void Delete(DirectoryInfo dir);
+        void Delete(string directory);
     }
 }

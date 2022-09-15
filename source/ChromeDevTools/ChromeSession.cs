@@ -1,5 +1,4 @@
-﻿#if !NETSTANDARD1_5
-using MasterDevs.ChromeDevTools.Serialization;
+﻿using MasterDevs.ChromeDevTools.Serialization;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Concurrent;
@@ -137,11 +136,13 @@ namespace MasterDevs.ChromeDevTools
             }
         }
 
-        private void ExecuteHandler(Action<object> handler, dynamic evnt)
+        private void ExecuteHandler(Action<object> handler, object evnt)
         {
+            var evntType = evnt.GetType();
+
             if (evnt.GetType().GetGenericTypeDefinition() == typeof(Event<>))
             {
-                handler(evnt.Params);
+                handler(evntType.GetProperty("Params"));
             } else
             {
                 handler(evnt);
@@ -266,4 +267,3 @@ namespace MasterDevs.ChromeDevTools
         }
     }
 }
-#endif

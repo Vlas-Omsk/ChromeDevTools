@@ -5,13 +5,13 @@ namespace MasterDevs.ChromeDevTools
 {
     public class StubbornDirectoryCleaner : IDirectoryCleaner
     {
-        public void Delete(DirectoryInfo dir)
+        public void Delete(string directory)
         {
             while (true)
             {
                 try
                 {
-                    dir.Delete(true);
+                    Directory.Delete(directory, true);
                     return;
                 }
                 catch
