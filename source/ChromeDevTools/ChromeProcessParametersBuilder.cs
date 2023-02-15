@@ -25,7 +25,6 @@ namespace MasterDevs.ChromeDevTools
 
             _parameters["remote-debugging-port"] = port;
             _parameters["user-data-dir"] = userDataDirectory;
-            _parameters["bwsi"] = null;
             _parameters["no-first-run"] = null;
         }
 
@@ -49,7 +48,13 @@ namespace MasterDevs.ChromeDevTools
 
         public ChromeProcessParametersBuilder SetHeadless()
         {
-            return SetParameter("headless").SetParameter("disable-gpu");
+            return SetParameter("headless")
+                .SetParameter("disable-gpu");
+        }
+
+        public ChromeProcessParametersBuilder SetIncognito()
+        {
+            return SetParameter("bwsi");
         }
 
         public override string ToString()
