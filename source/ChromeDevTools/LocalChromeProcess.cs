@@ -1,28 +1,46 @@
-﻿using System;
-using System.Diagnostics;
+﻿using System.Diagnostics;
 
 namespace MasterDevs.ChromeDevTools
 {
     public class LocalChromeProcess : RemoteChromeProcess
     {
-        public LocalChromeProcess(Uri remoteDebuggingUri, Action disposeUserDirectory, Process process)
-            : base(remoteDebuggingUri)
+        public LocalChromeProcess(
+            IDirectoryCleaner directoryCleaner,
+            string chromePath,
+            ChromeProcessParameters parameters,
+            IChromeSessionFactory sessionFactory
+        )
+            : base("http://localhost:" + parameters.Port, sessionFactory)
         {
-            DisposeUserDirectory = disposeUserDirectory;
-            Process = process;
+            DirectoryCleaner = directoryCleaner;
+            Parameters = parameters;
+            Process = new Process()
+            {
+                StartInfo = new ProcessStartInfo(chromePath, parameters.Parameters)
+            };
         }
 
-        public Action DisposeUserDirectory { get; set; }
-        public Process Process { get; set; }
+        public IDirectoryCleaner DirectoryCleaner { get; }
+        public ChromeProcessParameters Parameters { get; }
+        public Process Process { get; }
+
+        public void Start()
+        {
+            Process.Start();
+        }
+
+        public void Close()
+        {
+            Process.Kill();
+            Process.WaitForExit();
+        }
 
         public override void Dispose()
         {
             base.Dispose();
 
-            Process.Kill();
-            Process.WaitForExit();
-//            Process.Close();
-            DisposeUserDirectory();
+            Close();
+            DirectoryCleaner.Delete(Parameters.UserDataDirectory);
         }
     }
 }

@@ -1,12 +1,5 @@
 ﻿namespace MasterDevs.ChromeDevTools
 {
-    public interface ICommandResponse
-    {
-        long Id { get; }
-
-        string Method { get; }
-    }
-
     public class CommandResponse : ICommandResponse
     {
         public long Id
@@ -30,7 +23,7 @@
 
         public CommandResponse(T result)
         {
-            this.Result = result;
+            Result = result;
         }
 
         public T Result

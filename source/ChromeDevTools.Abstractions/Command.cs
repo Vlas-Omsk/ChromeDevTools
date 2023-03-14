@@ -1,12 +1,5 @@
 ﻿namespace MasterDevs.ChromeDevTools
 {
-    public interface ICommand
-    {
-        long Id { get; }
-
-        string Method { get; }
-    }
-
     public class Command : ICommand
     {
         public long Id

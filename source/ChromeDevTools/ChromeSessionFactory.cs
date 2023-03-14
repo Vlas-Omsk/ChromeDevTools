@@ -2,21 +2,28 @@
 {
     public class ChromeSessionFactory : IChromeSessionFactory
     {
-        public IChromeSession Create(ChromeSessionInfo sessionInfo)
+        private readonly ICommandFactory _commandFactory;
+        private readonly ICommandResponseFactory _commandResponseFactory;
+        private readonly IEventFactory _eventFactory;
+
+        public ChromeSessionFactory()
         {
-            return Create(sessionInfo.WebSocketDebuggerUrl);
+            var methodTypeMap = new MethodTypeMap();
+            _commandFactory = new CommandFactory();
+            _commandResponseFactory = new CommandResponseFactory(methodTypeMap, _commandFactory);
+            _eventFactory = new EventFactory(methodTypeMap);
         }
 
-        public IChromeSession Create(string endpointUrl)
+        public ChromeSessionFactory(ICommandFactory commandFactory, ICommandResponseFactory commandResponseFactory, IEventFactory eventFactory)
         {
-            // Sometimes binding to localhost might resolve wrong AddressFamily, force IPv4
-            endpointUrl = endpointUrl.Replace("ws://localhost", "ws://127.0.0.1");
-            var methodTypeMap = new MethodTypeMap();
-            var commandFactory = new CommandFactory();
-            var responseFactory = new CommandResponseFactory(methodTypeMap, commandFactory);
-            var eventFactory = new EventFactory(methodTypeMap);
-            var session = new ChromeSession(endpointUrl, commandFactory, responseFactory, eventFactory);
-            return session;
+            _commandFactory = commandFactory;
+            _commandResponseFactory = commandResponseFactory;
+            _eventFactory = eventFactory;
+        }
+
+        public IChromeSession Create(string webSocketDebuggerUrl, string id)
+        {
+            return new ChromeSession(webSocketDebuggerUrl, id, _commandFactory, _commandResponseFactory, _eventFactory);
         }
     }
 }

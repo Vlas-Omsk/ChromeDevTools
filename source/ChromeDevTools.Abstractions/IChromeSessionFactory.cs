@@ -2,6 +2,6 @@
 {
     public interface IChromeSessionFactory
     {
-        IChromeSession Create(string endpointUrl);
+        IChromeSession Create(string webSocketDebuggerUrl, string id);
     }
 }

@@ -8,6 +8,8 @@ namespace MasterDevs.ChromeDevTools
     public sealed class ChromeProcessParametersBuilder
     {
         private static readonly string[] _reservedParameters = { "remote-debugging-port", "user-data-dir" };
+        private readonly int _port;
+        private readonly string _userDataDirectory;
         private readonly Dictionary<string, object> _parameters = new Dictionary<string, object>();
 
         public ChromeProcessParametersBuilder() : this(9222)
@@ -20,16 +22,13 @@ namespace MasterDevs.ChromeDevTools
 
         public ChromeProcessParametersBuilder(int port, string userDataDirectory)
         {
-            Port = port;
-            UserDataDirectory = userDataDirectory;
+            _port = port;
+            _userDataDirectory = userDataDirectory;
 
             _parameters["remote-debugging-port"] = port;
             _parameters["user-data-dir"] = userDataDirectory;
             _parameters["no-first-run"] = null;
         }
-
-        public int Port { get; }
-        public string UserDataDirectory { get; }
 
         public ChromeProcessParametersBuilder SetParameter(string name)
         {
@@ -57,7 +56,16 @@ namespace MasterDevs.ChromeDevTools
             return SetParameter("bwsi");
         }
 
-        public override string ToString()
+        public ChromeProcessParameters Build()
+        {
+            return new ChromeProcessParameters(
+                _port,
+                _userDataDirectory,
+                BuildParameters()
+            );
+        }
+
+        private string BuildParameters()
         {
             var result = new StringBuilder();
             var i = 0;

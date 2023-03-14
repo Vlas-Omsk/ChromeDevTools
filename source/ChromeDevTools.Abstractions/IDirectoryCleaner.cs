@@ -1,6 +1,4 @@
-﻿using System.IO;
-
-namespace MasterDevs.ChromeDevTools
+﻿namespace MasterDevs.ChromeDevTools
 {
     public interface IDirectoryCleaner
     {

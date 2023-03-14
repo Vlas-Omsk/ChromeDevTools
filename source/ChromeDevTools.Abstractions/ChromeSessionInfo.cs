@@ -3,7 +3,6 @@
     public class ChromeSessionInfo
     {
         public string Description { get; set; }
-
         public string DevtoolsFrontendUrl { get; set; }
         public string Id { get; set; }
         public string Title { get; set; }

@@ -1,10 +1,5 @@
 ﻿namespace MasterDevs.ChromeDevTools
 {
-    public interface IEvent
-    {
-        string Method { get; set; }
-    }
-
     public class Event : IEvent
     {
         public string Method { get; set; }

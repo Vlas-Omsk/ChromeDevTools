@@ -1,26 +1,26 @@
-﻿using System;
-using System.Diagnostics;
-
-namespace MasterDevs.ChromeDevTools
+﻿namespace MasterDevs.ChromeDevTools
 {
     public class ChromeProcessFactory : IChromeProcessFactory
     {
-        public IDirectoryCleaner DirectoryCleaner { get; set; }
-        public string ChromePath { get; }
+        private readonly IChromeSessionFactory _sessionFactory;
+        private readonly IDirectoryCleaner _directoryCleaner;
+        private readonly string _chromePath;
 
-        public ChromeProcessFactory(IDirectoryCleaner directoryCleaner, string chromePath = @"C:\Program Files (x86)\Google\Chrome\Application\chrome.exe")
+        public ChromeProcessFactory(IChromeSessionFactory sessionFactory, IDirectoryCleaner directoryCleaner, string chromePath)
         {
-            DirectoryCleaner = directoryCleaner;
-            ChromePath = chromePath;
+            _sessionFactory = sessionFactory;
+            _directoryCleaner = directoryCleaner;
+            _chromePath = chromePath;
         }
 
-        public IChromeProcess Create(ChromeProcessParametersBuilder parameters)
+        public IChromeProcess Create(ChromeProcessParameters parameters)
         {
-            var processStartInfo = new ProcessStartInfo(ChromePath, parameters.ToString());
-            var chromeProcess = Process.Start(processStartInfo);
-
-            string remoteDebuggingUrl = "http://localhost:" + parameters.Port;
-            return new LocalChromeProcess(new Uri(remoteDebuggingUrl), () => DirectoryCleaner.Delete(parameters.UserDataDirectory), chromeProcess);
+            return new LocalChromeProcess(
+                _directoryCleaner,
+                _chromePath,
+                parameters,
+                _sessionFactory
+            );
         }
     }
 }

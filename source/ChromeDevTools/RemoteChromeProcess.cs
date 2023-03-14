@@ -7,41 +7,52 @@ namespace MasterDevs.ChromeDevTools
 {
     public class RemoteChromeProcess : IChromeProcess
     {
-        private readonly HttpClient http;
+        private readonly HttpClient _httpClient;
+        private readonly IChromeSessionFactory _sessionFactory;
 
-        public RemoteChromeProcess(string remoteDebuggingUri)
-            : this(new Uri(remoteDebuggingUri))
+        public RemoteChromeProcess(string remoteDebuggingUri, IChromeSessionFactory sessionFactory)
+            : this(new Uri(remoteDebuggingUri), sessionFactory)
         {
 
         }
 
-        public RemoteChromeProcess(Uri remoteDebuggingUri)
+        public RemoteChromeProcess(Uri remoteDebuggingUri, IChromeSessionFactory sessionFactory)
         {
             RemoteDebuggingUri = remoteDebuggingUri;
 
-            http = new HttpClient
+            _httpClient = new HttpClient
             {
                 BaseAddress = RemoteDebuggingUri
             };
+            _sessionFactory = sessionFactory;
         }
 
         public Uri RemoteDebuggingUri { get; }
 
         public virtual void Dispose()
         {
-            http.Dispose();
+            _httpClient.Dispose();
         }
 
-        public async Task<ChromeSessionInfo[]> GetSessionInfo()
+        public async Task<ChromeSessionInfo[]> GetSessionsRaw()
         {
-            string json = await http.GetStringAsync("/json");
+            string json = await _httpClient.GetStringAsync("/json");
+
             return JsonConvert.DeserializeObject<ChromeSessionInfo[]>(json);
         }
 
-        public async Task<ChromeSessionInfo> StartNewSession()
+        public async Task<ChromeSessionInfo> StartNewSessionRaw()
         {
-            string json = await http.GetStringAsync("/json/new");
+            string json = await _httpClient.GetStringAsync("/json/new");
+
             return JsonConvert.DeserializeObject<ChromeSessionInfo>(json);
+        }
+
+        public async Task<IChromeSession> StartNewSession()
+        {
+            ChromeSessionInfo info = await StartNewSessionRaw();
+
+            return _sessionFactory.Create(info.WebSocketDebuggerUrl, info.Id);
         }
     }
 }

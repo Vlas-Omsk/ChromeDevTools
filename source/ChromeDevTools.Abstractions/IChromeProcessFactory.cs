@@ -2,6 +2,6 @@
 {
     public interface IChromeProcessFactory
     {
-        IChromeProcess Create(ChromeProcessParametersBuilder parameters);
+        IChromeProcess Create(ChromeProcessParameters parameters);
     }
 }

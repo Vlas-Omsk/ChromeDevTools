@@ -11,21 +11,25 @@ namespace MasterDevs.ChromeDevTools
 {
     public class ChromeSession : IChromeSession
     {
-        private readonly string _endpoint;
+        private readonly string _webSocketDebuggerUrl;
+        private readonly string _id;
         private readonly ConcurrentDictionary<string, ConcurrentBag<Action<object>>> _handlers = new ConcurrentDictionary<string, ConcurrentBag<Action<object>>>();
         private ICommandFactory _commandFactory;
         private IEventFactory _eventFactory;
         private ManualResetEvent _openEvent = new ManualResetEvent(false);
-        private ManualResetEvent _publishEvent = new ManualResetEvent(false);
         private ConcurrentDictionary<long, ManualResetEventSlim> _requestWaitHandles = new ConcurrentDictionary<long, ManualResetEventSlim>();
         private ICommandResponseFactory _responseFactory;
         private ConcurrentDictionary<long, ICommandResponse> _responses = new ConcurrentDictionary<long, ICommandResponse>();
         private WebSocket _webSocket;
-        private static object _Lock = new object();
+        private readonly object _lock = new object();
 
-        public ChromeSession(string endpoint, ICommandFactory commandFactory, ICommandResponseFactory responseFactory, IEventFactory eventFactory)
+        public ChromeSession(string webSocketDebuggerUrl, string id, ICommandFactory commandFactory, ICommandResponseFactory responseFactory, IEventFactory eventFactory)
         {
-            _endpoint = endpoint;
+            // Sometimes binding to localhost might resolve wrong AddressFamily, force IPv4
+            webSocketDebuggerUrl = webSocketDebuggerUrl.Replace("ws://localhost", "ws://127.0.0.1");
+
+            _webSocketDebuggerUrl = webSocketDebuggerUrl;
+            _id = id;
             _commandFactory = commandFactory;
             _responseFactory = responseFactory;
             _eventFactory = eventFactory;
@@ -45,7 +49,7 @@ namespace MasterDevs.ChromeDevTools
         {
             if (null == _webSocket)
             {
-                lock (_Lock)
+                lock (_lock)
                 {
                     if (null == _webSocket)
                     {
@@ -59,7 +63,7 @@ namespace MasterDevs.ChromeDevTools
         {
             _openEvent.Reset();
 
-            _webSocket = new WebSocket(_endpoint);
+            _webSocket = new WebSocket(_webSocketDebuggerUrl);
             _webSocket.EnableAutoSendPing = false;
             _webSocket.Opened += WebSocket_Opened;
             _webSocket.MessageReceived += WebSocket_MessageReceived;

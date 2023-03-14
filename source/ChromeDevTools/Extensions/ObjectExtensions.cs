@@ -4,7 +4,7 @@ using System.Reflection;
 
 namespace MasterDevs.ChromeDevTools
 {
-    public static class ObjectExtensions
+    internal static class ObjectExtensions
     {
         public static string GetMethod(this object obj)
         {

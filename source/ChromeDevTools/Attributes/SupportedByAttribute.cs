@@ -12,7 +12,7 @@ namespace MasterDevs.ChromeDevTools
                 throw new ArgumentNullException(nameof(browser));
             }
 
-            this.Browser = browser;
+            Browser = browser;
         }
 
         public string Browser
