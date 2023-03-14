@@ -1,6 +1,4 @@
-﻿using MasterDevs.ChromeDevTools.Local.Abstractions;
-
-namespace MasterDevs.ChromeDevTools.Local
+﻿namespace MasterDevs.ChromeDevTools.Local
 {
     public class LocalChromeProcessFactory : ILocalChromeProcessFactory
     {
