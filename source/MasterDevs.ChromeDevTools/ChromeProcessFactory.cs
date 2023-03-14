@@ -3,20 +3,23 @@
     public class ChromeProcessFactory : IChromeProcessFactory
     {
         private readonly IChromeSessionFactory _sessionFactory;
-        private readonly IDirectoryCleaner _directoryCleaner;
         private readonly string _chromePath;
 
-        public ChromeProcessFactory(IChromeSessionFactory sessionFactory, IDirectoryCleaner directoryCleaner, string chromePath)
+        public ChromeProcessFactory(IChromeSessionFactory sessionFactory, string chromePath)
         {
             _sessionFactory = sessionFactory;
-            _directoryCleaner = directoryCleaner;
             _chromePath = chromePath;
         }
 
         public IChromeProcess Create(ChromeProcessParameters parameters)
         {
+            return Create(parameters, new StubbornDirectoryCleaner());
+        }
+
+        public IChromeProcess Create(ChromeProcessParameters parameters, IDirectoryCleaner directoryCleaner)
+        {
             return new LocalChromeProcess(
-                _directoryCleaner,
+                directoryCleaner,
                 _chromePath,
                 parameters,
                 _sessionFactory
