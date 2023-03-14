@@ -1,16 +1,18 @@
-﻿namespace MasterDevs.ChromeDevTools
+﻿using System.Collections.Generic;
+
+namespace MasterDevs.ChromeDevTools
 {
     public sealed class ChromeProcessParameters
     {
-        public ChromeProcessParameters(int port, string userDataDirectory, string parameters)
+        public ChromeProcessParameters(int port, string userDataDirectory, string arguments)
         {
             Port = port;
             UserDataDirectory = userDataDirectory;
-            Parameters = parameters;
+            Arguments = arguments;
         }
 
         public int Port { get; }
         public string UserDataDirectory { get; }
-        public string Parameters { get; }
+        public string Arguments { get; }
     }
 }

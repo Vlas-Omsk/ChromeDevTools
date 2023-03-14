@@ -11,10 +11,10 @@ namespace MasterDevs.ChromeDevTools
 
     public interface IChromeSession
     {
+        public string Id { get; }
+
         Task<CommandResponse<T>> SendAsync<T>(ICommand<T> parameter, CancellationToken cancellationToken);
-
         Task<ICommandResponse> SendAsync<T>(CancellationToken cancellationToken);
-
         void Subscribe<T>(Action<T> handler) where T : class;
     }
 }

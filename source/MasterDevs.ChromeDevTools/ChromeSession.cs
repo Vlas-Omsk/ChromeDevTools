@@ -12,7 +12,6 @@ namespace MasterDevs.ChromeDevTools
     public class ChromeSession : IChromeSession
     {
         private readonly string _webSocketDebuggerUrl;
-        private readonly string _id;
         private readonly ConcurrentDictionary<string, ConcurrentBag<Action<object>>> _handlers = new ConcurrentDictionary<string, ConcurrentBag<Action<object>>>();
         private ICommandFactory _commandFactory;
         private IEventFactory _eventFactory;
@@ -29,11 +28,13 @@ namespace MasterDevs.ChromeDevTools
             webSocketDebuggerUrl = webSocketDebuggerUrl.Replace("ws://localhost", "ws://127.0.0.1");
 
             _webSocketDebuggerUrl = webSocketDebuggerUrl;
-            _id = id;
+            Id = id;
             _commandFactory = commandFactory;
             _responseFactory = responseFactory;
             _eventFactory = eventFactory;
         }
+
+        public string Id { get; }
 
         public void Dispose()
         {

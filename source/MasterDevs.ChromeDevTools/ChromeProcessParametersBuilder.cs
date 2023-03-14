@@ -61,11 +61,11 @@ namespace MasterDevs.ChromeDevTools
             return new ChromeProcessParameters(
                 _port,
                 _userDataDirectory,
-                BuildParameters()
+                BuildArguments()
             );
         }
 
-        private string BuildParameters()
+        private string BuildArguments()
         {
             var result = new StringBuilder();
             var i = 0;

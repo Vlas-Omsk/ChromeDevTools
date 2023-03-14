@@ -27,4 +27,5 @@
   <ItemGroup>
     <ProjectReference Include="..\MasterDevs.ChromeDevTools.Abstractions\MasterDevs.ChromeDevTools.Abstractions.csproj" />
   </ItemGroup>
+  
 </Project>
