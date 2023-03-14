@@ -5,18 +5,18 @@ using Newtonsoft.Json;
 
 namespace MasterDevs.ChromeDevTools
 {
-    public class RemoteChromeProcess : IChromeProcess
+    public class ChromeProcess : IChromeProcess
     {
         private readonly HttpClient _httpClient;
         private readonly IChromeSessionFactory _sessionFactory;
 
-        public RemoteChromeProcess(string remoteDebuggingUri, IChromeSessionFactory sessionFactory)
+        public ChromeProcess(string remoteDebuggingUri, IChromeSessionFactory sessionFactory)
             : this(new Uri(remoteDebuggingUri), sessionFactory)
         {
 
         }
 
-        public RemoteChromeProcess(Uri remoteDebuggingUri, IChromeSessionFactory sessionFactory)
+        public ChromeProcess(Uri remoteDebuggingUri, IChromeSessionFactory sessionFactory)
         {
             RemoteDebuggingUri = remoteDebuggingUri;
 

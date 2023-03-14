@@ -1,16 +1,15 @@
 ﻿using System.Diagnostics;
 
-namespace MasterDevs.ChromeDevTools
+namespace MasterDevs.ChromeDevTools.Local
 {
-    public class LocalChromeProcess : RemoteChromeProcess
+    public class LocalChromeProcess : ChromeProcess, ILocalChromeProcess
     {
         public LocalChromeProcess(
             IDirectoryCleaner directoryCleaner,
             string chromePath,
             ChromeProcessParameters parameters,
             IChromeSessionFactory sessionFactory
-        )
-            : base("http://localhost:" + parameters.Port, sessionFactory)
+        ) : base("http://localhost:" + parameters.Port, sessionFactory)
         {
             DirectoryCleaner = directoryCleaner;
             Parameters = parameters;

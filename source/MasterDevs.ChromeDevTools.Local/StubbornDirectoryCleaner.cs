@@ -1,7 +1,7 @@
 ﻿using System.IO;
 using System.Threading;
 
-namespace MasterDevs.ChromeDevTools
+namespace MasterDevs.ChromeDevTools.Local
 {
     public class StubbornDirectoryCleaner : IDirectoryCleaner
     {
