@@ -10,6 +10,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\MasterDevs.ChromeDevTools.Abstractions\MasterDevs.ChromeDevTools.Abstractions.csproj" />
+    <ProjectReference Include="..\MasterDevs.ChromeDevTools.Protocol.Abstractions\MasterDevs.ChromeDevTools.Protocol.Abstractions.csproj" />
   </ItemGroup>
 
 </Project>

@@ -4,4 +4,8 @@
     <TargetFramework>netstandard2.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\MasterDevs.ChromeDevTools.Protocol.Abstractions\MasterDevs.ChromeDevTools.Protocol.Abstractions.csproj" />
+  </ItemGroup>
+
 </Project>
