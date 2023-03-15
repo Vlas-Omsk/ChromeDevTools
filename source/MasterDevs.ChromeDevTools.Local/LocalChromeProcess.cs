@@ -91,6 +91,7 @@ namespace MasterDevs.ChromeDevTools.Local
             //        throw new Win32Exception();
             //}
 
+            var mainWindowHandle = await GetMainWindowHandle();
             var chromeSession = await StartNewSession();
             var input = new Input(_inputDelay);
 
@@ -99,10 +100,10 @@ namespace MasterDevs.ChromeDevTools.Local
                 Url = "https://microsoft.com/"
             });
 
-            if (!Win32.SetForegroundWindow(Process.MainWindowHandle))
+            if (!Win32.SetForegroundWindow(mainWindowHandle))
                 throw new Win32Exception();
 
-            if (!Win32.GetWindowRect(Process.MainWindowHandle, out Win32.RECT rect))
+            if (!Win32.GetWindowRect(mainWindowHandle, out Win32.RECT rect))
                 throw new Win32Exception();
 
             var centerX = rect.Left + (rect.Right - rect.Left) / 2;
@@ -132,7 +133,7 @@ namespace MasterDevs.ChromeDevTools.Local
             // Click on 'Continue'
             await input.MouseLeftClick(centerX + 100, rect.Top + 310);
 
-            chromeSession.WaitWhile("window.cas != null");
+            chromeSession.WaitWhile("window.cas != null", TimeSpan.FromMinutes(1));
 
             await chromeSession.Close();
         }
