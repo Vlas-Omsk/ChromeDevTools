@@ -294,7 +294,7 @@ namespace MasterDevs.ChromeDevTools
                 HandleEvent(evnt);
                 return;
             }
-            throw new Exception("Don't know what to do with response: " + e.Data);
+            System.Diagnostics.Debug.Fail("Don't know what to do with response: " + e.Data);
         }
 
         private void WebSocket_Error(object sender, SuperSocket.ClientEngine.ErrorEventArgs e)
@@ -316,7 +316,7 @@ namespace MasterDevs.ChromeDevTools
                 HandleEvent(evnt);
                 return;
             }
-            throw new Exception("Don't know what to do with response: " + e.Message);
+            System.Diagnostics.Debug.Fail("Don't know what to do with response: " + e.Message);
         }
 
         private void WebSocket_Opened(object sender, EventArgs e)

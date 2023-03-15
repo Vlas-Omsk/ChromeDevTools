@@ -10,8 +10,8 @@ namespace MasterDevs.ChromeDevTools.ProtocolGenerator
     {
         public Type()
         {
-            this.Enum = new HashSet<string>();
-            this.Properties = new HashSet<Property>();
+            Enum = new HashSet<string>();
+            Properties = new HashSet<Property>();
         }
 
         [JsonProperty(PropertyName = "Id")]
@@ -90,6 +90,9 @@ namespace MasterDevs.ChromeDevTools.ProtocolGenerator
 
         [JsonProperty("experimental")]
         public bool IsExperimental { get; set; }
+
+        [JsonProperty("deprecated")]
+        public bool IsDeprecated { get; set; }
 
         public override bool Equals(object obj)
         {

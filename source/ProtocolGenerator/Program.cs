@@ -305,7 +305,7 @@ namespace MasterDevs.ChromeDevTools.ProtocolGenerator
             sb.AppendFormat("\t[{0}({1}.{2}.{3})]", CommandAttribute, ProtocolNameClass, domainDirectoryInfo.Name, ToCamelCase(commandName));
             sb.AppendLine();
             WriteSupportedBy(sb, supportedBy);
-            sb.AppendFormat("\tpublic class {0}: ICommand<{1}>", className, responseClassName);
+            sb.AppendFormat("\tpublic class {0}: IProtocolCommand<{1}>", className, responseClassName);
             sb.AppendLine();
             sb.AppendLine("\t{");
             foreach (var parameterProperty in parameters)
@@ -317,14 +317,21 @@ namespace MasterDevs.ChromeDevTools.ProtocolGenerator
             WriteToFile(domainDirectoryInfo, className, sb.ToString());
         }
 
-        private static void WriteSummary(StringBuilder sb, string description)
+        private static void WriteSummary(StringBuilder sb, string description, string tabulation = "\t")
         {
             if (!String.IsNullOrEmpty(description))
             {
-                sb.AppendLine("\t/// <summary>");
-                sb.AppendFormat("\t/// {0}", description);
+                sb.AppendFormat("{0}/// <summary>", tabulation);
                 sb.AppendLine();
-                sb.AppendLine("\t/// </summary>");
+
+                foreach (var line in description.Split(new string[] { "\r\n", "\n" }, StringSplitOptions.None))
+                {
+                    sb.AppendFormat("{0}/// {1}", tabulation, line);
+                    sb.AppendLine();
+                }
+
+                sb.AppendFormat("{0}/// </summary>", tabulation);
+                sb.AppendLine();
             }
         }
 
@@ -342,20 +349,21 @@ namespace MasterDevs.ChromeDevTools.ProtocolGenerator
         private static void WriteType(DirectoryInfo domainDirectoryInfo, string ns, Type type)
         {
             if (null == type) return;
-            if (type.Enum.Any()) WriteTypeEnum(domainDirectoryInfo, ns, type);
-            /*if (type.Properties.Any())*/
-            WriteTypeClass(domainDirectoryInfo, ns, type);
-            WriteTypeSimple(domainDirectoryInfo, type);
+            if (type.Enum.Any())
+                WriteTypeEnum(domainDirectoryInfo, ns, type);
+            else if (type.Properties.Any())
+                WriteTypeClass(domainDirectoryInfo, ns, type);
+            else if (null == type.Items)
+                WriteTypeSimple(type);
         }
 
-        private static void WriteTypeSimple(DirectoryInfo domainDirectoryInfo, Type type)
+        private static void WriteTypeSimple(Type type)
         {
             _SimpleTypes[type.Name] = type.Kind;
         }
 
         private static void WriteTypeClass(DirectoryInfo domainDirectoryInfo, string ns, Type type)
         {
-            if ("object" != type.Kind) return;
             var className = type.Name;
             var sb = new StringBuilder();
             sb.AppendFormat("using MasterDevs.ChromeDevTools;");
@@ -384,6 +392,7 @@ namespace MasterDevs.ChromeDevTools.ProtocolGenerator
         {
             var propertyName = GeneratePropertyName(property.Name);
             string propertyType = property.Kind;
+
             if (null != property.TypeReference)
             {
                 propertyType = GeneratePropertyTypeFromReference(domain, property.TypeReference);
@@ -423,6 +432,15 @@ namespace MasterDevs.ChromeDevTools.ProtocolGenerator
                 propertyType = GeneratePropertyType(propertyType.ToString());
             }
 
+            var key = _SimpleTypes.Keys.FirstOrDefault(x => propertyType.StartsWith(x));
+
+            if (key != null)
+            {
+                propertyType = propertyType.Replace(key, GeneratePropertyType(_SimpleTypes[key]));
+            }
+
+            propertyType.Replace("StringIndex", "long");
+
             string[] referenceTypes = new string[] { "long", "bool" };
 
             // If the property is optional, but a value type in .NET, make it nullable,
@@ -432,10 +450,7 @@ namespace MasterDevs.ChromeDevTools.ProtocolGenerator
                 propertyType += "?";
             }
 
-            sb.AppendLine("\t\t/// <summary>");
-            sb.AppendFormat("\t\t/// Gets or sets {0}", property.Description ?? propertyName);
-            sb.AppendLine();
-            sb.AppendLine("\t\t/// </summary>");
+            WriteSummary(sb, property.Description ?? propertyName, "\t\t");
             if (className == propertyName)
             {
                 sb.AppendFormat("\t\t[JsonProperty(\"{0}\")]", property.Name);
@@ -457,17 +472,18 @@ namespace MasterDevs.ChromeDevTools.ProtocolGenerator
             if (1 == propertyPaths.Length)
             {
                 Dictionary<string, string> domainDictionary;
-                string inDomainType;
+                string inDomainType = propertyPaths[0];
+
                 if (_DomainPropertyTypes.TryGetValue(domain, out domainDictionary)
                     && domainDictionary.TryGetValue(propertyPaths[0], out inDomainType))
                 {
                     if (inDomainType.StartsWith(domain + "."))
                     {
-                        return inDomainType.Substring(inDomainType.IndexOf('.') + 1);
+                        inDomainType = inDomainType.Substring(inDomainType.IndexOf('.') + 1);
                     }
-                    return inDomainType;
                 }
-                return propertyPaths[0];
+
+                return inDomainType;
             }
             else
             {
@@ -525,10 +541,7 @@ namespace MasterDevs.ChromeDevTools.ProtocolGenerator
             sb.AppendLine();
             sb.AppendFormat("namespace {0}.{1}.{2}", RootNamespace, ns, domainDirectoryInfo.Name);
             sb.AppendLine("{");
-            sb.AppendLine("\t/// <summary>");
-            sb.AppendFormat("\t/// {0}", type.Description);
-            sb.AppendLine();
-            sb.AppendLine("\t/// </summary>");
+            WriteSummary(sb, type.Description);
             sb.AppendLine("\t[JsonConverter(typeof(StringEnumConverter))]");
             sb.AppendFormat("\tpublic enum {0}", enumName);
             sb.AppendLine();

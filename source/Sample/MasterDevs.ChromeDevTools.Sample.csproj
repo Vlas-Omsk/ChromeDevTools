@@ -8,7 +8,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\MasterDevs.ChromeDevTools.Local\MasterDevs.ChromeDevTools.Local.csproj" />
-    <ProjectReference Include="..\MasterDevs.ChromeDevTools.Protocol\MasterDevs.ChromeDevTools.Protocol.Version12.csproj" />
+    <ProjectReference Include="..\MasterDevs.ChromeDevTools.Protocol.Version13\MasterDevs.ChromeDevTools.Protocol.Version13.csproj" />
   </ItemGroup>
 
 </Project>
