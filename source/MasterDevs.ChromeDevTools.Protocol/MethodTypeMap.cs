@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 
-namespace MasterDevs.ChromeDevTools
+namespace MasterDevs.ChromeDevTools.Protocol
 {
     public class MethodTypeMap : IMethodTypeMap
     {

@@ -6,9 +6,8 @@
         private readonly ICommandResponseFactory _commandResponseFactory;
         private readonly IEventFactory _eventFactory;
 
-        public ChromeSessionFactory()
+        public ChromeSessionFactory(IMethodTypeMap methodTypeMap)
         {
-            var methodTypeMap = new MethodTypeMap();
             _commandFactory = new CommandFactory();
             _commandResponseFactory = new CommandResponseFactory(methodTypeMap, _commandFactory);
             _eventFactory = new EventFactory(methodTypeMap);
