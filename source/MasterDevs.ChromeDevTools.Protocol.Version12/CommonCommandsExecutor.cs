@@ -20,7 +20,7 @@ namespace MasterDevs.ChromeDevTools.Protocol
         public async Task<IEvaluationResult> ExecuteEvaluateCommand(IChromeSession chromeSession, string expression)
         {
             var result = await chromeSession.SendAsync(
-                new EvaluateCommand
+                new EvaluateCommand()
                 {
                     Expression = expression,
                     ObjectGroup = "console",

@@ -34,13 +34,17 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MasterDevs.ChromeDevTools.L
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MasterDevs.ChromeDevTools.Local.DependencyInjection", "MasterDevs.ChromeDevTools.Local.DependencyInjection\MasterDevs.ChromeDevTools.Local.DependencyInjection.csproj", "{F1E9AB67-3AC5-4F96-9D9F-9829B239088D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MasterDevs.ChromeDevTools.Protocol.Version12", "MasterDevs.ChromeDevTools.Protocol\MasterDevs.ChromeDevTools.Protocol.Version12.csproj", "{044C271C-6B79-4046-AF67-802B0F527E90}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MasterDevs.ChromeDevTools.Protocol.Version12", "MasterDevs.ChromeDevTools.Protocol.Version12\MasterDevs.ChromeDevTools.Protocol.Version12.csproj", "{044C271C-6B79-4046-AF67-802B0F527E90}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MasterDevs.ChromeDevTools.Protocol.Abstractions", "MasterDevs.ChromeDevTools.Protocol.Abstractions\MasterDevs.ChromeDevTools.Protocol.Abstractions.csproj", "{08FEC97C-4330-4FEC-9C8B-30DBE0659833}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MasterDevs.ChromeDevTools.Protocol.Version12.DependencyInjection", "MasterDevs.ChromeDevTools.Protocol.DependencyInjection\MasterDevs.ChromeDevTools.Protocol.Version12.DependencyInjection.csproj", "{F62E076F-3172-4618-925E-CE0695AACDB8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MasterDevs.ChromeDevTools.Protocol.Version12.DependencyInjection", "MasterDevs.ChromeDevTools.Protocol.Version12.DependencyInjection\MasterDevs.ChromeDevTools.Protocol.Version12.DependencyInjection.csproj", "{F62E076F-3172-4618-925E-CE0695AACDB8}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PinkNet", "..\PinkNet\PinkNet\PinkNet.csproj", "{C6F818F8-5B1B-4004-B703-F03256D14950}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MasterDevs.ChromeDevTools.Protocol.Version13", "MasterDevs.ChromeDevTools.Protocol.Version13\MasterDevs.ChromeDevTools.Protocol.Version13.csproj", "{AD9F377B-693C-4A3B-B5A1-05BBBBCF4F35}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MasterDevs.ChromeDevTools.Protocol.Version13.DependencyInjection", "MasterDevs.ChromeDevTools.Protocol.Version13.DependencyInjection\MasterDevs.ChromeDevTools.Protocol.Version13.DependencyInjection.csproj", "{4596E77F-AFAB-46DD-9804-BD8E9D6D440C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -100,6 +104,14 @@ Global
 		{C6F818F8-5B1B-4004-B703-F03256D14950}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C6F818F8-5B1B-4004-B703-F03256D14950}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C6F818F8-5B1B-4004-B703-F03256D14950}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AD9F377B-693C-4A3B-B5A1-05BBBBCF4F35}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD9F377B-693C-4A3B-B5A1-05BBBBCF4F35}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD9F377B-693C-4A3B-B5A1-05BBBBCF4F35}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD9F377B-693C-4A3B-B5A1-05BBBBCF4F35}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4596E77F-AFAB-46DD-9804-BD8E9D6D440C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4596E77F-AFAB-46DD-9804-BD8E9D6D440C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4596E77F-AFAB-46DD-9804-BD8E9D6D440C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4596E77F-AFAB-46DD-9804-BD8E9D6D440C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

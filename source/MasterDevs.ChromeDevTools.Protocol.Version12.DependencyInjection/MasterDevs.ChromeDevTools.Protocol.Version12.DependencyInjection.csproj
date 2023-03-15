@@ -9,7 +9,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\MasterDevs.ChromeDevTools.Protocol\MasterDevs.ChromeDevTools.Protocol.Version12.csproj" />
+    <ProjectReference Include="..\MasterDevs.ChromeDevTools.Protocol.Version12\MasterDevs.ChromeDevTools.Protocol.Version12.csproj" />
   </ItemGroup>
 
 </Project>
