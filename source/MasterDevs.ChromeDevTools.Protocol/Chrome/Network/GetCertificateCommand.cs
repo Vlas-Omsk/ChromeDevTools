@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Network
 	/// </summary>
 	[Command(ProtocolName.Network.GetCertificate)]
 	[SupportedBy("Chrome")]
-	public class GetCertificateCommand: ICommand<GetCertificateCommandResponse>
+	public class GetCertificateCommand: IProtocolCommand<GetCertificateCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets Origin to get certificate for.

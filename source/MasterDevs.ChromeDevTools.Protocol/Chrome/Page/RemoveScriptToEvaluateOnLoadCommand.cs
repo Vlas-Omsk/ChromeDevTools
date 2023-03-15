@@ -11,7 +11,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Page
 	[Obsolete("Deprecated, please use removeScriptToEvaluateOnNewDocument instead.")]
 	[Command(ProtocolName.Page.RemoveScriptToEvaluateOnLoad)]
 	[SupportedBy("Chrome")]
-	public class RemoveScriptToEvaluateOnLoadCommand: ICommand<RemoveScriptToEvaluateOnLoadCommandResponse>
+	public class RemoveScriptToEvaluateOnLoadCommand: IProtocolCommand<RemoveScriptToEvaluateOnLoadCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets Identifier

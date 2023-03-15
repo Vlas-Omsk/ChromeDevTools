@@ -7,7 +7,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.HeapProfiler
 {
 	[Command(ProtocolName.HeapProfiler.StartTrackingHeapObjects)]
 	[SupportedBy("Chrome")]
-	public class StartTrackingHeapObjectsCommand: ICommand<StartTrackingHeapObjectsCommandResponse>
+	public class StartTrackingHeapObjectsCommand: IProtocolCommand<StartTrackingHeapObjectsCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets TrackAllocations

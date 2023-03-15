@@ -7,7 +7,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.Page
 {
 	[Command(ProtocolName.Page.AddScriptToEvaluateOnLoad)]
 	[SupportedBy("iOS")]
-	public class AddScriptToEvaluateOnLoadCommand: ICommand<AddScriptToEvaluateOnLoadCommandResponse>
+	public class AddScriptToEvaluateOnLoadCommand: IProtocolCommand<AddScriptToEvaluateOnLoadCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets ScriptSource

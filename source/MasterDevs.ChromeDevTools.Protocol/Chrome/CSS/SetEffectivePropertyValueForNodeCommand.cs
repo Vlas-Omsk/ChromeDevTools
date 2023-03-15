@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.CSS
 	/// </summary>
 	[Command(ProtocolName.CSS.SetEffectivePropertyValueForNode)]
 	[SupportedBy("Chrome")]
-	public class SetEffectivePropertyValueForNodeCommand: ICommand<SetEffectivePropertyValueForNodeCommandResponse>
+	public class SetEffectivePropertyValueForNodeCommand: IProtocolCommand<SetEffectivePropertyValueForNodeCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets The element id for which to set property.

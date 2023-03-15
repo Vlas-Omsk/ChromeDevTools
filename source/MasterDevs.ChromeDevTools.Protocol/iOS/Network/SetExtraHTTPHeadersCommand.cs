@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.Network
 	/// </summary>
 	[Command(ProtocolName.Network.SetExtraHTTPHeaders)]
 	[SupportedBy("iOS")]
-	public class SetExtraHTTPHeadersCommand: ICommand<SetExtraHTTPHeadersCommandResponse>
+	public class SetExtraHTTPHeadersCommand: IProtocolCommand<SetExtraHTTPHeadersCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets Map with extra HTTP headers.

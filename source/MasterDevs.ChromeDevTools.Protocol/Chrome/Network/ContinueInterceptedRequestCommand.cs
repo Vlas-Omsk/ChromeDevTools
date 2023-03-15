@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Network
 	/// </summary>
 	[Command(ProtocolName.Network.ContinueInterceptedRequest)]
 	[SupportedBy("Chrome")]
-	public class ContinueInterceptedRequestCommand: ICommand<ContinueInterceptedRequestCommandResponse>
+	public class ContinueInterceptedRequestCommand: IProtocolCommand<ContinueInterceptedRequestCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets InterceptionId

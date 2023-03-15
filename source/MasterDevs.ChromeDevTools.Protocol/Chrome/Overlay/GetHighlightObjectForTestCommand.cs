@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Overlay
 	/// </summary>
 	[Command(ProtocolName.Overlay.GetHighlightObjectForTest)]
 	[SupportedBy("Chrome")]
-	public class GetHighlightObjectForTestCommand: ICommand<GetHighlightObjectForTestCommandResponse>
+	public class GetHighlightObjectForTestCommand: IProtocolCommand<GetHighlightObjectForTestCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets Id of the node to get highlight object for.

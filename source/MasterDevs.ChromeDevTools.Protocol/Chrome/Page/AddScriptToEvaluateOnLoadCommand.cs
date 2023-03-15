@@ -11,7 +11,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Page
 	[Obsolete("Deprecated, please use addScriptToEvaluateOnNewDocument instead.")]
 	[Command(ProtocolName.Page.AddScriptToEvaluateOnLoad)]
 	[SupportedBy("Chrome")]
-	public class AddScriptToEvaluateOnLoadCommand: ICommand<AddScriptToEvaluateOnLoadCommandResponse>
+	public class AddScriptToEvaluateOnLoadCommand: IProtocolCommand<AddScriptToEvaluateOnLoadCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets ScriptSource

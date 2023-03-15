@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.Page
 	/// </summary>
 	[Command(ProtocolName.Page.GetScriptExecutionStatus)]
 	[SupportedBy("iOS")]
-	public class GetScriptExecutionStatusCommand: ICommand<GetScriptExecutionStatusCommandResponse>
+	public class GetScriptExecutionStatusCommand: IProtocolCommand<GetScriptExecutionStatusCommandResponse>
 	{
 	}
 }

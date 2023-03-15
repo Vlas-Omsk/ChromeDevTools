@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Debugger
 	/// </summary>
 	[Command(ProtocolName.Debugger.SetBlackboxPatterns)]
 	[SupportedBy("Chrome")]
-	public class SetBlackboxPatternsCommand: ICommand<SetBlackboxPatternsCommandResponse>
+	public class SetBlackboxPatternsCommand: IProtocolCommand<SetBlackboxPatternsCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets Array of regexps that will be used to check script url for blackbox state.

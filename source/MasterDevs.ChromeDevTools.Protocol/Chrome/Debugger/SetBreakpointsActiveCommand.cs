@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Debugger
 	/// </summary>
 	[Command(ProtocolName.Debugger.SetBreakpointsActive)]
 	[SupportedBy("Chrome")]
-	public class SetBreakpointsActiveCommand: ICommand<SetBreakpointsActiveCommandResponse>
+	public class SetBreakpointsActiveCommand: IProtocolCommand<SetBreakpointsActiveCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets New value for breakpoints active state.

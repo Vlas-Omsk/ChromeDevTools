@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.Network
 	/// </summary>
 	[Command(ProtocolName.Network.LoadResource)]
 	[SupportedBy("iOS")]
-	public class LoadResourceCommand: ICommand<LoadResourceCommandResponse>
+	public class LoadResourceCommand: IProtocolCommand<LoadResourceCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets Frame to load the resource from.

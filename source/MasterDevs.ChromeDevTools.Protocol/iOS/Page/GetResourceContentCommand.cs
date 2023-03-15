@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.Page
 	/// </summary>
 	[Command(ProtocolName.Page.GetResourceContent)]
 	[SupportedBy("iOS")]
-	public class GetResourceContentCommand: ICommand<GetResourceContentCommandResponse>
+	public class GetResourceContentCommand: IProtocolCommand<GetResourceContentCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets Frame id to get resource for.

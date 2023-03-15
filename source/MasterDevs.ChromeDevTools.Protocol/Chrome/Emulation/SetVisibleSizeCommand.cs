@@ -11,7 +11,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Emulation
 	[Obsolete]
 	[Command(ProtocolName.Emulation.SetVisibleSize)]
 	[SupportedBy("Chrome")]
-	public class SetVisibleSizeCommand: ICommand<SetVisibleSizeCommandResponse>
+	public class SetVisibleSizeCommand: IProtocolCommand<SetVisibleSizeCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets Frame width (DIP).

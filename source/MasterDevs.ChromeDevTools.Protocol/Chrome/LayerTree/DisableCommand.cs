@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.LayerTree
 	/// </summary>
 	[Command(ProtocolName.LayerTree.Disable)]
 	[SupportedBy("Chrome")]
-	public class DisableCommand: ICommand<DisableCommandResponse>
+	public class DisableCommand: IProtocolCommand<DisableCommandResponse>
 	{
 	}
 }

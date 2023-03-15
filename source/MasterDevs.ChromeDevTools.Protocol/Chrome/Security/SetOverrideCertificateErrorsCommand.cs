@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Security
 	/// </summary>
 	[Command(ProtocolName.Security.SetOverrideCertificateErrors)]
 	[SupportedBy("Chrome")]
-	public class SetOverrideCertificateErrorsCommand: ICommand<SetOverrideCertificateErrorsCommandResponse>
+	public class SetOverrideCertificateErrorsCommand: IProtocolCommand<SetOverrideCertificateErrorsCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets If true, certificate errors will be overridden.

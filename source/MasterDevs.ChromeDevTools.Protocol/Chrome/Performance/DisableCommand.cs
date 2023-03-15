@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Performance
 	/// </summary>
 	[Command(ProtocolName.Performance.Disable)]
 	[SupportedBy("Chrome")]
-	public class DisableCommand: ICommand<DisableCommandResponse>
+	public class DisableCommand: IProtocolCommand<DisableCommandResponse>
 	{
 	}
 }

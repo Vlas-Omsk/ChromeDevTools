@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.Debugger
 	/// </summary>
 	[Command(ProtocolName.Debugger.Resume)]
 	[SupportedBy("iOS")]
-	public class ResumeCommand: ICommand<ResumeCommandResponse>
+	public class ResumeCommand: IProtocolCommand<ResumeCommandResponse>
 	{
 	}
 }

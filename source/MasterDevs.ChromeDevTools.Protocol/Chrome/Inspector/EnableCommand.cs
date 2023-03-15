@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Inspector
 	/// </summary>
 	[Command(ProtocolName.Inspector.Enable)]
 	[SupportedBy("Chrome")]
-	public class EnableCommand: ICommand<EnableCommandResponse>
+	public class EnableCommand: IProtocolCommand<EnableCommandResponse>
 	{
 	}
 }

@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Tethering
 	/// </summary>
 	[Command(ProtocolName.Tethering.Bind)]
 	[SupportedBy("Chrome")]
-	public class BindCommand: ICommand<BindCommandResponse>
+	public class BindCommand: IProtocolCommand<BindCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets Port number to bind.

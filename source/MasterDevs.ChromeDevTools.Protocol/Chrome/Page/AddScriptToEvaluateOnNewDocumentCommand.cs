@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Page
 	/// </summary>
 	[Command(ProtocolName.Page.AddScriptToEvaluateOnNewDocument)]
 	[SupportedBy("Chrome")]
-	public class AddScriptToEvaluateOnNewDocumentCommand: ICommand<AddScriptToEvaluateOnNewDocumentCommandResponse>
+	public class AddScriptToEvaluateOnNewDocumentCommand: IProtocolCommand<AddScriptToEvaluateOnNewDocumentCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets Source

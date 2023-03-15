@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.CSS
 	/// </summary>
 	[Command(ProtocolName.CSS.GetStyleSheetText)]
 	[SupportedBy("Chrome")]
-	public class GetStyleSheetTextCommand: ICommand<GetStyleSheetTextCommandResponse>
+	public class GetStyleSheetTextCommand: IProtocolCommand<GetStyleSheetTextCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets StyleSheetId

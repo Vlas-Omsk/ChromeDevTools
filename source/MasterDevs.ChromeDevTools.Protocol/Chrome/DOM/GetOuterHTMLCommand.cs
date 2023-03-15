@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.DOM
 	/// </summary>
 	[Command(ProtocolName.DOM.GetOuterHTML)]
 	[SupportedBy("Chrome")]
-	public class GetOuterHTMLCommand: ICommand<GetOuterHTMLCommandResponse>
+	public class GetOuterHTMLCommand: IProtocolCommand<GetOuterHTMLCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets Identifier of the node.

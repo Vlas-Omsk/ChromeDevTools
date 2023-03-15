@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Debugger
 	/// </summary>
 	[Command(ProtocolName.Debugger.SetBlackboxedRanges)]
 	[SupportedBy("Chrome")]
-	public class SetBlackboxedRangesCommand: ICommand<SetBlackboxedRangesCommandResponse>
+	public class SetBlackboxedRangesCommand: IProtocolCommand<SetBlackboxedRangesCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets Id of the script.

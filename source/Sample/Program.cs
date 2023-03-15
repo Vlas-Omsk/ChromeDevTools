@@ -5,6 +5,8 @@ using System.Linq;
 using System.Threading;
 using MasterDevs.ChromeDevTools.Protocol.Chrome.DOM;
 using Task = System.Threading.Tasks.Task;
+using MasterDevs.ChromeDevTools.Local;
+using MasterDevs.ChromeDevTools.Protocol;
 
 namespace MasterDevs.ChromeDevTools.Sample
 {
@@ -12,86 +14,89 @@ namespace MasterDevs.ChromeDevTools.Sample
     {
         const int ViewPortWidth = 1440;
         const int ViewPortHeight = 900;
-        private static void Main(string[] args)
+        private static async Task Main(string[] args)
         {
-            Task.Run(async () =>
+            // synchronization
+            var screenshotDone = new ManualResetEventSlim();
+
+            // STEP 1 - Run Chrome
+            var methodTypeMap = new MethodTypeMap();
+            var commandsExecutor = new CommonCommandsExecutor();
+            var chromeSessionFactory = new ChromeSessionFactory(methodTypeMap, commandsExecutor);
+            var chromeProcessFactory = new LocalChromeProcessFactory(chromeSessionFactory, @"F:\Utils\ungoogled-chromium-103.0.5060.68-1_Win64\chrome.exe");
+            var chromeProcessParameters = new ChromeProcessParametersBuilder(9222)
+                .Build();
+            using (var chromeProcess = chromeProcessFactory.Create(chromeProcessParameters))
             {
-                // synchronization
-                var screenshotDone = new ManualResetEventSlim();
+                await chromeProcess.Start();
 
-                // STEP 1 - Run Chrome
-                var chromeProcessFactory = new ChromeProcessFactory(new StubbornDirectoryCleaner());
-                using (var chromeProcess = chromeProcessFactory.Create(9222, true))
+                // STEP 2 - Create a debugging session
+                var sessionInfo = (await chromeProcess.GetSessionsRaw()).LastOrDefault();
+                var chromeSession = chromeSessionFactory.Create(sessionInfo.WebSocketDebuggerUrl, sessionInfo.Id);
+
+                // STEP 3 - Send a command
+                //
+                // Here we are sending a commands to tell chrome to set the viewport size 
+                // and navigate to the specified URL
+                await chromeSession.SendAsync(new SetDeviceMetricsOverrideCommand
                 {
-                    // STEP 2 - Create a debugging session
-                    var sessionInfo = (await chromeProcess.GetSessionInfo()).LastOrDefault();
-                    var chromeSessionFactory = new ChromeSessionFactory();
-                    var chromeSession = chromeSessionFactory.Create(sessionInfo.WebSocketDebuggerUrl);
+                    Width = ViewPortWidth,
+                    Height = ViewPortHeight,
+                    Scale = 1
+                });
 
-                    // STEP 3 - Send a command
-                    //
-                    // Here we are sending a commands to tell chrome to set the viewport size 
-                    // and navigate to the specified URL
-                    await chromeSession.SendAsync(new SetDeviceMetricsOverrideCommand
+                var navigateResponse = await chromeSession.SendAsync(new NavigateCommand
+                {
+                    Url = "http://www.google.com"
+                });
+                Console.WriteLine("NavigateResponse: " + navigateResponse.Id);
+
+                // STEP 4 - Register for events (in this case, "Page" domain events)
+                // send an command to tell chrome to send us all Page events
+                // but we only subscribe to certain events in this session
+                var pageEnableResult = await chromeSession.SendAsync<Protocol.Chrome.Page.EnableCommand>();
+                Console.WriteLine("PageEnable: " + pageEnableResult.Id);
+
+                chromeSession.Subscribe<LoadEventFiredEvent>(loadEventFired =>
+                {
+                    // we cannot block in event handler, hence the task
+                    Task.Run(async () =>
                     {
-                        Width = ViewPortWidth,
-                        Height = ViewPortHeight,
-                        Scale = 1
-                    });
+                        Console.WriteLine("LoadEventFiredEvent: " + loadEventFired.Timestamp);
 
-                    var navigateResponse = await chromeSession.SendAsync(new NavigateCommand
-                    {
-                        Url = "http://www.google.com"
-                    });
-                    Console.WriteLine("NavigateResponse: " + navigateResponse.Id);
-
-                    // STEP 4 - Register for events (in this case, "Page" domain events)
-                    // send an command to tell chrome to send us all Page events
-                    // but we only subscribe to certain events in this session
-                    var pageEnableResult = await chromeSession.SendAsync<Protocol.Chrome.Page.EnableCommand>();
-                    Console.WriteLine("PageEnable: " + pageEnableResult.Id);
-
-                    chromeSession.Subscribe<LoadEventFiredEvent>(loadEventFired =>
-                    {
-                        // we cannot block in event handler, hence the task
-                        Task.Run(async () =>
-                        {
-                            Console.WriteLine("LoadEventFiredEvent: " + loadEventFired.Timestamp);
-
-                            var documentNodeId = (await chromeSession.SendAsync(new GetDocumentCommand())).Result.Root.NodeId;
-                            var bodyNodeId =
-                                (await chromeSession.SendAsync(new QuerySelectorCommand
-                                {
-                                    NodeId = documentNodeId,
-                                    Selector = "body"
-                                })).Result.NodeId;
-                            var height = (await chromeSession.SendAsync(new GetBoxModelCommand {NodeId = bodyNodeId})).Result.Model.Height;
-
-                            await chromeSession.SendAsync(new SetDeviceMetricsOverrideCommand
+                        var documentNodeId = (await chromeSession.SendAsync(new GetDocumentCommand())).Result.Root.NodeId;
+                        var bodyNodeId =
+                            (await chromeSession.SendAsync(new QuerySelectorCommand
                             {
-                                Width = ViewPortWidth,
-                                Height = height,
-                                Scale = 1
-                            });
+                                NodeId = documentNodeId,
+                                Selector = "body"
+                            })).Result.NodeId;
+                        var height = (await chromeSession.SendAsync(new GetBoxModelCommand { NodeId = bodyNodeId })).Result.Model.Height;
 
-                            Console.WriteLine("Taking screenshot");
-                            var screenshot = await chromeSession.SendAsync(new CaptureScreenshotCommand {Format = "png"});
-
-                            var data = Convert.FromBase64String(screenshot.Result.Data);
-                            File.WriteAllBytes("output.png", data);
-                            Console.WriteLine("Screenshot stored");
-
-                            // tell the main thread we are done
-                            screenshotDone.Set();
+                        await chromeSession.SendAsync(new SetDeviceMetricsOverrideCommand
+                        {
+                            Width = ViewPortWidth,
+                            Height = height,
+                            Scale = 1
                         });
+
+                        Console.WriteLine("Taking screenshot");
+                        var screenshot = await chromeSession.SendAsync(new CaptureScreenshotCommand { Format = "png" });
+
+                        var data = Convert.FromBase64String(screenshot.Result.Data);
+                        File.WriteAllBytes("output.png", data);
+                        Console.WriteLine("Screenshot stored");
+
+                        // tell the main thread we are done
+                        screenshotDone.Set();
                     });
+                });
 
-                    // wait for screenshoting thread to (start and) finish
-                    screenshotDone.Wait();
+                // wait for screenshoting thread to (start and) finish
+                screenshotDone.Wait();
 
-                    Console.WriteLine("Exiting ..");
-                }
-            }).Wait();
+                Console.WriteLine("Exiting ..");
+            }
         }
     }
 }

@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.DOM
 	/// </summary>
 	[Command(ProtocolName.DOM.MarkUndoableState)]
 	[SupportedBy("iOS")]
-	public class MarkUndoableStateCommand: ICommand<MarkUndoableStateCommandResponse>
+	public class MarkUndoableStateCommand: IProtocolCommand<MarkUndoableStateCommandResponse>
 	{
 	}
 }

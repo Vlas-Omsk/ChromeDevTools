@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Emulation
 	/// </summary>
 	[Command(ProtocolName.Emulation.CanEmulate)]
 	[SupportedBy("Chrome")]
-	public class CanEmulateCommand: ICommand<CanEmulateCommandResponse>
+	public class CanEmulateCommand: IProtocolCommand<CanEmulateCommandResponse>
 	{
 	}
 }

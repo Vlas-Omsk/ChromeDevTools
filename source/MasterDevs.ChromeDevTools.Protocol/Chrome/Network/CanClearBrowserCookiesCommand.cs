@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Network
 	/// </summary>
 	[Command(ProtocolName.Network.CanClearBrowserCookies)]
 	[SupportedBy("Chrome")]
-	public class CanClearBrowserCookiesCommand: ICommand<CanClearBrowserCookiesCommandResponse>
+	public class CanClearBrowserCookiesCommand: IProtocolCommand<CanClearBrowserCookiesCommandResponse>
 	{
 	}
 }

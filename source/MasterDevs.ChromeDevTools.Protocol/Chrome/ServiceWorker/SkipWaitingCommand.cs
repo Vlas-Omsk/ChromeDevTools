@@ -7,7 +7,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.ServiceWorker
 {
 	[Command(ProtocolName.ServiceWorker.SkipWaiting)]
 	[SupportedBy("Chrome")]
-	public class SkipWaitingCommand: ICommand<SkipWaitingCommandResponse>
+	public class SkipWaitingCommand: IProtocolCommand<SkipWaitingCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets ScopeURL

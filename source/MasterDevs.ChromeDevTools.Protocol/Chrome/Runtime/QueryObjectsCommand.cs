@@ -7,7 +7,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Runtime
 {
 	[Command(ProtocolName.Runtime.QueryObjects)]
 	[SupportedBy("Chrome")]
-	public class QueryObjectsCommand: ICommand<QueryObjectsCommandResponse>
+	public class QueryObjectsCommand: IProtocolCommand<QueryObjectsCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets Identifier of the prototype to return objects for.

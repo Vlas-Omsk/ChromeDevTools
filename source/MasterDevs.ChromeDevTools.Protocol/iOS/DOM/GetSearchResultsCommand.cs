@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.DOM
 	/// </summary>
 	[Command(ProtocolName.DOM.GetSearchResults)]
 	[SupportedBy("iOS")]
-	public class GetSearchResultsCommand: ICommand<GetSearchResultsCommandResponse>
+	public class GetSearchResultsCommand: IProtocolCommand<GetSearchResultsCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets Unique search session identifier.

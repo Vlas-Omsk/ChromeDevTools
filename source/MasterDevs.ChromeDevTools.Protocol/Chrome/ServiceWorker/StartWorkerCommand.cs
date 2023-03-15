@@ -7,7 +7,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.ServiceWorker
 {
 	[Command(ProtocolName.ServiceWorker.StartWorker)]
 	[SupportedBy("Chrome")]
-	public class StartWorkerCommand: ICommand<StartWorkerCommandResponse>
+	public class StartWorkerCommand: IProtocolCommand<StartWorkerCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets ScopeURL

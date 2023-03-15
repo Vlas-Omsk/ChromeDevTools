@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.DOM
 	/// </summary>
 	[Command(ProtocolName.DOM.PushNodeByPathToFrontend)]
 	[SupportedBy("iOS")]
-	public class PushNodeByPathToFrontendCommand: ICommand<PushNodeByPathToFrontendCommandResponse>
+	public class PushNodeByPathToFrontendCommand: IProtocolCommand<PushNodeByPathToFrontendCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets Path to node in the proprietary format.

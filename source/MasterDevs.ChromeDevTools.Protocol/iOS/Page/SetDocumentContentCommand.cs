@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.Page
 	/// </summary>
 	[Command(ProtocolName.Page.SetDocumentContent)]
 	[SupportedBy("iOS")]
-	public class SetDocumentContentCommand: ICommand<SetDocumentContentCommandResponse>
+	public class SetDocumentContentCommand: IProtocolCommand<SetDocumentContentCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets Frame id to set HTML for.

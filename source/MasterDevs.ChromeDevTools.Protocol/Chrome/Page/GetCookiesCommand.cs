@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Page
 	/// </summary>
 	[Command(ProtocolName.Page.GetCookies)]
 	[SupportedBy("Chrome")]
-	public class GetCookiesCommand: ICommand<GetCookiesCommandResponse>
+	public class GetCookiesCommand: IProtocolCommand<GetCookiesCommandResponse>
 	{
 	}
 }

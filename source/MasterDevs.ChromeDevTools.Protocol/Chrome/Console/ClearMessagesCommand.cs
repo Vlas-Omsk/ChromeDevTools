@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Console
 	/// </summary>
 	[Command(ProtocolName.Console.ClearMessages)]
 	[SupportedBy("Chrome")]
-	public class ClearMessagesCommand: ICommand<ClearMessagesCommandResponse>
+	public class ClearMessagesCommand: IProtocolCommand<ClearMessagesCommandResponse>
 	{
 	}
 }

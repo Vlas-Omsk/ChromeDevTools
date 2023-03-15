@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.Timeline
 	/// </summary>
 	[Command(ProtocolName.Timeline.Start)]
 	[SupportedBy("iOS")]
-	public class StartCommand: ICommand<StartCommandResponse>
+	public class StartCommand: IProtocolCommand<StartCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets Samples JavaScript stack traces up to <code>maxCallStackDepth</code>, defaults to 5.

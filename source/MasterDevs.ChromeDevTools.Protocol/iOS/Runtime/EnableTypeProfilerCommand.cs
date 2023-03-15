@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.Runtime
 	/// </summary>
 	[Command(ProtocolName.Runtime.EnableTypeProfiler)]
 	[SupportedBy("iOS")]
-	public class EnableTypeProfilerCommand: ICommand<EnableTypeProfilerCommandResponse>
+	public class EnableTypeProfilerCommand: IProtocolCommand<EnableTypeProfilerCommandResponse>
 	{
 	}
 }

@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.DOM
 	/// </summary>
 	[Command(ProtocolName.DOM.HighlightNode)]
 	[SupportedBy("Chrome")]
-	public class HighlightNodeCommand: ICommand<HighlightNodeCommandResponse>
+	public class HighlightNodeCommand: IProtocolCommand<HighlightNodeCommandResponse>
 	{
 	}
 }

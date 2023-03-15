@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Debugger
 	/// </summary>
 	[Command(ProtocolName.Debugger.RemoveBreakpoint)]
 	[SupportedBy("Chrome")]
-	public class RemoveBreakpointCommand: ICommand<RemoveBreakpointCommandResponse>
+	public class RemoveBreakpointCommand: IProtocolCommand<RemoveBreakpointCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets BreakpointId

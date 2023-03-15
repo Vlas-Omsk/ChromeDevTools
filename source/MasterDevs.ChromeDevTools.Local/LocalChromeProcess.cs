@@ -1,6 +1,4 @@
 ﻿using MasterDevs.ChromeDevTools.Local.Windows;
-using MasterDevs.ChromeDevTools.Protocol;
-using MasterDevs.ChromeDevTools.Protocol.Chrome.Page;
 using PinkNet;
 using System;
 using System.ComponentModel;
@@ -95,10 +93,7 @@ namespace MasterDevs.ChromeDevTools.Local
             var chromeSession = await StartNewSession();
             var input = new Input(_inputDelay);
 
-            await chromeSession.SendAsync(new NavigateCommand()
-            {
-                Url = "https://microsoft.com/"
-            });
+            await chromeSession.Naviagte("https://microsoft.com/");
 
             if (!Win32.SetForegroundWindow(mainWindowHandle))
                 throw new Win32Exception();

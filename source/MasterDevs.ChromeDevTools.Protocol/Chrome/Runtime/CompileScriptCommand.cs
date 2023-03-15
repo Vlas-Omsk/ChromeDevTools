@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Runtime
 	/// </summary>
 	[Command(ProtocolName.Runtime.CompileScript)]
 	[SupportedBy("Chrome")]
-	public class CompileScriptCommand: ICommand<CompileScriptCommandResponse>
+	public class CompileScriptCommand: IProtocolCommand<CompileScriptCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets Expression to compile.

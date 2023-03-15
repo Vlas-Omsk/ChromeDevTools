@@ -7,7 +7,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.ServiceWorker
 {
 	[Command(ProtocolName.ServiceWorker.SetForceUpdateOnPageLoad)]
 	[SupportedBy("Chrome")]
-	public class SetForceUpdateOnPageLoadCommand: ICommand<SetForceUpdateOnPageLoadCommandResponse>
+	public class SetForceUpdateOnPageLoadCommand: IProtocolCommand<SetForceUpdateOnPageLoadCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets ForceUpdateOnPageLoad

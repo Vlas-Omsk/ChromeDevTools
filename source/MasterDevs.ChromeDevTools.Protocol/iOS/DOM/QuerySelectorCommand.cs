@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.DOM
 	/// </summary>
 	[Command(ProtocolName.DOM.QuerySelector)]
 	[SupportedBy("iOS")]
-	public class QuerySelectorCommand: ICommand<QuerySelectorCommandResponse>
+	public class QuerySelectorCommand: IProtocolCommand<QuerySelectorCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets Id of the node to query upon.

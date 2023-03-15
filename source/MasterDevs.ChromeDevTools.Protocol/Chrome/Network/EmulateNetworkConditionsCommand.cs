@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Network
 	/// </summary>
 	[Command(ProtocolName.Network.EmulateNetworkConditions)]
 	[SupportedBy("Chrome")]
-	public class EmulateNetworkConditionsCommand: ICommand<EmulateNetworkConditionsCommandResponse>
+	public class EmulateNetworkConditionsCommand: IProtocolCommand<EmulateNetworkConditionsCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets True to emulate internet disconnection.

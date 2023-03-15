@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Overlay
 	/// </summary>
 	[Command(ProtocolName.Overlay.Enable)]
 	[SupportedBy("Chrome")]
-	public class EnableCommand: ICommand<EnableCommandResponse>
+	public class EnableCommand: IProtocolCommand<EnableCommandResponse>
 	{
 	}
 }

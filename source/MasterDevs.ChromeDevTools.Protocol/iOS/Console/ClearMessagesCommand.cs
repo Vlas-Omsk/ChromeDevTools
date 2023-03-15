@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.Console
 	/// </summary>
 	[Command(ProtocolName.Console.ClearMessages)]
 	[SupportedBy("iOS")]
-	public class ClearMessagesCommand: ICommand<ClearMessagesCommandResponse>
+	public class ClearMessagesCommand: IProtocolCommand<ClearMessagesCommandResponse>
 	{
 	}
 }

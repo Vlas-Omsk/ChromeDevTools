@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Page
 	/// </summary>
 	[Command(ProtocolName.Page.SetDownloadBehavior)]
 	[SupportedBy("Chrome")]
-	public class SetDownloadBehaviorCommand: ICommand<SetDownloadBehaviorCommandResponse>
+	public class SetDownloadBehaviorCommand: IProtocolCommand<SetDownloadBehaviorCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets Whether to allow all or deny all download requests, or use default Chrome behavior if available (otherwise deny).

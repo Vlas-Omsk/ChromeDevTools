@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Network
 	/// </summary>
 	[Command(ProtocolName.Network.SetRequestInterceptionEnabled)]
 	[SupportedBy("Chrome")]
-	public class SetRequestInterceptionEnabledCommand: ICommand<SetRequestInterceptionEnabledCommandResponse>
+	public class SetRequestInterceptionEnabledCommand: IProtocolCommand<SetRequestInterceptionEnabledCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets Whether requests should be intercepted. If patterns is not set, matches all and resets any previously set patterns. Other parameters are ignored if false.

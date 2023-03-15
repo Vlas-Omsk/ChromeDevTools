@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Storage
 	/// </summary>
 	[Command(ProtocolName.Storage.GetUsageAndQuota)]
 	[SupportedBy("Chrome")]
-	public class GetUsageAndQuotaCommand: ICommand<GetUsageAndQuotaCommandResponse>
+	public class GetUsageAndQuotaCommand: IProtocolCommand<GetUsageAndQuotaCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets Security origin.

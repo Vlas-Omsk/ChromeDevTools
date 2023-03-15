@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.DOM
 	/// </summary>
 	[Command(ProtocolName.DOM.PerformSearch)]
 	[SupportedBy("Chrome")]
-	public class PerformSearchCommand: ICommand<PerformSearchCommandResponse>
+	public class PerformSearchCommand: IProtocolCommand<PerformSearchCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets Plain text or query selector or XPath search query.

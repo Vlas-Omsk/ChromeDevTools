@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Network
 	/// </summary>
 	[Command(ProtocolName.Network.SetCookies)]
 	[SupportedBy("Chrome")]
-	public class SetCookiesCommand: ICommand<SetCookiesCommandResponse>
+	public class SetCookiesCommand: IProtocolCommand<SetCookiesCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets Cookies to be set.

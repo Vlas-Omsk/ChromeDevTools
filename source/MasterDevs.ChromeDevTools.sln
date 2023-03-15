@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33414.496
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{0D43D20B-6D51-4CBC-BD30-F17B8CA65678}"
 	ProjectSection(SolutionItems) = preProject
@@ -16,15 +16,31 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionFiles", "SolutionFi
 		..\README.md = ..\README.md
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MasterDevs.ChromeDevTools", "ChromeDevTools\MasterDevs.ChromeDevTools.csproj", "{C2508EE5-AAB2-4275-88C9-7DA9D1961336}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MasterDevs.ChromeDevTools.ProtocolGenerator", "ProtocolGenerator\MasterDevs.ChromeDevTools.ProtocolGenerator.csproj", "{97C7FCF5-1964-4878-B7CD-63448CA403B1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MasterDevs.ChromeDevTools.Sample", "Sample\MasterDevs.ChromeDevTools.Sample.csproj", "{36138327-0A72-44E3-B9DB-C4E6155AAFD5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MasterDevs.ChromeDevTools.Sample", "Sample\MasterDevs.ChromeDevTools.Sample.csproj", "{36138327-0A72-44E3-B9DB-C4E6155AAFD5}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MasterDevs.ChromeDevTools.ProtocolGenerator.Tests", "ProtocolGenerator.Tests\MasterDevs.ChromeDevTools.ProtocolGenerator.Tests.csproj", "{4C3A1910-79C5-43C0-8599-89921482B38B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MasterDevs.ChromeDevTools.Tests", "MasterDevs.ChromeDevTools.Tests\MasterDevs.ChromeDevTools.Tests.csproj", "{4CFEBA12-2ECB-4C17-9EA1-AD79C39EEA72}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MasterDevs.ChromeDevTools", "MasterDevs.ChromeDevTools\MasterDevs.ChromeDevTools.csproj", "{6C03A02E-046D-4CD8-A7B9-951CA2D32789}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MasterDevs.ChromeDevTools.Abstractions", "MasterDevs.ChromeDevTools.Abstractions\MasterDevs.ChromeDevTools.Abstractions.csproj", "{AB4F6D57-2672-4322-B0D3-6F15E90FC67F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MasterDevs.ChromeDevTools.Local", "MasterDevs.ChromeDevTools.Local\MasterDevs.ChromeDevTools.Local.csproj", "{F1954861-46DF-4617-AE0C-FE8A648F698C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MasterDevs.ChromeDevTools.Local.Abstractions", "MasterDevs.ChromeDevTools.Local.Abstractions\MasterDevs.ChromeDevTools.Local.Abstractions.csproj", "{EB7CE6CD-E43B-43C1-940C-8473AAC2B5F5}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MasterDevs.ChromeDevTools.Local.DependencyInjection", "MasterDevs.ChromeDevTools.Local.DependencyInjection\MasterDevs.ChromeDevTools.Local.DependencyInjection.csproj", "{F1E9AB67-3AC5-4F96-9D9F-9829B239088D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MasterDevs.ChromeDevTools.Protocol", "MasterDevs.ChromeDevTools.Protocol\MasterDevs.ChromeDevTools.Protocol.csproj", "{044C271C-6B79-4046-AF67-802B0F527E90}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MasterDevs.ChromeDevTools.Protocol.Abstractions", "MasterDevs.ChromeDevTools.Protocol.Abstractions\MasterDevs.ChromeDevTools.Protocol.Abstractions.csproj", "{08FEC97C-4330-4FEC-9C8B-30DBE0659833}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MasterDevs.ChromeDevTools.Protocol.DependencyInjection", "MasterDevs.ChromeDevTools.Protocol.DependencyInjection\MasterDevs.ChromeDevTools.Protocol.DependencyInjection.csproj", "{F62E076F-3172-4618-925E-CE0695AACDB8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PinkNet", "..\PinkNet\PinkNet\PinkNet.csproj", "{C6F818F8-5B1B-4004-B703-F03256D14950}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -32,10 +48,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{C2508EE5-AAB2-4275-88C9-7DA9D1961336}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C2508EE5-AAB2-4275-88C9-7DA9D1961336}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C2508EE5-AAB2-4275-88C9-7DA9D1961336}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C2508EE5-AAB2-4275-88C9-7DA9D1961336}.Release|Any CPU.Build.0 = Release|Any CPU
 		{97C7FCF5-1964-4878-B7CD-63448CA403B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{97C7FCF5-1964-4878-B7CD-63448CA403B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{97C7FCF5-1964-4878-B7CD-63448CA403B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -52,8 +64,47 @@ Global
 		{4CFEBA12-2ECB-4C17-9EA1-AD79C39EEA72}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4CFEBA12-2ECB-4C17-9EA1-AD79C39EEA72}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4CFEBA12-2ECB-4C17-9EA1-AD79C39EEA72}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6C03A02E-046D-4CD8-A7B9-951CA2D32789}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6C03A02E-046D-4CD8-A7B9-951CA2D32789}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6C03A02E-046D-4CD8-A7B9-951CA2D32789}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6C03A02E-046D-4CD8-A7B9-951CA2D32789}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AB4F6D57-2672-4322-B0D3-6F15E90FC67F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB4F6D57-2672-4322-B0D3-6F15E90FC67F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB4F6D57-2672-4322-B0D3-6F15E90FC67F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB4F6D57-2672-4322-B0D3-6F15E90FC67F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F1954861-46DF-4617-AE0C-FE8A648F698C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F1954861-46DF-4617-AE0C-FE8A648F698C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F1954861-46DF-4617-AE0C-FE8A648F698C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F1954861-46DF-4617-AE0C-FE8A648F698C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EB7CE6CD-E43B-43C1-940C-8473AAC2B5F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB7CE6CD-E43B-43C1-940C-8473AAC2B5F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB7CE6CD-E43B-43C1-940C-8473AAC2B5F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB7CE6CD-E43B-43C1-940C-8473AAC2B5F5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F1E9AB67-3AC5-4F96-9D9F-9829B239088D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F1E9AB67-3AC5-4F96-9D9F-9829B239088D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F1E9AB67-3AC5-4F96-9D9F-9829B239088D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F1E9AB67-3AC5-4F96-9D9F-9829B239088D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{044C271C-6B79-4046-AF67-802B0F527E90}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{044C271C-6B79-4046-AF67-802B0F527E90}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{044C271C-6B79-4046-AF67-802B0F527E90}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{044C271C-6B79-4046-AF67-802B0F527E90}.Release|Any CPU.Build.0 = Release|Any CPU
+		{08FEC97C-4330-4FEC-9C8B-30DBE0659833}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{08FEC97C-4330-4FEC-9C8B-30DBE0659833}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{08FEC97C-4330-4FEC-9C8B-30DBE0659833}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{08FEC97C-4330-4FEC-9C8B-30DBE0659833}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F62E076F-3172-4618-925E-CE0695AACDB8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F62E076F-3172-4618-925E-CE0695AACDB8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F62E076F-3172-4618-925E-CE0695AACDB8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F62E076F-3172-4618-925E-CE0695AACDB8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C6F818F8-5B1B-4004-B703-F03256D14950}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C6F818F8-5B1B-4004-B703-F03256D14950}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C6F818F8-5B1B-4004-B703-F03256D14950}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C6F818F8-5B1B-4004-B703-F03256D14950}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {13B85A9D-7773-4898-A747-A8F84117DE94}
 	EndGlobalSection
 EndGlobal

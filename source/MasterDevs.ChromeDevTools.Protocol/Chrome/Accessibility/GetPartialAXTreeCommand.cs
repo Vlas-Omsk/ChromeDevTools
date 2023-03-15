@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Accessibility
 	/// </summary>
 	[Command(ProtocolName.Accessibility.GetPartialAXTree)]
 	[SupportedBy("Chrome")]
-	public class GetPartialAXTreeCommand: ICommand<GetPartialAXTreeCommandResponse>
+	public class GetPartialAXTreeCommand: IProtocolCommand<GetPartialAXTreeCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets ID of node to get the partial accessibility tree for.

@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Tethering
 	/// </summary>
 	[Command(ProtocolName.Tethering.Unbind)]
 	[SupportedBy("Chrome")]
-	public class UnbindCommand: ICommand<UnbindCommandResponse>
+	public class UnbindCommand: IProtocolCommand<UnbindCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets Port number to unbind.

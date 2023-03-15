@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Animation
 	/// </summary>
 	[Command(ProtocolName.Animation.GetCurrentTime)]
 	[SupportedBy("Chrome")]
-	public class GetCurrentTimeCommand: ICommand<GetCurrentTimeCommandResponse>
+	public class GetCurrentTimeCommand: IProtocolCommand<GetCurrentTimeCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets Id of animation.

@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.CSS
 	/// </summary>
 	[Command(ProtocolName.CSS.GetMatchedStylesForNode)]
 	[SupportedBy("iOS")]
-	public class GetMatchedStylesForNodeCommand: ICommand<GetMatchedStylesForNodeCommandResponse>
+	public class GetMatchedStylesForNodeCommand: IProtocolCommand<GetMatchedStylesForNodeCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets NodeId

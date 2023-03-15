@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.DOM
 	/// </summary>
 	[Command(ProtocolName.DOM.GetAttributes)]
 	[SupportedBy("iOS")]
-	public class GetAttributesCommand: ICommand<GetAttributesCommandResponse>
+	public class GetAttributesCommand: IProtocolCommand<GetAttributesCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets Id of the node to retrieve attibutes for.

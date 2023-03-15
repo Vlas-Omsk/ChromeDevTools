@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.CacheStorage
 	/// </summary>
 	[Command(ProtocolName.CacheStorage.RequestEntries)]
 	[SupportedBy("Chrome")]
-	public class RequestEntriesCommand: ICommand<RequestEntriesCommandResponse>
+	public class RequestEntriesCommand: IProtocolCommand<RequestEntriesCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets ID of cache to get entries from.

@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Target
 	/// </summary>
 	[Command(ProtocolName.Target.ActivateTarget)]
 	[SupportedBy("Chrome")]
-	public class ActivateTargetCommand: ICommand<ActivateTargetCommandResponse>
+	public class ActivateTargetCommand: IProtocolCommand<ActivateTargetCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets TargetId

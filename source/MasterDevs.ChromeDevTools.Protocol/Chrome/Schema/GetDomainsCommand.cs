@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Schema
 	/// </summary>
 	[Command(ProtocolName.Schema.GetDomains)]
 	[SupportedBy("Chrome")]
-	public class GetDomainsCommand: ICommand<GetDomainsCommandResponse>
+	public class GetDomainsCommand: IProtocolCommand<GetDomainsCommandResponse>
 	{
 	}
 }

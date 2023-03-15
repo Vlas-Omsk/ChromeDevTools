@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Page
 	/// </summary>
 	[Command(ProtocolName.Page.GetNavigationHistory)]
 	[SupportedBy("Chrome")]
-	public class GetNavigationHistoryCommand: ICommand<GetNavigationHistoryCommandResponse>
+	public class GetNavigationHistoryCommand: IProtocolCommand<GetNavigationHistoryCommandResponse>
 	{
 	}
 }

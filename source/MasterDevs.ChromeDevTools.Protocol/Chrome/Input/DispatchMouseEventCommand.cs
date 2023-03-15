@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Input
 	/// </summary>
 	[Command(ProtocolName.Input.DispatchMouseEvent)]
 	[SupportedBy("Chrome")]
-	public class DispatchMouseEventCommand: ICommand<DispatchMouseEventCommandResponse>
+	public class DispatchMouseEventCommand: IProtocolCommand<DispatchMouseEventCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets Type of the mouse event.

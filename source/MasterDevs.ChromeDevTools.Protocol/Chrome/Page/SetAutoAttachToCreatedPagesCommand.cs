@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Page
 	/// </summary>
 	[Command(ProtocolName.Page.SetAutoAttachToCreatedPages)]
 	[SupportedBy("Chrome")]
-	public class SetAutoAttachToCreatedPagesCommand: ICommand<SetAutoAttachToCreatedPagesCommandResponse>
+	public class SetAutoAttachToCreatedPagesCommand: IProtocolCommand<SetAutoAttachToCreatedPagesCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets If true, browser will open a new inspector window for every page created from this one.

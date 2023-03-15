@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.CSS
 	/// </summary>
 	[Command(ProtocolName.CSS.SetRuleSelector)]
 	[SupportedBy("iOS")]
-	public class SetRuleSelectorCommand: ICommand<SetRuleSelectorCommandResponse>
+	public class SetRuleSelectorCommand: IProtocolCommand<SetRuleSelectorCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets RuleId

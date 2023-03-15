@@ -7,7 +7,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.ServiceWorker
 {
 	[Command(ProtocolName.ServiceWorker.UpdateRegistration)]
 	[SupportedBy("Chrome")]
-	public class UpdateRegistrationCommand: ICommand<UpdateRegistrationCommandResponse>
+	public class UpdateRegistrationCommand: IProtocolCommand<UpdateRegistrationCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets ScopeURL

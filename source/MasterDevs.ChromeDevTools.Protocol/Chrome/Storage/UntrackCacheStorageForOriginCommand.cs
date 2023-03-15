@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Storage
 	/// </summary>
 	[Command(ProtocolName.Storage.UntrackCacheStorageForOrigin)]
 	[SupportedBy("Chrome")]
-	public class UntrackCacheStorageForOriginCommand: ICommand<UntrackCacheStorageForOriginCommandResponse>
+	public class UntrackCacheStorageForOriginCommand: IProtocolCommand<UntrackCacheStorageForOriginCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets Security origin.

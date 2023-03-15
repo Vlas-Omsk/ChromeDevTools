@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.Debugger
 	/// </summary>
 	[Command(ProtocolName.Debugger.SearchInContent)]
 	[SupportedBy("iOS")]
-	public class SearchInContentCommand: ICommand<SearchInContentCommandResponse>
+	public class SearchInContentCommand: IProtocolCommand<SearchInContentCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets Id of the script to search in.

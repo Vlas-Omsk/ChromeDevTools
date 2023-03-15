@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.DOMStorage
 	/// </summary>
 	[Command(ProtocolName.DOMStorage.Disable)]
 	[SupportedBy("Chrome")]
-	public class DisableCommand: ICommand<DisableCommandResponse>
+	public class DisableCommand: IProtocolCommand<DisableCommandResponse>
 	{
 	}
 }

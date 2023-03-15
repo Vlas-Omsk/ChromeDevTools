@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Page
 	/// </summary>
 	[Command(ProtocolName.Page.SetGeolocationOverride)]
 	[SupportedBy("Chrome")]
-	public class SetGeolocationOverrideCommand: ICommand<SetGeolocationOverrideCommandResponse>
+	public class SetGeolocationOverrideCommand: IProtocolCommand<SetGeolocationOverrideCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets Mock latitude

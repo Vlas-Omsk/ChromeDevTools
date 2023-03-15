@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.CacheStorage
 	/// </summary>
 	[Command(ProtocolName.CacheStorage.RequestCacheNames)]
 	[SupportedBy("Chrome")]
-	public class RequestCacheNamesCommand: ICommand<RequestCacheNamesCommandResponse>
+	public class RequestCacheNamesCommand: IProtocolCommand<RequestCacheNamesCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets Security origin.

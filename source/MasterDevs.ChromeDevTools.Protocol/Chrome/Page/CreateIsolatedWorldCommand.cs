@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Page
 	/// </summary>
 	[Command(ProtocolName.Page.CreateIsolatedWorld)]
 	[SupportedBy("Chrome")]
-	public class CreateIsolatedWorldCommand: ICommand<CreateIsolatedWorldCommandResponse>
+	public class CreateIsolatedWorldCommand: IProtocolCommand<CreateIsolatedWorldCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets Id of the frame in which the isolated world should be created.

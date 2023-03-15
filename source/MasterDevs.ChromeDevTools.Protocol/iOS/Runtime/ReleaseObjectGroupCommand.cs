@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.Runtime
 	/// </summary>
 	[Command(ProtocolName.Runtime.ReleaseObjectGroup)]
 	[SupportedBy("iOS")]
-	public class ReleaseObjectGroupCommand: ICommand<ReleaseObjectGroupCommandResponse>
+	public class ReleaseObjectGroupCommand: IProtocolCommand<ReleaseObjectGroupCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets Symbolic object group name.

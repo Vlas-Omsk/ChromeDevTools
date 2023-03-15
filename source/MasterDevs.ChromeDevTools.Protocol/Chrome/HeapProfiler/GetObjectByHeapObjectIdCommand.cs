@@ -7,7 +7,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.HeapProfiler
 {
 	[Command(ProtocolName.HeapProfiler.GetObjectByHeapObjectId)]
 	[SupportedBy("Chrome")]
-	public class GetObjectByHeapObjectIdCommand: ICommand<GetObjectByHeapObjectIdCommandResponse>
+	public class GetObjectByHeapObjectIdCommand: IProtocolCommand<GetObjectByHeapObjectIdCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets ObjectId

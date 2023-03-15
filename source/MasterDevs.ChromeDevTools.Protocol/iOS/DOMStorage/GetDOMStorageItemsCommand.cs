@@ -7,7 +7,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.DOMStorage
 {
 	[Command(ProtocolName.DOMStorage.GetDOMStorageItems)]
 	[SupportedBy("iOS")]
-	public class GetDOMStorageItemsCommand: ICommand<GetDOMStorageItemsCommandResponse>
+	public class GetDOMStorageItemsCommand: IProtocolCommand<GetDOMStorageItemsCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets StorageId

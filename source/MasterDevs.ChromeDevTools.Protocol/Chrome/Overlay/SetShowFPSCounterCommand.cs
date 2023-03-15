@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Overlay
 	/// </summary>
 	[Command(ProtocolName.Overlay.SetShowFPSCounter)]
 	[SupportedBy("Chrome")]
-	public class SetShowFPSCounterCommand: ICommand<SetShowFPSCounterCommandResponse>
+	public class SetShowFPSCounterCommand: IProtocolCommand<SetShowFPSCounterCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets True for showing the FPS counter

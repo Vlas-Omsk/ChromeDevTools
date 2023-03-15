@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.DOMStorage
 	/// </summary>
 	[Command(ProtocolName.DOMStorage.Enable)]
 	[SupportedBy("iOS")]
-	public class EnableCommand: ICommand<EnableCommandResponse>
+	public class EnableCommand: IProtocolCommand<EnableCommandResponse>
 	{
 	}
 }

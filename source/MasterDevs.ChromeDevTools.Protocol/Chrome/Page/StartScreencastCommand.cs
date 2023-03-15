@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Page
 	/// </summary>
 	[Command(ProtocolName.Page.StartScreencast)]
 	[SupportedBy("Chrome")]
-	public class StartScreencastCommand: ICommand<StartScreencastCommandResponse>
+	public class StartScreencastCommand: IProtocolCommand<StartScreencastCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets Image compression format.

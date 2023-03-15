@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.Debugger
 	/// </summary>
 	[Command(ProtocolName.Debugger.StepOut)]
 	[SupportedBy("iOS")]
-	public class StepOutCommand: ICommand<StepOutCommandResponse>
+	public class StepOutCommand: IProtocolCommand<StepOutCommandResponse>
 	{
 	}
 }

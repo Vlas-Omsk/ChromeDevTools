@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.DOM
 	/// </summary>
 	[Command(ProtocolName.DOM.Redo)]
 	[SupportedBy("iOS")]
-	public class RedoCommand: ICommand<RedoCommandResponse>
+	public class RedoCommand: IProtocolCommand<RedoCommandResponse>
 	{
 	}
 }

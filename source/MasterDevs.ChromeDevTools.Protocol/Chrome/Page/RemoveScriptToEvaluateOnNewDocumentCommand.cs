@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Page
 	/// </summary>
 	[Command(ProtocolName.Page.RemoveScriptToEvaluateOnNewDocument)]
 	[SupportedBy("Chrome")]
-	public class RemoveScriptToEvaluateOnNewDocumentCommand: ICommand<RemoveScriptToEvaluateOnNewDocumentCommandResponse>
+	public class RemoveScriptToEvaluateOnNewDocumentCommand: IProtocolCommand<RemoveScriptToEvaluateOnNewDocumentCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets Identifier

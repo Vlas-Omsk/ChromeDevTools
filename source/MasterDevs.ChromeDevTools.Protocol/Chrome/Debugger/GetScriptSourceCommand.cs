@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Debugger
 	/// </summary>
 	[Command(ProtocolName.Debugger.GetScriptSource)]
 	[SupportedBy("Chrome")]
-	public class GetScriptSourceCommand: ICommand<GetScriptSourceCommandResponse>
+	public class GetScriptSourceCommand: IProtocolCommand<GetScriptSourceCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets Id of the script to get source for.

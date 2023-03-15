@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.IndexedDB
 	/// </summary>
 	[Command(ProtocolName.IndexedDB.DeleteDatabase)]
 	[SupportedBy("Chrome")]
-	public class DeleteDatabaseCommand: ICommand<DeleteDatabaseCommandResponse>
+	public class DeleteDatabaseCommand: IProtocolCommand<DeleteDatabaseCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets Security origin.

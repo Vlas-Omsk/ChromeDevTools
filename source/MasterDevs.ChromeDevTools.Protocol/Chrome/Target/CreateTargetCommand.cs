@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Target
 	/// </summary>
 	[Command(ProtocolName.Target.CreateTarget)]
 	[SupportedBy("Chrome")]
-	public class CreateTargetCommand: ICommand<CreateTargetCommandResponse>
+	public class CreateTargetCommand: IProtocolCommand<CreateTargetCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets The initial URL the page will be navigated to.

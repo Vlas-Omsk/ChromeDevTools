@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.ApplicationCache
 	/// </summary>
 	[Command(ProtocolName.ApplicationCache.GetFramesWithManifests)]
 	[SupportedBy("Chrome")]
-	public class GetFramesWithManifestsCommand: ICommand<GetFramesWithManifestsCommandResponse>
+	public class GetFramesWithManifestsCommand: IProtocolCommand<GetFramesWithManifestsCommandResponse>
 	{
 	}
 }

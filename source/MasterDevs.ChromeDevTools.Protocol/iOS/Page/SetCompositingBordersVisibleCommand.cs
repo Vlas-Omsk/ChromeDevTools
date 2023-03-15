@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.Page
 	/// </summary>
 	[Command(ProtocolName.Page.SetCompositingBordersVisible)]
 	[SupportedBy("iOS")]
-	public class SetCompositingBordersVisibleCommand: ICommand<SetCompositingBordersVisibleCommandResponse>
+	public class SetCompositingBordersVisibleCommand: IProtocolCommand<SetCompositingBordersVisibleCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets True for showing compositing borders.

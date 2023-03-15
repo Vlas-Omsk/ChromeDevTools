@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.Debugger
 	/// </summary>
 	[Command(ProtocolName.Debugger.GetFunctionDetails)]
 	[SupportedBy("iOS")]
-	public class GetFunctionDetailsCommand: ICommand<GetFunctionDetailsCommandResponse>
+	public class GetFunctionDetailsCommand: IProtocolCommand<GetFunctionDetailsCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets Id of the function to get location for.

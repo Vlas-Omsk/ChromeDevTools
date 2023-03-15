@@ -7,7 +7,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Target
 {
 	[Command(ProtocolName.Target.SetAttachToFrames)]
 	[SupportedBy("Chrome")]
-	public class SetAttachToFramesCommand: ICommand<SetAttachToFramesCommandResponse>
+	public class SetAttachToFramesCommand: IProtocolCommand<SetAttachToFramesCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets Whether to attach to frames.

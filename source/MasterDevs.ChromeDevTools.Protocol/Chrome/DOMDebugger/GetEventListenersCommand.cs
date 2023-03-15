@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.DOMDebugger
 	/// </summary>
 	[Command(ProtocolName.DOMDebugger.GetEventListeners)]
 	[SupportedBy("Chrome")]
-	public class GetEventListenersCommand: ICommand<GetEventListenersCommandResponse>
+	public class GetEventListenersCommand: IProtocolCommand<GetEventListenersCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets Identifier of the object to return listeners for.

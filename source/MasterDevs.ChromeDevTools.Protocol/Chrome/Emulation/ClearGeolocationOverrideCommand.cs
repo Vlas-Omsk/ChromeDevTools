@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Emulation
 	/// </summary>
 	[Command(ProtocolName.Emulation.ClearGeolocationOverride)]
 	[SupportedBy("Chrome")]
-	public class ClearGeolocationOverrideCommand: ICommand<ClearGeolocationOverrideCommandResponse>
+	public class ClearGeolocationOverrideCommand: IProtocolCommand<ClearGeolocationOverrideCommandResponse>
 	{
 	}
 }

@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.DOM
 	/// </summary>
 	[Command(ProtocolName.DOM.Undo)]
 	[SupportedBy("Chrome")]
-	public class UndoCommand: ICommand<UndoCommandResponse>
+	public class UndoCommand: IProtocolCommand<UndoCommandResponse>
 	{
 	}
 }

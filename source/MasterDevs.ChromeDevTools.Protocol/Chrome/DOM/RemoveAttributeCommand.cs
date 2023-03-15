@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.DOM
 	/// </summary>
 	[Command(ProtocolName.DOM.RemoveAttribute)]
 	[SupportedBy("Chrome")]
-	public class RemoveAttributeCommand: ICommand<RemoveAttributeCommandResponse>
+	public class RemoveAttributeCommand: IProtocolCommand<RemoveAttributeCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets Id of the element to remove attribute from.

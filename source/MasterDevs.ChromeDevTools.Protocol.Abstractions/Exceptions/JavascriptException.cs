@@ -1,15 +1,14 @@
-﻿using MasterDevs.ChromeDevTools.Protocol.Chrome.Runtime;
-using System;
+﻿using System;
 
 namespace MasterDevs.ChromeDevTools.Protocol
 {
     public class JavascriptException : Exception
     {
-        public JavascriptException(ExceptionDetails details) : base(details.Text)
+        public JavascriptException(IEvaluationExceptionDetails exceptionDetails) : base(exceptionDetails.Text)
         {
-            Details = details;
+            ExceptionDetails = exceptionDetails;
         }
 
-        public ExceptionDetails Details { get; }
+        public IEvaluationExceptionDetails ExceptionDetails { get; }
     }
 }

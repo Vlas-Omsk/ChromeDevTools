@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Page
 	/// </summary>
 	[Command(ProtocolName.Page.Navigate)]
 	[SupportedBy("Chrome")]
-	public class NavigateCommand: ICommand<NavigateCommandResponse>
+	public class NavigateCommand: IProtocolCommand<NavigateCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets URL to navigate the page to.

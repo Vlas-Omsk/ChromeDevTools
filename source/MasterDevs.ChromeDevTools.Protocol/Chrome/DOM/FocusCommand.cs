@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.DOM
 	/// </summary>
 	[Command(ProtocolName.DOM.Focus)]
 	[SupportedBy("Chrome")]
-	public class FocusCommand: ICommand<FocusCommandResponse>
+	public class FocusCommand: IProtocolCommand<FocusCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets Identifier of the node.

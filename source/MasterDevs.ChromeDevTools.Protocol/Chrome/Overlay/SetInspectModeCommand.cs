@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Overlay
 	/// </summary>
 	[Command(ProtocolName.Overlay.SetInspectMode)]
 	[SupportedBy("Chrome")]
-	public class SetInspectModeCommand: ICommand<SetInspectModeCommandResponse>
+	public class SetInspectModeCommand: IProtocolCommand<SetInspectModeCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets Set an inspection mode.

@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.DOM
 	/// </summary>
 	[Command(ProtocolName.DOM.RequestNode)]
 	[SupportedBy("iOS")]
-	public class RequestNodeCommand: ICommand<RequestNodeCommandResponse>
+	public class RequestNodeCommand: IProtocolCommand<RequestNodeCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets JavaScript object id to convert into node.

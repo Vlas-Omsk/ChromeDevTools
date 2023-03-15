@@ -7,7 +7,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.ServiceWorker
 {
 	[Command(ProtocolName.ServiceWorker.DeliverPushMessage)]
 	[SupportedBy("Chrome")]
-	public class DeliverPushMessageCommand: ICommand<DeliverPushMessageCommandResponse>
+	public class DeliverPushMessageCommand: IProtocolCommand<DeliverPushMessageCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets Origin

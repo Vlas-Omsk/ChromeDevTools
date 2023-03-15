@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Page
 	/// </summary>
 	[Command(ProtocolName.Page.StopLoading)]
 	[SupportedBy("Chrome")]
-	public class StopLoadingCommand: ICommand<StopLoadingCommandResponse>
+	public class StopLoadingCommand: IProtocolCommand<StopLoadingCommandResponse>
 	{
 	}
 }

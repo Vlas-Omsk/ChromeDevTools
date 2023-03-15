@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.Network
 	/// </summary>
 	[Command(ProtocolName.Network.GetResponseBody)]
 	[SupportedBy("iOS")]
-	public class GetResponseBodyCommand: ICommand<GetResponseBodyCommandResponse>
+	public class GetResponseBodyCommand: IProtocolCommand<GetResponseBodyCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets Identifier of the network request to get content for.

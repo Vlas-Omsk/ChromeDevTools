@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.Runtime
 	/// </summary>
 	[Command(ProtocolName.Runtime.Parse)]
 	[SupportedBy("iOS")]
-	public class ParseCommand: ICommand<ParseCommandResponse>
+	public class ParseCommand: IProtocolCommand<ParseCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets Source code to parse.

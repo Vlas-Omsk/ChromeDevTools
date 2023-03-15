@@ -7,7 +7,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.DOMStorage
 {
 	[Command(ProtocolName.DOMStorage.RemoveDOMStorageItem)]
 	[SupportedBy("iOS")]
-	public class RemoveDOMStorageItemCommand: ICommand<RemoveDOMStorageItemCommandResponse>
+	public class RemoveDOMStorageItemCommand: IProtocolCommand<RemoveDOMStorageItemCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets StorageId

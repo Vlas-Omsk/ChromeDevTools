@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.LayerTree
 	/// </summary>
 	[Command(ProtocolName.LayerTree.LoadSnapshot)]
 	[SupportedBy("Chrome")]
-	public class LoadSnapshotCommand: ICommand<LoadSnapshotCommandResponse>
+	public class LoadSnapshotCommand: IProtocolCommand<LoadSnapshotCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets An array of tiles composing the snapshot.

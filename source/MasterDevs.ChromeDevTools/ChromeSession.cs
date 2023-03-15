@@ -1,4 +1,5 @@
-﻿using MasterDevs.ChromeDevTools.Serialization;
+﻿using MasterDevs.ChromeDevTools.Protocol;
+using MasterDevs.ChromeDevTools.Serialization;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Concurrent;
@@ -12,6 +13,8 @@ namespace MasterDevs.ChromeDevTools
     public class ChromeSession : IChromeSession
     {
         private readonly string _webSocketDebuggerUrl;
+        private readonly string _id;
+        private readonly ICommonCommandsExecutor _commandsExecutor;
         private readonly ConcurrentDictionary<string, ConcurrentBag<Action<object>>> _handlers = new ConcurrentDictionary<string, ConcurrentBag<Action<object>>>();
         private ICommandFactory _commandFactory;
         private IEventFactory _eventFactory;
@@ -22,19 +25,25 @@ namespace MasterDevs.ChromeDevTools
         private WebSocket _webSocket;
         private readonly object _lock = new object();
 
-        public ChromeSession(string webSocketDebuggerUrl, string id, ICommandFactory commandFactory, ICommandResponseFactory responseFactory, IEventFactory eventFactory)
+        public ChromeSession(
+            string webSocketDebuggerUrl,
+            string id,
+            ICommonCommandsExecutor commandsExecutor,
+            ICommandFactory commandFactory,
+            ICommandResponseFactory responseFactory,
+            IEventFactory eventFactory
+        )
         {
             // Sometimes binding to localhost might resolve wrong AddressFamily, force IPv4
             webSocketDebuggerUrl = webSocketDebuggerUrl.Replace("ws://localhost", "ws://127.0.0.1");
 
             _webSocketDebuggerUrl = webSocketDebuggerUrl;
-            Id = id;
+            _id = id;
+            _commandsExecutor = commandsExecutor;
             _commandFactory = commandFactory;
             _responseFactory = responseFactory;
             _eventFactory = eventFactory;
         }
-
-        public string Id { get; }
 
         public void Dispose()
         {
@@ -79,13 +88,57 @@ namespace MasterDevs.ChromeDevTools
             });
         }
 
+        public Task Close()
+        {
+            return _commandsExecutor.ExecuteCloseTargetCommand(this, _id);
+        }
+
+        public void WaitWhile(string expression, TimeSpan? timeout = null)
+        {
+            var startTime = DateTime.Now;
+
+            SpinWait.SpinUntil(
+                () =>
+                {
+                    if (timeout.HasValue && DateTime.Now.Subtract(startTime) > timeout.Value)
+                        throw new TimeoutException();
+
+                    var result = _commandsExecutor.ExecuteEvaluateCommand(this, expression)
+                        .GetAwaiter()
+                        .GetResult()
+                        .Result;
+
+                    var boolResult = result is bool x ? x : result != null;
+
+                    if (!boolResult)
+                        Thread.Sleep(100);
+
+                    return boolResult;
+                }
+            );
+        }
+
+        public async Task<object> Execute(string expression)
+        {
+            var result = await _commandsExecutor.ExecuteEvaluateCommand(this, expression);
+
+            result.ExceptionDetails?.Throw();
+
+            return result.Result;
+        }
+
+        public Task Naviagte(string url)
+        {
+            return _commandsExecutor.ExecuteNavigateCommand(this, url);
+        }
+
         public Task<ICommandResponse> SendAsync<T>(CancellationToken cancellationToken)
         {
             var command = _commandFactory.Create<T>();
             return SendCommand(command, cancellationToken);
         }
 
-        public Task<CommandResponse<T>> SendAsync<T>(ICommand<T> parameter, CancellationToken cancellationToken)
+        public Task<CommandResponse<T>> SendAsync<T>(IProtocolCommand<T> parameter, CancellationToken cancellationToken)
         {
             var command = _commandFactory.Create(parameter);
             var task = SendCommand(command, cancellationToken);

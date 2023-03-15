@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Input
 	/// </summary>
 	[Command(ProtocolName.Input.SynthesizeScrollGesture)]
 	[SupportedBy("Chrome")]
-	public class SynthesizeScrollGestureCommand: ICommand<SynthesizeScrollGestureCommandResponse>
+	public class SynthesizeScrollGestureCommand: IProtocolCommand<SynthesizeScrollGestureCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets X coordinate of the start of the gesture in CSS pixels.

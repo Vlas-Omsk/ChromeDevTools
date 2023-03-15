@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.CSS
 	/// </summary>
 	[Command(ProtocolName.CSS.GetInlineStylesForNode)]
 	[SupportedBy("iOS")]
-	public class GetInlineStylesForNodeCommand: ICommand<GetInlineStylesForNodeCommandResponse>
+	public class GetInlineStylesForNodeCommand: IProtocolCommand<GetInlineStylesForNodeCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets NodeId

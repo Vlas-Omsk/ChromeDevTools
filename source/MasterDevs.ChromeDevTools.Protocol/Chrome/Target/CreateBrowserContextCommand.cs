@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Target
 	/// </summary>
 	[Command(ProtocolName.Target.CreateBrowserContext)]
 	[SupportedBy("Chrome")]
-	public class CreateBrowserContextCommand: ICommand<CreateBrowserContextCommandResponse>
+	public class CreateBrowserContextCommand: IProtocolCommand<CreateBrowserContextCommandResponse>
 	{
 	}
 }

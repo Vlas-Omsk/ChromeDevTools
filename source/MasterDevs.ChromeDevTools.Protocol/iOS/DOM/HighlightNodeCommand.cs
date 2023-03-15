@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.DOM
 	/// </summary>
 	[Command(ProtocolName.DOM.HighlightNode)]
 	[SupportedBy("iOS")]
-	public class HighlightNodeCommand: ICommand<HighlightNodeCommandResponse>
+	public class HighlightNodeCommand: IProtocolCommand<HighlightNodeCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets A descriptor for the highlight appearance.

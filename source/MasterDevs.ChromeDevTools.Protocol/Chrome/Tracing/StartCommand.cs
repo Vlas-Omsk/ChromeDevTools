@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Tracing
 	/// </summary>
 	[Command(ProtocolName.Tracing.Start)]
 	[SupportedBy("Chrome")]
-	public class StartCommand: ICommand<StartCommandResponse>
+	public class StartCommand: IProtocolCommand<StartCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets Category/tag filter

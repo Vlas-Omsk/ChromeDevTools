@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.DOM
 	/// </summary>
 	[Command(ProtocolName.DOM.DiscardSearchResults)]
 	[SupportedBy("Chrome")]
-	public class DiscardSearchResultsCommand: ICommand<DiscardSearchResultsCommandResponse>
+	public class DiscardSearchResultsCommand: IProtocolCommand<DiscardSearchResultsCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets Unique search session identifier.

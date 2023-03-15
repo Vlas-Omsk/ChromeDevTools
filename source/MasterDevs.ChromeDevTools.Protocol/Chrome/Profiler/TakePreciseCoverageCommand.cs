@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Profiler
 	/// </summary>
 	[Command(ProtocolName.Profiler.TakePreciseCoverage)]
 	[SupportedBy("Chrome")]
-	public class TakePreciseCoverageCommand: ICommand<TakePreciseCoverageCommandResponse>
+	public class TakePreciseCoverageCommand: IProtocolCommand<TakePreciseCoverageCommandResponse>
 	{
 	}
 }

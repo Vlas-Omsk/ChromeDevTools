@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.CSS
 	/// </summary>
 	[Command(ProtocolName.CSS.SetStyleTexts)]
 	[SupportedBy("Chrome")]
-	public class SetStyleTextsCommand: ICommand<SetStyleTextsCommandResponse>
+	public class SetStyleTextsCommand: IProtocolCommand<SetStyleTextsCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets Edits

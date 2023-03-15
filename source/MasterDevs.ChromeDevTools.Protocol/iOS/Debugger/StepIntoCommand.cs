@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.Debugger
 	/// </summary>
 	[Command(ProtocolName.Debugger.StepInto)]
 	[SupportedBy("iOS")]
-	public class StepIntoCommand: ICommand<StepIntoCommandResponse>
+	public class StepIntoCommand: IProtocolCommand<StepIntoCommandResponse>
 	{
 	}
 }

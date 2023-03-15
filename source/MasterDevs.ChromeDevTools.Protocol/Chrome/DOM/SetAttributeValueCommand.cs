@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.DOM
 	/// </summary>
 	[Command(ProtocolName.DOM.SetAttributeValue)]
 	[SupportedBy("Chrome")]
-	public class SetAttributeValueCommand: ICommand<SetAttributeValueCommandResponse>
+	public class SetAttributeValueCommand: IProtocolCommand<SetAttributeValueCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets Id of the element to set attribute for.

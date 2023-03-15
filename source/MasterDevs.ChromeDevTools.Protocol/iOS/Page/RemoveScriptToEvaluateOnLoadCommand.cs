@@ -7,7 +7,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.Page
 {
 	[Command(ProtocolName.Page.RemoveScriptToEvaluateOnLoad)]
 	[SupportedBy("iOS")]
-	public class RemoveScriptToEvaluateOnLoadCommand: ICommand<RemoveScriptToEvaluateOnLoadCommandResponse>
+	public class RemoveScriptToEvaluateOnLoadCommand: IProtocolCommand<RemoveScriptToEvaluateOnLoadCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets Identifier

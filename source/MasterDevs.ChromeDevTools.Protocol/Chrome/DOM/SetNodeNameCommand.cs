@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.DOM
 	/// </summary>
 	[Command(ProtocolName.DOM.SetNodeName)]
 	[SupportedBy("Chrome")]
-	public class SetNodeNameCommand: ICommand<SetNodeNameCommandResponse>
+	public class SetNodeNameCommand: IProtocolCommand<SetNodeNameCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets Id of the node to set name for.

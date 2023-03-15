@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.DOM
 	/// </summary>
 	[Command(ProtocolName.DOM.MoveTo)]
 	[SupportedBy("iOS")]
-	public class MoveToCommand: ICommand<MoveToCommandResponse>
+	public class MoveToCommand: IProtocolCommand<MoveToCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets Id of the node to drop.

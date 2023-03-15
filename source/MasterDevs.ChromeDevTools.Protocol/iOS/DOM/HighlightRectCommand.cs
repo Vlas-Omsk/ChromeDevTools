@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.DOM
 	/// </summary>
 	[Command(ProtocolName.DOM.HighlightRect)]
 	[SupportedBy("iOS")]
-	public class HighlightRectCommand: ICommand<HighlightRectCommandResponse>
+	public class HighlightRectCommand: IProtocolCommand<HighlightRectCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets X coordinate

@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Network
 	/// </summary>
 	[Command(ProtocolName.Network.CanEmulateNetworkConditions)]
 	[SupportedBy("Chrome")]
-	public class CanEmulateNetworkConditionsCommand: ICommand<CanEmulateNetworkConditionsCommandResponse>
+	public class CanEmulateNetworkConditionsCommand: IProtocolCommand<CanEmulateNetworkConditionsCommandResponse>
 	{
 	}
 }

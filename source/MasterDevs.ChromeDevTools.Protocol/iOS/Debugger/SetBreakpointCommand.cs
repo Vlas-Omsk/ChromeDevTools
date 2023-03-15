@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.Debugger
 	/// </summary>
 	[Command(ProtocolName.Debugger.SetBreakpoint)]
 	[SupportedBy("iOS")]
-	public class SetBreakpointCommand: ICommand<SetBreakpointCommandResponse>
+	public class SetBreakpointCommand: IProtocolCommand<SetBreakpointCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets Location to set breakpoint in.

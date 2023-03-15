@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.CSS
 	/// </summary>
 	[Command(ProtocolName.CSS.GetAllStyleSheets)]
 	[SupportedBy("iOS")]
-	public class GetAllStyleSheetsCommand: ICommand<GetAllStyleSheetsCommandResponse>
+	public class GetAllStyleSheetsCommand: IProtocolCommand<GetAllStyleSheetsCommandResponse>
 	{
 	}
 }

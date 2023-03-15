@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Target
 	/// </summary>
 	[Command(ProtocolName.Target.DisposeBrowserContext)]
 	[SupportedBy("Chrome")]
-	public class DisposeBrowserContextCommand: ICommand<DisposeBrowserContextCommandResponse>
+	public class DisposeBrowserContextCommand: IProtocolCommand<DisposeBrowserContextCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets BrowserContextId

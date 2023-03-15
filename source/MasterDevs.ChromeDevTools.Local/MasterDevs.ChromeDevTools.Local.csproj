@@ -8,12 +8,7 @@
   <ItemGroup>
     <ProjectReference Include="..\..\PinkNet\PinkNet\PinkNet.csproj" />
     <ProjectReference Include="..\MasterDevs.ChromeDevTools.Local.Abstractions\MasterDevs.ChromeDevTools.Local.Abstractions.csproj" />
-    <ProjectReference Include="..\MasterDevs.ChromeDevTools.Protocol\MasterDevs.ChromeDevTools.Protocol.csproj" />
     <ProjectReference Include="..\MasterDevs.ChromeDevTools\MasterDevs.ChromeDevTools.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Windows\" />
   </ItemGroup>
 
 </Project>

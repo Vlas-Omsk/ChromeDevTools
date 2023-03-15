@@ -8,7 +8,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Runtime
 	/// Detailed information about exception (or error) that was thrown during script compilation or execution.
 	/// </summary>
 	[SupportedBy("Chrome")]
-	public class ExceptionDetails
+	public class ExceptionDetails : IEvaluationExceptionDetails
 	{
 		/// <summary>
 		/// Gets or sets Exception id.

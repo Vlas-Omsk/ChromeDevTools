@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Debugger
 	/// </summary>
 	[Command(ProtocolName.Debugger.Resume)]
 	[SupportedBy("Chrome")]
-	public class ResumeCommand: ICommand<ResumeCommandResponse>
+	public class ResumeCommand: IProtocolCommand<ResumeCommandResponse>
 	{
 	}
 }

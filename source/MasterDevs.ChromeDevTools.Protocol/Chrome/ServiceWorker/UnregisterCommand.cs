@@ -7,7 +7,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.ServiceWorker
 {
 	[Command(ProtocolName.ServiceWorker.Unregister)]
 	[SupportedBy("Chrome")]
-	public class UnregisterCommand: ICommand<UnregisterCommandResponse>
+	public class UnregisterCommand: IProtocolCommand<UnregisterCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets ScopeURL

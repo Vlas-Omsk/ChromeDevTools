@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.DOM
 	/// </summary>
 	[Command(ProtocolName.DOM.Focus)]
 	[SupportedBy("iOS")]
-	public class FocusCommand: ICommand<FocusCommandResponse>
+	public class FocusCommand: IProtocolCommand<FocusCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets Id of the node to focus.

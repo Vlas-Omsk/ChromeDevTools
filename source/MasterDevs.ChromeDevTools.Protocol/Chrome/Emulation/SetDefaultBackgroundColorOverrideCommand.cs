@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Emulation
 	/// </summary>
 	[Command(ProtocolName.Emulation.SetDefaultBackgroundColorOverride)]
 	[SupportedBy("Chrome")]
-	public class SetDefaultBackgroundColorOverrideCommand: ICommand<SetDefaultBackgroundColorOverrideCommandResponse>
+	public class SetDefaultBackgroundColorOverrideCommand: IProtocolCommand<SetDefaultBackgroundColorOverrideCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets RGBA of the default background color. If not specified, any existing override will be cleared.

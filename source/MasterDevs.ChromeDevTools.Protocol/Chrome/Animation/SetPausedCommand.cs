@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Animation
 	/// </summary>
 	[Command(ProtocolName.Animation.SetPaused)]
 	[SupportedBy("Chrome")]
-	public class SetPausedCommand: ICommand<SetPausedCommandResponse>
+	public class SetPausedCommand: IProtocolCommand<SetPausedCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets Animations to set the pause state of.

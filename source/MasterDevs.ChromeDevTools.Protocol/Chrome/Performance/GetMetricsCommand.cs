@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Performance
 	/// </summary>
 	[Command(ProtocolName.Performance.GetMetrics)]
 	[SupportedBy("Chrome")]
-	public class GetMetricsCommand: ICommand<GetMetricsCommandResponse>
+	public class GetMetricsCommand: IProtocolCommand<GetMetricsCommandResponse>
 	{
 	}
 }

@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Debugger
 	/// </summary>
 	[Command(ProtocolName.Debugger.SetPauseOnExceptions)]
 	[SupportedBy("Chrome")]
-	public class SetPauseOnExceptionsCommand: ICommand<SetPauseOnExceptionsCommandResponse>
+	public class SetPauseOnExceptionsCommand: IProtocolCommand<SetPauseOnExceptionsCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets Pause on exceptions mode.

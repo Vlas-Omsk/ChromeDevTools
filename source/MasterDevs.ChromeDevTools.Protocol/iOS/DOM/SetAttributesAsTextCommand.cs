@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.DOM
 	/// </summary>
 	[Command(ProtocolName.DOM.SetAttributesAsText)]
 	[SupportedBy("iOS")]
-	public class SetAttributesAsTextCommand: ICommand<SetAttributesAsTextCommandResponse>
+	public class SetAttributesAsTextCommand: IProtocolCommand<SetAttributesAsTextCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets Id of the element to set attributes for.

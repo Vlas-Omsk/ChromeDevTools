@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.Debugger
 	/// </summary>
 	[Command(ProtocolName.Debugger.SetPauseOnExceptions)]
 	[SupportedBy("iOS")]
-	public class SetPauseOnExceptionsCommand: ICommand<SetPauseOnExceptionsCommandResponse>
+	public class SetPauseOnExceptionsCommand: IProtocolCommand<SetPauseOnExceptionsCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets Pause on exceptions mode.

@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Page
 	/// </summary>
 	[Command(ProtocolName.Page.PrintToPDF)]
 	[SupportedBy("Chrome")]
-	public class PrintToPDFCommand: ICommand<PrintToPDFCommandResponse>
+	public class PrintToPDFCommand: IProtocolCommand<PrintToPDFCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets Paper orientation. Defaults to false.

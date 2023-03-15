@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.Page
 	/// </summary>
 	[Command(ProtocolName.Page.HandleJavaScriptDialog)]
 	[SupportedBy("iOS")]
-	public class HandleJavaScriptDialogCommand: ICommand<HandleJavaScriptDialogCommandResponse>
+	public class HandleJavaScriptDialogCommand: IProtocolCommand<HandleJavaScriptDialogCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets Whether to accept or dismiss the dialog.

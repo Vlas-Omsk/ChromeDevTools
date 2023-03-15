@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.Debugger
 	/// </summary>
 	[Command(ProtocolName.Debugger.Pause)]
 	[SupportedBy("iOS")]
-	public class PauseCommand: ICommand<PauseCommandResponse>
+	public class PauseCommand: IProtocolCommand<PauseCommandResponse>
 	{
 	}
 }

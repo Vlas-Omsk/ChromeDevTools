@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.DOM
 	/// </summary>
 	[Command(ProtocolName.DOM.HighlightQuad)]
 	[SupportedBy("iOS")]
-	public class HighlightQuadCommand: ICommand<HighlightQuadCommandResponse>
+	public class HighlightQuadCommand: IProtocolCommand<HighlightQuadCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets Quad to highlight

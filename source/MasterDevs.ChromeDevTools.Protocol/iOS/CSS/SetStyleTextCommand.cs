@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.CSS
 	/// </summary>
 	[Command(ProtocolName.CSS.SetStyleText)]
 	[SupportedBy("iOS")]
-	public class SetStyleTextCommand: ICommand<SetStyleTextCommandResponse>
+	public class SetStyleTextCommand: IProtocolCommand<SetStyleTextCommandResponse>
 	{
 		/// <summary>
 		/// Gets or sets StyleId
