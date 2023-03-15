@@ -25,6 +25,7 @@ namespace MasterDevs.ChromeDevTools.Sample
             var chromeSessionFactory = new ChromeSessionFactory(methodTypeMap, commandsExecutor);
             var chromeProcessFactory = new LocalChromeProcessFactory(chromeSessionFactory, @"F:\Utils\ungoogled-chromium-103.0.5060.68-1_Win64\chrome.exe");
             var chromeProcessParameters = new ChromeProcessParametersBuilder(9222)
+                .SetHeadless()
                 .Build();
             using (var chromeProcess = chromeProcessFactory.Create(chromeProcessParameters))
             {
