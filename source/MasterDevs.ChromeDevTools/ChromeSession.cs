@@ -198,9 +198,9 @@ namespace MasterDevs.ChromeDevTools
         {
             var evntType = evnt.GetType();
 
-            if (evnt.GetType().GetGenericTypeDefinition() == typeof(Event<>))
+            if (evntType.GetGenericTypeDefinition() == typeof(Event<>))
             {
-                handler(evntType.GetProperty("Params"));
+                handler(evntType.GetProperty("Params").GetValue(evnt));
             } else
             {
                 handler(evnt);
