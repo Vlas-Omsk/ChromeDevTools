@@ -4,7 +4,7 @@ namespace MasterDevs.ChromeDevTools.Local
 {
     public static class IServiceCollectionExtensions
     {
-        public static void AddChromeDevTools(this IServiceCollection self, string chromePath)
+        public static void AddLocalChromeDevTools(this IServiceCollection self, string chromePath)
         {
             self.AddSingleton<IChromeSessionFactory, ChromeSessionFactory>();
             self.AddSingleton<ILocalChromeProcessFactory, LocalChromeProcessFactory>(

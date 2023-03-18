@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text;
 
-namespace MasterDevs.ChromeDevTools
+namespace MasterDevs.ChromeDevTools.Local
 {
     public sealed class ChromeProcessParametersBuilder
     {

@@ -1,8 +1,8 @@
 ﻿namespace MasterDevs.ChromeDevTools.Local
 {
-    public interface ILocalChromeProcessFactory : IChromeProcessFactory
+    public interface ILocalChromeProcessFactory
     {
-        new ILocalChromeProcess Create(ChromeProcessParameters parameters);
+        ILocalChromeProcess Create(ChromeProcessParameters parameters);
         ILocalChromeProcess Create(ChromeProcessParameters parameters, IDirectoryCleaner directoryCleaner);
     }
 }

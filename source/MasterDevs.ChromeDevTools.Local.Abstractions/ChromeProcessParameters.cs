@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace MasterDevs.ChromeDevTools
+﻿namespace MasterDevs.ChromeDevTools.Local
 {
     public sealed class ChromeProcessParameters
     {

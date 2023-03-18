@@ -2,6 +2,6 @@
 {
     public interface IChromeProcessFactory
     {
-        IChromeProcess Create(ChromeProcessParameters parameters);
+        IChromeProcess Create(string remoteDebuggingUri);
     }
 }

@@ -25,10 +25,5 @@
                 _sessionFactory
             );
         }
-
-        IChromeProcess IChromeProcessFactory.Create(ChromeProcessParameters parameters)
-        {
-            return Create(parameters);
-        }
     }
 }
