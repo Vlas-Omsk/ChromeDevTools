@@ -72,7 +72,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Runtime
 		/// Terminate execution after timing out (number of milliseconds).
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-		public double Timeout { get; set; }
+		public double? Timeout { get; set; }
 		/// <summary>
 		/// Disable breakpoints during execution.
 		/// </summary>
