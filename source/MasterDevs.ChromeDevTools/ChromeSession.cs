@@ -105,10 +105,12 @@ namespace MasterDevs.ChromeDevTools
 
                     var result = _commandsExecutor.ExecuteEvaluateCommand(this, expression)
                         .GetAwaiter()
-                        .GetResult()
-                        .Result;
+                        .GetResult();
 
-                    var boolResult = result is bool x ? x : result != null;
+                    if (result.ExceptionDetails != null)
+                        result.ExceptionDetails.Throw();
+
+                    var boolResult = result.Result is bool x ? x : result.Result != null;
 
                     if (!boolResult)
                         Thread.Sleep(100);
