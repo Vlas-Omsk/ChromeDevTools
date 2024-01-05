@@ -26,6 +26,7 @@ namespace MasterDevs.ChromeDevTools.Protocol
                     ObjectGroup = "console",
                     IncludeCommandLineAPI = true,
                     ReturnByValue = true,
+                    AwaitPromise = true
                 }
             );
 
