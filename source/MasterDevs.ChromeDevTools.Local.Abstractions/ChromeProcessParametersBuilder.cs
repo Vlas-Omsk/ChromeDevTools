@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Net.NetworkInformation;
 using System.Text;
 
 namespace MasterDevs.ChromeDevTools.Local
@@ -8,11 +9,12 @@ namespace MasterDevs.ChromeDevTools.Local
     public sealed class ChromeProcessParametersBuilder
     {
         private static readonly string[] _reservedParameters = { "remote-debugging-port", "user-data-dir" };
+        private static int _randomPortCounter = 9222;
         private readonly int _port;
         private readonly string _userDataDirectory;
         private readonly Dictionary<string, object> _parameters = new Dictionary<string, object>();
 
-        public ChromeProcessParametersBuilder() : this(9222)
+        public ChromeProcessParametersBuilder() : this(GetRandomPort())
         {
         }
 
@@ -98,6 +100,35 @@ namespace MasterDevs.ChromeDevTools.Local
             var directoryInfo = Directory.CreateDirectory(Path.Combine(Path.GetTempPath(), path));
 
             return directoryInfo.FullName;
+        }
+
+        private static int GetRandomPort()
+        {
+            var port = _randomPortCounter++;
+
+            while (!IsTcpPortAvailable(port))
+                port = _randomPortCounter++;
+
+            return port;
+        }
+
+        private static bool IsTcpPortAvailable(int port)
+        {
+            try
+            {
+                var ipGlobalProperties = IPGlobalProperties.GetIPGlobalProperties();
+                var tcpListeners = ipGlobalProperties.GetActiveTcpListeners();
+
+                foreach (var tcpListener in tcpListeners)
+                    if (tcpListener.Port == port)
+                        return false;
+
+                return true;
+            }
+            catch
+            {
+                return true;
+            }
         }
     }
 }
