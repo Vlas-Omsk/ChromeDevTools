@@ -43,7 +43,11 @@ namespace MasterDevs.ChromeDevTools
 
         public async Task<ChromeSessionInfo> StartNewSessionRaw()
         {
-            string json = await _httpClient.GetStringAsync("/json/new");
+            var response = await _httpClient.SendAsync(
+                new HttpRequestMessage(HttpMethod.Put, "/json/new")
+            );
+
+            string json = await response.Content.ReadAsStringAsync();
 
             return JsonConvert.DeserializeObject<ChromeSessionInfo>(json);
         }
