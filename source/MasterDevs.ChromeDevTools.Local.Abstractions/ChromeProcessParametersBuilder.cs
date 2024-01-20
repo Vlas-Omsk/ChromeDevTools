@@ -30,6 +30,7 @@ namespace MasterDevs.ChromeDevTools.Local
             _parameters["remote-debugging-port"] = port;
             _parameters["user-data-dir"] = userDataDirectory;
             _parameters["no-first-run"] = null;
+            _parameters["remote-allow-origins"] = "*";
         }
 
         public ChromeProcessParametersBuilder SetParameter(string name)
