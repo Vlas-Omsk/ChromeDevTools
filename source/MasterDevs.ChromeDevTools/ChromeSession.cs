@@ -3,6 +3,7 @@ using MasterDevs.ChromeDevTools.Serialization;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Concurrent;
+using System.Diagnostics;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
@@ -245,6 +246,10 @@ namespace MasterDevs.ChromeDevTools
             return Task.Run(() =>
             {
                 EnsureInit();
+
+                if (_webSocket.State != WebSocketState.Open)
+                    throw new InvalidOperationException("WebSocket closed");
+
                 _webSocket.Send(requestString);
                 requestResetEvent.Wait(cancellationToken);
                 ICommandResponse response = null;
@@ -282,7 +287,7 @@ namespace MasterDevs.ChromeDevTools
         {
         }
 
-        private void WebSocket_DataReceived(object sender, DataReceivedEventArgs e)
+        private void WebSocket_DataReceived(object sender, WebSocket4Net.DataReceivedEventArgs e)
         {
             ICommandResponse response;
             if (TryGetCommandResponse(e.Data, out response))
