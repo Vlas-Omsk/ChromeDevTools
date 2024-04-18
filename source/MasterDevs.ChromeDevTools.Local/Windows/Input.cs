@@ -33,7 +33,7 @@ namespace MasterDevs.ChromeDevTools.Local.Windows
                 }
             }).ToArray());
 
-            await Task.Delay(_inputDelay);
+            await Task.Delay(_inputDelay).ConfigureAwait(false);
 
             SendInput(virtualKeyCodes.Reverse().Select(x => new Win32.INPUT()
             {
@@ -82,7 +82,7 @@ namespace MasterDevs.ChromeDevTools.Local.Windows
                 },
             });
 
-            await Task.Delay(_inputDelay);
+            await Task.Delay(_inputDelay).ConfigureAwait(false);
 
             SendInput(new Win32.INPUT[]
             {

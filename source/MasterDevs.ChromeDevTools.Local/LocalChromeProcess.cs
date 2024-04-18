@@ -46,7 +46,7 @@ namespace MasterDevs.ChromeDevTools.Local
 
             Process.Start();
 
-            await ConfigureProxy();
+            await ConfigureProxy().ConfigureAwait(false);
         }
 
         public virtual void Close()
@@ -67,7 +67,7 @@ namespace MasterDevs.ChromeDevTools.Local
         {
             if (Process.MainWindowHandle == IntPtr.Zero)
             {
-                await Task.Delay(1000);
+                await Task.Delay(1000).ConfigureAwait(false);
 
                 SpinWait.SpinUntil(() => Process.MainWindowHandle != IntPtr.Zero);
             }
@@ -89,11 +89,11 @@ namespace MasterDevs.ChromeDevTools.Local
             //        throw new Win32Exception();
             //}
 
-            var mainWindowHandle = await GetMainWindowHandle();
-            var chromeSession = await StartNewSession();
+            var mainWindowHandle = await GetMainWindowHandle().ConfigureAwait(false);
+            var chromeSession = await StartNewSession().ConfigureAwait(false);
             var input = new Input(_inputDelay);
 
-            await chromeSession.Naviagte("https://microsoft.com/");
+            await chromeSession.Naviagte("https://microsoft.com/").ConfigureAwait(false);
 
             if (!Win32.SetForegroundWindow(mainWindowHandle))
                 throw new Win32Exception();
@@ -104,33 +104,33 @@ namespace MasterDevs.ChromeDevTools.Local
             var centerX = rect.Left + (rect.Right - rect.Left) / 2;
 
             // Set input focus in 'Username' field
-            await input.MouseLeftClick(centerX, rect.Top + 205);
+            await input.MouseLeftClick(centerX, rect.Top + 205).ConfigureAwait(false);
 
-            await Task.Delay(_inputDelay);
+            await Task.Delay(_inputDelay).ConfigureAwait(false);
 
             // Paste username
             Clipboard.SetText(Proxy.Username);
-            await input.SendPasteCommand();
+            await input.SendPasteCommand().ConfigureAwait(false);
 
-            await Task.Delay(_inputDelay);
+            await Task.Delay(_inputDelay).ConfigureAwait(false);
 
             // Set input focus in 'Password' field
-            await input.MouseLeftClick(centerX, rect.Top + 250);
+            await input.MouseLeftClick(centerX, rect.Top + 250).ConfigureAwait(false);
 
             Thread.Sleep(100);
 
             // Paste password
             Clipboard.SetText(Proxy.Password);
-            await input.SendPasteCommand();
+            await input.SendPasteCommand().ConfigureAwait(false);
 
             Thread.Sleep(100);
 
             // Click on 'Continue'
-            await input.MouseLeftClick(centerX + 100, rect.Top + 310);
+            await input.MouseLeftClick(centerX + 100, rect.Top + 310).ConfigureAwait(false);
 
             chromeSession.WaitWhile("window.cas != null", TimeSpan.FromMinutes(1));
 
-            await chromeSession.Close();
+            await chromeSession.Close().ConfigureAwait(false);
         }
     }
 }

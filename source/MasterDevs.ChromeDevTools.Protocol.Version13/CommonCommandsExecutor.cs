@@ -7,9 +7,9 @@ namespace MasterDevs.ChromeDevTools.Protocol
 {
     public sealed class CommonCommandsExecutor : ICommonCommandsExecutor
     {
-        public async Task ExecuteCloseTargetCommand(IChromeSession chromeSession, string id)
+        public Task ExecuteCloseTargetCommand(IChromeSession chromeSession, string id)
         {
-            await chromeSession.SendAsync(
+            return chromeSession.SendAsync(
                 new CloseTargetCommand()
                 {
                     TargetId = id
@@ -28,14 +28,14 @@ namespace MasterDevs.ChromeDevTools.Protocol
                     ReturnByValue = true,
                     AwaitPromise = true
                 }
-            );
+            ).ConfigureAwait(false);
 
             return new EvaluationResult(result.Result.Result.Value, result.Result.ExceptionDetails);
         }
 
-        public async Task ExecuteNavigateCommand(IChromeSession chromeSession, string url)
+        public Task ExecuteNavigateCommand(IChromeSession chromeSession, string url)
         {
-            await chromeSession.SendAsync(new NavigateCommand()
+            return chromeSession.SendAsync(new NavigateCommand()
             {
                 Url = url
             });

@@ -36,7 +36,7 @@ namespace MasterDevs.ChromeDevTools
 
         public async Task<ChromeSessionInfo[]> GetSessionsRaw()
         {
-            string json = await _httpClient.GetStringAsync("/json");
+            string json = await _httpClient.GetStringAsync("/json").ConfigureAwait(false);
 
             return JsonConvert.DeserializeObject<ChromeSessionInfo[]>(json);
         }
@@ -45,16 +45,16 @@ namespace MasterDevs.ChromeDevTools
         {
             var response = await _httpClient.SendAsync(
                 new HttpRequestMessage(HttpMethod.Put, "/json/new")
-            );
+            ).ConfigureAwait(false);
 
-            string json = await response.Content.ReadAsStringAsync();
+            string json = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
 
             return JsonConvert.DeserializeObject<ChromeSessionInfo>(json);
         }
 
         public async Task<IChromeSession> StartNewSession()
         {
-            ChromeSessionInfo info = await StartNewSessionRaw();
+            ChromeSessionInfo info = await StartNewSessionRaw().ConfigureAwait(false);
 
             return _sessionFactory.Create(info.WebSocketDebuggerUrl, info.Id);
         }

@@ -105,6 +105,7 @@ namespace MasterDevs.ChromeDevTools
                         throw new TimeoutException();
 
                     var result = _commandsExecutor.ExecuteEvaluateCommand(this, expression)
+                        .ConfigureAwait(false)
                         .GetAwaiter()
                         .GetResult();
 
@@ -123,7 +124,7 @@ namespace MasterDevs.ChromeDevTools
 
         public async Task<object> Execute(string expression)
         {
-            var result = await _commandsExecutor.ExecuteEvaluateCommand(this, expression);
+            var result = await _commandsExecutor.ExecuteEvaluateCommand(this, expression).ConfigureAwait(false);
 
             result.ExceptionDetails?.Throw();
 
