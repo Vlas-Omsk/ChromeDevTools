@@ -4,7 +4,7 @@ namespace MasterDevs.ChromeDevTools.Protocol
 {
     public class JavascriptException : Exception
     {
-        public JavascriptException(IEvaluationExceptionDetails exceptionDetails) : base(exceptionDetails.Text)
+        public JavascriptException(IEvaluationExceptionDetails exceptionDetails) : base(exceptionDetails.Text + $" {exceptionDetails.LineNumber}:{exceptionDetails.ColumnNumber}")
         {
             ExceptionDetails = exceptionDetails;
         }

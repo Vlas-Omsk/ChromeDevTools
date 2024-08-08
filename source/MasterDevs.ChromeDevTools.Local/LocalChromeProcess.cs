@@ -32,7 +32,7 @@ namespace MasterDevs.ChromeDevTools.Local
         public bool EnableAutoProxyAuth { get; set; }
         public Process Process { get; private set; }
 
-        public virtual async Task Start()
+        public virtual async Task Start(CancellationToken cancellationToken)
         {
             var arguments = Parameters.Arguments;
 
@@ -44,9 +44,10 @@ namespace MasterDevs.ChromeDevTools.Local
                 StartInfo = new ProcessStartInfo(ChromePath, arguments)
             };
 
-            Process.Start();
+            if (!Process.Start())
+                throw new Exception("Process exited with exit code " + Process.ExitCode);
 
-            await ConfigureProxy().ConfigureAwait(false);
+            await ConfigureProxy(cancellationToken).ConfigureAwait(false);
         }
 
         public virtual void Close()
@@ -75,7 +76,7 @@ namespace MasterDevs.ChromeDevTools.Local
             return Process.MainWindowHandle;
         }
 
-        private async Task ConfigureProxy()
+        private async Task ConfigureProxy(CancellationToken cancellationToken)
         {
             if (!EnableAutoProxyAuth || Proxy == null || Proxy.HasCredentials == false)
                 return;
@@ -93,7 +94,7 @@ namespace MasterDevs.ChromeDevTools.Local
             var chromeSession = await StartNewSession().ConfigureAwait(false);
             var input = new Input(_inputDelay);
 
-            await chromeSession.Naviagte("https://microsoft.com/").ConfigureAwait(false);
+            await chromeSession.Naviagte("https://microsoft.com/", cancellationToken).ConfigureAwait(false);
 
             if (!Win32.SetForegroundWindow(mainWindowHandle))
                 throw new Win32Exception();
@@ -128,9 +129,9 @@ namespace MasterDevs.ChromeDevTools.Local
             // Click on 'Continue'
             await input.MouseLeftClick(centerX + 100, rect.Top + 310).ConfigureAwait(false);
 
-            chromeSession.WaitWhile("window.cas != null", TimeSpan.FromMinutes(1));
+            await chromeSession.WaitWhile("window.cas != null", TimeSpan.FromMinutes(1), cancellationToken);
 
-            await chromeSession.Close().ConfigureAwait(false);
+            await chromeSession.Close(cancellationToken).ConfigureAwait(false);
         }
     }
 }

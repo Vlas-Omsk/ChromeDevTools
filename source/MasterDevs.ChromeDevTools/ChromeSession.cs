@@ -3,7 +3,6 @@ using MasterDevs.ChromeDevTools.Serialization;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Concurrent;
-using System.Diagnostics;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
@@ -16,15 +15,14 @@ namespace MasterDevs.ChromeDevTools
         private readonly string _webSocketDebuggerUrl;
         private readonly string _id;
         private readonly ICommonCommandsExecutor _commandsExecutor;
-        private readonly ConcurrentDictionary<string, ConcurrentBag<Action<object>>> _handlers = new ConcurrentDictionary<string, ConcurrentBag<Action<object>>>();
+        private readonly ConcurrentDictionary<string, ConcurrentBag<Func<object, Task>>> _handlers = new ConcurrentDictionary<string, ConcurrentBag<Func<object, Task>>>();
         private ICommandFactory _commandFactory;
         private IEventFactory _eventFactory;
-        private ManualResetEvent _openEvent = new ManualResetEvent(false);
-        private ConcurrentDictionary<long, ManualResetEventSlim> _requestWaitHandles = new ConcurrentDictionary<long, ManualResetEventSlim>();
+        private SemaphoreSlim _initEvent = new SemaphoreSlim(1, 1);
+        private ConcurrentDictionary<long, SemaphoreSlim> _requestWaitHandles = new ConcurrentDictionary<long, SemaphoreSlim>();
         private ICommandResponseFactory _responseFactory;
         private ConcurrentDictionary<long, ICommandResponse> _responses = new ConcurrentDictionary<long, ICommandResponse>();
         private WebSocket _webSocket;
-        private readonly object _lock = new object();
 
         public ChromeSession(
             string webSocketDebuggerUrl,
@@ -56,84 +54,80 @@ namespace MasterDevs.ChromeDevTools
             _webSocket.Dispose();
         }
 
-        private void EnsureInit()
+        private async Task EnsureInit()
         {
-            if (null == _webSocket)
+            if (null != _webSocket)
+                return;
+
+            await _initEvent.WaitAsync();
+
+            try
             {
-                lock (_lock)
-                {
-                    if (null == _webSocket)
-                    {
-                        Init().Wait();
-                    }
-                }
+                if (null != _webSocket)
+                    return;
+
+                await Init();
+            }
+            finally
+            {
+                _initEvent.Release();
             }
         }
 
-        private Task Init()
+        private async Task Init()
         {
-            _openEvent.Reset();
-
             _webSocket = new WebSocket(_webSocketDebuggerUrl);
             _webSocket.EnableAutoSendPing = false;
-            _webSocket.Opened += WebSocket_Opened;
             _webSocket.MessageReceived += WebSocket_MessageReceived;
             _webSocket.Error += WebSocket_Error;
             _webSocket.Closed += WebSocket_Closed;
             _webSocket.DataReceived += WebSocket_DataReceived;
 
-            _webSocket.Open();
-            return Task.Run(() =>
-            {
-                _openEvent.WaitOne();
-            });
+            await _webSocket.OpenAsync();
         }
 
-        public Task Close()
+        public Task Close(CancellationToken cancellationToken)
         {
-            return _commandsExecutor.ExecuteCloseTargetCommand(this, _id);
+            return _commandsExecutor.ExecuteCloseTargetCommand(this, _id, cancellationToken);
         }
 
-        public void WaitWhile(string expression, TimeSpan? timeout = null)
+        public async Task WaitWhile(string expression, TimeSpan? timeout = null, CancellationToken cancellationToken = default)
         {
             var startTime = DateTime.Now;
 
-            SpinWait.SpinUntil(
-                () =>
-                {
-                    if (timeout.HasValue && DateTime.Now.Subtract(startTime) > timeout.Value)
-                        throw new TimeoutException();
+            while (true)
+            {
+                cancellationToken.ThrowIfCancellationRequested();
 
-                    var result = _commandsExecutor.ExecuteEvaluateCommand(this, expression)
-                        .ConfigureAwait(false)
-                        .GetAwaiter()
-                        .GetResult();
+                if (timeout.HasValue && DateTime.Now.Subtract(startTime) > timeout.Value)
+                    throw new TimeoutException();
 
-                    if (result.ExceptionDetails != null)
-                        result.ExceptionDetails.Throw();
+                var result = await _commandsExecutor.ExecuteEvaluateCommand(this, expression, cancellationToken)
+                    .ConfigureAwait(false);
 
-                    var boolResult = result.Result is bool x ? x : result.Result != null;
+                result.ExceptionDetails?.Throw();
 
-                    if (!boolResult)
-                        Thread.Sleep(100);
+                var boolResult = result.Result is bool x ? x : result.Result != null;
 
-                    return boolResult;
-                }
-            );
+                if (boolResult)
+                    await Task.Delay(100, cancellationToken);
+                else
+                    return;
+            }
         }
 
-        public async Task<object> Execute(string expression)
+        public async Task<object> Execute(string expression, CancellationToken cancellationToken)
         {
-            var result = await _commandsExecutor.ExecuteEvaluateCommand(this, expression).ConfigureAwait(false);
+            var result = await _commandsExecutor.ExecuteEvaluateCommand(this, expression, cancellationToken).ConfigureAwait(false);
 
             result.ExceptionDetails?.Throw();
 
             return result.Result;
         }
 
-        public Task Naviagte(string url)
+        public Task Naviagte(string url, CancellationToken cancellationToken)
         {
-            return _commandsExecutor.ExecuteNavigateCommand(this, url);
+            return _commandsExecutor.ExecuteNavigateCommand(this, url, cancellationToken);
         }
 
         public Task<ICommandResponse> SendAsync<T>(CancellationToken cancellationToken)
@@ -161,12 +155,12 @@ namespace MasterDevs.ChromeDevTools
             return tcs.Task;
         }
 
-        public void Subscribe<T>(Action<T> handler) where T : class
+        public void Subscribe<T>(Func<T, Task> handler) where T : class
         {
             var handlerType = typeof(T);
-            var handlerForBag = new Action<object>(obj => handler((T)obj));
+            var handlerForBag = new Func<object, Task>(obj => handler((T)obj));
             _handlers.AddOrUpdate(handlerType.FullName,
-                (m) => new ConcurrentBag<Action<object>>(new [] { handlerForBag }),
+                (m) => new ConcurrentBag<Func<object, Task>>(new [] { handlerForBag }),
                 (m, currentBag) =>
                 {
                     currentBag.Add(handlerForBag);
@@ -174,7 +168,7 @@ namespace MasterDevs.ChromeDevTools
                 });
         }
 
-        private void HandleEvent(IEvent evnt)
+        private async Task HandleEvent(IEvent evnt)
         {
             if (null == evnt
                 || null == evnt)
@@ -187,54 +181,54 @@ namespace MasterDevs.ChromeDevTools
                 return;
             }
             var handlerKey = type.FullName;
-            ConcurrentBag<Action<object>> handlers = null;
+            ConcurrentBag<Func<object, Task>> handlers = null;
             if (_handlers.TryGetValue(handlerKey, out handlers))
             {
                 var localHandlers = handlers.ToArray();
                 foreach (var handler in localHandlers)
                 {
-                    ExecuteHandler(handler, evnt);
+                    await ExecuteHandler(handler, evnt);
                 }
             }
         }
 
-        private void ExecuteHandler(Action<object> handler, object evnt)
+        private async Task ExecuteHandler(Func<object, Task> handler, object evnt)
         {
             var evntType = evnt.GetType();
 
             if (evntType.GetGenericTypeDefinition() == typeof(Event<>))
             {
-                handler(evntType.GetProperty("Params").GetValue(evnt));
+                await handler(evntType.GetProperty("Params").GetValue(evnt));
             } else
             {
-                handler(evnt);
+                await handler(evnt);
             }
         }
 
         private void HandleResponse(ICommandResponse response)
         {
             if (null == response) return;
-            ManualResetEventSlim requestMre;
+            SemaphoreSlim requestMre;
             if (_requestWaitHandles.TryGetValue(response.Id, out requestMre))
             {
                 _responses.AddOrUpdate(response.Id, id => response, (key, value) => response);
-                requestMre.Set();
+                requestMre.Release();
             }
             else
             {
                 // in the case of an error, we don't always get the request Id back :(
                 // if there is only one pending requests, we know what to do ... otherwise
-                if (1 == _requestWaitHandles.Count)
-                {
-                    var requestId = _requestWaitHandles.Keys.First();
-                    _requestWaitHandles.TryGetValue(requestId, out requestMre);
-                    _responses.AddOrUpdate(requestId, id => response, (key, value) => response);
-                    requestMre.Set();
-                }
+                //if (1 == _requestWaitHandles.Count)
+                //{
+                //    var requestId = _requestWaitHandles.Keys.First();
+                //    _requestWaitHandles.TryGetValue(requestId, out requestMre);
+                //    _responses.AddOrUpdate(requestId, id => response, (key, value) => response);
+                //    requestMre.Release();
+                //}
             }
         }
 
-        private Task<ICommandResponse> SendCommand(Command command, CancellationToken cancellationToken)
+        private async Task<ICommandResponse> SendCommand(Command command, CancellationToken cancellationToken)
         {
             var settings = new JsonSerializerSettings
             {
@@ -242,22 +236,29 @@ namespace MasterDevs.ChromeDevTools
                 NullValueHandling = NullValueHandling.Ignore,
             };
             var requestString = JsonConvert.SerializeObject(command, settings);
-            var requestResetEvent = new ManualResetEventSlim(false);
+            var requestResetEvent = new SemaphoreSlim(0, 1);
             _requestWaitHandles.AddOrUpdate(command.Id, requestResetEvent, (id, r) => requestResetEvent);
-            return Task.Run(() =>
+
+            await EnsureInit();
+
+            if (_webSocket.State != WebSocketState.Open)
+                throw new InvalidOperationException("WebSocket closed");
+
+            _webSocket.Send(requestString);
+
+            ICommandResponse response = null;
+
+            try
             {
-                EnsureInit();
-
-                if (_webSocket.State != WebSocketState.Open)
-                    throw new InvalidOperationException("WebSocket closed");
-
-                _webSocket.Send(requestString);
-                requestResetEvent.Wait(cancellationToken);
-                ICommandResponse response = null;
+                await requestResetEvent.WaitAsync(cancellationToken);
+            }
+            finally
+            {
                 _responses.TryRemove(command.Id, out response);
                 _requestWaitHandles.TryRemove(command.Id, out requestResetEvent);
-                return response;
-            });
+            }
+
+            return response;
         }
 
         private bool TryGetCommandResponse(byte[] data, out ICommandResponse response)
@@ -288,7 +289,7 @@ namespace MasterDevs.ChromeDevTools
         {
         }
 
-        private void WebSocket_DataReceived(object sender, WebSocket4Net.DataReceivedEventArgs e)
+        private async void WebSocket_DataReceived(object sender, WebSocket4Net.DataReceivedEventArgs e)
         {
             ICommandResponse response;
             if (TryGetCommandResponse(e.Data, out response))
@@ -299,7 +300,7 @@ namespace MasterDevs.ChromeDevTools
             IEvent evnt;
             if (TryGetEvent(e.Data, out evnt))
             {
-                HandleEvent(evnt);
+                await HandleEvent(evnt);
                 return;
             }
             System.Diagnostics.Debug.Fail("Don't know what to do with response: " + e.Data);
@@ -310,7 +311,7 @@ namespace MasterDevs.ChromeDevTools
             throw e.Exception;
         }
 
-        private void WebSocket_MessageReceived(object sender, MessageReceivedEventArgs e)
+        private async void WebSocket_MessageReceived(object sender, MessageReceivedEventArgs e)
         {
             ICommandResponse response;
             if (TryGetCommandResponse(e.Message, out response))
@@ -321,15 +322,10 @@ namespace MasterDevs.ChromeDevTools
             IEvent evnt;
             if (TryGetEvent(e.Message, out evnt))
             {
-                HandleEvent(evnt);
+                await HandleEvent(evnt);
                 return;
             }
             System.Diagnostics.Debug.Fail("Don't know what to do with response: " + e.Message);
-        }
-
-        private void WebSocket_Opened(object sender, EventArgs e)
-        {
-            _openEvent.Set();
         }
     }
 }

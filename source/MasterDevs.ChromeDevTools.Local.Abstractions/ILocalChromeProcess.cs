@@ -1,10 +1,11 @@
-﻿using System.Threading.Tasks;
+﻿using System.Threading;
+using System.Threading.Tasks;
 
 namespace MasterDevs.ChromeDevTools.Local
 {
     public interface ILocalChromeProcess : IChromeProcess
     {
-        Task Start();
+        Task Start(CancellationToken cancellationToken);
         void Close();
     }
 }

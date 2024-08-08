@@ -11,12 +11,12 @@ namespace MasterDevs.ChromeDevTools
 
     public interface IChromeSession
     {
-        Task Close();
-        void WaitWhile(string expression, TimeSpan? timeout = null);
-        Task<object> Execute(string expression);
-        Task Naviagte(string url);
+        Task Close(CancellationToken cancellationToken);
+        Task WaitWhile(string expression, TimeSpan? timeout = null, CancellationToken cancellationToken = default);
+        Task<object> Execute(string expression, CancellationToken cancellationToken);
+        Task Naviagte(string url, CancellationToken cancellationToken);
         Task<CommandResponse<T>> SendAsync<T>(IProtocolCommand<T> parameter, CancellationToken cancellationToken);
         Task<ICommandResponse> SendAsync<T>(CancellationToken cancellationToken);
-        void Subscribe<T>(Action<T> handler) where T : class;
+        void Subscribe<T>(Func<T, Task> handler) where T : class;
     }
 }

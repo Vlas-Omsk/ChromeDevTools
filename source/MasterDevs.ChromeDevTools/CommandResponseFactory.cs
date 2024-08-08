@@ -11,9 +11,7 @@ namespace MasterDevs.ChromeDevTools
         private readonly IMethodTypeMap _methodTypeMap;
         private readonly ICommandFactory _commandFactory;
 
-        /// <summary>
         /// Used to deserialize command responses from JSON to .NET objects.
-        /// </summary>
         private readonly JsonSerializer _serializer;
 
         public CommandResponseFactory(IMethodTypeMap methodTypeMap, ICommandFactory commandFactory)
