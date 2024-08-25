@@ -1,3 +1,3 @@
-[submodule "BotsCommon"]
-	path = BotsCommon
-	url = https://github.com/Vlas-Omsk/BotsCommon
+[submodule "PinkSystem"]
+	path = PinkSystem
+	url = https://github.com/Vlas-Omsk/PinkSystem
