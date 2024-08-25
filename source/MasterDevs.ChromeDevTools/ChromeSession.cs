@@ -130,15 +130,17 @@ namespace MasterDevs.ChromeDevTools
             return _commandsExecutor.ExecuteNavigateCommand(this, url, cancellationToken);
         }
 
-        public Task<ICommandResponse> SendAsync<T>(CancellationToken cancellationToken)
+        public Task<ICommandResponse> SendAsync<T>(CancellationToken cancellationToken, string sessionId = null)
         {
             var command = _commandFactory.Create<T>();
+            command.SessionId = sessionId;
             return SendCommand(command, cancellationToken);
         }
 
-        public Task<CommandResponse<T>> SendAsync<T>(IProtocolCommand<T> parameter, CancellationToken cancellationToken)
+        public Task<CommandResponse<T>> SendAsync<T>(IProtocolCommand<T> parameter, CancellationToken cancellationToken, string sessionId = null)
         {
             var command = _commandFactory.Create(parameter);
+            command.SessionId = sessionId;
             var task = SendCommand(command, cancellationToken);
             return CastTaskResult<ICommandResponse, CommandResponse<T>>(task);
         }
@@ -155,10 +157,10 @@ namespace MasterDevs.ChromeDevTools
             return tcs.Task;
         }
 
-        public void Subscribe<T>(Func<T, Task> handler) where T : class
+        public void Subscribe<T>(Func<Event<T>, Task> handler) where T : class
         {
             var handlerType = typeof(T);
-            var handlerForBag = new Func<object, Task>(obj => handler((T)obj));
+            var handlerForBag = new Func<object, Task>(obj => handler((Event<T>)obj));
             _handlers.AddOrUpdate(handlerType.FullName,
                 (m) => new ConcurrentBag<Func<object, Task>>(new [] { handlerForBag }),
                 (m, currentBag) =>
@@ -194,15 +196,7 @@ namespace MasterDevs.ChromeDevTools
 
         private async Task ExecuteHandler(Func<object, Task> handler, object evnt)
         {
-            var evntType = evnt.GetType();
-
-            if (evntType.GetGenericTypeDefinition() == typeof(Event<>))
-            {
-                await handler(evntType.GetProperty("Params").GetValue(evnt));
-            } else
-            {
-                await handler(evnt);
-            }
+            await handler(evnt);
         }
 
         private void HandleResponse(ICommandResponse response)

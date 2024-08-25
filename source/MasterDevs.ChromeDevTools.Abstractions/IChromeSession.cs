@@ -15,8 +15,8 @@ namespace MasterDevs.ChromeDevTools
         Task WaitWhile(string expression, TimeSpan? timeout = null, CancellationToken cancellationToken = default);
         Task<object> Execute(string expression, CancellationToken cancellationToken);
         Task Naviagte(string url, CancellationToken cancellationToken);
-        Task<CommandResponse<T>> SendAsync<T>(IProtocolCommand<T> parameter, CancellationToken cancellationToken);
-        Task<ICommandResponse> SendAsync<T>(CancellationToken cancellationToken);
-        void Subscribe<T>(Func<T, Task> handler) where T : class;
+        Task<CommandResponse<T>> SendAsync<T>(IProtocolCommand<T> parameter, CancellationToken cancellationToken, string sessionId = null);
+        Task<ICommandResponse> SendAsync<T>(CancellationToken cancellationToken, string sessionId = null);
+        void Subscribe<T>(Func<Event<T>, Task> handler) where T : class;
     }
 }

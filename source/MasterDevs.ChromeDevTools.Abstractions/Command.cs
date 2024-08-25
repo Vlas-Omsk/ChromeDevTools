@@ -13,6 +13,12 @@
             get;
             set;
         }
+
+        public string SessionId
+        {
+            get;
+            set;
+        }
     }
 
     public class Command<T> : Command
