@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Cast
 	/// </summary>
 	[Command(ProtocolName.Cast.StartTabMirroring)]
 	[SupportedBy("Chrome")]
-	public class StartTabMirroringCommand: IProtocolCommand<StartTabMirroringCommandResponse>
+	public class StartTabMirroringCommand: ICommandParams<StartTabMirroringCommandResponse>
 	{
 		/// <summary>
 		/// SinkName

@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.Inspector
 	/// </summary>
 	[Command(ProtocolName.Inspector.Disable)]
 	[SupportedBy("iOS")]
-	public class DisableCommand: IProtocolCommand<DisableCommandResponse>
+	public class DisableCommand: ICommandParams<DisableCommandResponse>
 	{
 	}
 }

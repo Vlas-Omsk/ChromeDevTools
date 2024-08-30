@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Overlay
 	/// </summary>
 	[Command(ProtocolName.Overlay.SetShowHinge)]
 	[SupportedBy("Chrome")]
-	public class SetShowHingeCommand: IProtocolCommand<SetShowHingeCommandResponse>
+	public class SetShowHingeCommand: ICommandParams<SetShowHingeCommandResponse>
 	{
 		/// <summary>
 		/// hinge data, null means hideHinge

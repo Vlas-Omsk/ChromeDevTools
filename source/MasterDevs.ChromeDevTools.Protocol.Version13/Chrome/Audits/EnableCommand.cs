@@ -11,7 +11,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Audits
 	/// </summary>
 	[Command(ProtocolName.Audits.Enable)]
 	[SupportedBy("Chrome")]
-	public class EnableCommand: IProtocolCommand<EnableCommandResponse>
+	public class EnableCommand: ICommandParams<EnableCommandResponse>
 	{
 	}
 }

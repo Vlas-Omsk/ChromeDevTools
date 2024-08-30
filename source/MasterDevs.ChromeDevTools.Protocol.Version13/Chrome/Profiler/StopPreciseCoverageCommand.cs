@@ -11,7 +11,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Profiler
 	/// </summary>
 	[Command(ProtocolName.Profiler.StopPreciseCoverage)]
 	[SupportedBy("Chrome")]
-	public class StopPreciseCoverageCommand: IProtocolCommand<StopPreciseCoverageCommandResponse>
+	public class StopPreciseCoverageCommand: ICommandParams<StopPreciseCoverageCommandResponse>
 	{
 	}
 }

@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.DOM
 	/// </summary>
 	[Command(ProtocolName.DOM.HighlightRect)]
 	[SupportedBy("Chrome")]
-	public class HighlightRectCommand: IProtocolCommand<HighlightRectCommandResponse>
+	public class HighlightRectCommand: ICommandParams<HighlightRectCommandResponse>
 	{
 	}
 }

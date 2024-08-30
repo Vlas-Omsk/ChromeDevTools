@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Fetch
 	/// </summary>
 	[Command(ProtocolName.Fetch.ContinueWithAuth)]
 	[SupportedBy("Chrome")]
-	public class ContinueWithAuthCommand: IProtocolCommand<ContinueWithAuthCommandResponse>
+	public class ContinueWithAuthCommand: ICommandParams<ContinueWithAuthCommandResponse>
 	{
 		/// <summary>
 		/// An id the client received in authRequired event.

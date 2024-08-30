@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.CSS
 	/// </summary>
 	[Command(ProtocolName.CSS.ForcePseudoState)]
 	[SupportedBy("iOS")]
-	public class ForcePseudoStateCommand: IProtocolCommand<ForcePseudoStateCommandResponse>
+	public class ForcePseudoStateCommand: ICommandParams<ForcePseudoStateCommandResponse>
 	{
 		/// <summary>
 		/// The element id for which to force the pseudo state.

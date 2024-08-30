@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Page
 	/// </summary>
 	[Command(ProtocolName.Page.GetOriginTrials)]
 	[SupportedBy("Chrome")]
-	public class GetOriginTrialsCommand: IProtocolCommand<GetOriginTrialsCommandResponse>
+	public class GetOriginTrialsCommand: ICommandParams<GetOriginTrialsCommandResponse>
 	{
 		/// <summary>
 		/// FrameId

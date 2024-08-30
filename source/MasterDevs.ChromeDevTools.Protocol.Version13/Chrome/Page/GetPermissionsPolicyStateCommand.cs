@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Page
 	/// </summary>
 	[Command(ProtocolName.Page.GetPermissionsPolicyState)]
 	[SupportedBy("Chrome")]
-	public class GetPermissionsPolicyStateCommand: IProtocolCommand<GetPermissionsPolicyStateCommandResponse>
+	public class GetPermissionsPolicyStateCommand: ICommandParams<GetPermissionsPolicyStateCommandResponse>
 	{
 		/// <summary>
 		/// FrameId

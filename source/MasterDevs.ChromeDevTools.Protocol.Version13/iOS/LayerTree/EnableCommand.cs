@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.LayerTree
 	/// </summary>
 	[Command(ProtocolName.LayerTree.Enable)]
 	[SupportedBy("iOS")]
-	public class EnableCommand: IProtocolCommand<EnableCommandResponse>
+	public class EnableCommand: ICommandParams<EnableCommandResponse>
 	{
 	}
 }

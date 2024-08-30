@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Emulation
 	/// </summary>
 	[Command(ProtocolName.Emulation.SetAutoDarkModeOverride)]
 	[SupportedBy("Chrome")]
-	public class SetAutoDarkModeOverrideCommand: IProtocolCommand<SetAutoDarkModeOverrideCommandResponse>
+	public class SetAutoDarkModeOverrideCommand: ICommandParams<SetAutoDarkModeOverrideCommandResponse>
 	{
 		/// <summary>
 		/// Whether to enable or disable automatic dark mode.

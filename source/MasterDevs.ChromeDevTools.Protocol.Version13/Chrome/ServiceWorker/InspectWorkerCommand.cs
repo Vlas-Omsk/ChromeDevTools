@@ -7,7 +7,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.ServiceWorker
 {
 	[Command(ProtocolName.ServiceWorker.InspectWorker)]
 	[SupportedBy("Chrome")]
-	public class InspectWorkerCommand: IProtocolCommand<InspectWorkerCommandResponse>
+	public class InspectWorkerCommand: ICommandParams<InspectWorkerCommandResponse>
 	{
 		/// <summary>
 		/// VersionId

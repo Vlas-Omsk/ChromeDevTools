@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.DOM
 	/// </summary>
 	[Command(ProtocolName.DOM.SetFileInputFiles)]
 	[SupportedBy("Chrome")]
-	public class SetFileInputFilesCommand: IProtocolCommand<SetFileInputFilesCommandResponse>
+	public class SetFileInputFilesCommand: ICommandParams<SetFileInputFilesCommandResponse>
 	{
 		/// <summary>
 		/// Array of file paths to set.

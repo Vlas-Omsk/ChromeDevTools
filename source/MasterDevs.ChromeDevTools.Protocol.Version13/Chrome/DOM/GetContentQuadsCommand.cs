@@ -11,7 +11,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.DOM
 	/// </summary>
 	[Command(ProtocolName.DOM.GetContentQuads)]
 	[SupportedBy("Chrome")]
-	public class GetContentQuadsCommand: IProtocolCommand<GetContentQuadsCommandResponse>
+	public class GetContentQuadsCommand: ICommandParams<GetContentQuadsCommandResponse>
 	{
 		/// <summary>
 		/// Identifier of the node.

@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Storage
 	/// </summary>
 	[Command(ProtocolName.Storage.GetStorageKeyForFrame)]
 	[SupportedBy("Chrome")]
-	public class GetStorageKeyForFrameCommand: IProtocolCommand<GetStorageKeyForFrameCommandResponse>
+	public class GetStorageKeyForFrameCommand: ICommandParams<GetStorageKeyForFrameCommandResponse>
 	{
 		/// <summary>
 		/// FrameId

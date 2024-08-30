@@ -7,7 +7,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Emulation
 {
 	[Command(ProtocolName.Emulation.SetDisabledImageTypes)]
 	[SupportedBy("Chrome")]
-	public class SetDisabledImageTypesCommand: IProtocolCommand<SetDisabledImageTypesCommandResponse>
+	public class SetDisabledImageTypesCommand: ICommandParams<SetDisabledImageTypesCommandResponse>
 	{
 		/// <summary>
 		/// Image types to disable.

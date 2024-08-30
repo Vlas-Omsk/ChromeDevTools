@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.DOM
 	/// </summary>
 	[Command(ProtocolName.DOM.SetOuterHTML)]
 	[SupportedBy("Chrome")]
-	public class SetOuterHTMLCommand: IProtocolCommand<SetOuterHTMLCommandResponse>
+	public class SetOuterHTMLCommand: ICommandParams<SetOuterHTMLCommandResponse>
 	{
 		/// <summary>
 		/// Id of the node to set markup for.

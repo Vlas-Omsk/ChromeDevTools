@@ -11,7 +11,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Page
 	/// </summary>
 	[Command(ProtocolName.Page.GetAppId)]
 	[SupportedBy("Chrome")]
-	public class GetAppIdCommand: IProtocolCommand<GetAppIdCommandResponse>
+	public class GetAppIdCommand: ICommandParams<GetAppIdCommandResponse>
 	{
 	}
 }

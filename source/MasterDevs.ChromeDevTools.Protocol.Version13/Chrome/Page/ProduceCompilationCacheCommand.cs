@@ -15,7 +15,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Page
 	/// </summary>
 	[Command(ProtocolName.Page.ProduceCompilationCache)]
 	[SupportedBy("Chrome")]
-	public class ProduceCompilationCacheCommand: IProtocolCommand<ProduceCompilationCacheCommandResponse>
+	public class ProduceCompilationCacheCommand: ICommandParams<ProduceCompilationCacheCommandResponse>
 	{
 		/// <summary>
 		/// Scripts

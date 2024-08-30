@@ -7,7 +7,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Page
 {
 	[Command(ProtocolName.Page.GetAppManifest)]
 	[SupportedBy("Chrome")]
-	public class GetAppManifestCommand: IProtocolCommand<GetAppManifestCommandResponse>
+	public class GetAppManifestCommand: ICommandParams<GetAppManifestCommandResponse>
 	{
 	}
 }

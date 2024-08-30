@@ -12,7 +12,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.DOM
 	/// </summary>
 	[Command(ProtocolName.DOM.ScrollIntoViewIfNeeded)]
 	[SupportedBy("Chrome")]
-	public class ScrollIntoViewIfNeededCommand: IProtocolCommand<ScrollIntoViewIfNeededCommandResponse>
+	public class ScrollIntoViewIfNeededCommand: ICommandParams<ScrollIntoViewIfNeededCommandResponse>
 	{
 		/// <summary>
 		/// Identifier of the node.

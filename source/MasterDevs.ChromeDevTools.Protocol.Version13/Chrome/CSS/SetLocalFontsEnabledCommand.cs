@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.CSS
 	/// </summary>
 	[Command(ProtocolName.CSS.SetLocalFontsEnabled)]
 	[SupportedBy("Chrome")]
-	public class SetLocalFontsEnabledCommand: IProtocolCommand<SetLocalFontsEnabledCommandResponse>
+	public class SetLocalFontsEnabledCommand: ICommandParams<SetLocalFontsEnabledCommandResponse>
 	{
 		/// <summary>
 		/// Whether rendering of local fonts is enabled.

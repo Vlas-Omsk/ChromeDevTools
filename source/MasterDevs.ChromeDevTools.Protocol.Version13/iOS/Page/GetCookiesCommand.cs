@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.Page
 	/// </summary>
 	[Command(ProtocolName.Page.GetCookies)]
 	[SupportedBy("iOS")]
-	public class GetCookiesCommand: IProtocolCommand<GetCookiesCommandResponse>
+	public class GetCookiesCommand: ICommandParams<GetCookiesCommandResponse>
 	{
 	}
 }

@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.DOM
 	/// </summary>
 	[Command(ProtocolName.DOM.SetNodeValue)]
 	[SupportedBy("iOS")]
-	public class SetNodeValueCommand: IProtocolCommand<SetNodeValueCommandResponse>
+	public class SetNodeValueCommand: ICommandParams<SetNodeValueCommandResponse>
 	{
 		/// <summary>
 		/// Id of the node to set value for.

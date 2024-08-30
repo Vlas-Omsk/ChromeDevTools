@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Memory
 	/// </summary>
 	[Command(ProtocolName.Memory.ForciblyPurgeJavaScriptMemory)]
 	[SupportedBy("Chrome")]
-	public class ForciblyPurgeJavaScriptMemoryCommand: IProtocolCommand<ForciblyPurgeJavaScriptMemoryCommandResponse>
+	public class ForciblyPurgeJavaScriptMemoryCommand: ICommandParams<ForciblyPurgeJavaScriptMemoryCommandResponse>
 	{
 	}
 }

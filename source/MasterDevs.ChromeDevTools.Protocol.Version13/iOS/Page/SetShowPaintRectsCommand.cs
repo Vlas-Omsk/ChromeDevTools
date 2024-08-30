@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.Page
 	/// </summary>
 	[Command(ProtocolName.Page.SetShowPaintRects)]
 	[SupportedBy("iOS")]
-	public class SetShowPaintRectsCommand: IProtocolCommand<SetShowPaintRectsCommandResponse>
+	public class SetShowPaintRectsCommand: ICommandParams<SetShowPaintRectsCommandResponse>
 	{
 		/// <summary>
 		/// True for showing paint rectangles

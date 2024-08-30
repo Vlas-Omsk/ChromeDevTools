@@ -11,7 +11,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Target
 	/// </summary>
 	[Command(ProtocolName.Target.SetDiscoverTargets)]
 	[SupportedBy("Chrome")]
-	public class SetDiscoverTargetsCommand: IProtocolCommand<SetDiscoverTargetsCommandResponse>
+	public class SetDiscoverTargetsCommand: ICommandParams<SetDiscoverTargetsCommandResponse>
 	{
 		/// <summary>
 		/// Whether to discover available targets.

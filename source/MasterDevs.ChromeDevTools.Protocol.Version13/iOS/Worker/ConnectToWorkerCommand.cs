@@ -7,7 +7,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.Worker
 {
 	[Command(ProtocolName.Worker.ConnectToWorker)]
 	[SupportedBy("iOS")]
-	public class ConnectToWorkerCommand: IProtocolCommand<ConnectToWorkerCommandResponse>
+	public class ConnectToWorkerCommand: ICommandParams<ConnectToWorkerCommandResponse>
 	{
 		/// <summary>
 		/// WorkerId

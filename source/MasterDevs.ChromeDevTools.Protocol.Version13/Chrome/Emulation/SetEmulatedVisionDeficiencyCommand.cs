@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Emulation
 	/// </summary>
 	[Command(ProtocolName.Emulation.SetEmulatedVisionDeficiency)]
 	[SupportedBy("Chrome")]
-	public class SetEmulatedVisionDeficiencyCommand: IProtocolCommand<SetEmulatedVisionDeficiencyCommandResponse>
+	public class SetEmulatedVisionDeficiencyCommand: ICommandParams<SetEmulatedVisionDeficiencyCommandResponse>
 	{
 		/// <summary>
 		/// Vision deficiency to emulate. Order: best-effort emulations come first, followed by any

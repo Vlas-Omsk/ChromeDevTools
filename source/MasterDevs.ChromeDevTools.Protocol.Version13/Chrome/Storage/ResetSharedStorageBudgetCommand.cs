@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Storage
 	/// </summary>
 	[Command(ProtocolName.Storage.ResetSharedStorageBudget)]
 	[SupportedBy("Chrome")]
-	public class ResetSharedStorageBudgetCommand: IProtocolCommand<ResetSharedStorageBudgetCommandResponse>
+	public class ResetSharedStorageBudgetCommand: ICommandParams<ResetSharedStorageBudgetCommandResponse>
 	{
 		/// <summary>
 		/// OwnerOrigin

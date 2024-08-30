@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Storage
 	/// </summary>
 	[Command(ProtocolName.Storage.ClearDataForOrigin)]
 	[SupportedBy("Chrome")]
-	public class ClearDataForOriginCommand: IProtocolCommand<ClearDataForOriginCommandResponse>
+	public class ClearDataForOriginCommand: ICommandParams<ClearDataForOriginCommandResponse>
 	{
 		/// <summary>
 		/// Security origin.

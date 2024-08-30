@@ -13,7 +13,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.DOMSnapshot
 	/// </summary>
 	[Command(ProtocolName.DOMSnapshot.CaptureSnapshot)]
 	[SupportedBy("Chrome")]
-	public class CaptureSnapshotCommand: IProtocolCommand<CaptureSnapshotCommandResponse>
+	public class CaptureSnapshotCommand: ICommandParams<CaptureSnapshotCommandResponse>
 	{
 		/// <summary>
 		/// Whitelist of computed styles to return.

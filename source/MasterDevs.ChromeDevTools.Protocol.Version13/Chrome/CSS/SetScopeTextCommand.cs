@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.CSS
 	/// </summary>
 	[Command(ProtocolName.CSS.SetScopeText)]
 	[SupportedBy("Chrome")]
-	public class SetScopeTextCommand: IProtocolCommand<SetScopeTextCommandResponse>
+	public class SetScopeTextCommand: ICommandParams<SetScopeTextCommandResponse>
 	{
 		/// <summary>
 		/// StyleSheetId

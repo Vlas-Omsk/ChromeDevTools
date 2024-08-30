@@ -11,7 +11,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.CSS
 	/// </summary>
 	[Command(ProtocolName.CSS.Enable)]
 	[SupportedBy("Chrome")]
-	public class EnableCommand: IProtocolCommand<EnableCommandResponse>
+	public class EnableCommand: ICommandParams<EnableCommandResponse>
 	{
 	}
 }

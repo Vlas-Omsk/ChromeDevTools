@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.IndexedDB
 	/// </summary>
 	[Command(ProtocolName.IndexedDB.ClearObjectStore)]
 	[SupportedBy("iOS")]
-	public class ClearObjectStoreCommand: IProtocolCommand<ClearObjectStoreCommandResponse>
+	public class ClearObjectStoreCommand: ICommandParams<ClearObjectStoreCommandResponse>
 	{
 		/// <summary>
 		/// Security origin.

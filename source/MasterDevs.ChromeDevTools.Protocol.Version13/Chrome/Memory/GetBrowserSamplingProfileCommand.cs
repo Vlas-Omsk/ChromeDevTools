@@ -11,7 +11,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Memory
 	/// </summary>
 	[Command(ProtocolName.Memory.GetBrowserSamplingProfile)]
 	[SupportedBy("Chrome")]
-	public class GetBrowserSamplingProfileCommand: IProtocolCommand<GetBrowserSamplingProfileCommandResponse>
+	public class GetBrowserSamplingProfileCommand: ICommandParams<GetBrowserSamplingProfileCommandResponse>
 	{
 	}
 }

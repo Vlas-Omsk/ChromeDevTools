@@ -13,7 +13,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.DOM
 	[Obsolete]
 	[Command(ProtocolName.DOM.GetFlattenedDocument)]
 	[SupportedBy("Chrome")]
-	public class GetFlattenedDocumentCommand: IProtocolCommand<GetFlattenedDocumentCommandResponse>
+	public class GetFlattenedDocumentCommand: ICommandParams<GetFlattenedDocumentCommandResponse>
 	{
 		/// <summary>
 		/// The maximum depth at which children should be retrieved, defaults to 1. Use -1 for the

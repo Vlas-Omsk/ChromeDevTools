@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Target
 	/// </summary>
 	[Command(ProtocolName.Target.DetachFromTarget)]
 	[SupportedBy("Chrome")]
-	public class DetachFromTargetCommand: IProtocolCommand<DetachFromTargetCommandResponse>
+	public class DetachFromTargetCommand: ICommandParams<DetachFromTargetCommandResponse>
 	{
 		/// <summary>
 		/// Session to detach.

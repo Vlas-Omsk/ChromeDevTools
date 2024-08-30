@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Overlay
 	/// </summary>
 	[Command(ProtocolName.Overlay.SetShowAdHighlights)]
 	[SupportedBy("Chrome")]
-	public class SetShowAdHighlightsCommand: IProtocolCommand<SetShowAdHighlightsCommandResponse>
+	public class SetShowAdHighlightsCommand: ICommandParams<SetShowAdHighlightsCommandResponse>
 	{
 		/// <summary>
 		/// True for showing ad highlights

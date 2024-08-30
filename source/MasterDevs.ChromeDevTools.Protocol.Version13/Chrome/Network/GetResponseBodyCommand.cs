@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Network
 	/// </summary>
 	[Command(ProtocolName.Network.GetResponseBody)]
 	[SupportedBy("Chrome")]
-	public class GetResponseBodyCommand: IProtocolCommand<GetResponseBodyCommandResponse>
+	public class GetResponseBodyCommand: ICommandParams<GetResponseBodyCommandResponse>
 	{
 		/// <summary>
 		/// Identifier of the network request to get content for.

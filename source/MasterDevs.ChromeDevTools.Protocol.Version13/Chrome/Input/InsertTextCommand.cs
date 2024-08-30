@@ -11,7 +11,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Input
 	/// </summary>
 	[Command(ProtocolName.Input.InsertText)]
 	[SupportedBy("Chrome")]
-	public class InsertTextCommand: IProtocolCommand<InsertTextCommandResponse>
+	public class InsertTextCommand: ICommandParams<InsertTextCommandResponse>
 	{
 		/// <summary>
 		/// The text to insert.

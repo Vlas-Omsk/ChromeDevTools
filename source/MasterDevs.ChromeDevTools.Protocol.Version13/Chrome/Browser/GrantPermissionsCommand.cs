@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Browser
 	/// </summary>
 	[Command(ProtocolName.Browser.GrantPermissions)]
 	[SupportedBy("Chrome")]
-	public class GrantPermissionsCommand: IProtocolCommand<GrantPermissionsCommandResponse>
+	public class GrantPermissionsCommand: ICommandParams<GrantPermissionsCommandResponse>
 	{
 		/// <summary>
 		/// Permissions

@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.DOM
 	/// </summary>
 	[Command(ProtocolName.DOM.PushNodesByBackendIdsToFrontend)]
 	[SupportedBy("Chrome")]
-	public class PushNodesByBackendIdsToFrontendCommand: IProtocolCommand<PushNodesByBackendIdsToFrontendCommandResponse>
+	public class PushNodesByBackendIdsToFrontendCommand: ICommandParams<PushNodesByBackendIdsToFrontendCommandResponse>
 	{
 		/// <summary>
 		/// The array of backend node ids.

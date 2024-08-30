@@ -13,7 +13,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Target
 	[Obsolete]
 	[Command(ProtocolName.Target.SendMessageToTarget)]
 	[SupportedBy("Chrome")]
-	public class SendMessageToTargetCommand: IProtocolCommand<SendMessageToTargetCommandResponse>
+	public class SendMessageToTargetCommand: ICommandParams<SendMessageToTargetCommandResponse>
 	{
 		/// <summary>
 		/// Message

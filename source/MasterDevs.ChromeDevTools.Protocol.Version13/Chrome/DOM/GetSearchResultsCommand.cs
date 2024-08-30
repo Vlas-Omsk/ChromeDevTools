@@ -11,7 +11,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.DOM
 	/// </summary>
 	[Command(ProtocolName.DOM.GetSearchResults)]
 	[SupportedBy("Chrome")]
-	public class GetSearchResultsCommand: IProtocolCommand<GetSearchResultsCommandResponse>
+	public class GetSearchResultsCommand: ICommandParams<GetSearchResultsCommandResponse>
 	{
 		/// <summary>
 		/// Unique search session identifier.

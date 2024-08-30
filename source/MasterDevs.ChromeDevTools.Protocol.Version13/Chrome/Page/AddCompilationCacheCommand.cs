@@ -11,7 +11,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Page
 	/// </summary>
 	[Command(ProtocolName.Page.AddCompilationCache)]
 	[SupportedBy("Chrome")]
-	public class AddCompilationCacheCommand: IProtocolCommand<AddCompilationCacheCommandResponse>
+	public class AddCompilationCacheCommand: ICommandParams<AddCompilationCacheCommandResponse>
 	{
 		/// <summary>
 		/// Url

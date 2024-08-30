@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Runtime
 	/// </summary>
 	[Command(ProtocolName.Runtime.GlobalLexicalScopeNames)]
 	[SupportedBy("Chrome")]
-	public class GlobalLexicalScopeNamesCommand: IProtocolCommand<GlobalLexicalScopeNamesCommandResponse>
+	public class GlobalLexicalScopeNamesCommand: ICommandParams<GlobalLexicalScopeNamesCommandResponse>
 	{
 		/// <summary>
 		/// Specifies in which execution context to lookup global scope variables.

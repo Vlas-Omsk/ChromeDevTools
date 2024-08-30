@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Network
 	/// </summary>
 	[Command(ProtocolName.Network.GetRequestPostData)]
 	[SupportedBy("Chrome")]
-	public class GetRequestPostDataCommand: IProtocolCommand<GetRequestPostDataCommandResponse>
+	public class GetRequestPostDataCommand: ICommandParams<GetRequestPostDataCommandResponse>
 	{
 		/// <summary>
 		/// Identifier of the network request to get content for.

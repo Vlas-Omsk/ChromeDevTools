@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.DOM
 	/// </summary>
 	[Command(ProtocolName.DOM.SetOuterHTML)]
 	[SupportedBy("iOS")]
-	public class SetOuterHTMLCommand: IProtocolCommand<SetOuterHTMLCommandResponse>
+	public class SetOuterHTMLCommand: ICommandParams<SetOuterHTMLCommandResponse>
 	{
 		/// <summary>
 		/// Id of the node to set markup for.

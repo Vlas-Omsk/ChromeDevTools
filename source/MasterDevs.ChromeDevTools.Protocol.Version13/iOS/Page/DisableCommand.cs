@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.Page
 	/// </summary>
 	[Command(ProtocolName.Page.Disable)]
 	[SupportedBy("iOS")]
-	public class DisableCommand: IProtocolCommand<DisableCommandResponse>
+	public class DisableCommand: ICommandParams<DisableCommandResponse>
 	{
 	}
 }

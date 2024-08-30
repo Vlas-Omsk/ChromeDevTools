@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.DOM
 	/// </summary>
 	[Command(ProtocolName.DOM.ReleaseBackendNodeIds)]
 	[SupportedBy("iOS")]
-	public class ReleaseBackendNodeIdsCommand: IProtocolCommand<ReleaseBackendNodeIdsCommandResponse>
+	public class ReleaseBackendNodeIdsCommand: ICommandParams<ReleaseBackendNodeIdsCommandResponse>
 	{
 		/// <summary>
 		/// The backend node ids group name.

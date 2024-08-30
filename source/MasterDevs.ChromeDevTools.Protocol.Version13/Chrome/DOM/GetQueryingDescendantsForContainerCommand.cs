@@ -11,7 +11,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.DOM
 	/// </summary>
 	[Command(ProtocolName.DOM.GetQueryingDescendantsForContainer)]
 	[SupportedBy("Chrome")]
-	public class GetQueryingDescendantsForContainerCommand: IProtocolCommand<GetQueryingDescendantsForContainerCommandResponse>
+	public class GetQueryingDescendantsForContainerCommand: ICommandParams<GetQueryingDescendantsForContainerCommandResponse>
 	{
 		/// <summary>
 		/// Id of the container node to find querying descendants from.

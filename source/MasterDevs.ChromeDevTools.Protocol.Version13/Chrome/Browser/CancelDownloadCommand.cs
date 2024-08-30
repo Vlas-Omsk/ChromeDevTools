@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Browser
 	/// </summary>
 	[Command(ProtocolName.Browser.CancelDownload)]
 	[SupportedBy("Chrome")]
-	public class CancelDownloadCommand: IProtocolCommand<CancelDownloadCommandResponse>
+	public class CancelDownloadCommand: ICommandParams<CancelDownloadCommandResponse>
 	{
 		/// <summary>
 		/// Global unique identifier of the download.

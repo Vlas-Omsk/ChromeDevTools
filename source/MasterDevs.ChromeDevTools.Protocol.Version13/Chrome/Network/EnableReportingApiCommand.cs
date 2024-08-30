@@ -11,7 +11,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Network
 	/// </summary>
 	[Command(ProtocolName.Network.EnableReportingApi)]
 	[SupportedBy("Chrome")]
-	public class EnableReportingApiCommand: IProtocolCommand<EnableReportingApiCommandResponse>
+	public class EnableReportingApiCommand: ICommandParams<EnableReportingApiCommandResponse>
 	{
 		/// <summary>
 		/// Whether to enable or disable events for the Reporting API

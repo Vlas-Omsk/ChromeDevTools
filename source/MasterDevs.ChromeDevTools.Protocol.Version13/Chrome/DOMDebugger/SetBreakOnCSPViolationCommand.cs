@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.DOMDebugger
 	/// </summary>
 	[Command(ProtocolName.DOMDebugger.SetBreakOnCSPViolation)]
 	[SupportedBy("Chrome")]
-	public class SetBreakOnCSPViolationCommand: IProtocolCommand<SetBreakOnCSPViolationCommandResponse>
+	public class SetBreakOnCSPViolationCommand: ICommandParams<SetBreakOnCSPViolationCommandResponse>
 	{
 		/// <summary>
 		/// CSP Violations to stop upon.

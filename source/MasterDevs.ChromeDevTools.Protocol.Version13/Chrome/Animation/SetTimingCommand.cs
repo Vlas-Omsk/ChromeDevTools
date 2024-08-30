@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Animation
 	/// </summary>
 	[Command(ProtocolName.Animation.SetTiming)]
 	[SupportedBy("Chrome")]
-	public class SetTimingCommand: IProtocolCommand<SetTimingCommandResponse>
+	public class SetTimingCommand: ICommandParams<SetTimingCommandResponse>
 	{
 		/// <summary>
 		/// Animation id.

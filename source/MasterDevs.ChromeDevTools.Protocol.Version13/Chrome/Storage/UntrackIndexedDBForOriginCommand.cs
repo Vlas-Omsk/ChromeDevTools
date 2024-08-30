@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Storage
 	/// </summary>
 	[Command(ProtocolName.Storage.UntrackIndexedDBForOrigin)]
 	[SupportedBy("Chrome")]
-	public class UntrackIndexedDBForOriginCommand: IProtocolCommand<UntrackIndexedDBForOriginCommandResponse>
+	public class UntrackIndexedDBForOriginCommand: ICommandParams<UntrackIndexedDBForOriginCommandResponse>
 	{
 		/// <summary>
 		/// Security origin.

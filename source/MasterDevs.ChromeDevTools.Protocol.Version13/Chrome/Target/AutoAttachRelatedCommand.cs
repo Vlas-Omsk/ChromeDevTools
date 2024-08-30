@@ -14,7 +14,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Target
 	/// </summary>
 	[Command(ProtocolName.Target.AutoAttachRelated)]
 	[SupportedBy("Chrome")]
-	public class AutoAttachRelatedCommand: IProtocolCommand<AutoAttachRelatedCommandResponse>
+	public class AutoAttachRelatedCommand: ICommandParams<AutoAttachRelatedCommandResponse>
 	{
 		/// <summary>
 		/// TargetId

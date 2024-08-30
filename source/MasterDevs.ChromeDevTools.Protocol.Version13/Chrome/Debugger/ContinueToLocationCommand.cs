@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Debugger
 	/// </summary>
 	[Command(ProtocolName.Debugger.ContinueToLocation)]
 	[SupportedBy("Chrome")]
-	public class ContinueToLocationCommand: IProtocolCommand<ContinueToLocationCommandResponse>
+	public class ContinueToLocationCommand: ICommandParams<ContinueToLocationCommandResponse>
 	{
 		/// <summary>
 		/// Location to continue to.

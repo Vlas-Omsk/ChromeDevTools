@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Page
 	/// </summary>
 	[Command(ProtocolName.Page.Enable)]
 	[SupportedBy("Chrome")]
-	public class EnableCommand: IProtocolCommand<EnableCommandResponse>
+	public class EnableCommand: ICommandParams<EnableCommandResponse>
 	{
 	}
 }

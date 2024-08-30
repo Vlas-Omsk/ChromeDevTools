@@ -11,7 +11,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Security
 	[Obsolete]
 	[Command(ProtocolName.Security.HandleCertificateError)]
 	[SupportedBy("Chrome")]
-	public class HandleCertificateErrorCommand: IProtocolCommand<HandleCertificateErrorCommandResponse>
+	public class HandleCertificateErrorCommand: ICommandParams<HandleCertificateErrorCommandResponse>
 	{
 		/// <summary>
 		/// The ID of the event.

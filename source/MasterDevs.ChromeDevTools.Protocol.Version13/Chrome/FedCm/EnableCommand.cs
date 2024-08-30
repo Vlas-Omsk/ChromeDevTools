@@ -7,7 +7,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.FedCm
 {
 	[Command(ProtocolName.FedCm.Enable)]
 	[SupportedBy("Chrome")]
-	public class EnableCommand: IProtocolCommand<EnableCommandResponse>
+	public class EnableCommand: ICommandParams<EnableCommandResponse>
 	{
 	}
 }

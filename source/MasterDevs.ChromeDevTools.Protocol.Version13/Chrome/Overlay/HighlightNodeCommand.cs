@@ -11,7 +11,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Overlay
 	/// </summary>
 	[Command(ProtocolName.Overlay.HighlightNode)]
 	[SupportedBy("Chrome")]
-	public class HighlightNodeCommand: IProtocolCommand<HighlightNodeCommandResponse>
+	public class HighlightNodeCommand: ICommandParams<HighlightNodeCommandResponse>
 	{
 		/// <summary>
 		/// A descriptor for the highlight appearance.

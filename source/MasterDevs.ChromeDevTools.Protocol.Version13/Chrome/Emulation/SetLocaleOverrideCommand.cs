@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Emulation
 	/// </summary>
 	[Command(ProtocolName.Emulation.SetLocaleOverride)]
 	[SupportedBy("Chrome")]
-	public class SetLocaleOverrideCommand: IProtocolCommand<SetLocaleOverrideCommandResponse>
+	public class SetLocaleOverrideCommand: ICommandParams<SetLocaleOverrideCommandResponse>
 	{
 		/// <summary>
 		/// ICU style C locale (e.g. "en_US"). If not specified or empty, disables the override and

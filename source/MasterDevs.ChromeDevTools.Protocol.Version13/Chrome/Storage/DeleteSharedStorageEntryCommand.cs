@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Storage
 	/// </summary>
 	[Command(ProtocolName.Storage.DeleteSharedStorageEntry)]
 	[SupportedBy("Chrome")]
-	public class DeleteSharedStorageEntryCommand: IProtocolCommand<DeleteSharedStorageEntryCommandResponse>
+	public class DeleteSharedStorageEntryCommand: ICommandParams<DeleteSharedStorageEntryCommandResponse>
 	{
 		/// <summary>
 		/// OwnerOrigin

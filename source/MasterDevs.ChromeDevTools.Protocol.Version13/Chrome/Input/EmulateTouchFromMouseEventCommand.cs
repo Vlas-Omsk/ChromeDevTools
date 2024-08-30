@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Input
 	/// </summary>
 	[Command(ProtocolName.Input.EmulateTouchFromMouseEvent)]
 	[SupportedBy("Chrome")]
-	public class EmulateTouchFromMouseEventCommand: IProtocolCommand<EmulateTouchFromMouseEventCommandResponse>
+	public class EmulateTouchFromMouseEventCommand: ICommandParams<EmulateTouchFromMouseEventCommandResponse>
 	{
 		/// <summary>
 		/// Type of the mouse event.

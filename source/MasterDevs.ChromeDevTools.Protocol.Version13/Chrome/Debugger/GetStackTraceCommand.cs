@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Debugger
 	/// </summary>
 	[Command(ProtocolName.Debugger.GetStackTrace)]
 	[SupportedBy("Chrome")]
-	public class GetStackTraceCommand: IProtocolCommand<GetStackTraceCommandResponse>
+	public class GetStackTraceCommand: ICommandParams<GetStackTraceCommandResponse>
 	{
 		/// <summary>
 		/// StackTraceId

@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Network
 	/// </summary>
 	[Command(ProtocolName.Network.Disable)]
 	[SupportedBy("Chrome")]
-	public class DisableCommand: IProtocolCommand<DisableCommandResponse>
+	public class DisableCommand: ICommandParams<DisableCommandResponse>
 	{
 	}
 }

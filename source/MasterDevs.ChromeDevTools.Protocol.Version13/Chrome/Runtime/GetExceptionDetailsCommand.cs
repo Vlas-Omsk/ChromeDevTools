@@ -14,7 +14,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Runtime
 	/// </summary>
 	[Command(ProtocolName.Runtime.GetExceptionDetails)]
 	[SupportedBy("Chrome")]
-	public class GetExceptionDetailsCommand: IProtocolCommand<GetExceptionDetailsCommandResponse>
+	public class GetExceptionDetailsCommand: ICommandParams<GetExceptionDetailsCommandResponse>
 	{
 		/// <summary>
 		/// The error object for which to resolve the exception details.

@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Page
 	/// </summary>
 	[Command(ProtocolName.Page.SetLifecycleEventsEnabled)]
 	[SupportedBy("Chrome")]
-	public class SetLifecycleEventsEnabledCommand: IProtocolCommand<SetLifecycleEventsEnabledCommandResponse>
+	public class SetLifecycleEventsEnabledCommand: ICommandParams<SetLifecycleEventsEnabledCommandResponse>
 	{
 		/// <summary>
 		/// If true, starts emitting lifecycle events.

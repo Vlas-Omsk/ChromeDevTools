@@ -11,7 +11,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Browser
 	/// </summary>
 	[Command(ProtocolName.Browser.GetBrowserCommandLine)]
 	[SupportedBy("Chrome")]
-	public class GetBrowserCommandLineCommand: IProtocolCommand<GetBrowserCommandLineCommandResponse>
+	public class GetBrowserCommandLineCommand: ICommandParams<GetBrowserCommandLineCommandResponse>
 	{
 	}
 }

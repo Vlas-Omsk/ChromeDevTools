@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.Debugger
 	/// </summary>
 	[Command(ProtocolName.Debugger.EvaluateOnCallFrame)]
 	[SupportedBy("iOS")]
-	public class EvaluateOnCallFrameCommand: IProtocolCommand<EvaluateOnCallFrameCommandResponse>
+	public class EvaluateOnCallFrameCommand: ICommandParams<EvaluateOnCallFrameCommandResponse>
 	{
 		/// <summary>
 		/// Call frame identifier to evaluate on.

@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Overlay
 	/// </summary>
 	[Command(ProtocolName.Overlay.HighlightQuad)]
 	[SupportedBy("Chrome")]
-	public class HighlightQuadCommand: IProtocolCommand<HighlightQuadCommandResponse>
+	public class HighlightQuadCommand: ICommandParams<HighlightQuadCommandResponse>
 	{
 		/// <summary>
 		/// Quad to highlight

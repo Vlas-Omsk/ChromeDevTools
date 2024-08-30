@@ -11,7 +11,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Runtime
 	/// </summary>
 	[Command(ProtocolName.Runtime.GetHeapUsage)]
 	[SupportedBy("Chrome")]
-	public class GetHeapUsageCommand: IProtocolCommand<GetHeapUsageCommandResponse>
+	public class GetHeapUsageCommand: ICommandParams<GetHeapUsageCommandResponse>
 	{
 	}
 }

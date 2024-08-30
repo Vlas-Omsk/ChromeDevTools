@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Input
 	/// </summary>
 	[Command(ProtocolName.Input.DispatchDragEvent)]
 	[SupportedBy("Chrome")]
-	public class DispatchDragEventCommand: IProtocolCommand<DispatchDragEventCommandResponse>
+	public class DispatchDragEventCommand: ICommandParams<DispatchDragEventCommandResponse>
 	{
 		/// <summary>
 		/// Type of the drag event.

@@ -5,7 +5,7 @@ using System.Reflection;
 
 namespace MasterDevs.ChromeDevTools.Protocol
 {
-    public class MethodTypeMap : IMethodTypeMap
+    public class MethodTypeMap : IProtocolTypeMap
     {
         private readonly Dictionary<string, Type> _commandTypes = new Dictionary<string, Type>();
         private readonly Dictionary<string, Type> _commandResponseTypes = new Dictionary<string, Type>();
@@ -52,14 +52,14 @@ namespace MasterDevs.ChromeDevTools.Protocol
             }
         }
 
-        private string GetMethodName<T>(Type type) where T : IMethodNameAttribute
+        private string GetMethodName<T>(Type type) where T : IProtocolNameAttribute
         {
             var attribute = type.GetTypeInfo().GetCustomAttributes(typeof(T))
                 .FirstOrDefault();
             if (null == attribute) return null;
-            var methodNameAttribute = attribute as IMethodNameAttribute;
+            var methodNameAttribute = attribute as IProtocolNameAttribute;
             if (null == methodNameAttribute) return null;
-            return methodNameAttribute.MethodName;
+            return methodNameAttribute.Name;
         }
 
         public Type GetCommand(string method)

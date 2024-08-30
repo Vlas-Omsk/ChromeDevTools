@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Page
 	/// </summary>
 	[Command(ProtocolName.Page.GetFrameTree)]
 	[SupportedBy("Chrome")]
-	public class GetFrameTreeCommand: IProtocolCommand<GetFrameTreeCommandResponse>
+	public class GetFrameTreeCommand: ICommandParams<GetFrameTreeCommandResponse>
 	{
 	}
 }

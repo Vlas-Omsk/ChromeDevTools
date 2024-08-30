@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Overlay
 	/// </summary>
 	[Command(ProtocolName.Overlay.GetGridHighlightObjectsForTest)]
 	[SupportedBy("Chrome")]
-	public class GetGridHighlightObjectsForTestCommand: IProtocolCommand<GetGridHighlightObjectsForTestCommandResponse>
+	public class GetGridHighlightObjectsForTestCommand: ICommandParams<GetGridHighlightObjectsForTestCommandResponse>
 	{
 		/// <summary>
 		/// Ids of the node to get highlight object for.

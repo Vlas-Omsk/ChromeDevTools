@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Performance
 	/// </summary>
 	[Command(ProtocolName.Performance.Enable)]
 	[SupportedBy("Chrome")]
-	public class EnableCommand: IProtocolCommand<EnableCommandResponse>
+	public class EnableCommand: ICommandParams<EnableCommandResponse>
 	{
 		/// <summary>
 		/// Time domain to use for collecting and reporting duration metrics.

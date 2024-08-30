@@ -11,7 +11,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Page
 	[Obsolete]
 	[Command(ProtocolName.Page.DeleteCookie)]
 	[SupportedBy("Chrome")]
-	public class DeleteCookieCommand: IProtocolCommand<DeleteCookieCommandResponse>
+	public class DeleteCookieCommand: ICommandParams<DeleteCookieCommandResponse>
 	{
 		/// <summary>
 		/// Name of the cookie to remove.

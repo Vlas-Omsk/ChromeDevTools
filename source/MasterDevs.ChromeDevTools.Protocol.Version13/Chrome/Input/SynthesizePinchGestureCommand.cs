@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Input
 	/// </summary>
 	[Command(ProtocolName.Input.SynthesizePinchGesture)]
 	[SupportedBy("Chrome")]
-	public class SynthesizePinchGestureCommand: IProtocolCommand<SynthesizePinchGestureCommandResponse>
+	public class SynthesizePinchGestureCommand: ICommandParams<SynthesizePinchGestureCommandResponse>
 	{
 		/// <summary>
 		/// X coordinate of the start of the gesture in CSS pixels.

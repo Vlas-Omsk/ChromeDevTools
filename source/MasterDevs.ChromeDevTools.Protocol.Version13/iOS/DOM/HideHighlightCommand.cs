@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.DOM
 	/// </summary>
 	[Command(ProtocolName.DOM.HideHighlight)]
 	[SupportedBy("iOS")]
-	public class HideHighlightCommand: IProtocolCommand<HideHighlightCommandResponse>
+	public class HideHighlightCommand: ICommandParams<HideHighlightCommandResponse>
 	{
 	}
 }

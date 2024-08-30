@@ -13,7 +13,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Performance
 	[Obsolete]
 	[Command(ProtocolName.Performance.SetTimeDomain)]
 	[SupportedBy("Chrome")]
-	public class SetTimeDomainCommand: IProtocolCommand<SetTimeDomainCommandResponse>
+	public class SetTimeDomainCommand: ICommandParams<SetTimeDomainCommandResponse>
 	{
 		/// <summary>
 		/// Time domain

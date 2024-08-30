@@ -11,7 +11,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Page
 	/// </summary>
 	[Command(ProtocolName.Page.SetRPHRegistrationMode)]
 	[SupportedBy("Chrome")]
-	public class SetRPHRegistrationModeCommand: IProtocolCommand<SetRPHRegistrationModeCommandResponse>
+	public class SetRPHRegistrationModeCommand: ICommandParams<SetRPHRegistrationModeCommandResponse>
 	{
 		/// <summary>
 		/// Mode

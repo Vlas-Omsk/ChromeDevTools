@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.CSS
 	/// </summary>
 	[Command(ProtocolName.CSS.CreateStyleSheet)]
 	[SupportedBy("iOS")]
-	public class CreateStyleSheetCommand: IProtocolCommand<CreateStyleSheetCommandResponse>
+	public class CreateStyleSheetCommand: ICommandParams<CreateStyleSheetCommandResponse>
 	{
 		/// <summary>
 		/// Identifier of the frame where the new "inspector" stylesheet should be created.

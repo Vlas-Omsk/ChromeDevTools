@@ -2,7 +2,7 @@
 
 namespace MasterDevs.ChromeDevTools
 {
-    public interface IMethodTypeMap
+    public interface IProtocolTypeMap
     {
         Type GetCommand(string method);
 

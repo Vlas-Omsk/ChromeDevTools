@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Network
 	/// </summary>
 	[Command(ProtocolName.Network.SetAttachDebugStack)]
 	[SupportedBy("Chrome")]
-	public class SetAttachDebugStackCommand: IProtocolCommand<SetAttachDebugStackCommandResponse>
+	public class SetAttachDebugStackCommand: ICommandParams<SetAttachDebugStackCommandResponse>
 	{
 		/// <summary>
 		/// Whether to attach a page script stack for debugging purpose.

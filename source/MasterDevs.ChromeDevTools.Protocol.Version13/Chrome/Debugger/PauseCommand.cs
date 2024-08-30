@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Debugger
 	/// </summary>
 	[Command(ProtocolName.Debugger.Pause)]
 	[SupportedBy("Chrome")]
-	public class PauseCommand: IProtocolCommand<PauseCommandResponse>
+	public class PauseCommand: ICommandParams<PauseCommandResponse>
 	{
 	}
 }

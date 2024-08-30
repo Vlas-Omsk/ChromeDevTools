@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.CSS
 	/// </summary>
 	[Command(ProtocolName.CSS.SetRuleSelector)]
 	[SupportedBy("Chrome")]
-	public class SetRuleSelectorCommand: IProtocolCommand<SetRuleSelectorCommandResponse>
+	public class SetRuleSelectorCommand: ICommandParams<SetRuleSelectorCommandResponse>
 	{
 		/// <summary>
 		/// StyleSheetId

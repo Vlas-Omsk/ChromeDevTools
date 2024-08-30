@@ -15,7 +15,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Runtime
 	/// </summary>
 	[Command(ProtocolName.Runtime.AddBinding)]
 	[SupportedBy("Chrome")]
-	public class AddBindingCommand: IProtocolCommand<AddBindingCommandResponse>
+	public class AddBindingCommand: ICommandParams<AddBindingCommandResponse>
 	{
 		/// <summary>
 		/// Name

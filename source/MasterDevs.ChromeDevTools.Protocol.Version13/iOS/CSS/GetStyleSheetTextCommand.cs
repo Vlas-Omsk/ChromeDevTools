@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.CSS
 	/// </summary>
 	[Command(ProtocolName.CSS.GetStyleSheetText)]
 	[SupportedBy("iOS")]
-	public class GetStyleSheetTextCommand: IProtocolCommand<GetStyleSheetTextCommandResponse>
+	public class GetStyleSheetTextCommand: ICommandParams<GetStyleSheetTextCommandResponse>
 	{
 		/// <summary>
 		/// StyleSheetId

@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.Page
 	/// </summary>
 	[Command(ProtocolName.Page.SetTouchEmulationEnabled)]
 	[SupportedBy("iOS")]
-	public class SetTouchEmulationEnabledCommand: IProtocolCommand<SetTouchEmulationEnabledCommandResponse>
+	public class SetTouchEmulationEnabledCommand: ICommandParams<SetTouchEmulationEnabledCommandResponse>
 	{
 		/// <summary>
 		/// Whether the touch event emulation should be enabled.

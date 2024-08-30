@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Overlay
 	/// </summary>
 	[Command(ProtocolName.Overlay.SetShowLayoutShiftRegions)]
 	[SupportedBy("Chrome")]
-	public class SetShowLayoutShiftRegionsCommand: IProtocolCommand<SetShowLayoutShiftRegionsCommandResponse>
+	public class SetShowLayoutShiftRegionsCommand: ICommandParams<SetShowLayoutShiftRegionsCommandResponse>
 	{
 		/// <summary>
 		/// True for showing layout shift regions

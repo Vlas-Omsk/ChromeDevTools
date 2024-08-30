@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.DOM
 	/// </summary>
 	[Command(ProtocolName.DOM.GetNodesForSubtreeByStyle)]
 	[SupportedBy("Chrome")]
-	public class GetNodesForSubtreeByStyleCommand: IProtocolCommand<GetNodesForSubtreeByStyleCommandResponse>
+	public class GetNodesForSubtreeByStyleCommand: ICommandParams<GetNodesForSubtreeByStyleCommandResponse>
 	{
 		/// <summary>
 		/// Node ID pointing to the root of a subtree.

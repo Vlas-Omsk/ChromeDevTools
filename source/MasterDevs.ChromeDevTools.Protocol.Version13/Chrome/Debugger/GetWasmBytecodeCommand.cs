@@ -11,7 +11,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Debugger
 	[Obsolete]
 	[Command(ProtocolName.Debugger.GetWasmBytecode)]
 	[SupportedBy("Chrome")]
-	public class GetWasmBytecodeCommand: IProtocolCommand<GetWasmBytecodeCommandResponse>
+	public class GetWasmBytecodeCommand: ICommandParams<GetWasmBytecodeCommandResponse>
 	{
 		/// <summary>
 		/// Id of the Wasm script to get source for.

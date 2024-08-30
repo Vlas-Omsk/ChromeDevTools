@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Emulation
 	/// </summary>
 	[Command(ProtocolName.Emulation.SetFocusEmulationEnabled)]
 	[SupportedBy("Chrome")]
-	public class SetFocusEmulationEnabledCommand: IProtocolCommand<SetFocusEmulationEnabledCommandResponse>
+	public class SetFocusEmulationEnabledCommand: ICommandParams<SetFocusEmulationEnabledCommandResponse>
 	{
 		/// <summary>
 		/// Whether to enable to disable focus emulation.

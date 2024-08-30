@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Page
 	/// </summary>
 	[Command(ProtocolName.Page.GetLayoutMetrics)]
 	[SupportedBy("Chrome")]
-	public class GetLayoutMetricsCommand: IProtocolCommand<GetLayoutMetricsCommandResponse>
+	public class GetLayoutMetricsCommand: ICommandParams<GetLayoutMetricsCommandResponse>
 	{
 	}
 }

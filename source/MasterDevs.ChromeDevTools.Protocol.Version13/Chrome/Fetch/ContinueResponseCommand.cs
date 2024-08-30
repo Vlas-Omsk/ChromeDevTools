@@ -12,7 +12,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Fetch
 	/// </summary>
 	[Command(ProtocolName.Fetch.ContinueResponse)]
 	[SupportedBy("Chrome")]
-	public class ContinueResponseCommand: IProtocolCommand<ContinueResponseCommandResponse>
+	public class ContinueResponseCommand: ICommandParams<ContinueResponseCommandResponse>
 	{
 		/// <summary>
 		/// An id the client received in requestPaused event.

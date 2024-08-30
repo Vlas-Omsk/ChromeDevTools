@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Animation
 	/// </summary>
 	[Command(ProtocolName.Animation.GetPlaybackRate)]
 	[SupportedBy("Chrome")]
-	public class GetPlaybackRateCommand: IProtocolCommand<GetPlaybackRateCommandResponse>
+	public class GetPlaybackRateCommand: ICommandParams<GetPlaybackRateCommandResponse>
 	{
 	}
 }

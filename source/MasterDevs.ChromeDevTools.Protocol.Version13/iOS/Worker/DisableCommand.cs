@@ -7,7 +7,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.Worker
 {
 	[Command(ProtocolName.Worker.Disable)]
 	[SupportedBy("iOS")]
-	public class DisableCommand: IProtocolCommand<DisableCommandResponse>
+	public class DisableCommand: ICommandParams<DisableCommandResponse>
 	{
 	}
 }

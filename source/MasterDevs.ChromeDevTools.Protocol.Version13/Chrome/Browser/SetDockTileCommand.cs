@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Browser
 	/// </summary>
 	[Command(ProtocolName.Browser.SetDockTile)]
 	[SupportedBy("Chrome")]
-	public class SetDockTileCommand: IProtocolCommand<SetDockTileCommandResponse>
+	public class SetDockTileCommand: ICommandParams<SetDockTileCommandResponse>
 	{
 		/// <summary>
 		/// BadgeLabel

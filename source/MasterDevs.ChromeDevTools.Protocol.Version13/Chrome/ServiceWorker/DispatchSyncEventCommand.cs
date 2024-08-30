@@ -7,7 +7,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.ServiceWorker
 {
 	[Command(ProtocolName.ServiceWorker.DispatchSyncEvent)]
 	[SupportedBy("Chrome")]
-	public class DispatchSyncEventCommand: IProtocolCommand<DispatchSyncEventCommandResponse>
+	public class DispatchSyncEventCommand: ICommandParams<DispatchSyncEventCommandResponse>
 	{
 		/// <summary>
 		/// Origin

@@ -11,7 +11,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.WebAuthn
 	/// </summary>
 	[Command(ProtocolName.WebAuthn.SetAutomaticPresenceSimulation)]
 	[SupportedBy("Chrome")]
-	public class SetAutomaticPresenceSimulationCommand: IProtocolCommand<SetAutomaticPresenceSimulationCommandResponse>
+	public class SetAutomaticPresenceSimulationCommand: ICommandParams<SetAutomaticPresenceSimulationCommandResponse>
 	{
 		/// <summary>
 		/// AuthenticatorId

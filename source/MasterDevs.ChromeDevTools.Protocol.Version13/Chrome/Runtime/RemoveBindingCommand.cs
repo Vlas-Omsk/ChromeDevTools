@@ -11,7 +11,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Runtime
 	/// </summary>
 	[Command(ProtocolName.Runtime.RemoveBinding)]
 	[SupportedBy("Chrome")]
-	public class RemoveBindingCommand: IProtocolCommand<RemoveBindingCommandResponse>
+	public class RemoveBindingCommand: ICommandParams<RemoveBindingCommandResponse>
 	{
 		/// <summary>
 		/// Name

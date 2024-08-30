@@ -22,7 +22,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Debugger
 	/// </summary>
 	[Command(ProtocolName.Debugger.RestartFrame)]
 	[SupportedBy("Chrome")]
-	public class RestartFrameCommand: IProtocolCommand<RestartFrameCommandResponse>
+	public class RestartFrameCommand: ICommandParams<RestartFrameCommandResponse>
 	{
 		/// <summary>
 		/// Call frame identifier to evaluate on.

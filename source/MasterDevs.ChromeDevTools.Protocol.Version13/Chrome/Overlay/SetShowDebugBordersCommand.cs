@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Overlay
 	/// </summary>
 	[Command(ProtocolName.Overlay.SetShowDebugBorders)]
 	[SupportedBy("Chrome")]
-	public class SetShowDebugBordersCommand: IProtocolCommand<SetShowDebugBordersCommandResponse>
+	public class SetShowDebugBordersCommand: ICommandParams<SetShowDebugBordersCommandResponse>
 	{
 		/// <summary>
 		/// True for showing debug borders

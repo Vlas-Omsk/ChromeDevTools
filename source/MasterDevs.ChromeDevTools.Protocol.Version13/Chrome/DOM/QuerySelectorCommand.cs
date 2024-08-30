@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.DOM
 	/// </summary>
 	[Command(ProtocolName.DOM.QuerySelector)]
 	[SupportedBy("Chrome")]
-	public class QuerySelectorCommand: IProtocolCommand<QuerySelectorCommandResponse>
+	public class QuerySelectorCommand: ICommandParams<QuerySelectorCommandResponse>
 	{
 		/// <summary>
 		/// Id of the node to query upon.

@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.CSS
 	/// </summary>
 	[Command(ProtocolName.CSS.GetNamedFlowCollection)]
 	[SupportedBy("iOS")]
-	public class GetNamedFlowCollectionCommand: IProtocolCommand<GetNamedFlowCollectionCommandResponse>
+	public class GetNamedFlowCollectionCommand: ICommandParams<GetNamedFlowCollectionCommandResponse>
 	{
 		/// <summary>
 		/// The document node id for which to get the Named Flow Collection.

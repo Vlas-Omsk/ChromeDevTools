@@ -12,7 +12,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Debugger
 	/// </summary>
 	[Command(ProtocolName.Debugger.SetBreakpointOnFunctionCall)]
 	[SupportedBy("Chrome")]
-	public class SetBreakpointOnFunctionCallCommand: IProtocolCommand<SetBreakpointOnFunctionCallCommandResponse>
+	public class SetBreakpointOnFunctionCallCommand: ICommandParams<SetBreakpointOnFunctionCallCommandResponse>
 	{
 		/// <summary>
 		/// Function object id.

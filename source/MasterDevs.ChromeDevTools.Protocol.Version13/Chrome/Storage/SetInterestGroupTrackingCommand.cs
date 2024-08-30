@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Storage
 	/// </summary>
 	[Command(ProtocolName.Storage.SetInterestGroupTracking)]
 	[SupportedBy("Chrome")]
-	public class SetInterestGroupTrackingCommand: IProtocolCommand<SetInterestGroupTrackingCommandResponse>
+	public class SetInterestGroupTrackingCommand: ICommandParams<SetInterestGroupTrackingCommandResponse>
 	{
 		/// <summary>
 		/// Enable

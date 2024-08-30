@@ -11,7 +11,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.PerformanceTimeline
 	/// </summary>
 	[Command(ProtocolName.PerformanceTimeline.Enable)]
 	[SupportedBy("Chrome")]
-	public class EnableCommand: IProtocolCommand<EnableCommandResponse>
+	public class EnableCommand: ICommandParams<EnableCommandResponse>
 	{
 		/// <summary>
 		/// The types of event to report, as specified in

@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.WebAudio
 	/// </summary>
 	[Command(ProtocolName.WebAudio.GetRealtimeData)]
 	[SupportedBy("Chrome")]
-	public class GetRealtimeDataCommand: IProtocolCommand<GetRealtimeDataCommandResponse>
+	public class GetRealtimeDataCommand: ICommandParams<GetRealtimeDataCommandResponse>
 	{
 		/// <summary>
 		/// ContextId

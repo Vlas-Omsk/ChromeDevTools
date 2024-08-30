@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Storage
 	/// </summary>
 	[Command(ProtocolName.Storage.GetCookies)]
 	[SupportedBy("Chrome")]
-	public class GetCookiesCommand: IProtocolCommand<GetCookiesCommandResponse>
+	public class GetCookiesCommand: ICommandParams<GetCookiesCommandResponse>
 	{
 		/// <summary>
 		/// Browser context to use when called on the browser endpoint.

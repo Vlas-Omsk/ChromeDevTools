@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Network
 	/// </summary>
 	[Command(ProtocolName.Network.SetAcceptedEncodings)]
 	[SupportedBy("Chrome")]
-	public class SetAcceptedEncodingsCommand: IProtocolCommand<SetAcceptedEncodingsCommandResponse>
+	public class SetAcceptedEncodingsCommand: ICommandParams<SetAcceptedEncodingsCommandResponse>
 	{
 		/// <summary>
 		/// List of accepted content encodings.

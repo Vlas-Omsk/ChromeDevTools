@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Target
 	/// </summary>
 	[Command(ProtocolName.Target.AttachToTarget)]
 	[SupportedBy("Chrome")]
-	public class AttachToTargetCommand: IProtocolCommand<AttachToTargetCommandResponse>
+	public class AttachToTargetCommand: ICommandParams<AttachToTargetCommandResponse>
 	{
 		/// <summary>
 		/// TargetId

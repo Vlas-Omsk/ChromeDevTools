@@ -16,7 +16,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Debugger
 	/// </summary>
 	[Command(ProtocolName.Debugger.SetScriptSource)]
 	[SupportedBy("Chrome")]
-	public class SetScriptSourceCommand: IProtocolCommand<SetScriptSourceCommandResponse>
+	public class SetScriptSourceCommand: ICommandParams<SetScriptSourceCommandResponse>
 	{
 		/// <summary>
 		/// Id of the script to edit.

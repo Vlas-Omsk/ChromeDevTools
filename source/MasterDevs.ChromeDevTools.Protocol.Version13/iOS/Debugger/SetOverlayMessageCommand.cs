@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.Debugger
 	/// </summary>
 	[Command(ProtocolName.Debugger.SetOverlayMessage)]
 	[SupportedBy("iOS")]
-	public class SetOverlayMessageCommand: IProtocolCommand<SetOverlayMessageCommandResponse>
+	public class SetOverlayMessageCommand: ICommandParams<SetOverlayMessageCommandResponse>
 	{
 		/// <summary>
 		/// Overlay message to display when paused in debugger.

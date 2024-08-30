@@ -7,7 +7,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Runtime
 {
 	[Command(ProtocolName.Runtime.SetCustomObjectFormatterEnabled)]
 	[SupportedBy("Chrome")]
-	public class SetCustomObjectFormatterEnabledCommand: IProtocolCommand<SetCustomObjectFormatterEnabledCommandResponse>
+	public class SetCustomObjectFormatterEnabledCommand: ICommandParams<SetCustomObjectFormatterEnabledCommandResponse>
 	{
 		/// <summary>
 		/// Enabled

@@ -13,7 +13,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.CSS
 	/// </summary>
 	[Command(ProtocolName.CSS.GetLayersForNode)]
 	[SupportedBy("Chrome")]
-	public class GetLayersForNodeCommand: IProtocolCommand<GetLayersForNodeCommandResponse>
+	public class GetLayersForNodeCommand: ICommandParams<GetLayersForNodeCommandResponse>
 	{
 		/// <summary>
 		/// NodeId

@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Debugger
 	/// </summary>
 	[Command(ProtocolName.Debugger.EvaluateOnCallFrame)]
 	[SupportedBy("Chrome")]
-	public class EvaluateOnCallFrameCommand: IProtocolCommand<EvaluateOnCallFrameCommandResponse>
+	public class EvaluateOnCallFrameCommand: ICommandParams<EvaluateOnCallFrameCommandResponse>
 	{
 		/// <summary>
 		/// Call frame identifier to evaluate on.

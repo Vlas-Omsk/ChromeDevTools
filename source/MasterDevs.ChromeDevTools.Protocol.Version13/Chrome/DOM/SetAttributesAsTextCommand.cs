@@ -11,7 +11,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.DOM
 	/// </summary>
 	[Command(ProtocolName.DOM.SetAttributesAsText)]
 	[SupportedBy("Chrome")]
-	public class SetAttributesAsTextCommand: IProtocolCommand<SetAttributesAsTextCommandResponse>
+	public class SetAttributesAsTextCommand: ICommandParams<SetAttributesAsTextCommandResponse>
 	{
 		/// <summary>
 		/// Id of the element to set attributes for.

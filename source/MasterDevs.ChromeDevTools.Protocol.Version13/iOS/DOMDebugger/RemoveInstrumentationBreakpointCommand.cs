@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.DOMDebugger
 	/// </summary>
 	[Command(ProtocolName.DOMDebugger.RemoveInstrumentationBreakpoint)]
 	[SupportedBy("iOS")]
-	public class RemoveInstrumentationBreakpointCommand: IProtocolCommand<RemoveInstrumentationBreakpointCommandResponse>
+	public class RemoveInstrumentationBreakpointCommand: ICommandParams<RemoveInstrumentationBreakpointCommandResponse>
 	{
 		/// <summary>
 		/// Instrumentation name to stop on.

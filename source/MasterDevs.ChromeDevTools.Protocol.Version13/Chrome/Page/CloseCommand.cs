@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Page
 	/// </summary>
 	[Command(ProtocolName.Page.Close)]
 	[SupportedBy("Chrome")]
-	public class CloseCommand: IProtocolCommand<CloseCommandResponse>
+	public class CloseCommand: ICommandParams<CloseCommandResponse>
 	{
 	}
 }

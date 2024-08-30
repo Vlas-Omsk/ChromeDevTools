@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Page
 	/// </summary>
 	[Command(ProtocolName.Page.CaptureScreenshot)]
 	[SupportedBy("Chrome")]
-	public class CaptureScreenshotCommand: IProtocolCommand<CaptureScreenshotCommandResponse>
+	public class CaptureScreenshotCommand: ICommandParams<CaptureScreenshotCommandResponse>
 	{
 		/// <summary>
 		/// Image compression format (defaults to png).

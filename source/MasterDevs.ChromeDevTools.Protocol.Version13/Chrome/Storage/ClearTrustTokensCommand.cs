@@ -11,7 +11,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Storage
 	/// </summary>
 	[Command(ProtocolName.Storage.ClearTrustTokens)]
 	[SupportedBy("Chrome")]
-	public class ClearTrustTokensCommand: IProtocolCommand<ClearTrustTokensCommandResponse>
+	public class ClearTrustTokensCommand: ICommandParams<ClearTrustTokensCommandResponse>
 	{
 		/// <summary>
 		/// IssuerOrigin

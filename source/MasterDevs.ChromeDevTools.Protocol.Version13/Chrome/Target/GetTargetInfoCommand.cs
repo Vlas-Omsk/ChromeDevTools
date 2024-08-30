@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Target
 	/// </summary>
 	[Command(ProtocolName.Target.GetTargetInfo)]
 	[SupportedBy("Chrome")]
-	public class GetTargetInfoCommand: IProtocolCommand<GetTargetInfoCommandResponse>
+	public class GetTargetInfoCommand: ICommandParams<GetTargetInfoCommandResponse>
 	{
 		/// <summary>
 		/// TargetId

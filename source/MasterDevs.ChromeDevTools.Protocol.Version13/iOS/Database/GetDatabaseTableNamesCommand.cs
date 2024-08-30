@@ -7,7 +7,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.Database
 {
 	[Command(ProtocolName.Database.GetDatabaseTableNames)]
 	[SupportedBy("iOS")]
-	public class GetDatabaseTableNamesCommand: IProtocolCommand<GetDatabaseTableNamesCommandResponse>
+	public class GetDatabaseTableNamesCommand: ICommandParams<GetDatabaseTableNamesCommandResponse>
 	{
 		/// <summary>
 		/// DatabaseId

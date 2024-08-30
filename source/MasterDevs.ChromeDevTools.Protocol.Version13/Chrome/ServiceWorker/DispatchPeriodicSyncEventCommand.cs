@@ -7,7 +7,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.ServiceWorker
 {
 	[Command(ProtocolName.ServiceWorker.DispatchPeriodicSyncEvent)]
 	[SupportedBy("Chrome")]
-	public class DispatchPeriodicSyncEventCommand: IProtocolCommand<DispatchPeriodicSyncEventCommandResponse>
+	public class DispatchPeriodicSyncEventCommand: ICommandParams<DispatchPeriodicSyncEventCommandResponse>
 	{
 		/// <summary>
 		/// Origin

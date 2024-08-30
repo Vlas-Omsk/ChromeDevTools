@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Debugger
 	/// </summary>
 	[Command(ProtocolName.Debugger.StepInto)]
 	[SupportedBy("Chrome")]
-	public class StepIntoCommand: IProtocolCommand<StepIntoCommandResponse>
+	public class StepIntoCommand: ICommandParams<StepIntoCommandResponse>
 	{
 		/// <summary>
 		/// Debugger will pause on the execution of the first async task which was scheduled

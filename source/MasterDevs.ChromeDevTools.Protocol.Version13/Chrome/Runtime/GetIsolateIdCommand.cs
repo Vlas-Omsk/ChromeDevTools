@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Runtime
 	/// </summary>
 	[Command(ProtocolName.Runtime.GetIsolateId)]
 	[SupportedBy("Chrome")]
-	public class GetIsolateIdCommand: IProtocolCommand<GetIsolateIdCommandResponse>
+	public class GetIsolateIdCommand: ICommandParams<GetIsolateIdCommandResponse>
 	{
 	}
 }

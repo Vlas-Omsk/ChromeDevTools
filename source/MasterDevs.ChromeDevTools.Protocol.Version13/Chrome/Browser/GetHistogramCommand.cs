@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Browser
 	/// </summary>
 	[Command(ProtocolName.Browser.GetHistogram)]
 	[SupportedBy("Chrome")]
-	public class GetHistogramCommand: IProtocolCommand<GetHistogramCommandResponse>
+	public class GetHistogramCommand: ICommandParams<GetHistogramCommandResponse>
 	{
 		/// <summary>
 		/// Requested histogram name.

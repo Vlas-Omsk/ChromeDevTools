@@ -8,7 +8,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Debugger
 	[Obsolete]
 	[Command(ProtocolName.Debugger.PauseOnAsyncCall)]
 	[SupportedBy("Chrome")]
-	public class PauseOnAsyncCallCommand: IProtocolCommand<PauseOnAsyncCallCommandResponse>
+	public class PauseOnAsyncCallCommand: ICommandParams<PauseOnAsyncCallCommandResponse>
 	{
 		/// <summary>
 		/// Debugger will pause when async call with given stack trace is started.

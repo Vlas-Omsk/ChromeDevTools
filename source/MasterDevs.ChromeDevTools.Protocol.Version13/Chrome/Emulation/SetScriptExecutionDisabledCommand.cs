@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Emulation
 	/// </summary>
 	[Command(ProtocolName.Emulation.SetScriptExecutionDisabled)]
 	[SupportedBy("Chrome")]
-	public class SetScriptExecutionDisabledCommand: IProtocolCommand<SetScriptExecutionDisabledCommandResponse>
+	public class SetScriptExecutionDisabledCommand: ICommandParams<SetScriptExecutionDisabledCommandResponse>
 	{
 		/// <summary>
 		/// Whether script execution should be disabled in the page.

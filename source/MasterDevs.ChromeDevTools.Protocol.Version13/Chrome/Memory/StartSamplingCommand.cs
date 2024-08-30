@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Memory
 	/// </summary>
 	[Command(ProtocolName.Memory.StartSampling)]
 	[SupportedBy("Chrome")]
-	public class StartSamplingCommand: IProtocolCommand<StartSamplingCommandResponse>
+	public class StartSamplingCommand: ICommandParams<StartSamplingCommandResponse>
 	{
 		/// <summary>
 		/// Average number of bytes between samples.

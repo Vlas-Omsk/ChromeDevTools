@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Debugger
 	/// </summary>
 	[Command(ProtocolName.Debugger.SetInstrumentationBreakpoint)]
 	[SupportedBy("Chrome")]
-	public class SetInstrumentationBreakpointCommand: IProtocolCommand<SetInstrumentationBreakpointCommandResponse>
+	public class SetInstrumentationBreakpointCommand: ICommandParams<SetInstrumentationBreakpointCommandResponse>
 	{
 		/// <summary>
 		/// Instrumentation name.

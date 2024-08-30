@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.Runtime
 	/// </summary>
 	[Command(ProtocolName.Runtime.GetRuntimeTypesForVariablesAtOffsets)]
 	[SupportedBy("iOS")]
-	public class GetRuntimeTypesForVariablesAtOffsetsCommand: IProtocolCommand<GetRuntimeTypesForVariablesAtOffsetsCommandResponse>
+	public class GetRuntimeTypesForVariablesAtOffsetsCommand: ICommandParams<GetRuntimeTypesForVariablesAtOffsetsCommandResponse>
 	{
 		/// <summary>
 		/// An array of type locations we're requesting information for. Results are expected in the same order they're sent in.

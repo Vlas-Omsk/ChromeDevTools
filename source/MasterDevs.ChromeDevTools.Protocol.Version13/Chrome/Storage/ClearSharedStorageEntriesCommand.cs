@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Storage
 	/// </summary>
 	[Command(ProtocolName.Storage.ClearSharedStorageEntries)]
 	[SupportedBy("Chrome")]
-	public class ClearSharedStorageEntriesCommand: IProtocolCommand<ClearSharedStorageEntriesCommandResponse>
+	public class ClearSharedStorageEntriesCommand: ICommandParams<ClearSharedStorageEntriesCommandResponse>
 	{
 		/// <summary>
 		/// OwnerOrigin

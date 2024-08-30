@@ -11,7 +11,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Storage
 	/// </summary>
 	[Command(ProtocolName.Storage.GetTrustTokens)]
 	[SupportedBy("Chrome")]
-	public class GetTrustTokensCommand: IProtocolCommand<GetTrustTokensCommandResponse>
+	public class GetTrustTokensCommand: ICommandParams<GetTrustTokensCommandResponse>
 	{
 	}
 }

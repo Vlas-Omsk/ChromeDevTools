@@ -13,7 +13,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.DOM
 	/// </summary>
 	[Command(ProtocolName.DOM.GetContainerForNode)]
 	[SupportedBy("Chrome")]
-	public class GetContainerForNodeCommand: IProtocolCommand<GetContainerForNodeCommandResponse>
+	public class GetContainerForNodeCommand: ICommandParams<GetContainerForNodeCommandResponse>
 	{
 		/// <summary>
 		/// NodeId

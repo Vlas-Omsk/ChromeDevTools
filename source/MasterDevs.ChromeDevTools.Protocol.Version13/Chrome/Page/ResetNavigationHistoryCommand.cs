@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Page
 	/// </summary>
 	[Command(ProtocolName.Page.ResetNavigationHistory)]
 	[SupportedBy("Chrome")]
-	public class ResetNavigationHistoryCommand: IProtocolCommand<ResetNavigationHistoryCommandResponse>
+	public class ResetNavigationHistoryCommand: ICommandParams<ResetNavigationHistoryCommandResponse>
 	{
 	}
 }

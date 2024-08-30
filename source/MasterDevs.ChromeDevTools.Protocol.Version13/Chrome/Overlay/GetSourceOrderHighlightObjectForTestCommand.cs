@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Overlay
 	/// </summary>
 	[Command(ProtocolName.Overlay.GetSourceOrderHighlightObjectForTest)]
 	[SupportedBy("Chrome")]
-	public class GetSourceOrderHighlightObjectForTestCommand: IProtocolCommand<GetSourceOrderHighlightObjectForTestCommandResponse>
+	public class GetSourceOrderHighlightObjectForTestCommand: ICommandParams<GetSourceOrderHighlightObjectForTestCommandResponse>
 	{
 		/// <summary>
 		/// Id of the node to highlight.

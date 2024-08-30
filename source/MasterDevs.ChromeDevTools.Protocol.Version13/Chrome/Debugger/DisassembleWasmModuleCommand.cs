@@ -7,7 +7,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Debugger
 {
 	[Command(ProtocolName.Debugger.DisassembleWasmModule)]
 	[SupportedBy("Chrome")]
-	public class DisassembleWasmModuleCommand: IProtocolCommand<DisassembleWasmModuleCommandResponse>
+	public class DisassembleWasmModuleCommand: ICommandParams<DisassembleWasmModuleCommandResponse>
 	{
 		/// <summary>
 		/// Id of the script to disassemble

@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Overlay
 	/// </summary>
 	[Command(ProtocolName.Overlay.SetShowWebVitals)]
 	[SupportedBy("Chrome")]
-	public class SetShowWebVitalsCommand: IProtocolCommand<SetShowWebVitalsCommandResponse>
+	public class SetShowWebVitalsCommand: ICommandParams<SetShowWebVitalsCommandResponse>
 	{
 		/// <summary>
 		/// Show

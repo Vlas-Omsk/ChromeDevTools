@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.Runtime
 	/// </summary>
 	[Command(ProtocolName.Runtime.Run)]
 	[SupportedBy("iOS")]
-	public class RunCommand: IProtocolCommand<RunCommandResponse>
+	public class RunCommand: ICommandParams<RunCommandResponse>
 	{
 	}
 }

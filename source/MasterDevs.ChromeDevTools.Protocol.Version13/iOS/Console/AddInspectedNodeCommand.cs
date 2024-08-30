@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.Console
 	/// </summary>
 	[Command(ProtocolName.Console.AddInspectedNode)]
 	[SupportedBy("iOS")]
-	public class AddInspectedNodeCommand: IProtocolCommand<AddInspectedNodeCommandResponse>
+	public class AddInspectedNodeCommand: ICommandParams<AddInspectedNodeCommandResponse>
 	{
 		/// <summary>
 		/// DOM node id to be accessible by means of $0 command line API.

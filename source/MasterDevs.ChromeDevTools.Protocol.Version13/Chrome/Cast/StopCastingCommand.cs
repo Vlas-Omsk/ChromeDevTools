@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Cast
 	/// </summary>
 	[Command(ProtocolName.Cast.StopCasting)]
 	[SupportedBy("Chrome")]
-	public class StopCastingCommand: IProtocolCommand<StopCastingCommandResponse>
+	public class StopCastingCommand: ICommandParams<StopCastingCommandResponse>
 	{
 		/// <summary>
 		/// SinkName

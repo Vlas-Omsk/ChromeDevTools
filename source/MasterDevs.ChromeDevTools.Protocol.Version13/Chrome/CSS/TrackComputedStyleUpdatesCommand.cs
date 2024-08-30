@@ -15,7 +15,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.CSS
 	/// </summary>
 	[Command(ProtocolName.CSS.TrackComputedStyleUpdates)]
 	[SupportedBy("Chrome")]
-	public class TrackComputedStyleUpdatesCommand: IProtocolCommand<TrackComputedStyleUpdatesCommandResponse>
+	public class TrackComputedStyleUpdatesCommand: ICommandParams<TrackComputedStyleUpdatesCommandResponse>
 	{
 		/// <summary>
 		/// PropertiesToTrack

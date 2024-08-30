@@ -13,7 +13,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Debugger
 	/// </summary>
 	[Command(ProtocolName.Debugger.NextWasmDisassemblyChunk)]
 	[SupportedBy("Chrome")]
-	public class NextWasmDisassemblyChunkCommand: IProtocolCommand<NextWasmDisassemblyChunkCommandResponse>
+	public class NextWasmDisassemblyChunkCommand: ICommandParams<NextWasmDisassemblyChunkCommandResponse>
 	{
 		/// <summary>
 		/// StreamId

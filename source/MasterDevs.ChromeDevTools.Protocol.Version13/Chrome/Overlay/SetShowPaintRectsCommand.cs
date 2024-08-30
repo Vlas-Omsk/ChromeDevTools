@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Overlay
 	/// </summary>
 	[Command(ProtocolName.Overlay.SetShowPaintRects)]
 	[SupportedBy("Chrome")]
-	public class SetShowPaintRectsCommand: IProtocolCommand<SetShowPaintRectsCommandResponse>
+	public class SetShowPaintRectsCommand: ICommandParams<SetShowPaintRectsCommandResponse>
 	{
 		/// <summary>
 		/// True for showing paint rectangles

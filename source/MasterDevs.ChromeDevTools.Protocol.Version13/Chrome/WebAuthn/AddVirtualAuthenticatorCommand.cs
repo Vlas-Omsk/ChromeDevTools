@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.WebAuthn
 	/// </summary>
 	[Command(ProtocolName.WebAuthn.AddVirtualAuthenticator)]
 	[SupportedBy("Chrome")]
-	public class AddVirtualAuthenticatorCommand: IProtocolCommand<AddVirtualAuthenticatorCommandResponse>
+	public class AddVirtualAuthenticatorCommand: ICommandParams<AddVirtualAuthenticatorCommandResponse>
 	{
 		/// <summary>
 		/// Options

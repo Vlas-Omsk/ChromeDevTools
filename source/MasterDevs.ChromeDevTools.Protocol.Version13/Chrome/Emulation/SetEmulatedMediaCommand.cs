@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Emulation
 	/// </summary>
 	[Command(ProtocolName.Emulation.SetEmulatedMedia)]
 	[SupportedBy("Chrome")]
-	public class SetEmulatedMediaCommand: IProtocolCommand<SetEmulatedMediaCommandResponse>
+	public class SetEmulatedMediaCommand: ICommandParams<SetEmulatedMediaCommandResponse>
 	{
 		/// <summary>
 		/// Media type to emulate. Empty string disables the override.

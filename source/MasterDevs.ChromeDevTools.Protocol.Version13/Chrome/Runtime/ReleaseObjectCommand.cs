@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Runtime
 	/// </summary>
 	[Command(ProtocolName.Runtime.ReleaseObject)]
 	[SupportedBy("Chrome")]
-	public class ReleaseObjectCommand: IProtocolCommand<ReleaseObjectCommandResponse>
+	public class ReleaseObjectCommand: ICommandParams<ReleaseObjectCommandResponse>
 	{
 		/// <summary>
 		/// Identifier of the object to release.

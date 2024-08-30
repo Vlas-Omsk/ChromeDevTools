@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Security
 	/// </summary>
 	[Command(ProtocolName.Security.SetIgnoreCertificateErrors)]
 	[SupportedBy("Chrome")]
-	public class SetIgnoreCertificateErrorsCommand: IProtocolCommand<SetIgnoreCertificateErrorsCommandResponse>
+	public class SetIgnoreCertificateErrorsCommand: ICommandParams<SetIgnoreCertificateErrorsCommandResponse>
 	{
 		/// <summary>
 		/// If true, all certificate errors will be ignored.

@@ -12,7 +12,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.DOM
 	/// </summary>
 	[Command(ProtocolName.DOM.GetTopLayerElements)]
 	[SupportedBy("Chrome")]
-	public class GetTopLayerElementsCommand: IProtocolCommand<GetTopLayerElementsCommandResponse>
+	public class GetTopLayerElementsCommand: ICommandParams<GetTopLayerElementsCommandResponse>
 	{
 	}
 }

@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Input
 	/// </summary>
 	[Command(ProtocolName.Input.SynthesizeTapGesture)]
 	[SupportedBy("Chrome")]
-	public class SynthesizeTapGestureCommand: IProtocolCommand<SynthesizeTapGestureCommandResponse>
+	public class SynthesizeTapGestureCommand: ICommandParams<SynthesizeTapGestureCommandResponse>
 	{
 		/// <summary>
 		/// X coordinate of the start of the gesture in CSS pixels.

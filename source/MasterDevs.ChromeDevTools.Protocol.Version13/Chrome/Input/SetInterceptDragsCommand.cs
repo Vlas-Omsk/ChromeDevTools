@@ -11,7 +11,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Input
 	/// </summary>
 	[Command(ProtocolName.Input.SetInterceptDrags)]
 	[SupportedBy("Chrome")]
-	public class SetInterceptDragsCommand: IProtocolCommand<SetInterceptDragsCommandResponse>
+	public class SetInterceptDragsCommand: ICommandParams<SetInterceptDragsCommandResponse>
 	{
 		/// <summary>
 		/// Enabled

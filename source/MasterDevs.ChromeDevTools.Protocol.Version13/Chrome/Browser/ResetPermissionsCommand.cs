@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Browser
 	/// </summary>
 	[Command(ProtocolName.Browser.ResetPermissions)]
 	[SupportedBy("Chrome")]
-	public class ResetPermissionsCommand: IProtocolCommand<ResetPermissionsCommandResponse>
+	public class ResetPermissionsCommand: ICommandParams<ResetPermissionsCommandResponse>
 	{
 		/// <summary>
 		/// BrowserContext to reset permissions. When omitted, default browser context is used.

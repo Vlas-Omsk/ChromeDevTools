@@ -11,7 +11,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Page
 	/// </summary>
 	[Command(ProtocolName.Page.CaptureSnapshot)]
 	[SupportedBy("Chrome")]
-	public class CaptureSnapshotCommand: IProtocolCommand<CaptureSnapshotCommandResponse>
+	public class CaptureSnapshotCommand: ICommandParams<CaptureSnapshotCommandResponse>
 	{
 		/// <summary>
 		/// Format (defaults to mhtml).

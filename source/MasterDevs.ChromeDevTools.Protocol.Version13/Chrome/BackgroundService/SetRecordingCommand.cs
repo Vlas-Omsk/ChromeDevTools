@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.BackgroundService
 	/// </summary>
 	[Command(ProtocolName.BackgroundService.SetRecording)]
 	[SupportedBy("Chrome")]
-	public class SetRecordingCommand: IProtocolCommand<SetRecordingCommandResponse>
+	public class SetRecordingCommand: ICommandParams<SetRecordingCommandResponse>
 	{
 		/// <summary>
 		/// ShouldRecord

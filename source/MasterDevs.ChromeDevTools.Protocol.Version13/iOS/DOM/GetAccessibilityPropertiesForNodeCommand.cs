@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.DOM
 	/// </summary>
 	[Command(ProtocolName.DOM.GetAccessibilityPropertiesForNode)]
 	[SupportedBy("iOS")]
-	public class GetAccessibilityPropertiesForNodeCommand: IProtocolCommand<GetAccessibilityPropertiesForNodeCommandResponse>
+	public class GetAccessibilityPropertiesForNodeCommand: ICommandParams<GetAccessibilityPropertiesForNodeCommandResponse>
 	{
 		/// <summary>
 		/// Id of the node for which to get accessibility properties.

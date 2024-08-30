@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Storage
 	/// </summary>
 	[Command(ProtocolName.Storage.GetSharedStorageEntries)]
 	[SupportedBy("Chrome")]
-	public class GetSharedStorageEntriesCommand: IProtocolCommand<GetSharedStorageEntriesCommandResponse>
+	public class GetSharedStorageEntriesCommand: ICommandParams<GetSharedStorageEntriesCommandResponse>
 	{
 		/// <summary>
 		/// OwnerOrigin

@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.DOM
 	/// </summary>
 	[Command(ProtocolName.DOM.ResolveNode)]
 	[SupportedBy("iOS")]
-	public class ResolveNodeCommand: IProtocolCommand<ResolveNodeCommandResponse>
+	public class ResolveNodeCommand: ICommandParams<ResolveNodeCommandResponse>
 	{
 		/// <summary>
 		/// Id of the node to resolve.

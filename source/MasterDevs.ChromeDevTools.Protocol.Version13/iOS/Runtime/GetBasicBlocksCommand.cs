@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.Runtime
 	/// </summary>
 	[Command(ProtocolName.Runtime.GetBasicBlocks)]
 	[SupportedBy("iOS")]
-	public class GetBasicBlocksCommand: IProtocolCommand<GetBasicBlocksCommandResponse>
+	public class GetBasicBlocksCommand: ICommandParams<GetBasicBlocksCommandResponse>
 	{
 		/// <summary>
 		/// Indicates which sourceID information is requested for.

@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.WebAuthn
 	/// </summary>
 	[Command(ProtocolName.WebAuthn.RemoveCredential)]
 	[SupportedBy("Chrome")]
-	public class RemoveCredentialCommand: IProtocolCommand<RemoveCredentialCommandResponse>
+	public class RemoveCredentialCommand: ICommandParams<RemoveCredentialCommandResponse>
 	{
 		/// <summary>
 		/// AuthenticatorId

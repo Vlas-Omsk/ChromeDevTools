@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Input
 	/// </summary>
 	[Command(ProtocolName.Input.DispatchTouchEvent)]
 	[SupportedBy("Chrome")]
-	public class DispatchTouchEventCommand: IProtocolCommand<DispatchTouchEventCommandResponse>
+	public class DispatchTouchEventCommand: ICommandParams<DispatchTouchEventCommandResponse>
 	{
 		/// <summary>
 		/// Type of the touch event. TouchEnd and TouchCancel must not contain any touch points, while

@@ -13,7 +13,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Network
 	/// </summary>
 	[Command(ProtocolName.Network.TakeResponseBodyForInterceptionAsStream)]
 	[SupportedBy("Chrome")]
-	public class TakeResponseBodyForInterceptionAsStreamCommand: IProtocolCommand<TakeResponseBodyForInterceptionAsStreamCommandResponse>
+	public class TakeResponseBodyForInterceptionAsStreamCommand: ICommandParams<TakeResponseBodyForInterceptionAsStreamCommandResponse>
 	{
 		/// <summary>
 		/// InterceptionId

@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.Debugger
 	/// </summary>
 	[Command(ProtocolName.Debugger.GetScriptSource)]
 	[SupportedBy("iOS")]
-	public class GetScriptSourceCommand: IProtocolCommand<GetScriptSourceCommandResponse>
+	public class GetScriptSourceCommand: ICommandParams<GetScriptSourceCommandResponse>
 	{
 		/// <summary>
 		/// Id of the script to get source for.

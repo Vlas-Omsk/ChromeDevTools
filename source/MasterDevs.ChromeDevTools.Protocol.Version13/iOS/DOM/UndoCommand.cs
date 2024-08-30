@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.DOM
 	/// </summary>
 	[Command(ProtocolName.DOM.Undo)]
 	[SupportedBy("iOS")]
-	public class UndoCommand: IProtocolCommand<UndoCommandResponse>
+	public class UndoCommand: ICommandParams<UndoCommandResponse>
 	{
 	}
 }

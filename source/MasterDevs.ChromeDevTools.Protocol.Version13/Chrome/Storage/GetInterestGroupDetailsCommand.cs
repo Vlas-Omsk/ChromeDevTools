@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Storage
 	/// </summary>
 	[Command(ProtocolName.Storage.GetInterestGroupDetails)]
 	[SupportedBy("Chrome")]
-	public class GetInterestGroupDetailsCommand: IProtocolCommand<GetInterestGroupDetailsCommandResponse>
+	public class GetInterestGroupDetailsCommand: ICommandParams<GetInterestGroupDetailsCommandResponse>
 	{
 		/// <summary>
 		/// OwnerOrigin

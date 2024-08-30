@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.ApplicationCache
 	/// </summary>
 	[Command(ProtocolName.ApplicationCache.GetFramesWithManifests)]
 	[SupportedBy("iOS")]
-	public class GetFramesWithManifestsCommand: IProtocolCommand<GetFramesWithManifestsCommandResponse>
+	public class GetFramesWithManifestsCommand: ICommandParams<GetFramesWithManifestsCommandResponse>
 	{
 	}
 }

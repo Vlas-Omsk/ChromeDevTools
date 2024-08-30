@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Debugger
 	/// </summary>
 	[Command(ProtocolName.Debugger.StepOver)]
 	[SupportedBy("Chrome")]
-	public class StepOverCommand: IProtocolCommand<StepOverCommandResponse>
+	public class StepOverCommand: ICommandParams<StepOverCommandResponse>
 	{
 		/// <summary>
 		/// The skipList specifies location ranges that should be skipped on step over.

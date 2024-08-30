@@ -7,7 +7,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Profiler
 {
 	[Command(ProtocolName.Profiler.Stop)]
 	[SupportedBy("Chrome")]
-	public class StopCommand: IProtocolCommand<StopCommandResponse>
+	public class StopCommand: ICommandParams<StopCommandResponse>
 	{
 	}
 }

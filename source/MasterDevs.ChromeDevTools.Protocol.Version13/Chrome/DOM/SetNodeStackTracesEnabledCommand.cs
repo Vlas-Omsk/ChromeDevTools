@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.DOM
 	/// </summary>
 	[Command(ProtocolName.DOM.SetNodeStackTracesEnabled)]
 	[SupportedBy("Chrome")]
-	public class SetNodeStackTracesEnabledCommand: IProtocolCommand<SetNodeStackTracesEnabledCommandResponse>
+	public class SetNodeStackTracesEnabledCommand: ICommandParams<SetNodeStackTracesEnabledCommandResponse>
 	{
 		/// <summary>
 		/// Enable or disable.

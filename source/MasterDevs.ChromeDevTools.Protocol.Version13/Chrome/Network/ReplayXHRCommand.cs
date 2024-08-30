@@ -12,7 +12,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Network
 	/// </summary>
 	[Command(ProtocolName.Network.ReplayXHR)]
 	[SupportedBy("Chrome")]
-	public class ReplayXHRCommand: IProtocolCommand<ReplayXHRCommandResponse>
+	public class ReplayXHRCommand: ICommandParams<ReplayXHRCommandResponse>
 	{
 		/// <summary>
 		/// Identifier of XHR to replay.

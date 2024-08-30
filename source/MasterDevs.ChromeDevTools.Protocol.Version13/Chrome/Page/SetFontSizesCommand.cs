@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Page
 	/// </summary>
 	[Command(ProtocolName.Page.SetFontSizes)]
 	[SupportedBy("Chrome")]
-	public class SetFontSizesCommand: IProtocolCommand<SetFontSizesCommandResponse>
+	public class SetFontSizesCommand: ICommandParams<SetFontSizesCommandResponse>
 	{
 		/// <summary>
 		/// Specifies font sizes to set. If a font size is not specified, it won't be changed.

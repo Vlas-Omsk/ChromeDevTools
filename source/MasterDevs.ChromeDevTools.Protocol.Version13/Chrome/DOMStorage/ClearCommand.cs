@@ -7,7 +7,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.DOMStorage
 {
 	[Command(ProtocolName.DOMStorage.Clear)]
 	[SupportedBy("Chrome")]
-	public class ClearCommand: IProtocolCommand<ClearCommandResponse>
+	public class ClearCommand: ICommandParams<ClearCommandResponse>
 	{
 		/// <summary>
 		/// StorageId

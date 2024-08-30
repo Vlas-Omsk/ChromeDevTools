@@ -11,7 +11,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Overlay
 	/// </summary>
 	[Command(ProtocolName.Overlay.HighlightSourceOrder)]
 	[SupportedBy("Chrome")]
-	public class HighlightSourceOrderCommand: IProtocolCommand<HighlightSourceOrderCommandResponse>
+	public class HighlightSourceOrderCommand: ICommandParams<HighlightSourceOrderCommandResponse>
 	{
 		/// <summary>
 		/// A descriptor for the appearance of the overlay drawing.

@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Page
 	/// </summary>
 	[Command(ProtocolName.Page.SetBypassCSP)]
 	[SupportedBy("Chrome")]
-	public class SetBypassCSPCommand: IProtocolCommand<SetBypassCSPCommandResponse>
+	public class SetBypassCSPCommand: ICommandParams<SetBypassCSPCommandResponse>
 	{
 		/// <summary>
 		/// Whether to bypass page CSP.

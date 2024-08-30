@@ -7,7 +7,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.HeapProfiler
 {
 	[Command(ProtocolName.HeapProfiler.StopTrackingHeapObjects)]
 	[SupportedBy("Chrome")]
-	public class StopTrackingHeapObjectsCommand: IProtocolCommand<StopTrackingHeapObjectsCommandResponse>
+	public class StopTrackingHeapObjectsCommand: ICommandParams<StopTrackingHeapObjectsCommandResponse>
 	{
 		/// <summary>
 		/// If true 'reportHeapSnapshotProgress' events will be generated while snapshot is being taken

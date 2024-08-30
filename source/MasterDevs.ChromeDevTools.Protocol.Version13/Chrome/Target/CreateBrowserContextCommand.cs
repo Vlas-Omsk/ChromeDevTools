@@ -11,7 +11,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Target
 	/// </summary>
 	[Command(ProtocolName.Target.CreateBrowserContext)]
 	[SupportedBy("Chrome")]
-	public class CreateBrowserContextCommand: IProtocolCommand<CreateBrowserContextCommandResponse>
+	public class CreateBrowserContextCommand: ICommandParams<CreateBrowserContextCommandResponse>
 	{
 		/// <summary>
 		/// If specified, disposes this context when debugging session disconnects.

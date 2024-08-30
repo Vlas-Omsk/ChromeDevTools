@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.Page
 	/// </summary>
 	[Command(ProtocolName.Page.DeleteCookie)]
 	[SupportedBy("iOS")]
-	public class DeleteCookieCommand: IProtocolCommand<DeleteCookieCommandResponse>
+	public class DeleteCookieCommand: ICommandParams<DeleteCookieCommandResponse>
 	{
 		/// <summary>
 		/// Name of the cookie to remove.

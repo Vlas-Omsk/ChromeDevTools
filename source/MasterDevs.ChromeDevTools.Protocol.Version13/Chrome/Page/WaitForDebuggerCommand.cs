@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Page
 	/// </summary>
 	[Command(ProtocolName.Page.WaitForDebugger)]
 	[SupportedBy("Chrome")]
-	public class WaitForDebuggerCommand: IProtocolCommand<WaitForDebuggerCommandResponse>
+	public class WaitForDebuggerCommand: ICommandParams<WaitForDebuggerCommandResponse>
 	{
 	}
 }

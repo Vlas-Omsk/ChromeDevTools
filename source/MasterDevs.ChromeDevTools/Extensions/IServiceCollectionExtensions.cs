@@ -6,9 +6,9 @@ namespace MasterDevs.ChromeDevTools
     {
         public static void AddChromeDevTools(this IServiceCollection self)
         {
-            self.AddSingleton<IChromeSessionFactory, ChromeSessionFactory>();
-            self.AddSingleton<IChromeProcessFactory, ChromeProcessFactory>(
-                x => new ChromeProcessFactory(
+            self.AddSingleton<IChromeSessionFactory, RemoteChromeSessionFactory>();
+            self.AddSingleton<IChromeProcessFactory, RemoteChromeProcessFactory>(
+                x => new RemoteChromeProcessFactory(
                     x.GetRequiredService<IChromeSessionFactory>()
                 )
             );

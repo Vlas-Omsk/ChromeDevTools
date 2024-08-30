@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Log
 	/// </summary>
 	[Command(ProtocolName.Log.StartViolationsReport)]
 	[SupportedBy("Chrome")]
-	public class StartViolationsReportCommand: IProtocolCommand<StartViolationsReportCommandResponse>
+	public class StartViolationsReportCommand: ICommandParams<StartViolationsReportCommandResponse>
 	{
 		/// <summary>
 		/// Configuration for violations.

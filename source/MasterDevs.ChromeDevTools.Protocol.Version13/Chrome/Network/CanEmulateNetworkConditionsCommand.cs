@@ -11,7 +11,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Network
 	[Obsolete]
 	[Command(ProtocolName.Network.CanEmulateNetworkConditions)]
 	[SupportedBy("Chrome")]
-	public class CanEmulateNetworkConditionsCommand: IProtocolCommand<CanEmulateNetworkConditionsCommandResponse>
+	public class CanEmulateNetworkConditionsCommand: ICommandParams<CanEmulateNetworkConditionsCommandResponse>
 	{
 	}
 }

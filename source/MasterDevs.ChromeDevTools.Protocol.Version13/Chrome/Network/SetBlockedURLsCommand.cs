@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Network
 	/// </summary>
 	[Command(ProtocolName.Network.SetBlockedURLs)]
 	[SupportedBy("Chrome")]
-	public class SetBlockedURLsCommand: IProtocolCommand<SetBlockedURLsCommandResponse>
+	public class SetBlockedURLsCommand: ICommandParams<SetBlockedURLsCommandResponse>
 	{
 		/// <summary>
 		/// URL patterns to block. Wildcards ('*') are allowed.

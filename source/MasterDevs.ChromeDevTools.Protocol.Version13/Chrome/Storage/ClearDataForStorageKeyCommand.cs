@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Storage
 	/// </summary>
 	[Command(ProtocolName.Storage.ClearDataForStorageKey)]
 	[SupportedBy("Chrome")]
-	public class ClearDataForStorageKeyCommand: IProtocolCommand<ClearDataForStorageKeyCommandResponse>
+	public class ClearDataForStorageKeyCommand: ICommandParams<ClearDataForStorageKeyCommandResponse>
 	{
 		/// <summary>
 		/// Storage key.

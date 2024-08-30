@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace MasterDevs.ChromeDevTools.Local
 {
-    public class LocalChromeProcess : ChromeProcess, ILocalChromeProcess
+    public class LocalChromeProcess : RemoteChromeProcess, ILocalChromeProcess
     {
         public LocalChromeProcess(
             IDirectoryCleaner directoryCleaner,

@@ -11,7 +11,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.DOM
 	/// </summary>
 	[Command(ProtocolName.DOM.GetDocument)]
 	[SupportedBy("Chrome")]
-	public class GetDocumentCommand: IProtocolCommand<GetDocumentCommandResponse>
+	public class GetDocumentCommand: ICommandParams<GetDocumentCommandResponse>
 	{
 		/// <summary>
 		/// The maximum depth at which children should be retrieved, defaults to 1. Use -1 for the

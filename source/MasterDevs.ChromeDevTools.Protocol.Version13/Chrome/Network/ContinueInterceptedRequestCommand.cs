@@ -15,7 +15,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Network
 	[Obsolete]
 	[Command(ProtocolName.Network.ContinueInterceptedRequest)]
 	[SupportedBy("Chrome")]
-	public class ContinueInterceptedRequestCommand: IProtocolCommand<ContinueInterceptedRequestCommandResponse>
+	public class ContinueInterceptedRequestCommand: ICommandParams<ContinueInterceptedRequestCommandResponse>
 	{
 		/// <summary>
 		/// InterceptionId

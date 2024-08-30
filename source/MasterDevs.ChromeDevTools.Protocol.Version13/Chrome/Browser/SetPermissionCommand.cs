@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Browser
 	/// </summary>
 	[Command(ProtocolName.Browser.SetPermission)]
 	[SupportedBy("Chrome")]
-	public class SetPermissionCommand: IProtocolCommand<SetPermissionCommandResponse>
+	public class SetPermissionCommand: ICommandParams<SetPermissionCommandResponse>
 	{
 		/// <summary>
 		/// Descriptor of permission to override.

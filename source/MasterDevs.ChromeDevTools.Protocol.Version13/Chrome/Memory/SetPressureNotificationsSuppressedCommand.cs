@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Memory
 	/// </summary>
 	[Command(ProtocolName.Memory.SetPressureNotificationsSuppressed)]
 	[SupportedBy("Chrome")]
-	public class SetPressureNotificationsSuppressedCommand: IProtocolCommand<SetPressureNotificationsSuppressedCommandResponse>
+	public class SetPressureNotificationsSuppressedCommand: ICommandParams<SetPressureNotificationsSuppressedCommandResponse>
 	{
 		/// <summary>
 		/// If true, memory pressure notifications will be suppressed.

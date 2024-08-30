@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Storage
 	/// </summary>
 	[Command(ProtocolName.Storage.TrackCacheStorageForStorageKey)]
 	[SupportedBy("Chrome")]
-	public class TrackCacheStorageForStorageKeyCommand: IProtocolCommand<TrackCacheStorageForStorageKeyCommandResponse>
+	public class TrackCacheStorageForStorageKeyCommand: ICommandParams<TrackCacheStorageForStorageKeyCommandResponse>
 	{
 		/// <summary>
 		/// Storage key.

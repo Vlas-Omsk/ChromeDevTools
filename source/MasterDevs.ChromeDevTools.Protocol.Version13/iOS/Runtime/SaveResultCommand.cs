@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.Runtime
 	/// </summary>
 	[Command(ProtocolName.Runtime.SaveResult)]
 	[SupportedBy("iOS")]
-	public class SaveResultCommand: IProtocolCommand<SaveResultCommandResponse>
+	public class SaveResultCommand: ICommandParams<SaveResultCommandResponse>
 	{
 		/// <summary>
 		/// Id or value of the object to save.

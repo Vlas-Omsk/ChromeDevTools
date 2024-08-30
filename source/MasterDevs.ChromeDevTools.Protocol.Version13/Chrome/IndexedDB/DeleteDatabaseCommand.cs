@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.IndexedDB
 	/// </summary>
 	[Command(ProtocolName.IndexedDB.DeleteDatabase)]
 	[SupportedBy("Chrome")]
-	public class DeleteDatabaseCommand: IProtocolCommand<DeleteDatabaseCommandResponse>
+	public class DeleteDatabaseCommand: ICommandParams<DeleteDatabaseCommandResponse>
 	{
 		/// <summary>
 		/// At least and at most one of securityOrigin, storageKey must be specified.

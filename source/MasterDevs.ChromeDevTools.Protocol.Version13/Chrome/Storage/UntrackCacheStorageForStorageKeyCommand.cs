@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Storage
 	/// </summary>
 	[Command(ProtocolName.Storage.UntrackCacheStorageForStorageKey)]
 	[SupportedBy("Chrome")]
-	public class UntrackCacheStorageForStorageKeyCommand: IProtocolCommand<UntrackCacheStorageForStorageKeyCommandResponse>
+	public class UntrackCacheStorageForStorageKeyCommand: ICommandParams<UntrackCacheStorageForStorageKeyCommandResponse>
 	{
 		/// <summary>
 		/// Storage key.

@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.DOM
 	/// </summary>
 	[Command(ProtocolName.DOM.GetFrameOwner)]
 	[SupportedBy("Chrome")]
-	public class GetFrameOwnerCommand: IProtocolCommand<GetFrameOwnerCommandResponse>
+	public class GetFrameOwnerCommand: ICommandParams<GetFrameOwnerCommandResponse>
 	{
 		/// <summary>
 		/// FrameId

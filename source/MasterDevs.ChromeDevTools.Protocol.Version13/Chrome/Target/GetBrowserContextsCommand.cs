@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Target
 	/// </summary>
 	[Command(ProtocolName.Target.GetBrowserContexts)]
 	[SupportedBy("Chrome")]
-	public class GetBrowserContextsCommand: IProtocolCommand<GetBrowserContextsCommandResponse>
+	public class GetBrowserContextsCommand: ICommandParams<GetBrowserContextsCommandResponse>
 	{
 	}
 }

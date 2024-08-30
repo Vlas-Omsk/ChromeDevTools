@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Target
 	/// </summary>
 	[Command(ProtocolName.Target.CreateTarget)]
 	[SupportedBy("Chrome")]
-	public class CreateTargetCommand: IProtocolCommand<CreateTargetCommandResponse>
+	public class CreateTargetCommand: ICommandParams<CreateTargetCommandResponse>
 	{
 		/// <summary>
 		/// The initial URL the page will be navigated to. An empty string indicates about:blank.

@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Browser
 	/// </summary>
 	[Command(ProtocolName.Browser.GetHistograms)]
 	[SupportedBy("Chrome")]
-	public class GetHistogramsCommand: IProtocolCommand<GetHistogramsCommandResponse>
+	public class GetHistogramsCommand: ICommandParams<GetHistogramsCommandResponse>
 	{
 		/// <summary>
 		/// Requested substring in name. Only histograms which have query as a

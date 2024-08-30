@@ -11,7 +11,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Network
 	[Obsolete]
 	[Command(ProtocolName.Network.CanClearBrowserCache)]
 	[SupportedBy("Chrome")]
-	public class CanClearBrowserCacheCommand: IProtocolCommand<CanClearBrowserCacheCommandResponse>
+	public class CanClearBrowserCacheCommand: ICommandParams<CanClearBrowserCacheCommandResponse>
 	{
 	}
 }

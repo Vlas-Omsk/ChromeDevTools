@@ -12,7 +12,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Page
 	/// </summary>
 	[Command(ProtocolName.Page.SetInterceptFileChooserDialog)]
 	[SupportedBy("Chrome")]
-	public class SetInterceptFileChooserDialogCommand: IProtocolCommand<SetInterceptFileChooserDialogCommandResponse>
+	public class SetInterceptFileChooserDialogCommand: ICommandParams<SetInterceptFileChooserDialogCommandResponse>
 	{
 		/// <summary>
 		/// Enabled

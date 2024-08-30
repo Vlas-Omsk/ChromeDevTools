@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.DOM
 	/// </summary>
 	[Command(ProtocolName.DOM.GetNodeStackTraces)]
 	[SupportedBy("Chrome")]
-	public class GetNodeStackTracesCommand: IProtocolCommand<GetNodeStackTracesCommandResponse>
+	public class GetNodeStackTracesCommand: ICommandParams<GetNodeStackTracesCommandResponse>
 	{
 		/// <summary>
 		/// Id of the node to get stack traces for.

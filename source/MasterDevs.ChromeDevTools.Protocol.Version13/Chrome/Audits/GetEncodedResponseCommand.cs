@@ -11,7 +11,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Audits
 	/// </summary>
 	[Command(ProtocolName.Audits.GetEncodedResponse)]
 	[SupportedBy("Chrome")]
-	public class GetEncodedResponseCommand: IProtocolCommand<GetEncodedResponseCommandResponse>
+	public class GetEncodedResponseCommand: ICommandParams<GetEncodedResponseCommandResponse>
 	{
 		/// <summary>
 		/// Identifier of the network request to get content for.

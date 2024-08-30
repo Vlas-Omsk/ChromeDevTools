@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Network
 	/// </summary>
 	[Command(ProtocolName.Network.SetExtraHTTPHeaders)]
 	[SupportedBy("Chrome")]
-	public class SetExtraHTTPHeadersCommand: IProtocolCommand<SetExtraHTTPHeadersCommandResponse>
+	public class SetExtraHTTPHeadersCommand: ICommandParams<SetExtraHTTPHeadersCommandResponse>
 	{
 		/// <summary>
 		/// Map with extra HTTP headers.

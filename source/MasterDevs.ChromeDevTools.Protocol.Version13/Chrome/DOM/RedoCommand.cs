@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.DOM
 	/// </summary>
 	[Command(ProtocolName.DOM.Redo)]
 	[SupportedBy("Chrome")]
-	public class RedoCommand: IProtocolCommand<RedoCommandResponse>
+	public class RedoCommand: ICommandParams<RedoCommandResponse>
 	{
 	}
 }

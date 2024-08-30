@@ -7,7 +7,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Database
 {
 	[Command(ProtocolName.Database.ExecuteSQL)]
 	[SupportedBy("Chrome")]
-	public class ExecuteSQLCommand: IProtocolCommand<ExecuteSQLCommandResponse>
+	public class ExecuteSQLCommand: ICommandParams<ExecuteSQLCommandResponse>
 	{
 		/// <summary>
 		/// DatabaseId

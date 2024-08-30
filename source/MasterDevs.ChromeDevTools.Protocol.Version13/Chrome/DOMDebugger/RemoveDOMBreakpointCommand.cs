@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.DOMDebugger
 	/// </summary>
 	[Command(ProtocolName.DOMDebugger.RemoveDOMBreakpoint)]
 	[SupportedBy("Chrome")]
-	public class RemoveDOMBreakpointCommand: IProtocolCommand<RemoveDOMBreakpointCommandResponse>
+	public class RemoveDOMBreakpointCommand: ICommandParams<RemoveDOMBreakpointCommandResponse>
 	{
 		/// <summary>
 		/// Identifier of the node to remove breakpoint from.

@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.SystemInfo
 	/// </summary>
 	[Command(ProtocolName.SystemInfo.GetFeatureState)]
 	[SupportedBy("Chrome")]
-	public class GetFeatureStateCommand: IProtocolCommand<GetFeatureStateCommandResponse>
+	public class GetFeatureStateCommand: ICommandParams<GetFeatureStateCommandResponse>
 	{
 		/// <summary>
 		/// FeatureState

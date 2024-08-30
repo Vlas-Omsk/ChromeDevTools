@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.CSS
 	/// </summary>
 	[Command(ProtocolName.CSS.GetSupportedCSSProperties)]
 	[SupportedBy("iOS")]
-	public class GetSupportedCSSPropertiesCommand: IProtocolCommand<GetSupportedCSSPropertiesCommandResponse>
+	public class GetSupportedCSSPropertiesCommand: ICommandParams<GetSupportedCSSPropertiesCommandResponse>
 	{
 	}
 }

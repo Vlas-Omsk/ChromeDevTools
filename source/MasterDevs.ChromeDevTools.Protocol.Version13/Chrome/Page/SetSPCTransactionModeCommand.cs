@@ -11,7 +11,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Page
 	/// </summary>
 	[Command(ProtocolName.Page.SetSPCTransactionMode)]
 	[SupportedBy("Chrome")]
-	public class SetSPCTransactionModeCommand: IProtocolCommand<SetSPCTransactionModeCommandResponse>
+	public class SetSPCTransactionModeCommand: ICommandParams<SetSPCTransactionModeCommandResponse>
 	{
 		/// <summary>
 		/// Mode

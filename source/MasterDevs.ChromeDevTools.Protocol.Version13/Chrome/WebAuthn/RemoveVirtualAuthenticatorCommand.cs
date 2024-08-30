@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.WebAuthn
 	/// </summary>
 	[Command(ProtocolName.WebAuthn.RemoveVirtualAuthenticator)]
 	[SupportedBy("Chrome")]
-	public class RemoveVirtualAuthenticatorCommand: IProtocolCommand<RemoveVirtualAuthenticatorCommandResponse>
+	public class RemoveVirtualAuthenticatorCommand: ICommandParams<RemoveVirtualAuthenticatorCommandResponse>
 	{
 		/// <summary>
 		/// AuthenticatorId

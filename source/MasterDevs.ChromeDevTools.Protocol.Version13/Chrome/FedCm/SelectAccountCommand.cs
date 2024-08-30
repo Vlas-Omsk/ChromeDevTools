@@ -7,7 +7,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.FedCm
 {
 	[Command(ProtocolName.FedCm.SelectAccount)]
 	[SupportedBy("Chrome")]
-	public class SelectAccountCommand: IProtocolCommand<SelectAccountCommandResponse>
+	public class SelectAccountCommand: ICommandParams<SelectAccountCommandResponse>
 	{
 		/// <summary>
 		/// DialogId

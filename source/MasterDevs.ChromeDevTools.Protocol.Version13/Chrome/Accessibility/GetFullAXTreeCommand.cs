@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Accessibility
 	/// </summary>
 	[Command(ProtocolName.Accessibility.GetFullAXTree)]
 	[SupportedBy("Chrome")]
-	public class GetFullAXTreeCommand: IProtocolCommand<GetFullAXTreeCommandResponse>
+	public class GetFullAXTreeCommand: ICommandParams<GetFullAXTreeCommandResponse>
 	{
 		/// <summary>
 		/// The maximum depth at which descendants of the root node should be retrieved.

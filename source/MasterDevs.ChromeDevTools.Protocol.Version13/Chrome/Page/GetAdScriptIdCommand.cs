@@ -7,7 +7,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Page
 {
 	[Command(ProtocolName.Page.GetAdScriptId)]
 	[SupportedBy("Chrome")]
-	public class GetAdScriptIdCommand: IProtocolCommand<GetAdScriptIdCommandResponse>
+	public class GetAdScriptIdCommand: ICommandParams<GetAdScriptIdCommandResponse>
 	{
 		/// <summary>
 		/// FrameId

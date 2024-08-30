@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.CSS
 	/// </summary>
 	[Command(ProtocolName.CSS.TakeComputedStyleUpdates)]
 	[SupportedBy("Chrome")]
-	public class TakeComputedStyleUpdatesCommand: IProtocolCommand<TakeComputedStyleUpdatesCommandResponse>
+	public class TakeComputedStyleUpdatesCommand: ICommandParams<TakeComputedStyleUpdatesCommandResponse>
 	{
 	}
 }

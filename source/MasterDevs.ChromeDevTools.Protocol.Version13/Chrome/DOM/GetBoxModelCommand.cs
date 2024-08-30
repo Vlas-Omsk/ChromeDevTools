@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.DOM
 	/// </summary>
 	[Command(ProtocolName.DOM.GetBoxModel)]
 	[SupportedBy("Chrome")]
-	public class GetBoxModelCommand: IProtocolCommand<GetBoxModelCommandResponse>
+	public class GetBoxModelCommand: ICommandParams<GetBoxModelCommandResponse>
 	{
 		/// <summary>
 		/// Identifier of the node.

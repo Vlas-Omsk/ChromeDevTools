@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.CSS
 	/// </summary>
 	[Command(ProtocolName.CSS.SetContainerQueryText)]
 	[SupportedBy("Chrome")]
-	public class SetContainerQueryTextCommand: IProtocolCommand<SetContainerQueryTextCommandResponse>
+	public class SetContainerQueryTextCommand: ICommandParams<SetContainerQueryTextCommandResponse>
 	{
 		/// <summary>
 		/// StyleSheetId

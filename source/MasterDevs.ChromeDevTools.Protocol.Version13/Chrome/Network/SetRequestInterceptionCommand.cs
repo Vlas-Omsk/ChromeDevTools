@@ -12,7 +12,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Network
 	[Obsolete]
 	[Command(ProtocolName.Network.SetRequestInterception)]
 	[SupportedBy("Chrome")]
-	public class SetRequestInterceptionCommand: IProtocolCommand<SetRequestInterceptionCommandResponse>
+	public class SetRequestInterceptionCommand: ICommandParams<SetRequestInterceptionCommandResponse>
 	{
 		/// <summary>
 		/// Requests matching any of these patterns will be forwarded and wait for the corresponding

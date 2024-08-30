@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Debugger
 	/// </summary>
 	[Command(ProtocolName.Debugger.SetBreakpoint)]
 	[SupportedBy("Chrome")]
-	public class SetBreakpointCommand: IProtocolCommand<SetBreakpointCommandResponse>
+	public class SetBreakpointCommand: ICommandParams<SetBreakpointCommandResponse>
 	{
 		/// <summary>
 		/// Location to set breakpoint in.

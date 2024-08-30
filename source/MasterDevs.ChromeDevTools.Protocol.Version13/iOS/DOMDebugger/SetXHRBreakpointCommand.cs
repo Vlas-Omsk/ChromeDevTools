@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.DOMDebugger
 	/// </summary>
 	[Command(ProtocolName.DOMDebugger.SetXHRBreakpoint)]
 	[SupportedBy("iOS")]
-	public class SetXHRBreakpointCommand: IProtocolCommand<SetXHRBreakpointCommandResponse>
+	public class SetXHRBreakpointCommand: ICommandParams<SetXHRBreakpointCommandResponse>
 	{
 		/// <summary>
 		/// Resource URL substring. All XHRs having this substring in the URL will get stopped upon.

@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Page
 	/// </summary>
 	[Command(ProtocolName.Page.NavigateToHistoryEntry)]
 	[SupportedBy("Chrome")]
-	public class NavigateToHistoryEntryCommand: IProtocolCommand<NavigateToHistoryEntryCommandResponse>
+	public class NavigateToHistoryEntryCommand: ICommandParams<NavigateToHistoryEntryCommandResponse>
 	{
 		/// <summary>
 		/// Unique id of the entry to navigate to.

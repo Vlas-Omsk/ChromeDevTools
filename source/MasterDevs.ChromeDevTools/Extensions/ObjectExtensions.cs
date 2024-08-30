@@ -8,22 +8,31 @@ namespace MasterDevs.ChromeDevTools
     {
         public static string GetMethod(this object obj)
         {
-            if (null == obj) return null;
+            if (null == obj)
+                return null;
+
             return GetMethod(obj.GetType());
         }
 
         public static string GetMethod(this Type type)
         {
-            if (null == type) return null;
-            var eventAttribute = type.GetTypeInfo().GetCustomAttributes(typeof(EventAttribute), true)
-                .FirstOrDefault() as EventAttribute;
-            if (null != eventAttribute) return eventAttribute.MethodName;
-            var commandAttribute = type.GetTypeInfo().GetCustomAttributes(typeof(CommandAttribute), true)
-                .FirstOrDefault() as CommandAttribute;
-            if (null != commandAttribute) return commandAttribute.MethodName;
-            var commandResponseAttribute = type.GetTypeInfo().GetCustomAttributes(typeof(CommandResponseAttribute), true)
-                .FirstOrDefault() as CommandResponseAttribute;
-            if (null != commandResponseAttribute) return commandResponseAttribute.MethodName;
+            if (null == type)
+                return null;
+
+            if (type.GetTypeInfo()
+                .GetCustomAttributes(typeof(EventAttribute), true)
+                .FirstOrDefault() is EventAttribute eventAttribute)
+                return eventAttribute.Name;
+
+            if (type.GetTypeInfo()
+                .GetCustomAttributes(typeof(CommandAttribute), true)
+                .FirstOrDefault() is CommandAttribute commandAttribute)
+                return commandAttribute.Name;
+
+            if (type.GetTypeInfo()
+                .GetCustomAttributes(typeof(CommandResponseAttribute), true)
+                .FirstOrDefault() is CommandResponseAttribute commandResponseAttribute)
+                return commandResponseAttribute.Name;
 
             // maybe it's generic parameter has a method
             if (type.GetTypeInfo().IsGenericType)

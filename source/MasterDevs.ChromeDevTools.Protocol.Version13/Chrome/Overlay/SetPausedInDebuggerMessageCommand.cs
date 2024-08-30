@@ -7,7 +7,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Overlay
 {
 	[Command(ProtocolName.Overlay.SetPausedInDebuggerMessage)]
 	[SupportedBy("Chrome")]
-	public class SetPausedInDebuggerMessageCommand: IProtocolCommand<SetPausedInDebuggerMessageCommandResponse>
+	public class SetPausedInDebuggerMessageCommand: ICommandParams<SetPausedInDebuggerMessageCommandResponse>
 	{
 		/// <summary>
 		/// The message to display, also triggers resume and step over controls.

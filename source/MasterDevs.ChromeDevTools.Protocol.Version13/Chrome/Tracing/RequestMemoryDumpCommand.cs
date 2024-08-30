@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Tracing
 	/// </summary>
 	[Command(ProtocolName.Tracing.RequestMemoryDump)]
 	[SupportedBy("Chrome")]
-	public class RequestMemoryDumpCommand: IProtocolCommand<RequestMemoryDumpCommandResponse>
+	public class RequestMemoryDumpCommand: ICommandParams<RequestMemoryDumpCommandResponse>
 	{
 		/// <summary>
 		/// Enables more deterministic results by forcing garbage collection

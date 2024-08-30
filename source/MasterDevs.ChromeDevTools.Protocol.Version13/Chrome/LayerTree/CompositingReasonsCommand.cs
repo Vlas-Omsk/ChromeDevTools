@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.LayerTree
 	/// </summary>
 	[Command(ProtocolName.LayerTree.CompositingReasons)]
 	[SupportedBy("Chrome")]
-	public class CompositingReasonsCommand: IProtocolCommand<CompositingReasonsCommandResponse>
+	public class CompositingReasonsCommand: ICommandParams<CompositingReasonsCommandResponse>
 	{
 		/// <summary>
 		/// The id of the layer for which we want to get the reasons it was composited.

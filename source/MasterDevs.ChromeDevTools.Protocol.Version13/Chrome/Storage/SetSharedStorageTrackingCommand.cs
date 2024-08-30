@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Storage
 	/// </summary>
 	[Command(ProtocolName.Storage.SetSharedStorageTracking)]
 	[SupportedBy("Chrome")]
-	public class SetSharedStorageTrackingCommand: IProtocolCommand<SetSharedStorageTrackingCommandResponse>
+	public class SetSharedStorageTrackingCommand: ICommandParams<SetSharedStorageTrackingCommandResponse>
 	{
 		/// <summary>
 		/// Enable

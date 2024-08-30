@@ -12,7 +12,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Page
 	/// </summary>
 	[Command(ProtocolName.Page.SetWebLifecycleState)]
 	[SupportedBy("Chrome")]
-	public class SetWebLifecycleStateCommand: IProtocolCommand<SetWebLifecycleStateCommandResponse>
+	public class SetWebLifecycleStateCommand: ICommandParams<SetWebLifecycleStateCommandResponse>
 	{
 		/// <summary>
 		/// Target lifecycle state

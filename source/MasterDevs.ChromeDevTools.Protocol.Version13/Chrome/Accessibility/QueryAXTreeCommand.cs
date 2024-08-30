@@ -14,7 +14,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Accessibility
 	/// </summary>
 	[Command(ProtocolName.Accessibility.QueryAXTree)]
 	[SupportedBy("Chrome")]
-	public class QueryAXTreeCommand: IProtocolCommand<QueryAXTreeCommandResponse>
+	public class QueryAXTreeCommand: ICommandParams<QueryAXTreeCommandResponse>
 	{
 		/// <summary>
 		/// Identifier of the node for the root to query.

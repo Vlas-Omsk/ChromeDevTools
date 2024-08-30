@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Emulation
 	/// </summary>
 	[Command(ProtocolName.Emulation.SetPageScaleFactor)]
 	[SupportedBy("Chrome")]
-	public class SetPageScaleFactorCommand: IProtocolCommand<SetPageScaleFactorCommandResponse>
+	public class SetPageScaleFactorCommand: ICommandParams<SetPageScaleFactorCommandResponse>
 	{
 		/// <summary>
 		/// Page scale factor.

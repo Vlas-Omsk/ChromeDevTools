@@ -7,7 +7,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.Worker
 {
 	[Command(ProtocolName.Worker.SetAutoconnectToWorkers)]
 	[SupportedBy("iOS")]
-	public class SetAutoconnectToWorkersCommand: IProtocolCommand<SetAutoconnectToWorkersCommandResponse>
+	public class SetAutoconnectToWorkersCommand: ICommandParams<SetAutoconnectToWorkersCommandResponse>
 	{
 		/// <summary>
 		/// Value

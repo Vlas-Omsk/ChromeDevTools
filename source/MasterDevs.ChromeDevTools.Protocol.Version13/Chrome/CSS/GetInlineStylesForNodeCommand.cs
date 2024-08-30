@@ -11,7 +11,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.CSS
 	/// </summary>
 	[Command(ProtocolName.CSS.GetInlineStylesForNode)]
 	[SupportedBy("Chrome")]
-	public class GetInlineStylesForNodeCommand: IProtocolCommand<GetInlineStylesForNodeCommandResponse>
+	public class GetInlineStylesForNodeCommand: ICommandParams<GetInlineStylesForNodeCommandResponse>
 	{
 		/// <summary>
 		/// NodeId

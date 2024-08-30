@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Tracing
 	/// </summary>
 	[Command(ProtocolName.Tracing.RecordClockSyncMarker)]
 	[SupportedBy("Chrome")]
-	public class RecordClockSyncMarkerCommand: IProtocolCommand<RecordClockSyncMarkerCommandResponse>
+	public class RecordClockSyncMarkerCommand: ICommandParams<RecordClockSyncMarkerCommandResponse>
 	{
 		/// <summary>
 		/// The ID of this clock sync marker

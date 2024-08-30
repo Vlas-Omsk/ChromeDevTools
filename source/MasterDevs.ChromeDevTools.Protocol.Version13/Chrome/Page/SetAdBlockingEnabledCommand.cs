@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Page
 	/// </summary>
 	[Command(ProtocolName.Page.SetAdBlockingEnabled)]
 	[SupportedBy("Chrome")]
-	public class SetAdBlockingEnabledCommand: IProtocolCommand<SetAdBlockingEnabledCommandResponse>
+	public class SetAdBlockingEnabledCommand: ICommandParams<SetAdBlockingEnabledCommandResponse>
 	{
 		/// <summary>
 		/// Whether to block ads.

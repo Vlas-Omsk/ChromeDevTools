@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.WebAuthn
 	/// </summary>
 	[Command(ProtocolName.WebAuthn.ClearCredentials)]
 	[SupportedBy("Chrome")]
-	public class ClearCredentialsCommand: IProtocolCommand<ClearCredentialsCommandResponse>
+	public class ClearCredentialsCommand: ICommandParams<ClearCredentialsCommandResponse>
 	{
 		/// <summary>
 		/// AuthenticatorId

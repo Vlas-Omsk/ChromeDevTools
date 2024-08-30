@@ -11,7 +11,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Audits
 	/// </summary>
 	[Command(ProtocolName.Audits.CheckContrast)]
 	[SupportedBy("Chrome")]
-	public class CheckContrastCommand: IProtocolCommand<CheckContrastCommandResponse>
+	public class CheckContrastCommand: ICommandParams<CheckContrastCommandResponse>
 	{
 		/// <summary>
 		/// Whether to report WCAG AAA level issues. Default is false.

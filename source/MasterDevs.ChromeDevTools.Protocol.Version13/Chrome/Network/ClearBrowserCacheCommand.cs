@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Network
 	/// </summary>
 	[Command(ProtocolName.Network.ClearBrowserCache)]
 	[SupportedBy("Chrome")]
-	public class ClearBrowserCacheCommand: IProtocolCommand<ClearBrowserCacheCommandResponse>
+	public class ClearBrowserCacheCommand: ICommandParams<ClearBrowserCacheCommandResponse>
 	{
 	}
 }

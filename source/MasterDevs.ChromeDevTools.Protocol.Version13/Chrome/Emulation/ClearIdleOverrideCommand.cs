@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Emulation
 	/// </summary>
 	[Command(ProtocolName.Emulation.ClearIdleOverride)]
 	[SupportedBy("Chrome")]
-	public class ClearIdleOverrideCommand: IProtocolCommand<ClearIdleOverrideCommandResponse>
+	public class ClearIdleOverrideCommand: ICommandParams<ClearIdleOverrideCommandResponse>
 	{
 	}
 }

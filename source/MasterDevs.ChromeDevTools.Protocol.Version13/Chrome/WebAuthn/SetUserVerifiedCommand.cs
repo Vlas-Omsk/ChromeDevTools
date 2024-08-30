@@ -11,7 +11,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.WebAuthn
 	/// </summary>
 	[Command(ProtocolName.WebAuthn.SetUserVerified)]
 	[SupportedBy("Chrome")]
-	public class SetUserVerifiedCommand: IProtocolCommand<SetUserVerifiedCommandResponse>
+	public class SetUserVerifiedCommand: ICommandParams<SetUserVerifiedCommandResponse>
 	{
 		/// <summary>
 		/// AuthenticatorId

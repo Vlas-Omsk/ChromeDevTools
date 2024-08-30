@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.CacheStorage
 	/// </summary>
 	[Command(ProtocolName.CacheStorage.RequestCacheNames)]
 	[SupportedBy("Chrome")]
-	public class RequestCacheNamesCommand: IProtocolCommand<RequestCacheNamesCommandResponse>
+	public class RequestCacheNamesCommand: ICommandParams<RequestCacheNamesCommandResponse>
 	{
 		/// <summary>
 		/// At least and at most one of securityOrigin, storageKey must be specified.

@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Input
 	/// </summary>
 	[Command(ProtocolName.Input.SetIgnoreInputEvents)]
 	[SupportedBy("Chrome")]
-	public class SetIgnoreInputEventsCommand: IProtocolCommand<SetIgnoreInputEventsCommandResponse>
+	public class SetIgnoreInputEventsCommand: ICommandParams<SetIgnoreInputEventsCommandResponse>
 	{
 		/// <summary>
 		/// Ignores input events processing when set to true.

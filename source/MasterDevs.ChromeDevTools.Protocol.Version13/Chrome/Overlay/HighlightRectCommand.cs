@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Overlay
 	/// </summary>
 	[Command(ProtocolName.Overlay.HighlightRect)]
 	[SupportedBy("Chrome")]
-	public class HighlightRectCommand: IProtocolCommand<HighlightRectCommandResponse>
+	public class HighlightRectCommand: ICommandParams<HighlightRectCommandResponse>
 	{
 		/// <summary>
 		/// X coordinate

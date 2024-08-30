@@ -11,7 +11,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Emulation
 	/// </summary>
 	[Command(ProtocolName.Emulation.SetVirtualTimePolicy)]
 	[SupportedBy("Chrome")]
-	public class SetVirtualTimePolicyCommand: IProtocolCommand<SetVirtualTimePolicyCommandResponse>
+	public class SetVirtualTimePolicyCommand: ICommandParams<SetVirtualTimePolicyCommandResponse>
 	{
 		/// <summary>
 		/// Policy

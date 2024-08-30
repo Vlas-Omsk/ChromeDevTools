@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.WebAuthn
 	/// </summary>
 	[Command(ProtocolName.WebAuthn.SetResponseOverrideBits)]
 	[SupportedBy("Chrome")]
-	public class SetResponseOverrideBitsCommand: IProtocolCommand<SetResponseOverrideBitsCommandResponse>
+	public class SetResponseOverrideBitsCommand: ICommandParams<SetResponseOverrideBitsCommandResponse>
 	{
 		/// <summary>
 		/// AuthenticatorId

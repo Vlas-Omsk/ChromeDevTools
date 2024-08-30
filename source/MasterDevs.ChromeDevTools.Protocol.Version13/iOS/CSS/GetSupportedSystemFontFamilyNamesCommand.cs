@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.CSS
 	/// </summary>
 	[Command(ProtocolName.CSS.GetSupportedSystemFontFamilyNames)]
 	[SupportedBy("iOS")]
-	public class GetSupportedSystemFontFamilyNamesCommand: IProtocolCommand<GetSupportedSystemFontFamilyNamesCommandResponse>
+	public class GetSupportedSystemFontFamilyNamesCommand: ICommandParams<GetSupportedSystemFontFamilyNamesCommandResponse>
 	{
 	}
 }

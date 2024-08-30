@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.DOM
 	/// </summary>
 	[Command(ProtocolName.DOM.HighlightFrame)]
 	[SupportedBy("iOS")]
-	public class HighlightFrameCommand: IProtocolCommand<HighlightFrameCommandResponse>
+	public class HighlightFrameCommand: ICommandParams<HighlightFrameCommandResponse>
 	{
 		/// <summary>
 		/// Identifier of the frame to highlight.

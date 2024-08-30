@@ -12,7 +12,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Input
 	/// </summary>
 	[Command(ProtocolName.Input.ImeSetComposition)]
 	[SupportedBy("Chrome")]
-	public class ImeSetCompositionCommand: IProtocolCommand<ImeSetCompositionCommandResponse>
+	public class ImeSetCompositionCommand: ICommandParams<ImeSetCompositionCommandResponse>
 	{
 		/// <summary>
 		/// The text to insert

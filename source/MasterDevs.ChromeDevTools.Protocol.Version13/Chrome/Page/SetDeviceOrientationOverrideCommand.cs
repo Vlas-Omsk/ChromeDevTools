@@ -11,7 +11,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Page
 	[Obsolete]
 	[Command(ProtocolName.Page.SetDeviceOrientationOverride)]
 	[SupportedBy("Chrome")]
-	public class SetDeviceOrientationOverrideCommand: IProtocolCommand<SetDeviceOrientationOverrideCommandResponse>
+	public class SetDeviceOrientationOverrideCommand: ICommandParams<SetDeviceOrientationOverrideCommandResponse>
 	{
 		/// <summary>
 		/// Mock alpha

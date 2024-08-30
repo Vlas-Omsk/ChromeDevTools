@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Storage
 	/// </summary>
 	[Command(ProtocolName.Storage.OverrideQuotaForOrigin)]
 	[SupportedBy("Chrome")]
-	public class OverrideQuotaForOriginCommand: IProtocolCommand<OverrideQuotaForOriginCommandResponse>
+	public class OverrideQuotaForOriginCommand: ICommandParams<OverrideQuotaForOriginCommandResponse>
 	{
 		/// <summary>
 		/// Security origin.

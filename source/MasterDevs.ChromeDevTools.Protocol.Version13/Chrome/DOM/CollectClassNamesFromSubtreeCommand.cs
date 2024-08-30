@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.DOM
 	/// </summary>
 	[Command(ProtocolName.DOM.CollectClassNamesFromSubtree)]
 	[SupportedBy("Chrome")]
-	public class CollectClassNamesFromSubtreeCommand: IProtocolCommand<CollectClassNamesFromSubtreeCommandResponse>
+	public class CollectClassNamesFromSubtreeCommand: ICommandParams<CollectClassNamesFromSubtreeCommandResponse>
 	{
 		/// <summary>
 		/// Id of the node to collect class names.

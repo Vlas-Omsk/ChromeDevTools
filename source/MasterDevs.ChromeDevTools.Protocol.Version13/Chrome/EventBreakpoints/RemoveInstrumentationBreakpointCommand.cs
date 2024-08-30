@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.EventBreakpoints
 	/// </summary>
 	[Command(ProtocolName.EventBreakpoints.RemoveInstrumentationBreakpoint)]
 	[SupportedBy("Chrome")]
-	public class RemoveInstrumentationBreakpointCommand: IProtocolCommand<RemoveInstrumentationBreakpointCommandResponse>
+	public class RemoveInstrumentationBreakpointCommand: ICommandParams<RemoveInstrumentationBreakpointCommandResponse>
 	{
 		/// <summary>
 		/// Instrumentation name to stop on.

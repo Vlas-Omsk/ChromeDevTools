@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Storage
 	/// </summary>
 	[Command(ProtocolName.Storage.TrackIndexedDBForStorageKey)]
 	[SupportedBy("Chrome")]
-	public class TrackIndexedDBForStorageKeyCommand: IProtocolCommand<TrackIndexedDBForStorageKeyCommandResponse>
+	public class TrackIndexedDBForStorageKeyCommand: ICommandParams<TrackIndexedDBForStorageKeyCommandResponse>
 	{
 		/// <summary>
 		/// Storage key.

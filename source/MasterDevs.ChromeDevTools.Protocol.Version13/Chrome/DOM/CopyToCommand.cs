@@ -11,7 +11,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.DOM
 	/// </summary>
 	[Command(ProtocolName.DOM.CopyTo)]
 	[SupportedBy("Chrome")]
-	public class CopyToCommand: IProtocolCommand<CopyToCommandResponse>
+	public class CopyToCommand: ICommandParams<CopyToCommandResponse>
 	{
 		/// <summary>
 		/// Id of the node to copy.

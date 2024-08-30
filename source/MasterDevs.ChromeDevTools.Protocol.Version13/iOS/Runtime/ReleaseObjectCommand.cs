@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.Runtime
 	/// </summary>
 	[Command(ProtocolName.Runtime.ReleaseObject)]
 	[SupportedBy("iOS")]
-	public class ReleaseObjectCommand: IProtocolCommand<ReleaseObjectCommandResponse>
+	public class ReleaseObjectCommand: ICommandParams<ReleaseObjectCommandResponse>
 	{
 		/// <summary>
 		/// Identifier of the object to release.

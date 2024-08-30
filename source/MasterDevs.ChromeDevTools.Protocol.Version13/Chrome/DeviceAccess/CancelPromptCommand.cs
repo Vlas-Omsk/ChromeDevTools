@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.DeviceAccess
 	/// </summary>
 	[Command(ProtocolName.DeviceAccess.CancelPrompt)]
 	[SupportedBy("Chrome")]
-	public class CancelPromptCommand: IProtocolCommand<CancelPromptCommandResponse>
+	public class CancelPromptCommand: ICommandParams<CancelPromptCommandResponse>
 	{
 		/// <summary>
 		/// Id

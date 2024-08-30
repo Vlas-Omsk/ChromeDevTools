@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.IO
 	/// </summary>
 	[Command(ProtocolName.IO.Read)]
 	[SupportedBy("Chrome")]
-	public class ReadCommand: IProtocolCommand<ReadCommandResponse>
+	public class ReadCommand: ICommandParams<ReadCommandResponse>
 	{
 		/// <summary>
 		/// Handle of the stream to read.

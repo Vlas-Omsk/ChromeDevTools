@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Emulation
 	/// </summary>
 	[Command(ProtocolName.Emulation.SetAutomationOverride)]
 	[SupportedBy("Chrome")]
-	public class SetAutomationOverrideCommand: IProtocolCommand<SetAutomationOverrideCommandResponse>
+	public class SetAutomationOverrideCommand: ICommandParams<SetAutomationOverrideCommandResponse>
 	{
 		/// <summary>
 		/// Whether the override should be enabled.

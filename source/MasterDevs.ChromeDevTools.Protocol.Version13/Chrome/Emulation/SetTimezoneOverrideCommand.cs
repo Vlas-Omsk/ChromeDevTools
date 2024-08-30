@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Emulation
 	/// </summary>
 	[Command(ProtocolName.Emulation.SetTimezoneOverride)]
 	[SupportedBy("Chrome")]
-	public class SetTimezoneOverrideCommand: IProtocolCommand<SetTimezoneOverrideCommandResponse>
+	public class SetTimezoneOverrideCommand: ICommandParams<SetTimezoneOverrideCommandResponse>
 	{
 		/// <summary>
 		/// The timezone identifier. If empty, disables the override and

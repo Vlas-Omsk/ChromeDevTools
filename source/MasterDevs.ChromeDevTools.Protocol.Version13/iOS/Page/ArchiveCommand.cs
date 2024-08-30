@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.Page
 	/// </summary>
 	[Command(ProtocolName.Page.Archive)]
 	[SupportedBy("iOS")]
-	public class ArchiveCommand: IProtocolCommand<ArchiveCommandResponse>
+	public class ArchiveCommand: ICommandParams<ArchiveCommandResponse>
 	{
 	}
 }

@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.IndexedDB
 	/// </summary>
 	[Command(ProtocolName.IndexedDB.ClearObjectStore)]
 	[SupportedBy("Chrome")]
-	public class ClearObjectStoreCommand: IProtocolCommand<ClearObjectStoreCommandResponse>
+	public class ClearObjectStoreCommand: ICommandParams<ClearObjectStoreCommandResponse>
 	{
 		/// <summary>
 		/// At least and at most one of securityOrigin, storageKey must be specified.

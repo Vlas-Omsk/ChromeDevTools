@@ -11,7 +11,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.DOM
 	/// </summary>
 	[Command(ProtocolName.DOM.GetNodeForLocation)]
 	[SupportedBy("Chrome")]
-	public class GetNodeForLocationCommand: IProtocolCommand<GetNodeForLocationCommandResponse>
+	public class GetNodeForLocationCommand: ICommandParams<GetNodeForLocationCommandResponse>
 	{
 		/// <summary>
 		/// X coordinate.

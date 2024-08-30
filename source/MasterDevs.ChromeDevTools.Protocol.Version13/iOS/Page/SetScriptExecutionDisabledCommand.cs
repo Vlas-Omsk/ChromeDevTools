@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.Page
 	/// </summary>
 	[Command(ProtocolName.Page.SetScriptExecutionDisabled)]
 	[SupportedBy("iOS")]
-	public class SetScriptExecutionDisabledCommand: IProtocolCommand<SetScriptExecutionDisabledCommandResponse>
+	public class SetScriptExecutionDisabledCommand: ICommandParams<SetScriptExecutionDisabledCommandResponse>
 	{
 		/// <summary>
 		/// Whether script execution should be disabled in the page.

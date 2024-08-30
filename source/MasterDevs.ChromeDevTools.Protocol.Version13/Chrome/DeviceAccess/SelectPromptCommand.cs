@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.DeviceAccess
 	/// </summary>
 	[Command(ProtocolName.DeviceAccess.SelectPrompt)]
 	[SupportedBy("Chrome")]
-	public class SelectPromptCommand: IProtocolCommand<SelectPromptCommandResponse>
+	public class SelectPromptCommand: ICommandParams<SelectPromptCommandResponse>
 	{
 		/// <summary>
 		/// Id

@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.Page
 	/// </summary>
 	[Command(ProtocolName.Page.Navigate)]
 	[SupportedBy("iOS")]
-	public class NavigateCommand: IProtocolCommand<NavigateCommandResponse>
+	public class NavigateCommand: ICommandParams<NavigateCommandResponse>
 	{
 		/// <summary>
 		/// URL to navigate the page to.

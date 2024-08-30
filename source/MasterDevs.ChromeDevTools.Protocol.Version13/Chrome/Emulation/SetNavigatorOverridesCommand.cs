@@ -11,7 +11,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Emulation
 	[Obsolete]
 	[Command(ProtocolName.Emulation.SetNavigatorOverrides)]
 	[SupportedBy("Chrome")]
-	public class SetNavigatorOverridesCommand: IProtocolCommand<SetNavigatorOverridesCommandResponse>
+	public class SetNavigatorOverridesCommand: ICommandParams<SetNavigatorOverridesCommandResponse>
 	{
 		/// <summary>
 		/// The platform navigator.platform should return.

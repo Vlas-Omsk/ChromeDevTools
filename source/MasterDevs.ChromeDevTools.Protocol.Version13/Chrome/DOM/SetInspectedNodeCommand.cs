@@ -11,7 +11,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.DOM
 	/// </summary>
 	[Command(ProtocolName.DOM.SetInspectedNode)]
 	[SupportedBy("Chrome")]
-	public class SetInspectedNodeCommand: IProtocolCommand<SetInspectedNodeCommandResponse>
+	public class SetInspectedNodeCommand: ICommandParams<SetInspectedNodeCommandResponse>
 	{
 		/// <summary>
 		/// DOM node id to be accessible by means of $x command line API.

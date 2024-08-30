@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.Page
 	/// </summary>
 	[Command(ProtocolName.Page.SearchInResources)]
 	[SupportedBy("iOS")]
-	public class SearchInResourcesCommand: IProtocolCommand<SearchInResourcesCommandResponse>
+	public class SearchInResourcesCommand: ICommandParams<SearchInResourcesCommandResponse>
 	{
 		/// <summary>
 		/// String to search for.

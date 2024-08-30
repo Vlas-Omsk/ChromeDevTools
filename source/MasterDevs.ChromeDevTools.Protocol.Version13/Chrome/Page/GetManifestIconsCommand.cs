@@ -11,7 +11,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Page
 	[Obsolete("Deprecated because it's not guaranteed that the returned icon is in fact the one used for PWA installation.")]
 	[Command(ProtocolName.Page.GetManifestIcons)]
 	[SupportedBy("Chrome")]
-	public class GetManifestIconsCommand: IProtocolCommand<GetManifestIconsCommandResponse>
+	public class GetManifestIconsCommand: ICommandParams<GetManifestIconsCommandResponse>
 	{
 	}
 }

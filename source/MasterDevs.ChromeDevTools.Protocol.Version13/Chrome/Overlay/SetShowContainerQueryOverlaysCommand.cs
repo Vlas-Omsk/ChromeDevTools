@@ -7,7 +7,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Overlay
 {
 	[Command(ProtocolName.Overlay.SetShowContainerQueryOverlays)]
 	[SupportedBy("Chrome")]
-	public class SetShowContainerQueryOverlaysCommand: IProtocolCommand<SetShowContainerQueryOverlaysCommandResponse>
+	public class SetShowContainerQueryOverlaysCommand: ICommandParams<SetShowContainerQueryOverlaysCommandResponse>
 	{
 		/// <summary>
 		/// An array of node identifiers and descriptors for the highlight appearance.

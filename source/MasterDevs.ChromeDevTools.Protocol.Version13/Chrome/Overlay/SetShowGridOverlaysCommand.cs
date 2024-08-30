@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Overlay
 	/// </summary>
 	[Command(ProtocolName.Overlay.SetShowGridOverlays)]
 	[SupportedBy("Chrome")]
-	public class SetShowGridOverlaysCommand: IProtocolCommand<SetShowGridOverlaysCommandResponse>
+	public class SetShowGridOverlaysCommand: ICommandParams<SetShowGridOverlaysCommandResponse>
 	{
 		/// <summary>
 		/// An array of node identifiers and descriptors for the highlight appearance.

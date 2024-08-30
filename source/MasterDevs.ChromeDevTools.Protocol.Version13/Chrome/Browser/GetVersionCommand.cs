@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Browser
 	/// </summary>
 	[Command(ProtocolName.Browser.GetVersion)]
 	[SupportedBy("Chrome")]
-	public class GetVersionCommand: IProtocolCommand<GetVersionCommandResponse>
+	public class GetVersionCommand: ICommandParams<GetVersionCommandResponse>
 	{
 	}
 }

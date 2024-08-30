@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Page
 	/// </summary>
 	[Command(ProtocolName.Page.ScreencastFrameAck)]
 	[SupportedBy("Chrome")]
-	public class ScreencastFrameAckCommand: IProtocolCommand<ScreencastFrameAckCommandResponse>
+	public class ScreencastFrameAckCommand: ICommandParams<ScreencastFrameAckCommandResponse>
 	{
 		/// <summary>
 		/// Frame number.

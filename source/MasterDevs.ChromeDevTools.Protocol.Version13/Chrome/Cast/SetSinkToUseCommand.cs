@@ -11,7 +11,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Cast
 	/// </summary>
 	[Command(ProtocolName.Cast.SetSinkToUse)]
 	[SupportedBy("Chrome")]
-	public class SetSinkToUseCommand: IProtocolCommand<SetSinkToUseCommandResponse>
+	public class SetSinkToUseCommand: ICommandParams<SetSinkToUseCommandResponse>
 	{
 		/// <summary>
 		/// SinkName

@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Network
 	/// </summary>
 	[Command(ProtocolName.Network.GetSecurityIsolationStatus)]
 	[SupportedBy("Chrome")]
-	public class GetSecurityIsolationStatusCommand: IProtocolCommand<GetSecurityIsolationStatusCommandResponse>
+	public class GetSecurityIsolationStatusCommand: ICommandParams<GetSecurityIsolationStatusCommandResponse>
 	{
 		/// <summary>
 		/// If no frameId is provided, the status of the target is provided.

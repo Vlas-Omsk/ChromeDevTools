@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Storage
 	/// </summary>
 	[Command(ProtocolName.Storage.GetSharedStorageMetadata)]
 	[SupportedBy("Chrome")]
-	public class GetSharedStorageMetadataCommand: IProtocolCommand<GetSharedStorageMetadataCommandResponse>
+	public class GetSharedStorageMetadataCommand: ICommandParams<GetSharedStorageMetadataCommandResponse>
 	{
 		/// <summary>
 		/// OwnerOrigin

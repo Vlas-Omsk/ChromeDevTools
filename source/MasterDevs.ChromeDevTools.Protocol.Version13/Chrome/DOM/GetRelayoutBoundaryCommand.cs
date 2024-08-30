@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.DOM
 	/// </summary>
 	[Command(ProtocolName.DOM.GetRelayoutBoundary)]
 	[SupportedBy("Chrome")]
-	public class GetRelayoutBoundaryCommand: IProtocolCommand<GetRelayoutBoundaryCommandResponse>
+	public class GetRelayoutBoundaryCommand: ICommandParams<GetRelayoutBoundaryCommandResponse>
 	{
 		/// <summary>
 		/// Id of the node.

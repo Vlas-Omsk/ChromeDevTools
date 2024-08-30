@@ -7,7 +7,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.HeapProfiler
 {
 	[Command(ProtocolName.HeapProfiler.TakeHeapSnapshot)]
 	[SupportedBy("Chrome")]
-	public class TakeHeapSnapshotCommand: IProtocolCommand<TakeHeapSnapshotCommandResponse>
+	public class TakeHeapSnapshotCommand: ICommandParams<TakeHeapSnapshotCommandResponse>
 	{
 		/// <summary>
 		/// If true 'reportHeapSnapshotProgress' events will be generated while snapshot is being taken.

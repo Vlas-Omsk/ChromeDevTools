@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.DOM
 	/// </summary>
 	[Command(ProtocolName.DOM.PerformSearch)]
 	[SupportedBy("iOS")]
-	public class PerformSearchCommand: IProtocolCommand<PerformSearchCommandResponse>
+	public class PerformSearchCommand: ICommandParams<PerformSearchCommandResponse>
 	{
 		/// <summary>
 		/// Plain text or query selector or XPath search query.

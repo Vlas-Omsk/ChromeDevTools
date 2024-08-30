@@ -7,7 +7,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.DOMStorage
 {
 	[Command(ProtocolName.DOMStorage.SetDOMStorageItem)]
 	[SupportedBy("Chrome")]
-	public class SetDOMStorageItemCommand: IProtocolCommand<SetDOMStorageItemCommandResponse>
+	public class SetDOMStorageItemCommand: ICommandParams<SetDOMStorageItemCommandResponse>
 	{
 		/// <summary>
 		/// StorageId

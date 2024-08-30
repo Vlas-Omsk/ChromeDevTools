@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.IndexedDB
 	/// </summary>
 	[Command(ProtocolName.IndexedDB.RequestDatabaseNames)]
 	[SupportedBy("Chrome")]
-	public class RequestDatabaseNamesCommand: IProtocolCommand<RequestDatabaseNamesCommandResponse>
+	public class RequestDatabaseNamesCommand: ICommandParams<RequestDatabaseNamesCommandResponse>
 	{
 		/// <summary>
 		/// At least and at most one of securityOrigin, storageKey must be specified.

@@ -7,7 +7,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.Worker
 {
 	[Command(ProtocolName.Worker.DisconnectFromWorker)]
 	[SupportedBy("iOS")]
-	public class DisconnectFromWorkerCommand: IProtocolCommand<DisconnectFromWorkerCommandResponse>
+	public class DisconnectFromWorkerCommand: ICommandParams<DisconnectFromWorkerCommandResponse>
 	{
 		/// <summary>
 		/// WorkerId

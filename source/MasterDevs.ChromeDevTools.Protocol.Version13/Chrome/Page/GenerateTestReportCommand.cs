@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Page
 	/// </summary>
 	[Command(ProtocolName.Page.GenerateTestReport)]
 	[SupportedBy("Chrome")]
-	public class GenerateTestReportCommand: IProtocolCommand<GenerateTestReportCommandResponse>
+	public class GenerateTestReportCommand: ICommandParams<GenerateTestReportCommandResponse>
 	{
 		/// <summary>
 		/// Message to be displayed in the report.

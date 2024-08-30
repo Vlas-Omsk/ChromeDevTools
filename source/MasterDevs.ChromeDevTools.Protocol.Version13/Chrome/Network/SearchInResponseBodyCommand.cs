@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Network
 	/// </summary>
 	[Command(ProtocolName.Network.SearchInResponseBody)]
 	[SupportedBy("Chrome")]
-	public class SearchInResponseBodyCommand: IProtocolCommand<SearchInResponseBodyCommandResponse>
+	public class SearchInResponseBodyCommand: ICommandParams<SearchInResponseBodyCommandResponse>
 	{
 		/// <summary>
 		/// Identifier of the network response to search.

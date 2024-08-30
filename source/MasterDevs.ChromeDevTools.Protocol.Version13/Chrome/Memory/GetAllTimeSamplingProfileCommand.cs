@@ -11,7 +11,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Memory
 	/// </summary>
 	[Command(ProtocolName.Memory.GetAllTimeSamplingProfile)]
 	[SupportedBy("Chrome")]
-	public class GetAllTimeSamplingProfileCommand: IProtocolCommand<GetAllTimeSamplingProfileCommandResponse>
+	public class GetAllTimeSamplingProfileCommand: ICommandParams<GetAllTimeSamplingProfileCommandResponse>
 	{
 	}
 }

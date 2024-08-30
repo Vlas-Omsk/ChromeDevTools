@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Storage
 	/// </summary>
 	[Command(ProtocolName.Storage.TrackCacheStorageForOrigin)]
 	[SupportedBy("Chrome")]
-	public class TrackCacheStorageForOriginCommand: IProtocolCommand<TrackCacheStorageForOriginCommandResponse>
+	public class TrackCacheStorageForOriginCommand: ICommandParams<TrackCacheStorageForOriginCommandResponse>
 	{
 		/// <summary>
 		/// Security origin.

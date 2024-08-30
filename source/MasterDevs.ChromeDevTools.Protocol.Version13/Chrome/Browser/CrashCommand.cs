@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Browser
 	/// </summary>
 	[Command(ProtocolName.Browser.Crash)]
 	[SupportedBy("Chrome")]
-	public class CrashCommand: IProtocolCommand<CrashCommandResponse>
+	public class CrashCommand: ICommandParams<CrashCommandResponse>
 	{
 	}
 }

@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.DOMDebugger
 	/// </summary>
 	[Command(ProtocolName.DOMDebugger.SetDOMBreakpoint)]
 	[SupportedBy("iOS")]
-	public class SetDOMBreakpointCommand: IProtocolCommand<SetDOMBreakpointCommandResponse>
+	public class SetDOMBreakpointCommand: ICommandParams<SetDOMBreakpointCommandResponse>
 	{
 		/// <summary>
 		/// Identifier of the node to set breakpoint on.

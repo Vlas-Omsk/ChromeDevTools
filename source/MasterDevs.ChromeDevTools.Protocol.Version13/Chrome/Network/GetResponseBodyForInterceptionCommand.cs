@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Network
 	/// </summary>
 	[Command(ProtocolName.Network.GetResponseBodyForInterception)]
 	[SupportedBy("Chrome")]
-	public class GetResponseBodyForInterceptionCommand: IProtocolCommand<GetResponseBodyForInterceptionCommandResponse>
+	public class GetResponseBodyForInterceptionCommand: ICommandParams<GetResponseBodyForInterceptionCommandResponse>
 	{
 		/// <summary>
 		/// Identifier for the intercepted request to get body for.

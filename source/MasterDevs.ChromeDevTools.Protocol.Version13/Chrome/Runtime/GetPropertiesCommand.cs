@@ -11,7 +11,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Runtime
 	/// </summary>
 	[Command(ProtocolName.Runtime.GetProperties)]
 	[SupportedBy("Chrome")]
-	public class GetPropertiesCommand: IProtocolCommand<GetPropertiesCommandResponse>
+	public class GetPropertiesCommand: ICommandParams<GetPropertiesCommandResponse>
 	{
 		/// <summary>
 		/// Identifier of the object to return properties for.

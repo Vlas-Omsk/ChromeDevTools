@@ -7,7 +7,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Database
 {
 	[Command(ProtocolName.Database.GetDatabaseTableNames)]
 	[SupportedBy("Chrome")]
-	public class GetDatabaseTableNamesCommand: IProtocolCommand<GetDatabaseTableNamesCommandResponse>
+	public class GetDatabaseTableNamesCommand: ICommandParams<GetDatabaseTableNamesCommandResponse>
 	{
 		/// <summary>
 		/// DatabaseId

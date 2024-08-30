@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.CSS
 	/// </summary>
 	[Command(ProtocolName.CSS.GetComputedStyleForNode)]
 	[SupportedBy("Chrome")]
-	public class GetComputedStyleForNodeCommand: IProtocolCommand<GetComputedStyleForNodeCommandResponse>
+	public class GetComputedStyleForNodeCommand: ICommandParams<GetComputedStyleForNodeCommandResponse>
 	{
 		/// <summary>
 		/// NodeId

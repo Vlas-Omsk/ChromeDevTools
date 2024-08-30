@@ -13,7 +13,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Debugger
 	/// </summary>
 	[Command(ProtocolName.Debugger.SetBreakpointByUrl)]
 	[SupportedBy("Chrome")]
-	public class SetBreakpointByUrlCommand: IProtocolCommand<SetBreakpointByUrlCommandResponse>
+	public class SetBreakpointByUrlCommand: ICommandParams<SetBreakpointByUrlCommandResponse>
 	{
 		/// <summary>
 		/// Line number to set breakpoint at.

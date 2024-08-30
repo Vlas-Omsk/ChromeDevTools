@@ -7,7 +7,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.HeapProfiler
 {
 	[Command(ProtocolName.HeapProfiler.StartSampling)]
 	[SupportedBy("Chrome")]
-	public class StartSamplingCommand: IProtocolCommand<StartSamplingCommandResponse>
+	public class StartSamplingCommand: ICommandParams<StartSamplingCommandResponse>
 	{
 		/// <summary>
 		/// Average sample interval in bytes. Poisson distribution is used for the intervals. The

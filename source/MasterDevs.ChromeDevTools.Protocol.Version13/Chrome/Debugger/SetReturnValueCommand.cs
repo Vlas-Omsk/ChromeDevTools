@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Debugger
 	/// </summary>
 	[Command(ProtocolName.Debugger.SetReturnValue)]
 	[SupportedBy("Chrome")]
-	public class SetReturnValueCommand: IProtocolCommand<SetReturnValueCommandResponse>
+	public class SetReturnValueCommand: ICommandParams<SetReturnValueCommandResponse>
 	{
 		/// <summary>
 		/// New return value.

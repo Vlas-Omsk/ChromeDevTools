@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Fetch
 	/// </summary>
 	[Command(ProtocolName.Fetch.FulfillRequest)]
 	[SupportedBy("Chrome")]
-	public class FulfillRequestCommand: IProtocolCommand<FulfillRequestCommandResponse>
+	public class FulfillRequestCommand: ICommandParams<FulfillRequestCommandResponse>
 	{
 		/// <summary>
 		/// An id the client received in requestPaused event.

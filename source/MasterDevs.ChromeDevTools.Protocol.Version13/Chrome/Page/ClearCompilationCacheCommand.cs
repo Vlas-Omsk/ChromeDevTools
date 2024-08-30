@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Page
 	/// </summary>
 	[Command(ProtocolName.Page.ClearCompilationCache)]
 	[SupportedBy("Chrome")]
-	public class ClearCompilationCacheCommand: IProtocolCommand<ClearCompilationCacheCommandResponse>
+	public class ClearCompilationCacheCommand: ICommandParams<ClearCompilationCacheCommandResponse>
 	{
 	}
 }

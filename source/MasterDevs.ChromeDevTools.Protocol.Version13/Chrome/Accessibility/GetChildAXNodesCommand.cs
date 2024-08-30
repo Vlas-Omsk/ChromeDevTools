@@ -11,7 +11,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Accessibility
 	/// </summary>
 	[Command(ProtocolName.Accessibility.GetChildAXNodes)]
 	[SupportedBy("Chrome")]
-	public class GetChildAXNodesCommand: IProtocolCommand<GetChildAXNodesCommandResponse>
+	public class GetChildAXNodesCommand: ICommandParams<GetChildAXNodesCommandResponse>
 	{
 		/// <summary>
 		/// Id

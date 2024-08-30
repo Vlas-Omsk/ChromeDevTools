@@ -7,7 +7,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.FedCm
 {
 	[Command(ProtocolName.FedCm.DismissDialog)]
 	[SupportedBy("Chrome")]
-	public class DismissDialogCommand: IProtocolCommand<DismissDialogCommandResponse>
+	public class DismissDialogCommand: ICommandParams<DismissDialogCommandResponse>
 	{
 		/// <summary>
 		/// DialogId

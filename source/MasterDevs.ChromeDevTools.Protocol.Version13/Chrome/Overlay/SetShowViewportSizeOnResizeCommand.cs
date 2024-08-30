@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Overlay
 	/// </summary>
 	[Command(ProtocolName.Overlay.SetShowViewportSizeOnResize)]
 	[SupportedBy("Chrome")]
-	public class SetShowViewportSizeOnResizeCommand: IProtocolCommand<SetShowViewportSizeOnResizeCommandResponse>
+	public class SetShowViewportSizeOnResizeCommand: ICommandParams<SetShowViewportSizeOnResizeCommandResponse>
 	{
 		/// <summary>
 		/// Whether to paint size or not.

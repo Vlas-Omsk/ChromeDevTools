@@ -13,7 +13,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.HeadlessExperimental
 	/// </summary>
 	[Command(ProtocolName.HeadlessExperimental.BeginFrame)]
 	[SupportedBy("Chrome")]
-	public class BeginFrameCommand: IProtocolCommand<BeginFrameCommandResponse>
+	public class BeginFrameCommand: ICommandParams<BeginFrameCommandResponse>
 	{
 		/// <summary>
 		/// Timestamp of this BeginFrame in Renderer TimeTicks (milliseconds of uptime). If not set,

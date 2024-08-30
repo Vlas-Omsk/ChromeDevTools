@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.DOM
 	/// </summary>
 	[Command(ProtocolName.DOM.PushNodeByPathToFrontend)]
 	[SupportedBy("Chrome")]
-	public class PushNodeByPathToFrontendCommand: IProtocolCommand<PushNodeByPathToFrontendCommandResponse>
+	public class PushNodeByPathToFrontendCommand: ICommandParams<PushNodeByPathToFrontendCommandResponse>
 	{
 		/// <summary>
 		/// Path to node in the proprietary format.

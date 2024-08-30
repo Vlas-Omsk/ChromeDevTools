@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Target
 	/// </summary>
 	[Command(ProtocolName.Target.CloseTarget)]
 	[SupportedBy("Chrome")]
-	public class CloseTargetCommand: IProtocolCommand<CloseTargetCommandResponse>
+	public class CloseTargetCommand: ICommandParams<CloseTargetCommandResponse>
 	{
 		/// <summary>
 		/// TargetId

@@ -7,7 +7,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Overlay
 {
 	[Command(ProtocolName.Overlay.SetShowScrollSnapOverlays)]
 	[SupportedBy("Chrome")]
-	public class SetShowScrollSnapOverlaysCommand: IProtocolCommand<SetShowScrollSnapOverlaysCommandResponse>
+	public class SetShowScrollSnapOverlaysCommand: ICommandParams<SetShowScrollSnapOverlaysCommandResponse>
 	{
 		/// <summary>
 		/// An array of node identifiers and descriptors for the highlight appearance.

@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.IO
 	/// </summary>
 	[Command(ProtocolName.IO.Close)]
 	[SupportedBy("Chrome")]
-	public class CloseCommand: IProtocolCommand<CloseCommandResponse>
+	public class CloseCommand: ICommandParams<CloseCommandResponse>
 	{
 		/// <summary>
 		/// Handle of the stream to close.

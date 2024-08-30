@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Cast
 	/// </summary>
 	[Command(ProtocolName.Cast.StartDesktopMirroring)]
 	[SupportedBy("Chrome")]
-	public class StartDesktopMirroringCommand: IProtocolCommand<StartDesktopMirroringCommandResponse>
+	public class StartDesktopMirroringCommand: ICommandParams<StartDesktopMirroringCommandResponse>
 	{
 		/// <summary>
 		/// SinkName

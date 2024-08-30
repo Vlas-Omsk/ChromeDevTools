@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.Worker
 	/// </summary>
 	[Command(ProtocolName.Worker.CanInspectWorkers)]
 	[SupportedBy("iOS")]
-	public class CanInspectWorkersCommand: IProtocolCommand<CanInspectWorkersCommandResponse>
+	public class CanInspectWorkersCommand: ICommandParams<CanInspectWorkersCommandResponse>
 	{
 	}
 }

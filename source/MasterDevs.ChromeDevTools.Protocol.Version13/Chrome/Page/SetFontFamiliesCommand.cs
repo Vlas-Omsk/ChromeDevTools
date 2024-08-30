@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Page
 	/// </summary>
 	[Command(ProtocolName.Page.SetFontFamilies)]
 	[SupportedBy("Chrome")]
-	public class SetFontFamiliesCommand: IProtocolCommand<SetFontFamiliesCommandResponse>
+	public class SetFontFamiliesCommand: ICommandParams<SetFontFamiliesCommandResponse>
 	{
 		/// <summary>
 		/// Specifies font families to set. If a font family is not specified, it won't be changed.

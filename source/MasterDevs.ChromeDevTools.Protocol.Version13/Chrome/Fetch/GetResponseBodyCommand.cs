@@ -15,7 +15,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Fetch
 	/// </summary>
 	[Command(ProtocolName.Fetch.GetResponseBody)]
 	[SupportedBy("Chrome")]
-	public class GetResponseBodyCommand: IProtocolCommand<GetResponseBodyCommandResponse>
+	public class GetResponseBodyCommand: ICommandParams<GetResponseBodyCommandResponse>
 	{
 		/// <summary>
 		/// Identifier for the intercepted request to get body for.

@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.CSS
 	/// </summary>
 	[Command(ProtocolName.CSS.SetSupportsText)]
 	[SupportedBy("Chrome")]
-	public class SetSupportsTextCommand: IProtocolCommand<SetSupportsTextCommandResponse>
+	public class SetSupportsTextCommand: ICommandParams<SetSupportsTextCommandResponse>
 	{
 		/// <summary>
 		/// StyleSheetId

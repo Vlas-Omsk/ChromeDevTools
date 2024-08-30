@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.Page
 	/// </summary>
 	[Command(ProtocolName.Page.Reload)]
 	[SupportedBy("iOS")]
-	public class ReloadCommand: IProtocolCommand<ReloadCommandResponse>
+	public class ReloadCommand: ICommandParams<ReloadCommandResponse>
 	{
 		/// <summary>
 		/// If true, browser cache is ignored (as if the user pressed Shift+refresh).

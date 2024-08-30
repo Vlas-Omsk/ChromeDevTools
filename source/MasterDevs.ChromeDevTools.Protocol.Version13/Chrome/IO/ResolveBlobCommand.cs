@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.IO
 	/// </summary>
 	[Command(ProtocolName.IO.ResolveBlob)]
 	[SupportedBy("Chrome")]
-	public class ResolveBlobCommand: IProtocolCommand<ResolveBlobCommandResponse>
+	public class ResolveBlobCommand: ICommandParams<ResolveBlobCommandResponse>
 	{
 		/// <summary>
 		/// Object id of a Blob object wrapper.

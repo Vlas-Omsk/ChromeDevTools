@@ -7,7 +7,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.LayerTree
 {
 	[Command(ProtocolName.LayerTree.ProfileSnapshot)]
 	[SupportedBy("Chrome")]
-	public class ProfileSnapshotCommand: IProtocolCommand<ProfileSnapshotCommandResponse>
+	public class ProfileSnapshotCommand: ICommandParams<ProfileSnapshotCommandResponse>
 	{
 		/// <summary>
 		/// The id of the layer snapshot.

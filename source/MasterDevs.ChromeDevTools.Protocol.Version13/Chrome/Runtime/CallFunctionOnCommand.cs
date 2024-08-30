@@ -11,7 +11,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Runtime
 	/// </summary>
 	[Command(ProtocolName.Runtime.CallFunctionOn)]
 	[SupportedBy("Chrome")]
-	public class CallFunctionOnCommand: IProtocolCommand<CallFunctionOnCommandResponse>
+	public class CallFunctionOnCommand: ICommandParams<CallFunctionOnCommandResponse>
 	{
 		/// <summary>
 		/// Declaration of the function to call.

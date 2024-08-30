@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.LayerTree
 	/// </summary>
 	[Command(ProtocolName.LayerTree.MakeSnapshot)]
 	[SupportedBy("Chrome")]
-	public class MakeSnapshotCommand: IProtocolCommand<MakeSnapshotCommandResponse>
+	public class MakeSnapshotCommand: ICommandParams<MakeSnapshotCommandResponse>
 	{
 		/// <summary>
 		/// The id of the layer.

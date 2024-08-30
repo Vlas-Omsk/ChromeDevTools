@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.CacheStorage
 	/// </summary>
 	[Command(ProtocolName.CacheStorage.RequestCachedResponse)]
 	[SupportedBy("Chrome")]
-	public class RequestCachedResponseCommand: IProtocolCommand<RequestCachedResponseCommandResponse>
+	public class RequestCachedResponseCommand: ICommandParams<RequestCachedResponseCommandResponse>
 	{
 		/// <summary>
 		/// Id of cache that contains the entry.

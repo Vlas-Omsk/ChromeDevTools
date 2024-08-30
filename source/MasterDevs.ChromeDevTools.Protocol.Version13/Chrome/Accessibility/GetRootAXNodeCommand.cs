@@ -11,7 +11,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Accessibility
 	/// </summary>
 	[Command(ProtocolName.Accessibility.GetRootAXNode)]
 	[SupportedBy("Chrome")]
-	public class GetRootAXNodeCommand: IProtocolCommand<GetRootAXNodeCommandResponse>
+	public class GetRootAXNodeCommand: ICommandParams<GetRootAXNodeCommandResponse>
 	{
 		/// <summary>
 		/// The frame in whose document the node resides.

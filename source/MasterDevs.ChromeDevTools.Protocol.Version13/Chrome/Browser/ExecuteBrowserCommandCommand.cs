@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Browser
 	/// </summary>
 	[Command(ProtocolName.Browser.ExecuteBrowserCommand)]
 	[SupportedBy("Chrome")]
-	public class ExecuteBrowserCommandCommand: IProtocolCommand<ExecuteBrowserCommandCommandResponse>
+	public class ExecuteBrowserCommandCommand: ICommandParams<ExecuteBrowserCommandCommandResponse>
 	{
 		/// <summary>
 		/// CommandId

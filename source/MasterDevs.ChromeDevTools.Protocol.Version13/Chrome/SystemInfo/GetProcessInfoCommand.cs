@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.SystemInfo
 	/// </summary>
 	[Command(ProtocolName.SystemInfo.GetProcessInfo)]
 	[SupportedBy("Chrome")]
-	public class GetProcessInfoCommand: IProtocolCommand<GetProcessInfoCommandResponse>
+	public class GetProcessInfoCommand: ICommandParams<GetProcessInfoCommandResponse>
 	{
 	}
 }

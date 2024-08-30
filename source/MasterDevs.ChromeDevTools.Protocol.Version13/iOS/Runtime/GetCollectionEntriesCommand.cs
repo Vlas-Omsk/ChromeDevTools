@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.Runtime
 	/// </summary>
 	[Command(ProtocolName.Runtime.GetCollectionEntries)]
 	[SupportedBy("iOS")]
-	public class GetCollectionEntriesCommand: IProtocolCommand<GetCollectionEntriesCommandResponse>
+	public class GetCollectionEntriesCommand: ICommandParams<GetCollectionEntriesCommandResponse>
 	{
 		/// <summary>
 		/// Id of the collection to get entries for.

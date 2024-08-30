@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.DOM
 	/// </summary>
 	[Command(ProtocolName.DOM.RequestChildNodes)]
 	[SupportedBy("iOS")]
-	public class RequestChildNodesCommand: IProtocolCommand<RequestChildNodesCommandResponse>
+	public class RequestChildNodesCommand: ICommandParams<RequestChildNodesCommandResponse>
 	{
 		/// <summary>
 		/// Id of the node to get children for.

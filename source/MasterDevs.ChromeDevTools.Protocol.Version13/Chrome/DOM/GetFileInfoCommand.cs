@@ -11,7 +11,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.DOM
 	/// </summary>
 	[Command(ProtocolName.DOM.GetFileInfo)]
 	[SupportedBy("Chrome")]
-	public class GetFileInfoCommand: IProtocolCommand<GetFileInfoCommandResponse>
+	public class GetFileInfoCommand: ICommandParams<GetFileInfoCommandResponse>
 	{
 		/// <summary>
 		/// JavaScript object id of the node wrapper.

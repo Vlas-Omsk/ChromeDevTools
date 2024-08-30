@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Network
 	/// </summary>
 	[Command(ProtocolName.Network.SetBypassServiceWorker)]
 	[SupportedBy("Chrome")]
-	public class SetBypassServiceWorkerCommand: IProtocolCommand<SetBypassServiceWorkerCommandResponse>
+	public class SetBypassServiceWorkerCommand: ICommandParams<SetBypassServiceWorkerCommandResponse>
 	{
 		/// <summary>
 		/// Bypass service worker and load from network.

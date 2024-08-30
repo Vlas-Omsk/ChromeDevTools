@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Network
 	/// </summary>
 	[Command(ProtocolName.Network.LoadNetworkResource)]
 	[SupportedBy("Chrome")]
-	public class LoadNetworkResourceCommand: IProtocolCommand<LoadNetworkResourceCommandResponse>
+	public class LoadNetworkResourceCommand: ICommandParams<LoadNetworkResourceCommandResponse>
 	{
 		/// <summary>
 		/// Frame id to get the resource for. Mandatory for frame targets, and

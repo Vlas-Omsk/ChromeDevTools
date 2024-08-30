@@ -7,7 +7,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.CSS
 {
 	[Command(ProtocolName.CSS.GetBackgroundColors)]
 	[SupportedBy("Chrome")]
-	public class GetBackgroundColorsCommand: IProtocolCommand<GetBackgroundColorsCommandResponse>
+	public class GetBackgroundColorsCommand: ICommandParams<GetBackgroundColorsCommandResponse>
 	{
 		/// <summary>
 		/// Id of the node to get background colors for.

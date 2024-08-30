@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Input
 	/// </summary>
 	[Command(ProtocolName.Input.DispatchKeyEvent)]
 	[SupportedBy("Chrome")]
-	public class DispatchKeyEventCommand: IProtocolCommand<DispatchKeyEventCommandResponse>
+	public class DispatchKeyEventCommand: ICommandParams<DispatchKeyEventCommandResponse>
 	{
 		/// <summary>
 		/// Type of the key event.

@@ -7,7 +7,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Emulation
 {
 	[Command(ProtocolName.Emulation.SetHardwareConcurrencyOverride)]
 	[SupportedBy("Chrome")]
-	public class SetHardwareConcurrencyOverrideCommand: IProtocolCommand<SetHardwareConcurrencyOverrideCommandResponse>
+	public class SetHardwareConcurrencyOverrideCommand: ICommandParams<SetHardwareConcurrencyOverrideCommandResponse>
 	{
 		/// <summary>
 		/// Hardware concurrency to report

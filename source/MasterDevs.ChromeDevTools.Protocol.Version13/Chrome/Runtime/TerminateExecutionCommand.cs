@@ -11,7 +11,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Runtime
 	/// </summary>
 	[Command(ProtocolName.Runtime.TerminateExecution)]
 	[SupportedBy("Chrome")]
-	public class TerminateExecutionCommand: IProtocolCommand<TerminateExecutionCommandResponse>
+	public class TerminateExecutionCommand: ICommandParams<TerminateExecutionCommandResponse>
 	{
 	}
 }

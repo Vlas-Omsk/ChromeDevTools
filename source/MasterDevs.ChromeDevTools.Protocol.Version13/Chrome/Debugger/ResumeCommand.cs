@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Debugger
 	/// </summary>
 	[Command(ProtocolName.Debugger.Resume)]
 	[SupportedBy("Chrome")]
-	public class ResumeCommand: IProtocolCommand<ResumeCommandResponse>
+	public class ResumeCommand: ICommandParams<ResumeCommandResponse>
 	{
 		/// <summary>
 		/// Set to true to terminate execution upon resuming execution. In contrast

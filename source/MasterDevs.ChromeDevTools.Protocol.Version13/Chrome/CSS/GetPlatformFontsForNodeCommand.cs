@@ -11,7 +11,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.CSS
 	/// </summary>
 	[Command(ProtocolName.CSS.GetPlatformFontsForNode)]
 	[SupportedBy("Chrome")]
-	public class GetPlatformFontsForNodeCommand: IProtocolCommand<GetPlatformFontsForNodeCommandResponse>
+	public class GetPlatformFontsForNodeCommand: ICommandParams<GetPlatformFontsForNodeCommandResponse>
 	{
 		/// <summary>
 		/// NodeId

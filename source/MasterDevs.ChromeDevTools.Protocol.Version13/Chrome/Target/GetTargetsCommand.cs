@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Target
 	/// </summary>
 	[Command(ProtocolName.Target.GetTargets)]
 	[SupportedBy("Chrome")]
-	public class GetTargetsCommand: IProtocolCommand<GetTargetsCommandResponse>
+	public class GetTargetsCommand: ICommandParams<GetTargetsCommandResponse>
 	{
 		/// <summary>
 		/// Only targets matching filter will be reported. If filter is not specified

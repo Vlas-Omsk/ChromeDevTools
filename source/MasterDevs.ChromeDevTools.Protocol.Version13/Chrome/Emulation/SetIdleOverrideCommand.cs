@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Emulation
 	/// </summary>
 	[Command(ProtocolName.Emulation.SetIdleOverride)]
 	[SupportedBy("Chrome")]
-	public class SetIdleOverrideCommand: IProtocolCommand<SetIdleOverrideCommandResponse>
+	public class SetIdleOverrideCommand: ICommandParams<SetIdleOverrideCommandResponse>
 	{
 		/// <summary>
 		/// Mock isUserActive

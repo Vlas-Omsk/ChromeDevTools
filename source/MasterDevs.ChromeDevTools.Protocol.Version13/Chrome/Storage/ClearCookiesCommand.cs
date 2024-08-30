@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Storage
 	/// </summary>
 	[Command(ProtocolName.Storage.ClearCookies)]
 	[SupportedBy("Chrome")]
-	public class ClearCookiesCommand: IProtocolCommand<ClearCookiesCommandResponse>
+	public class ClearCookiesCommand: ICommandParams<ClearCookiesCommandResponse>
 	{
 		/// <summary>
 		/// Browser context to use when called on the browser endpoint.

@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.BackgroundService
 	/// </summary>
 	[Command(ProtocolName.BackgroundService.StartObserving)]
 	[SupportedBy("Chrome")]
-	public class StartObservingCommand: IProtocolCommand<StartObservingCommandResponse>
+	public class StartObservingCommand: ICommandParams<StartObservingCommandResponse>
 	{
 		/// <summary>
 		/// Service

@@ -11,7 +11,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.CSS
 	/// </summary>
 	[Command(ProtocolName.CSS.AddRule)]
 	[SupportedBy("Chrome")]
-	public class AddRuleCommand: IProtocolCommand<AddRuleCommandResponse>
+	public class AddRuleCommand: ICommandParams<AddRuleCommandResponse>
 	{
 		/// <summary>
 		/// The css style sheet identifier where a new rule should be inserted.

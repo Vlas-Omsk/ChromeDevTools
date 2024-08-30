@@ -11,7 +11,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Debugger
 	/// </summary>
 	[Command(ProtocolName.Debugger.SetVariableValue)]
 	[SupportedBy("Chrome")]
-	public class SetVariableValueCommand: IProtocolCommand<SetVariableValueCommandResponse>
+	public class SetVariableValueCommand: ICommandParams<SetVariableValueCommandResponse>
 	{
 		/// <summary>
 		/// 0-based number of scope as was listed in scope chain. Only 'local', 'closure' and 'catch'

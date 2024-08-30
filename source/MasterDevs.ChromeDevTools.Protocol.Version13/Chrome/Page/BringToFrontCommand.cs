@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Page
 	/// </summary>
 	[Command(ProtocolName.Page.BringToFront)]
 	[SupportedBy("Chrome")]
-	public class BringToFrontCommand: IProtocolCommand<BringToFrontCommandResponse>
+	public class BringToFrontCommand: ICommandParams<BringToFrontCommandResponse>
 	{
 	}
 }

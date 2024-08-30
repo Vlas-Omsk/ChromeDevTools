@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Network
 	/// </summary>
 	[Command(ProtocolName.Network.SetCacheDisabled)]
 	[SupportedBy("Chrome")]
-	public class SetCacheDisabledCommand: IProtocolCommand<SetCacheDisabledCommandResponse>
+	public class SetCacheDisabledCommand: ICommandParams<SetCacheDisabledCommandResponse>
 	{
 		/// <summary>
 		/// Cache disabled state.

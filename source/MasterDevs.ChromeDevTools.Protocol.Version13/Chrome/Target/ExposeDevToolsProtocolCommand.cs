@@ -17,7 +17,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Target
 	/// </summary>
 	[Command(ProtocolName.Target.ExposeDevToolsProtocol)]
 	[SupportedBy("Chrome")]
-	public class ExposeDevToolsProtocolCommand: IProtocolCommand<ExposeDevToolsProtocolCommandResponse>
+	public class ExposeDevToolsProtocolCommand: ICommandParams<ExposeDevToolsProtocolCommandResponse>
 	{
 		/// <summary>
 		/// TargetId

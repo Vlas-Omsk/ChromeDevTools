@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Overlay
 	/// </summary>
 	[Command(ProtocolName.Overlay.SetShowIsolatedElements)]
 	[SupportedBy("Chrome")]
-	public class SetShowIsolatedElementsCommand: IProtocolCommand<SetShowIsolatedElementsCommandResponse>
+	public class SetShowIsolatedElementsCommand: ICommandParams<SetShowIsolatedElementsCommandResponse>
 	{
 		/// <summary>
 		/// An array of node identifiers and descriptors for the highlight appearance.

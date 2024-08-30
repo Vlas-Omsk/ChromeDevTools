@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Memory
 	/// </summary>
 	[Command(ProtocolName.Memory.StopSampling)]
 	[SupportedBy("Chrome")]
-	public class StopSamplingCommand: IProtocolCommand<StopSamplingCommandResponse>
+	public class StopSamplingCommand: ICommandParams<StopSamplingCommandResponse>
 	{
 	}
 }

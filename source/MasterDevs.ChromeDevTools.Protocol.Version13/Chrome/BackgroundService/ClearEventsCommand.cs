@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.BackgroundService
 	/// </summary>
 	[Command(ProtocolName.BackgroundService.ClearEvents)]
 	[SupportedBy("Chrome")]
-	public class ClearEventsCommand: IProtocolCommand<ClearEventsCommandResponse>
+	public class ClearEventsCommand: ICommandParams<ClearEventsCommandResponse>
 	{
 		/// <summary>
 		/// Service

@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.EventBreakpoints
 	/// </summary>
 	[Command(ProtocolName.EventBreakpoints.SetInstrumentationBreakpoint)]
 	[SupportedBy("Chrome")]
-	public class SetInstrumentationBreakpointCommand: IProtocolCommand<SetInstrumentationBreakpointCommandResponse>
+	public class SetInstrumentationBreakpointCommand: ICommandParams<SetInstrumentationBreakpointCommandResponse>
 	{
 		/// <summary>
 		/// Instrumentation name to stop on.

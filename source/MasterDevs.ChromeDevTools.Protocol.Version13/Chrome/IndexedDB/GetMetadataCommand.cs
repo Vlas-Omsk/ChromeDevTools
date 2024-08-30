@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.IndexedDB
 	/// </summary>
 	[Command(ProtocolName.IndexedDB.GetMetadata)]
 	[SupportedBy("Chrome")]
-	public class GetMetadataCommand: IProtocolCommand<GetMetadataCommandResponse>
+	public class GetMetadataCommand: ICommandParams<GetMetadataCommandResponse>
 	{
 		/// <summary>
 		/// At least and at most one of securityOrigin, storageKey must be specified.

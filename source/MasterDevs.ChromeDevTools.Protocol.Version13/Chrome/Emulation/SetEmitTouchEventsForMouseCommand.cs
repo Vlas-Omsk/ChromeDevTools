@@ -7,7 +7,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Emulation
 {
 	[Command(ProtocolName.Emulation.SetEmitTouchEventsForMouse)]
 	[SupportedBy("Chrome")]
-	public class SetEmitTouchEventsForMouseCommand: IProtocolCommand<SetEmitTouchEventsForMouseCommandResponse>
+	public class SetEmitTouchEventsForMouseCommand: ICommandParams<SetEmitTouchEventsForMouseCommandResponse>
 	{
 		/// <summary>
 		/// Whether touch emulation based on mouse input should be enabled.

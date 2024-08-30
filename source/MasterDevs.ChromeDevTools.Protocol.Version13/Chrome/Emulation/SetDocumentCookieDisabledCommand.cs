@@ -7,7 +7,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Emulation
 {
 	[Command(ProtocolName.Emulation.SetDocumentCookieDisabled)]
 	[SupportedBy("Chrome")]
-	public class SetDocumentCookieDisabledCommand: IProtocolCommand<SetDocumentCookieDisabledCommandResponse>
+	public class SetDocumentCookieDisabledCommand: ICommandParams<SetDocumentCookieDisabledCommandResponse>
 	{
 		/// <summary>
 		/// Whether document.coookie API should be disabled.

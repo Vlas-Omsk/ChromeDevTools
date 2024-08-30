@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Browser
 	/// </summary>
 	[Command(ProtocolName.Browser.CrashGpuProcess)]
 	[SupportedBy("Chrome")]
-	public class CrashGpuProcessCommand: IProtocolCommand<CrashGpuProcessCommandResponse>
+	public class CrashGpuProcessCommand: ICommandParams<CrashGpuProcessCommandResponse>
 	{
 	}
 }

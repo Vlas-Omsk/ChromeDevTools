@@ -19,7 +19,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Fetch
 	/// </summary>
 	[Command(ProtocolName.Fetch.TakeResponseBodyAsStream)]
 	[SupportedBy("Chrome")]
-	public class TakeResponseBodyAsStreamCommand: IProtocolCommand<TakeResponseBodyAsStreamCommandResponse>
+	public class TakeResponseBodyAsStreamCommand: ICommandParams<TakeResponseBodyAsStreamCommandResponse>
 	{
 		/// <summary>
 		/// RequestId

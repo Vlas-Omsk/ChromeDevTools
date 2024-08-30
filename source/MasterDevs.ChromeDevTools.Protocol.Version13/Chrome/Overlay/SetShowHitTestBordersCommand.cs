@@ -11,7 +11,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Overlay
 	[Obsolete("Deprecated, no longer has any effect.")]
 	[Command(ProtocolName.Overlay.SetShowHitTestBorders)]
 	[SupportedBy("Chrome")]
-	public class SetShowHitTestBordersCommand: IProtocolCommand<SetShowHitTestBordersCommandResponse>
+	public class SetShowHitTestBordersCommand: ICommandParams<SetShowHitTestBordersCommandResponse>
 	{
 		/// <summary>
 		/// True for showing hit-test borders

@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Debugger
 	/// </summary>
 	[Command(ProtocolName.Debugger.SetSkipAllPauses)]
 	[SupportedBy("Chrome")]
-	public class SetSkipAllPausesCommand: IProtocolCommand<SetSkipAllPausesCommandResponse>
+	public class SetSkipAllPausesCommand: ICommandParams<SetSkipAllPausesCommandResponse>
 	{
 		/// <summary>
 		/// New value for skip pauses state.

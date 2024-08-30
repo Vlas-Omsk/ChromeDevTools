@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.WebAuthn
 	/// </summary>
 	[Command(ProtocolName.WebAuthn.GetCredentials)]
 	[SupportedBy("Chrome")]
-	public class GetCredentialsCommand: IProtocolCommand<GetCredentialsCommandResponse>
+	public class GetCredentialsCommand: ICommandParams<GetCredentialsCommandResponse>
 	{
 		/// <summary>
 		/// AuthenticatorId

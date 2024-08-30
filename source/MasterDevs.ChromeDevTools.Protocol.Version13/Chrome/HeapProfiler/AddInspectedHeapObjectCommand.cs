@@ -11,7 +11,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.HeapProfiler
 	/// </summary>
 	[Command(ProtocolName.HeapProfiler.AddInspectedHeapObject)]
 	[SupportedBy("Chrome")]
-	public class AddInspectedHeapObjectCommand: IProtocolCommand<AddInspectedHeapObjectCommandResponse>
+	public class AddInspectedHeapObjectCommand: ICommandParams<AddInspectedHeapObjectCommandResponse>
 	{
 		/// <summary>
 		/// Heap snapshot object id to be accessible by means of $x command line API.

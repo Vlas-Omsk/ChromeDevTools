@@ -11,7 +11,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Target
 	/// </summary>
 	[Command(ProtocolName.Target.SetRemoteLocations)]
 	[SupportedBy("Chrome")]
-	public class SetRemoteLocationsCommand: IProtocolCommand<SetRemoteLocationsCommandResponse>
+	public class SetRemoteLocationsCommand: ICommandParams<SetRemoteLocationsCommandResponse>
 	{
 		/// <summary>
 		/// List of remote locations.

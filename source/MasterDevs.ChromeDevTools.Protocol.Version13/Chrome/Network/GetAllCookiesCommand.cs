@@ -13,7 +13,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Network
 	[Obsolete]
 	[Command(ProtocolName.Network.GetAllCookies)]
 	[SupportedBy("Chrome")]
-	public class GetAllCookiesCommand: IProtocolCommand<GetAllCookiesCommandResponse>
+	public class GetAllCookiesCommand: ICommandParams<GetAllCookiesCommandResponse>
 	{
 	}
 }

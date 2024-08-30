@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.LayerTree
 	/// </summary>
 	[Command(ProtocolName.LayerTree.ReasonsForCompositingLayer)]
 	[SupportedBy("iOS")]
-	public class ReasonsForCompositingLayerCommand: IProtocolCommand<ReasonsForCompositingLayerCommandResponse>
+	public class ReasonsForCompositingLayerCommand: ICommandParams<ReasonsForCompositingLayerCommandResponse>
 	{
 		/// <summary>
 		/// The id of the layer for which we want to get the reasons it was composited.

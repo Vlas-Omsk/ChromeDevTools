@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Browser
 	/// </summary>
 	[Command(ProtocolName.Browser.GetWindowBounds)]
 	[SupportedBy("Chrome")]
-	public class GetWindowBoundsCommand: IProtocolCommand<GetWindowBoundsCommandResponse>
+	public class GetWindowBoundsCommand: ICommandParams<GetWindowBoundsCommandResponse>
 	{
 		/// <summary>
 		/// Browser window id.

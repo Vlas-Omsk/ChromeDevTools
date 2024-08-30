@@ -11,7 +11,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.CSS
 	/// </summary>
 	[Command(ProtocolName.CSS.ForcePseudoState)]
 	[SupportedBy("Chrome")]
-	public class ForcePseudoStateCommand: IProtocolCommand<ForcePseudoStateCommandResponse>
+	public class ForcePseudoStateCommand: ICommandParams<ForcePseudoStateCommandResponse>
 	{
 		/// <summary>
 		/// The element id for which to force the pseudo state.

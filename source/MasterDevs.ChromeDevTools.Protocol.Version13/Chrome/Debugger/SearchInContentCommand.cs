@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Debugger
 	/// </summary>
 	[Command(ProtocolName.Debugger.SearchInContent)]
 	[SupportedBy("Chrome")]
-	public class SearchInContentCommand: IProtocolCommand<SearchInContentCommandResponse>
+	public class SearchInContentCommand: ICommandParams<SearchInContentCommandResponse>
 	{
 		/// <summary>
 		/// Id of the script to search in.

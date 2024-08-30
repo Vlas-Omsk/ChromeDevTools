@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.Debugger
 	/// </summary>
 	[Command(ProtocolName.Debugger.ContinueToLocation)]
 	[SupportedBy("iOS")]
-	public class ContinueToLocationCommand: IProtocolCommand<ContinueToLocationCommandResponse>
+	public class ContinueToLocationCommand: ICommandParams<ContinueToLocationCommandResponse>
 	{
 		/// <summary>
 		/// Location to continue to.

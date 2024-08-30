@@ -7,7 +7,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Runtime
 {
 	[Command(ProtocolName.Runtime.SetMaxCallStackSizeToCapture)]
 	[SupportedBy("Chrome")]
-	public class SetMaxCallStackSizeToCaptureCommand: IProtocolCommand<SetMaxCallStackSizeToCaptureCommandResponse>
+	public class SetMaxCallStackSizeToCaptureCommand: ICommandParams<SetMaxCallStackSizeToCaptureCommandResponse>
 	{
 		/// <summary>
 		/// Size

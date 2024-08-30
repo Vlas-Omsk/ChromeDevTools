@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.IndexedDB
 	/// </summary>
 	[Command(ProtocolName.IndexedDB.DeleteObjectStoreEntries)]
 	[SupportedBy("Chrome")]
-	public class DeleteObjectStoreEntriesCommand: IProtocolCommand<DeleteObjectStoreEntriesCommandResponse>
+	public class DeleteObjectStoreEntriesCommand: ICommandParams<DeleteObjectStoreEntriesCommandResponse>
 	{
 		/// <summary>
 		/// At least and at most one of securityOrigin, storageKey must be specified.

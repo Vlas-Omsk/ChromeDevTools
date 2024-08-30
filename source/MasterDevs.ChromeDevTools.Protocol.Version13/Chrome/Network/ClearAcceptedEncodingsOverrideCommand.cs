@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Network
 	/// </summary>
 	[Command(ProtocolName.Network.ClearAcceptedEncodingsOverride)]
 	[SupportedBy("Chrome")]
-	public class ClearAcceptedEncodingsOverrideCommand: IProtocolCommand<ClearAcceptedEncodingsOverrideCommandResponse>
+	public class ClearAcceptedEncodingsOverrideCommand: ICommandParams<ClearAcceptedEncodingsOverrideCommandResponse>
 	{
 	}
 }

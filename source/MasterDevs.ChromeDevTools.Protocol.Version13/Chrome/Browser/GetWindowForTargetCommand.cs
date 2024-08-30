@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Browser
 	/// </summary>
 	[Command(ProtocolName.Browser.GetWindowForTarget)]
 	[SupportedBy("Chrome")]
-	public class GetWindowForTargetCommand: IProtocolCommand<GetWindowForTargetCommandResponse>
+	public class GetWindowForTargetCommand: ICommandParams<GetWindowForTargetCommandResponse>
 	{
 		/// <summary>
 		/// Devtools agent host id. If called as a part of the session, associated targetId is used.

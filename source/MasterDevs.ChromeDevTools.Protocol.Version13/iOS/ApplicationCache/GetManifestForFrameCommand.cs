@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.ApplicationCache
 	/// </summary>
 	[Command(ProtocolName.ApplicationCache.GetManifestForFrame)]
 	[SupportedBy("iOS")]
-	public class GetManifestForFrameCommand: IProtocolCommand<GetManifestForFrameCommandResponse>
+	public class GetManifestForFrameCommand: ICommandParams<GetManifestForFrameCommandResponse>
 	{
 		/// <summary>
 		/// Identifier of the frame containing document whose manifest is retrieved.

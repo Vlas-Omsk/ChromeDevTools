@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.Debugger
 	/// </summary>
 	[Command(ProtocolName.Debugger.StepOver)]
 	[SupportedBy("iOS")]
-	public class StepOverCommand: IProtocolCommand<StepOverCommandResponse>
+	public class StepOverCommand: ICommandParams<StepOverCommandResponse>
 	{
 	}
 }

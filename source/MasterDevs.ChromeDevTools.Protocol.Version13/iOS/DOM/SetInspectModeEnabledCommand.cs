@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.DOM
 	/// </summary>
 	[Command(ProtocolName.DOM.SetInspectModeEnabled)]
 	[SupportedBy("iOS")]
-	public class SetInspectModeEnabledCommand: IProtocolCommand<SetInspectModeEnabledCommandResponse>
+	public class SetInspectModeEnabledCommand: ICommandParams<SetInspectModeEnabledCommandResponse>
 	{
 		/// <summary>
 		/// True to enable inspection mode, false to disable it.

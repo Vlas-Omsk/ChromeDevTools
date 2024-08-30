@@ -6,14 +6,14 @@ namespace MasterDevs.ChromeDevTools.Protocol
     {
         public static void AddChromeDevToolsProtocol(this IServiceCollection self)
         {
-            self.AddSingleton<IMethodTypeMap, MethodTypeMap>();
-            self.AddSingleton<ICommonCommandsExecutor, CommonCommandsExecutor>();
+            self.AddSingleton<IProtocolTypeMap, MethodTypeMap>();
+            self.AddSingleton<ICommonCommandsProvider, CommonCommandsExecutor>();
         }
 
         public static void AddChromeDevToolsProtocol(this IServiceCollection self, string alias)
         {
-            self.AddSingleton<IMethodTypeMap, MethodTypeMap>(x => new MethodTypeMap(alias));
-            self.AddSingleton<ICommonCommandsExecutor, CommonCommandsExecutor>();
+            self.AddSingleton<IProtocolTypeMap, MethodTypeMap>(x => new MethodTypeMap(alias));
+            self.AddSingleton<ICommonCommandsProvider, CommonCommandsExecutor>();
         }
     }
 }

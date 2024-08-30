@@ -2,12 +2,11 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.1</TargetFramework>
-    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+    <Nullable>enable</Nullable>
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\MasterDevs.ChromeDevTools.Local.Abstractions\MasterDevs.ChromeDevTools.Local.Abstractions.csproj" />
-    <ProjectReference Include="..\MasterDevs.ChromeDevTools\MasterDevs.ChromeDevTools.csproj" />
+    <ProjectReference Include="..\MasterDevs.ChromeDevTools\MasterDevs.ChromeDevTools.Remote.csproj" />
   </ItemGroup>
 
 </Project>

@@ -10,7 +10,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.iOS.DOM
 	/// </summary>
 	[Command(ProtocolName.DOM.RemoveAttribute)]
 	[SupportedBy("iOS")]
-	public class RemoveAttributeCommand: IProtocolCommand<RemoveAttributeCommandResponse>
+	public class RemoveAttributeCommand: ICommandParams<RemoveAttributeCommandResponse>
 	{
 		/// <summary>
 		/// Id of the element to remove attribute from.

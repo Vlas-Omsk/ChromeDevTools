@@ -11,7 +11,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Profiler
 	/// </summary>
 	[Command(ProtocolName.Profiler.GetBestEffortCoverage)]
 	[SupportedBy("Chrome")]
-	public class GetBestEffortCoverageCommand: IProtocolCommand<GetBestEffortCoverageCommandResponse>
+	public class GetBestEffortCoverageCommand: ICommandParams<GetBestEffortCoverageCommandResponse>
 	{
 	}
 }

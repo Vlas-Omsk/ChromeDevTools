@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MasterDevs.ChromeDevTools.Protocol
 {
-    public sealed class CommonCommandsExecutor : ICommonCommandsExecutor
+    public sealed class CommonCommandsExecutor : ICommonCommandsProvider
     {
         public Task ExecuteCloseTargetCommand(IChromeSession chromeSession, string id, CancellationToken cancellationToken)
         {

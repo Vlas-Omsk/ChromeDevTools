@@ -11,7 +11,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.DOM
 	/// </summary>
 	[Command(ProtocolName.DOM.DescribeNode)]
 	[SupportedBy("Chrome")]
-	public class DescribeNodeCommand: IProtocolCommand<DescribeNodeCommandResponse>
+	public class DescribeNodeCommand: ICommandParams<DescribeNodeCommandResponse>
 	{
 		/// <summary>
 		/// Identifier of the node.
