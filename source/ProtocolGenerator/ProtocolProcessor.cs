@@ -86,7 +86,7 @@ namespace MasterDevs.ChromeDevTools.ProtocolGenerator
             }
         }
 
-        public static Protocol LoadProtocol(string[] paths, string alias)
+        public static Protocol LoadProtocol(string[] paths, string alias, Version? version)
         {
             if (paths == null || paths.Length < 1)
                 throw new ArgumentException("Must specify at least one path", nameof(paths));
@@ -99,6 +99,10 @@ namespace MasterDevs.ChromeDevTools.ProtocolGenerator
 
             string json = File.ReadAllText(paths[0]);
             Protocol p = JsonConvert.DeserializeObject<Protocol>(json, settings);
+
+            if (p.Version == null)
+                p.Version = version;
+
             p.SourceFiles = paths;
             p.Alias = alias;
 

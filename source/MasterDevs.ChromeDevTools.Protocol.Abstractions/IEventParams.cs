@@ -1,6 +1,6 @@
 ﻿namespace MasterDevs.ChromeDevTools.Protocol
 {
-    public interface IEventParams : IMethodParams
+    public interface IEventParams
     {
     }
 }

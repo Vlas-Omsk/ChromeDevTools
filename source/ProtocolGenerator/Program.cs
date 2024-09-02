@@ -10,26 +10,26 @@ namespace MasterDevs.ChromeDevTools.ProtocolGenerator
     internal class Program
     {
         private const string CommandAttribute = "Command";
-        private const string CommandResponseAttribute = "CommandResponse";
-        private const string EventAttribute = "Event";
+        private const string EventAttribute = "EventName";
         private const string ProtocolNameClass = "ProtocolName";
         private const string RootNamespace = "MasterDevs.ChromeDevTools.Protocol";
-        private const string CommandSubclass = "Command";
-        private const string CommandResponseSubclass = CommandSubclass + "Response";
-        private const string EventSubclass = "Event";
+        private const string CommandSubclass = "CommandParams";
+        private const string CommandResponseSubclass = "CommandResult";
+        private const string EventSubclass = "EventParams";
         private static Dictionary<string, Dictionary<string, string>> _DomainPropertyTypes = new Dictionary<string, Dictionary<string, string>>();
         private static Dictionary<string, List<string>> _DomainCommands = new Dictionary<string, List<string>>();
         private static Dictionary<string, List<string>> _DomainEvents = new Dictionary<string, List<string>>();
         private static Dictionary<string, string> _SimpleTypes = new Dictionary<string, string>();
+        private static string _Version;
 
         private static void Main(string[] args)
         {
             // At this point in time, we only process the most recent Chrome
             // and iOS (Safari) protocols.
-            Dictionary<string, string[]> protocolFiles = new Dictionary<string, string[]>
+            Dictionary<string, (string[], Version)> protocolFiles = new Dictionary<string, (string[], Version)>
             {
-                {"Chrome", new [] { "js_protocol.json", "browser_protocol.json" } },
-                {"iOS", new [] { "Inspector-iOS-9.3.json" } }
+                {"Chrome", (new [] { "js_protocol13.json", "browser_protocol13.json" }, new Version() { Major = "1", Minor = "3" }) },
+                {"IOS", (new [] { "Inspector-iOS-9.3.json" }, new Version() { Major = "9", Minor = "3" }) }
             };
 
 
@@ -40,9 +40,6 @@ namespace MasterDevs.ChromeDevTools.ProtocolGenerator
             //protocolFiles.Add("iOS-8.0", "Inspector-iOS-8.0.json");
             //protocolFiles.Add("iOS-9.0", "Inspector-iOS-9.0.json");
 
-
-            Collection<Protocol> protocols = new Collection<Protocol>();
-
             // "Explicit mappings" allow us to map one type reference to another. This is a
             // rather hard-coded way of doing things, and is only used when the same type
             // has different names accross different versions of the dev tools - e.g. the RGBA
@@ -51,26 +48,25 @@ namespace MasterDevs.ChromeDevTools.ProtocolGenerator
 
             foreach (var protocolFile in protocolFiles)
             {
-                Protocol p = ProtocolProcessor.LoadProtocol(protocolFile.Value, protocolFile.Key);
+                Protocol p = ProtocolProcessor.LoadProtocol(protocolFile.Value.Item1, protocolFile.Key, protocolFile.Value.Item2);
                 ProtocolProcessor.ResolveTypeReferences(p, explicitMappings);
-                protocols.Add(p);
-            }
 
-            var outputFolder = "OutputProtocol";
-            if (args.Length > 0)
-            {
-                outputFolder = args[0];
-            }
-            if (Directory.Exists(outputFolder))
-            {
-                Directory.Delete(outputFolder, true);
+                _Version = $"{p.Version.Major}{p.Version.Minor}";
+
+                var outputFolder = @$"D:\GitBuh\TwitterBot2\ChromeDevTools\source/MasterDevs.ChromeDevTools.Protocol.Version{_Version}.{p.Alias}";
+
+                if (Directory.Exists(outputFolder))
+                    Directory.Delete(outputFolder, true);
+
                 Directory.CreateDirectory(outputFolder);
-            }
 
-            foreach (var protocol in protocols)
-            {
-                var outputDirectoryInfo = Directory.CreateDirectory(Path.Combine(outputFolder, protocol.Alias));
-                WriteProtocolClasses(protocol, outputDirectoryInfo);
+                File.Copy(
+                    "protocol.csproj.template",
+                    Path.Combine(outputFolder, $"MasterDevs.ChromeDevTools.Protocol.Version{_Version}.{p.Alias}.csproj")
+                );
+
+                var outputDirectoryInfo = new DirectoryInfo(outputFolder);
+                WriteProtocolClasses(p, outputDirectoryInfo);
             }
         }
 
@@ -163,10 +159,10 @@ namespace MasterDevs.ChromeDevTools.ProtocolGenerator
         private static void WriteMethodConstants(DirectoryInfo domainDirectoryInfo, string ns)
         {
             var sb = new StringBuilder();
-            sb.AppendFormat("using MasterDevs.ChromeDevTools;");
+            sb.AppendFormat("using MasterDevs.ChromeDevTools.Protocol;");
             sb.AppendLine();
             sb.AppendLine();
-            sb.AppendFormat("namespace {0}.{1}", RootNamespace, ns);
+            sb.AppendFormat("namespace {0}.Version{2}.{1}", RootNamespace, ns, _Version);
             sb.AppendLine();
             sb.AppendLine("{");
             sb.AppendFormat("\tpublic static class {0}", ProtocolNameClass);
@@ -225,14 +221,14 @@ namespace MasterDevs.ChromeDevTools.ProtocolGenerator
             sb.AppendLine("using Newtonsoft.Json;");
             sb.AppendLine("using System.Collections.Generic;");
             sb.AppendLine();
-            sb.AppendFormat("namespace {0}.{1}.{2}", RootNamespace, ns, domainDirectoryInfo.Name);
+            sb.AppendFormat("namespace {0}.Version{2}.{1}.{3}", RootNamespace, ns, _Version, domainDirectoryInfo.Name);
             sb.AppendLine();
             sb.AppendLine("{");
             WriteSummary(sb, description);
             sb.AppendFormat("\t[{0}({1}.{2}.{3})]", EventAttribute, ProtocolNameClass, domainDirectoryInfo.Name, ToCamelCase(eventName));
             sb.AppendLine();
             WriteSupportedBy(sb, supportedBy);
-            sb.AppendFormat("\tpublic class {0}", className);
+            sb.AppendFormat("\tpublic class {0} : IEventParams", className);
             sb.AppendLine();
             sb.AppendLine("\t{");
             foreach (var parameterProperty in parameters)
@@ -265,16 +261,15 @@ namespace MasterDevs.ChromeDevTools.ProtocolGenerator
             sb.AppendLine("using System;");
             sb.AppendLine("using System.Collections.Generic;");
             sb.AppendLine();
-            sb.AppendFormat("namespace {0}.{1}.{2}", RootNamespace, ns, domainDirectoryInfo.Name);
+            sb.AppendFormat("namespace {0}.Version{2}.{1}.{3}", RootNamespace, ns, _Version, domainDirectoryInfo.Name);
             sb.AppendLine();
             sb.AppendLine("{");
             WriteSummary(sb, description);
             if (isDeprecated)
                 WriteObsoleteAttribute(sb, description);
-            sb.AppendFormat("\t[{0}({1}.{2}.{3})]", CommandResponseAttribute, ProtocolNameClass, domainDirectoryInfo.Name, ToCamelCase(commandName));
             sb.AppendLine();
             WriteSupportedBy(sb, supportedBy);
-            sb.AppendFormat("\tpublic class {0}", className);
+            sb.AppendFormat("\tpublic class {0} : ICommandResult", className);
             sb.AppendLine();
             sb.AppendLine("\t{");
             foreach (var returnObjectProperty in returnObject)
@@ -296,18 +291,19 @@ namespace MasterDevs.ChromeDevTools.ProtocolGenerator
             sb.AppendLine("using System;");
             sb.AppendLine("using System.Collections.Generic;");
             sb.AppendLine();
-            sb.AppendFormat("namespace {0}.{1}.{2}", RootNamespace, ns, domainDirectoryInfo.Name);
+            sb.AppendFormat("namespace {0}.Version{2}.{1}.{3}", RootNamespace, ns, _Version, domainDirectoryInfo.Name);
             sb.AppendLine();
             sb.AppendLine("{");
             WriteSummary(sb, description);
             if (isDeprecated)
                 WriteObsoleteAttribute(sb, description);
-            sb.AppendFormat("\t[{0}({1}.{2}.{3})]", CommandAttribute, ProtocolNameClass, domainDirectoryInfo.Name, ToCamelCase(commandName));
             sb.AppendLine();
             WriteSupportedBy(sb, supportedBy);
-            sb.AppendFormat("\tpublic class {0}: IProtocolCommand<{1}>", className, responseClassName);
+            sb.AppendFormat("\tpublic class {0}: ICommandParams<{1}>", className, responseClassName);
             sb.AppendLine();
             sb.AppendLine("\t{");
+            sb.AppendFormat("\t\tpublic string MethodName {{ get; }} = {0}.{1}.{2};", ProtocolNameClass, domainDirectoryInfo.Name, ToCamelCase(commandName));
+            sb.AppendLine();
             foreach (var parameterProperty in parameters)
             {
                 WriteProperty(sb, domainDirectoryInfo.Name, className, parameterProperty);
@@ -371,7 +367,7 @@ namespace MasterDevs.ChromeDevTools.ProtocolGenerator
             sb.AppendLine("using Newtonsoft.Json;");
             sb.AppendLine("using System.Collections.Generic;");
             sb.AppendLine();
-            sb.AppendFormat("namespace {0}.{1}.{2}", RootNamespace, ns, domainDirectoryInfo.Name);
+            sb.AppendFormat("namespace {0}.Version{2}.{1}.{3}", RootNamespace, ns, _Version, domainDirectoryInfo.Name);
             sb.AppendLine();
             sb.AppendLine("{");
             WriteSummary(sb, type.Description);
@@ -539,7 +535,7 @@ namespace MasterDevs.ChromeDevTools.ProtocolGenerator
             sb.AppendLine("using System.Runtime.Serialization;");
             sb.AppendLine();
             sb.AppendLine();
-            sb.AppendFormat("namespace {0}.{1}.{2}", RootNamespace, ns, domainDirectoryInfo.Name);
+            sb.AppendFormat("namespace {0}.Version{2}.{1}.{3}", RootNamespace, ns, _Version, domainDirectoryInfo.Name);
             sb.AppendLine("{");
             WriteSummary(sb, type.Description);
             sb.AppendLine("\t[JsonConverter(typeof(StringEnumConverter))]");

@@ -1,0 +1,17 @@
+using MasterDevs.ChromeDevTools;
+using Newtonsoft.Json;
+using System;
+using System.Collections.Generic;
+
+namespace MasterDevs.ChromeDevTools.Protocol.Version93.IOS.Debugger
+{
+	/// <summary>
+	/// Steps out of the function call.
+	/// </summary>
+
+	[SupportedBy("IOS")]
+	public class StepOutCommandParams: ICommandParams<StepOutCommandResult>
+	{
+		public string MethodName { get; } = ProtocolName.Debugger.StepOut;
+	}
+}

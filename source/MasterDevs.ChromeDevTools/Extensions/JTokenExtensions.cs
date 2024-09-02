@@ -2,9 +2,9 @@
 {
     public static class JTokenExtensions
     {
-        public static string GetSafeString(this JToken jtoken)
+        public static string? GetSafeString(this JToken jtoken)
         {
-            if (null == jtoken)
+            if (jtoken == null)
                 return null;
 
             return jtoken.ToString();

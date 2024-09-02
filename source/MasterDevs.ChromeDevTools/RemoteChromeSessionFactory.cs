@@ -6,11 +6,11 @@
         private readonly CommandResponseFactory _commandResponseFactory;
         private readonly EventFactory _eventFactory;
 
-        public RemoteChromeSessionFactory(IProtocolTypeMap protocolTypeMap)
+        public RemoteChromeSessionFactory()
         {
             _commandFactory = new CommandFactory();
-            _commandResponseFactory = new CommandResponseFactory(protocolTypeMap);
-            _eventFactory = new EventFactory(protocolTypeMap);
+            _commandResponseFactory = new CommandResponseFactory(_commandFactory);
+            _eventFactory = new EventFactory();
         }
 
         public IChromeSession Create(string webSocketDebuggerUrl, string id)

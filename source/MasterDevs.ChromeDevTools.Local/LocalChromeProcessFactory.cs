@@ -1,29 +1,27 @@
 ﻿namespace MasterDevs.ChromeDevTools.Local
 {
-    public class LocalChromeProcessFactory : ILocalChromeProcessFactory
+    public sealed class LocalChromeProcessFactory
     {
-        private readonly IChromeSessionFactory _sessionFactory;
         private readonly string _chromePath;
+        private readonly RemoteChromeProcessFactory _remoteChromeProcessFactory;
 
-        public LocalChromeProcessFactory(IChromeSessionFactory sessionFactory, string chromePath)
+        public LocalChromeProcessFactory(string chromePath)
         {
-            _sessionFactory = sessionFactory;
             _chromePath = chromePath;
+            _remoteChromeProcessFactory = new RemoteChromeProcessFactory();
         }
 
-        public ILocalChromeProcess Create(ChromeProcessParameters parameters)
+        public IChromeProcess Create(ChromeProcessParameters parameters)
         {
-            return Create(parameters, new StubbornDirectoryCleaner());
-        }
-
-        public ILocalChromeProcess Create(ChromeProcessParameters parameters, IDirectoryCleaner directoryCleaner)
-        {
-            return new LocalChromeProcess(
-                directoryCleaner,
+            var chromeProcess = new LocalChromeProcess(
                 _chromePath,
                 parameters,
-                _sessionFactory
+                _remoteChromeProcessFactory
             );
+
+            chromeProcess.Start();
+
+            return chromeProcess;
         }
     }
 }

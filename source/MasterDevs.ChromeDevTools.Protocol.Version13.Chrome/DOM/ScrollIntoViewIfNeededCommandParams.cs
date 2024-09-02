@@ -1,0 +1,40 @@
+using MasterDevs.ChromeDevTools;
+using Newtonsoft.Json;
+using System;
+using System.Collections.Generic;
+
+namespace MasterDevs.ChromeDevTools.Protocol.Version13.Chrome.DOM
+{
+	/// <summary>
+	/// Scrolls the specified rect of the given node into view if not already visible.
+	/// Note: exactly one between nodeId, backendNodeId and objectId should be passed
+	/// to identify the node.
+	/// </summary>
+
+	[SupportedBy("Chrome")]
+	public class ScrollIntoViewIfNeededCommandParams: ICommandParams<ScrollIntoViewIfNeededCommandResult>
+	{
+		public string MethodName { get; } = ProtocolName.DOM.ScrollIntoViewIfNeeded;
+		/// <summary>
+		/// Identifier of the node.
+		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public long? NodeId { get; set; }
+		/// <summary>
+		/// Identifier of the backend node.
+		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public long? BackendNodeId { get; set; }
+		/// <summary>
+		/// JavaScript object id of the node wrapper.
+		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public string ObjectId { get; set; }
+		/// <summary>
+		/// The rect to be scrolled into view, relative to the node's border box, in CSS pixels.
+		/// When omitted, center of the node will be used, similar to Element.scrollIntoView.
+		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public Rect Rect { get; set; }
+	}
+}

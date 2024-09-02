@@ -6,9 +6,9 @@ namespace MasterDevs.ChromeDevTools
     {
         private readonly RemoteChromeSessionFactory _sessionFactory;
 
-        public RemoteChromeProcessFactory(IProtocolTypeMap protocolTypeMap)
+        public RemoteChromeProcessFactory()
         {
-            _sessionFactory = new RemoteChromeSessionFactory(protocolTypeMap);
+            _sessionFactory = new RemoteChromeSessionFactory();
         }
 
         public IChromeProcess Create(Uri remoteDebuggingUri)

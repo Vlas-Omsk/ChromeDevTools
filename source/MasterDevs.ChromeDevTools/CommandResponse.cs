@@ -1,21 +1,11 @@
-﻿using MasterDevs.ChromeDevTools.Protocol;
-using System;
+﻿using System;
 
 namespace MasterDevs.ChromeDevTools
 {
-
-    internal interface ICommandResponse
+    public class Error
     {
-        long Id { get; }
-        string Method { get; }
-    }
-    
-    internal sealed class CommandResponse<T> : ICommandResponse
-        where T : ICommandResult
-    {
-        public long Id { get; set; }
-        public string Method { get; set; } = null!;
-        public T Result { get; set; } = default!;
+        public int Code { get; set; }
+        public string? Message { get; set; } = null!;
     }
 
     internal sealed class ErrorResponse : ICommandResponse
@@ -25,6 +15,6 @@ namespace MasterDevs.ChromeDevTools
         {
             get => throw new NotSupportedException();
         }
-        public Error Error { get; set; }
+        public Error Error { get; set; } = null!;
     }
 }

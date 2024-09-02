@@ -13,7 +13,7 @@ namespace MasterDevs.ChromeDevTools
         private readonly RemoteChromeSessionFactory _sessionFactory;
         private readonly HttpClient _httpClient;
 
-        internal RemoteChromeProcess(Uri remoteDebuggingUri, RemoteChromeSessionFactory sessionFactory)
+        public RemoteChromeProcess(Uri remoteDebuggingUri, RemoteChromeSessionFactory sessionFactory)
         {
             _remoteDebuggingUri = remoteDebuggingUri;
             _sessionFactory = sessionFactory;

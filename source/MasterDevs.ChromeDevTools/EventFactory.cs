@@ -1,36 +1,38 @@
-﻿using MasterDevs.ChromeDevTools.Protocol;
-using Newtonsoft.Json.Linq;
+﻿using Newtonsoft.Json.Linq;
 using System;
+using System.Collections.Concurrent;
 
 namespace MasterDevs.ChromeDevTools
 {
     internal sealed class EventFactory
     {
-        public Event<T>? Create<T>(byte[] responseBytes)
-            where T : IEventParams
+        private readonly ConcurrentDictionary<string, Type> _nameTypeMap = new ConcurrentDictionary<string, Type>();
+
+        public IEvent? Create(byte[] responseBytes)
         {
             throw new NotImplementedException();
         }
 
-        public Event<T>? Create<T>(string responseText)
-            where T : IEventParams
+        public IEvent? Create(string responseText)
         {
             var jObject = JObject.Parse(responseText);
             var methodString = jObject["method"]?.GetSafeString();
 
-            if (null == methodString)
+            if (methodString == null)
                 return null;
 
-            var typeInferredFromMethod = _methodTypeMap.GetEvent(methodString);
-
-            if (null == typeInferredFromMethod)
+            if (!_nameTypeMap.TryGetValue(methodString, out var eventParamsType))
                 return null;
 
-            var genericEventType = typeof(Event<>);
-            var commandResponseType = genericEventType.MakeGenericType(typeInferredFromMethod);
-            var result = jObject.ToObject(commandResponseType);
+            var result = jObject.ToObject(typeof(Event<>).MakeGenericType(eventParamsType)) ??
+                throw new Exception("Event was empty");
 
-            return result as Event<T>;
+            return (IEvent)result;
+        }
+
+        public void AddEventParamsType(string name, Type type)
+        {
+            _nameTypeMap.TryAdd(name, type);
         }
     }
 }

@@ -1,35 +1,43 @@
 ﻿using MasterDevs.ChromeDevTools.Protocol;
+using System;
 using System.Collections.Concurrent;
+using System.Diagnostics.CodeAnalysis;
 using System.Threading;
 
 namespace MasterDevs.ChromeDevTools
 {
     internal sealed class CommandFactory
     {
-        private readonly ConcurrentDictionary<long, string> _methods = new ConcurrentDictionary<long, string>();
+        private readonly ConcurrentDictionary<long, Type> _idTypeMap = new ConcurrentDictionary<long, Type>();
+        private readonly ConcurrentDictionary<string, Type> _nameTypeMap = new ConcurrentDictionary<string, Type>();
         private long _count = 0;
 
         public Command<T> Create<T>(ICommandParams<T> @params)
             where T : ICommandResult
         {
-            var commandId = Interlocked.Increment(ref _count);
             var command = new Command<T>()
             {
-                Id = commandId,
-                Method = @params.GetMethod(),
+                Id = Interlocked.Increment(ref _count),
+                Method = @params.MethodName,
                 Params = @params
             };
 
-            _methods.AddOrUpdate(commandId, command.Method, (key, value) => command.Method);
+            _idTypeMap.AddOrUpdate(command.Id, typeof(T), (key, value) => typeof(T));
+            _nameTypeMap.AddOrUpdate(command.Method, typeof(T), (key, value) => typeof(T));
 
             return command;
         }
 
-        public string? GetMethod(long id)
+        public bool TryTakeCommandResultType(long? id, string? method, [NotNullWhen(true)] out Type? type)
         {
-            _methods.TryRemove(id, out var method);
+            if (id.HasValue && _idTypeMap.TryRemove(id.Value, out type))
+                return true;
 
-            return method;
+            if (method != null && _nameTypeMap.TryGetValue(method, out type))
+                return true;
+
+            type = null;
+            return false;
         }
     }
 }

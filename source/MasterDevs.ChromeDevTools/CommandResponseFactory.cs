@@ -1,55 +1,54 @@
-﻿using MasterDevs.ChromeDevTools.Protocol;
-using MasterDevs.ChromeDevTools.Serialization;
+﻿using MasterDevs.ChromeDevTools.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
+using System.Diagnostics.CodeAnalysis;
 
 namespace MasterDevs.ChromeDevTools
 {
     internal sealed class CommandResponseFactory
     {
-        private readonly CommandFactory _commandFactory = new CommandFactory();
+        // Used to deserialize command responses from JSON to .NET objects.
+        private  static readonly JsonSerializer _serializer = new JsonSerializer()
+        {
+            ContractResolver = new MessageContractResolver()
+        };
+        private readonly CommandFactory _commandFactory;
+        
+        public CommandResponseFactory(CommandFactory commandFactory)
+        {
+            _commandFactory = commandFactory;
+        }
 
-        /// Used to deserialize command responses from JSON to .NET objects.
-        private readonly JsonSerializer _serializer = new JsonSerializer() { ContractResolver = new MessageContractResolver() };
-
-        public CommandResponse<T>? Create<T>(byte[] responseBytes)
-            where T : ICommandResult
+        public ICommandResponse? Create(byte[] responseBytes)
         {
             throw new NotImplementedException();
         }
 
-        public CommandResponse<T>? Create<T>(string responseText)
-            where T : ICommandResult
+        public ICommandResponse? Create(string responseText)
         {
             var jObject = JObject.Parse(responseText);
 
-            if (null != jObject["error"])
+            if (jObject["error"] != null)
                 return jObject.ToObject<ErrorResponse>();
             
-            var methodString = GetMethod(jObject);
-
-            if (null == methodString)
+            if (!TryGetCommandResultType(jObject, out var commandResultType))
                 return null;
 
-            var result = jObject.ToObject<CommandResponse<T>>(_serializer);
-
-            return result;
+            return (ICommandResponse?)jObject.ToObject(
+                typeof(CommandResponse<>).MakeGenericType(commandResultType),
+                _serializer
+            ) ?? throw new Exception("Response was empty");
         }
 
-        private string? GetMethod(JObject jObject)
+        private bool TryGetCommandResultType(JObject jObject, [NotNullWhen(true)] out Type? type)
         {
             var methodString = jObject["method"]?.GetSafeString();
+            var commandIdString = jObject["id"]?.GetSafeString();
 
-            if (null == methodString)
-            {
-                var commandIdString = jObject["id"]?.GetSafeString();
+            long.TryParse(commandIdString, out var commandId);
 
-                if (long.TryParse(commandIdString, out var commandId))
-                    methodString = _commandFactory.GetMethod(commandId);
-            }
-
-            return methodString;
+            return _commandFactory.TryTakeCommandResultType(commandId, methodString, out type);
         }
     }
 }

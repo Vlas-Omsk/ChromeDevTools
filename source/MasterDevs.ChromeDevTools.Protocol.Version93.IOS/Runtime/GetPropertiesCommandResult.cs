@@ -1,0 +1,25 @@
+using MasterDevs.ChromeDevTools;
+using Newtonsoft.Json;
+using System;
+using System.Collections.Generic;
+
+namespace MasterDevs.ChromeDevTools.Protocol.Version93.IOS.Runtime
+{
+	/// <summary>
+	/// Returns properties of a given object. Object group of the result is inherited from the target object.
+	/// </summary>
+
+	[SupportedBy("IOS")]
+	public class GetPropertiesCommandResult : ICommandResult
+	{
+		/// <summary>
+		/// Object properties.
+		/// </summary>
+		public PropertyDescriptor[] Result { get; set; }
+		/// <summary>
+		/// Internal object properties.
+		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+		public InternalPropertyDescriptor[] InternalProperties { get; set; }
+	}
+}

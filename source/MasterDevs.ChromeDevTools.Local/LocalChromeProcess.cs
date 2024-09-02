@@ -1,72 +1,87 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 using System.Threading;
 using System.Threading.Tasks;
 
 namespace MasterDevs.ChromeDevTools.Local
 {
-    public class LocalChromeProcess : RemoteChromeProcess, ILocalChromeProcess
+    internal sealed class LocalChromeProcess : IChromeProcess
     {
+        private readonly string _chromePath;
+        private readonly ChromeProcessParameters _parameters;
+        private readonly RemoteChromeProcessFactory _remoteChromeProcessFactory;
+        private Process? _process;
+        private IChromeProcess? _remoteChromeProcess;
+
         public LocalChromeProcess(
-            IDirectoryCleaner directoryCleaner,
             string chromePath,
             ChromeProcessParameters parameters,
-            IChromeSessionFactory sessionFactory
-        ) : base("http://localhost:" + parameters.Port, sessionFactory)
+            RemoteChromeProcessFactory remoteChromeProcessFactory
+        )
         {
-            DirectoryCleaner = directoryCleaner;
-            ChromePath = chromePath;
-            Parameters = parameters;
+            _chromePath = chromePath;
+            _parameters = parameters;
+            _remoteChromeProcessFactory = remoteChromeProcessFactory;
         }
 
-        public IDirectoryCleaner DirectoryCleaner { get; }
-        public string ChromePath { get; }
-        public ChromeProcessParameters Parameters { get; }
-        public string ProxyHost { get; set; }
-        public int ProxyPort { get; set; }
-        public bool EnableAutoProxyAuth { get; set; }
-        public Process Process { get; private set; }
-
-        public virtual void Start(CancellationToken cancellationToken)
+        public Task<IEnumerable<IChromeSessionConnector>> GetSessionsAsync()
         {
-            var arguments = Parameters.Arguments;
+            if (_remoteChromeProcess == null)
+                throw new InvalidOperationException("Process not started");
 
-            if (ProxyHost != null)
-                arguments = $"--proxy-server=\"http://{ProxyHost}:{ProxyPort}\" " + arguments;
+            return _remoteChromeProcess.GetSessionsAsync();
+        }
 
-            Process = new Process()
+        public Task<IChromeSessionConnector> StartNewSessionAsync()
+        {
+            if (_remoteChromeProcess == null)
+                throw new InvalidOperationException("Process not started");
+
+            return _remoteChromeProcess.StartNewSessionAsync();
+        }
+
+        internal void Start()
+        {
+            _process = new Process()
             {
-                StartInfo = new ProcessStartInfo(ChromePath, arguments)
+                StartInfo = new ProcessStartInfo(_chromePath, _parameters.Arguments)
             };
 
-            if (!Process.Start())
-                throw new Exception("Process exited with exit code " + Process.ExitCode);
+            if (!_process.Start())
+                throw new Exception("Process exited with code " + _process.ExitCode);
+
+            _remoteChromeProcess = _remoteChromeProcessFactory.Create(new Uri("http://localhost:" + _parameters.Port));
         }
 
-        public virtual void Close()
+        private void Close()
         {
-            Process.Kill();
-            Process.WaitForExit();
-        }
+            _remoteChromeProcess?.Dispose();
 
-        public override void Dispose()
-        {
-            base.Dispose();
-
-            Close();
-            DirectoryCleaner.Delete(Parameters.UserDataDirectory);
-        }
-
-        private async Task<IntPtr> GetMainWindowHandle()
-        {
-            if (Process.MainWindowHandle == IntPtr.Zero)
+            if (_process != null)
             {
-                await Task.Delay(1000).ConfigureAwait(false);
-
-                SpinWait.SpinUntil(() => Process.MainWindowHandle != IntPtr.Zero);
+                _process.Kill();
+                _process.WaitForExit();
             }
+        }
 
-            return Process.MainWindowHandle;
+        public void Dispose()
+        {
+            Close();
+
+            while (true)
+            {
+                try
+                {
+                    Directory.Delete(_parameters.UserDataDirectory, true);
+                    return;
+                }
+                catch
+                {
+                    Thread.Sleep(500);
+                }
+            }
         }
     }
 }

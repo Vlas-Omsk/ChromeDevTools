@@ -12,7 +12,7 @@ namespace MasterDevs.ChromeDevTools.Local
         private static int _randomPortCounter = 9222;
         private readonly int _port;
         private readonly string _userDataDirectory;
-        private readonly Dictionary<string, object> _parameters = new Dictionary<string, object>();
+        private readonly Dictionary<string, object?> _parameters = new Dictionary<string, object?>();
 
         public ChromeProcessParametersBuilder() : this(GetRandomPort())
         {
@@ -38,7 +38,7 @@ namespace MasterDevs.ChromeDevTools.Local
             return SetParameter(name, null);
         }
 
-        public ChromeProcessParametersBuilder SetParameter(string name, object value)
+        public ChromeProcessParametersBuilder SetParameter(string name, object? value)
         {
             if (Array.Exists(_reservedParameters, x => x == name))
                 throw new InvalidOperationException("Cannot set reserved parameter");
@@ -57,6 +57,11 @@ namespace MasterDevs.ChromeDevTools.Local
         public ChromeProcessParametersBuilder SetIncognito()
         {
             return SetParameter("bwsi");
+        }
+
+        public ChromeProcessParametersBuilder SetHttpProxy(string host, int port)
+        {
+            return SetParameter("proxy-server", $"http://{host}:{port}");
         }
 
         public ChromeProcessParameters Build()
