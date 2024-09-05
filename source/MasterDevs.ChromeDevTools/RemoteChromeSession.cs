@@ -197,7 +197,7 @@ namespace MasterDevs.ChromeDevTools
                 return;
             }
 
-            System.Diagnostics.Debug.Fail("Don't know what to do with response: " + e.Data);
+            System.Diagnostics.Debug.Write("Don't know what to do with response: " + e.Data);
         }
 
         private void WebSocket_Error(object sender, SuperSocket.ClientEngine.ErrorEventArgs e)
@@ -223,7 +223,7 @@ namespace MasterDevs.ChromeDevTools
                 return;
             }
 
-            System.Diagnostics.Debug.Fail("Don't know what to do with response: " + e.Message);
+            System.Diagnostics.Debug.Write("Don't know what to do with response: " + e.Message);
         }
 
         public void Dispose()
