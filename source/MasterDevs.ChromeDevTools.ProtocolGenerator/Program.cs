@@ -438,9 +438,7 @@ namespace MasterDevs.ChromeDevTools.ProtocolGenerator
                 propertyType = propertyType.Replace(key, GeneratePropertyType(_SimpleTypes[key]));
             }
 
-            propertyType.Replace("StringIndex", "long");
-
-            string[] referenceTypes = new string[] { "long", "bool" };
+            string[] referenceTypes = new string[] { "long", "bool", "double" };
 
             // If the property is optional, but a value type in .NET, make it nullable,
             // so that the property becomes optional.
@@ -466,8 +464,13 @@ namespace MasterDevs.ChromeDevTools.ProtocolGenerator
 
         private static string GeneratePropertyTypeFromReference(string domain, string propertyRef)
         {
-            if (null == propertyRef) return null;
+            if (null == propertyRef)
+            {
+                return null;
+            }
+
             var propertyPaths = propertyRef.Split('.');
+
             if (1 == propertyPaths.Length)
             {
                 Dictionary<string, string> domainDictionary;
@@ -488,6 +491,7 @@ namespace MasterDevs.ChromeDevTools.ProtocolGenerator
             {
                 domain = propertyPaths[0];
                 var name = propertyPaths[1];
+
                 return _DomainPropertyTypes[domain][name];
             }
         }
