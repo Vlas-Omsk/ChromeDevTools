@@ -1,0 +1,21 @@
+using MasterDevs.ChromeDevTools.Protocol;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
+using System.Runtime.Serialization;
+
+
+namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Version13.Storage{
+	/// <summary>
+	/// Enum of interest group access types.
+	/// </summary>
+	[JsonConverter(typeof(StringEnumConverter))]
+	public enum InterestGroupAccessType
+	{
+			Join,
+			Leave,
+			Update,
+			Loaded,
+			Bid,
+			Win,
+	}
+}

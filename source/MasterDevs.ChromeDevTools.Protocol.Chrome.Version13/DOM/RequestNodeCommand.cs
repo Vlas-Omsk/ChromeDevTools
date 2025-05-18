@@ -1,0 +1,23 @@
+using MasterDevs.ChromeDevTools.Protocol;
+using Newtonsoft.Json;
+using System;
+using System.Collections.Generic;
+
+namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Version13.DOM
+{
+	/// <summary>
+	/// Requests that the node is sent to the caller given the JavaScript node object reference. All
+	/// nodes that form the path from the node to the root are also sent to the client as a series of
+	/// `setChildNodes` notifications.
+	/// </summary>
+
+	[SupportedBy("Chrome")]
+	public class RequestNodeCommand: ICommand<RequestNodeCommandResult>
+	{
+		public string MethodName { get; } = ProtocolName.DOM.RequestNode;
+		/// <summary>
+		/// JavaScript object id to convert into node.
+		/// </summary>
+		public string ObjectId { get; set; }
+	}
+}

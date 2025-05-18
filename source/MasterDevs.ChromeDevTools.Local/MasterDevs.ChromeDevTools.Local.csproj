@@ -6,7 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\MasterDevs.ChromeDevTools\MasterDevs.ChromeDevTools.Remote.csproj" />
+    <ProjectReference Include="..\MasterDevs.ChromeDevTools.Remote\MasterDevs.ChromeDevTools.Remote.csproj" />
   </ItemGroup>
 
 </Project>

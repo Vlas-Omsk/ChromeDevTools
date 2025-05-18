@@ -1,0 +1,18 @@
+﻿using System;
+
+namespace MasterDevs.ChromeDevTools.Protocol
+{
+    [AttributeUsage(AttributeTargets.Class)]
+    public sealed class SupportedByAttribute : Attribute
+    {
+        public SupportedByAttribute(string browser)
+        {
+            if (browser == null)
+                throw new ArgumentNullException(nameof(browser));
+
+            Browser = browser;
+        }
+
+        public string Browser { get; set; }
+    }
+}

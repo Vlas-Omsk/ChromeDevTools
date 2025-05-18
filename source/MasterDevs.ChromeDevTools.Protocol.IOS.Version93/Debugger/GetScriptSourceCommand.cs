@@ -1,0 +1,21 @@
+using MasterDevs.ChromeDevTools.Protocol;
+using Newtonsoft.Json;
+using System;
+using System.Collections.Generic;
+
+namespace MasterDevs.ChromeDevTools.Protocol.IOS.Version93.Debugger
+{
+	/// <summary>
+	/// Returns source for the script with given id.
+	/// </summary>
+
+	[SupportedBy("IOS")]
+	public class GetScriptSourceCommand: ICommand<GetScriptSourceCommandResult>
+	{
+		public string MethodName { get; } = ProtocolName.Debugger.GetScriptSource;
+		/// <summary>
+		/// Id of the script to get source for.
+		/// </summary>
+		public string ScriptId { get; set; }
+	}
+}

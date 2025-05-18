@@ -1,0 +1,18 @@
+using MasterDevs.ChromeDevTools.Protocol;
+using Newtonsoft.Json;
+using System;
+using System.Collections.Generic;
+
+namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Version13.Runtime
+{
+	/// <summary>
+	/// Terminate current or next JavaScript execution.
+	/// Will cancel the termination when the outer-most script execution ends.
+	/// </summary>
+
+	[SupportedBy("Chrome")]
+	public class TerminateExecutionCommand: ICommand<TerminateExecutionCommandResult>
+	{
+		public string MethodName { get; } = ProtocolName.Runtime.TerminateExecution;
+	}
+}

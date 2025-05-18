@@ -1,0 +1,17 @@
+using MasterDevs.ChromeDevTools.Protocol;
+using Newtonsoft.Json;
+using System;
+using System.Collections.Generic;
+
+namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Version13.Page
+{
+	/// <summary>
+	/// Force the page stop all navigations and pending resource fetches.
+	/// </summary>
+
+	[SupportedBy("Chrome")]
+	public class StopLoadingCommand: ICommand<StopLoadingCommandResult>
+	{
+		public string MethodName { get; } = ProtocolName.Page.StopLoading;
+	}
+}

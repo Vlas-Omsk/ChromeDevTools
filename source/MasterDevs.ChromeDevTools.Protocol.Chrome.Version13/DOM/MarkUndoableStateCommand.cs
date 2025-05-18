@@ -1,0 +1,17 @@
+using MasterDevs.ChromeDevTools.Protocol;
+using Newtonsoft.Json;
+using System;
+using System.Collections.Generic;
+
+namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Version13.DOM
+{
+	/// <summary>
+	/// Marks last undoable state.
+	/// </summary>
+
+	[SupportedBy("Chrome")]
+	public class MarkUndoableStateCommand: ICommand<MarkUndoableStateCommandResult>
+	{
+		public string MethodName { get; } = ProtocolName.DOM.MarkUndoableState;
+	}
+}

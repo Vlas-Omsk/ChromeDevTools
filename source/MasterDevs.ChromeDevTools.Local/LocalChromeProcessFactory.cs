@@ -1,4 +1,6 @@
-﻿namespace MasterDevs.ChromeDevTools.Local
+﻿using MasterDevs.ChromeDevTools.Remote;
+
+namespace MasterDevs.ChromeDevTools.Local
 {
     public sealed class LocalChromeProcessFactory
     {

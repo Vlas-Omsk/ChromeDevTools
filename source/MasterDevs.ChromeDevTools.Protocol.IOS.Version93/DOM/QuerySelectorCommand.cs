@@ -1,0 +1,25 @@
+using MasterDevs.ChromeDevTools.Protocol;
+using Newtonsoft.Json;
+using System;
+using System.Collections.Generic;
+
+namespace MasterDevs.ChromeDevTools.Protocol.IOS.Version93.DOM
+{
+	/// <summary>
+	/// Executes <code>querySelector</code> on a given node.
+	/// </summary>
+
+	[SupportedBy("IOS")]
+	public class QuerySelectorCommand: ICommand<QuerySelectorCommandResult>
+	{
+		public string MethodName { get; } = ProtocolName.DOM.QuerySelector;
+		/// <summary>
+		/// Id of the node to query upon.
+		/// </summary>
+		public long NodeId { get; set; }
+		/// <summary>
+		/// Selector string.
+		/// </summary>
+		public string Selector { get; set; }
+	}
+}
