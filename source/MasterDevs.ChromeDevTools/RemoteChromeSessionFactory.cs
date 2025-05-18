@@ -13,11 +13,10 @@
             _eventFactory = new EventFactory();
         }
 
-        public IChromeSession Create(string webSocketDebuggerUrl, string id)
+        public IChromeSession Create(string webSocketDebuggerUrl)
         {
             return new RemoteChromeSession(
                 webSocketDebuggerUrl,
-                id,
                 _commandFactory,
                 _commandResponseFactory,
                 _eventFactory

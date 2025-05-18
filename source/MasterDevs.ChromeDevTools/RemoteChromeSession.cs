@@ -12,7 +12,6 @@ namespace MasterDevs.ChromeDevTools
     internal sealed class RemoteChromeSession : IChromeSession
     {
         private readonly string _webSocketDebuggerUrl;
-        private readonly string _id;
         private readonly CommandFactory _commandFactory;
         private readonly CommandResponseFactory _commandResponseFactory;
         private readonly EventFactory _eventFactory;
@@ -45,7 +44,6 @@ namespace MasterDevs.ChromeDevTools
 
         public RemoteChromeSession(
             string webSocketDebuggerUrl,
-            string id,
             CommandFactory commandFactory,
             CommandResponseFactory responseFactory,
             EventFactory eventFactory
@@ -55,7 +53,6 @@ namespace MasterDevs.ChromeDevTools
             webSocketDebuggerUrl = webSocketDebuggerUrl.Replace("ws://localhost", "ws://127.0.0.1");
 
             _webSocketDebuggerUrl = webSocketDebuggerUrl;
-            _id = id;
             _commandFactory = commandFactory;
             _commandResponseFactory = responseFactory;
             _eventFactory = eventFactory;
