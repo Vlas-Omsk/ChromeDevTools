@@ -58,6 +58,6 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Version13.Debugger
 		/// Terminate execution after timing out (number of milliseconds).
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-		public double Timeout { get; set; }
+		public double? Timeout { get; set; }
 	}
 }

@@ -33,17 +33,17 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Version13.Input
 		/// Time at which the event occurred (default: current time).
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-		public double Timestamp { get; set; }
+		public double? Timestamp { get; set; }
 		/// <summary>
 		/// X delta in DIP for mouse wheel event (default: 0).
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-		public double DeltaX { get; set; }
+		public double? DeltaX { get; set; }
 		/// <summary>
 		/// Y delta in DIP for mouse wheel event (default: 0).
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-		public double DeltaY { get; set; }
+		public double? DeltaY { get; set; }
 		/// <summary>
 		/// Bit field representing pressed modifier keys. Alt=1, Ctrl=2, Meta/Command=4, Shift=8
 		/// (default: 0).

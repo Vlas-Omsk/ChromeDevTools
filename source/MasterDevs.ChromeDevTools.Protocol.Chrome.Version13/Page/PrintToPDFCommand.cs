@@ -32,37 +32,37 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Version13.Page
 		/// Scale of the webpage rendering. Defaults to 1.
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-		public double Scale { get; set; }
+		public double? Scale { get; set; }
 		/// <summary>
 		/// Paper width in inches. Defaults to 8.5 inches.
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-		public double PaperWidth { get; set; }
+		public double? PaperWidth { get; set; }
 		/// <summary>
 		/// Paper height in inches. Defaults to 11 inches.
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-		public double PaperHeight { get; set; }
+		public double? PaperHeight { get; set; }
 		/// <summary>
 		/// Top margin in inches. Defaults to 1cm (~0.4 inches).
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-		public double MarginTop { get; set; }
+		public double? MarginTop { get; set; }
 		/// <summary>
 		/// Bottom margin in inches. Defaults to 1cm (~0.4 inches).
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-		public double MarginBottom { get; set; }
+		public double? MarginBottom { get; set; }
 		/// <summary>
 		/// Left margin in inches. Defaults to 1cm (~0.4 inches).
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-		public double MarginLeft { get; set; }
+		public double? MarginLeft { get; set; }
 		/// <summary>
 		/// Right margin in inches. Defaults to 1cm (~0.4 inches).
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-		public double MarginRight { get; set; }
+		public double? MarginRight { get; set; }
 		/// <summary>
 		/// Paper ranges to print, one based, e.g., '1-5, 8, 11-13'. Pages are
 		/// printed in the document order, not in the order specified, and no

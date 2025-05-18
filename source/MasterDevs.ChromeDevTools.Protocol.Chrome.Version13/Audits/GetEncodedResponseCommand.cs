@@ -26,7 +26,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Version13.Audits
 		/// The quality of the encoding (0-1). (defaults to 1)
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-		public double Quality { get; set; }
+		public double? Quality { get; set; }
 		/// <summary>
 		/// Whether to only return the size information (defaults to false).
 		/// </summary>

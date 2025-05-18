@@ -19,6 +19,6 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Version13.Debugger
 		/// the debugger can hold. Puts no limit if parameter is omitted.
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-		public double MaxScriptsCacheSize { get; set; }
+		public double? MaxScriptsCacheSize { get; set; }
 	}
 }

@@ -22,12 +22,12 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Version13.SystemInfo
 		/// Sub sys ID of the GPU, only available on Windows.
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-		public double SubSysId { get; set; }
+		public double? SubSysId { get; set; }
 		/// <summary>
 		/// Revision of the GPU, only available on Windows.
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-		public double Revision { get; set; }
+		public double? Revision { get; set; }
 		/// <summary>
 		/// String description of the GPU vendor, if the PCI ID is not available.
 		/// </summary>

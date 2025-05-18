@@ -26,12 +26,12 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Version13.Page
 		/// last-modified timestamp as reported by server.
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-		public double LastModified { get; set; }
+		public double? LastModified { get; set; }
 		/// <summary>
 		/// Resource content size.
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-		public double ContentSize { get; set; }
+		public double? ContentSize { get; set; }
 		/// <summary>
 		/// True if the resource failed to load.
 		/// </summary>

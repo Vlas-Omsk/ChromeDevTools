@@ -23,7 +23,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Version13.LayerTree
 		/// The minimum duration (in seconds) to replay the snapshot.
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-		public double MinDuration { get; set; }
+		public double? MinDuration { get; set; }
 		/// <summary>
 		/// The clip rectangle to apply when replaying the snapshot.
 		/// </summary>

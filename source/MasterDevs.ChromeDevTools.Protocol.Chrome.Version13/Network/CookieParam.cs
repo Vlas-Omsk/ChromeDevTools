@@ -53,7 +53,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Version13.Network
 		/// Cookie expiration date, session cookie if not set
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-		public double Expires { get; set; }
+		public double? Expires { get; set; }
 		/// <summary>
 		/// Cookie Priority.
 		/// </summary>

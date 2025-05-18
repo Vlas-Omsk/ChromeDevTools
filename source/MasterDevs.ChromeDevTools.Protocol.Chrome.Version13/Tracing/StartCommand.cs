@@ -27,7 +27,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Version13.Tracing
 		/// If set, the agent will issue bufferUsage events at this interval, specified in milliseconds
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-		public double BufferUsageReportingInterval { get; set; }
+		public double? BufferUsageReportingInterval { get; set; }
 		/// <summary>
 		/// Whether to report trace events as series of dataCollected events or to save trace to a
 		/// stream (defaults to `ReportEvents`).

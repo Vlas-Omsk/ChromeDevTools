@@ -42,6 +42,6 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Version13.Page
 		/// Page zoom factor (CSS to device independent pixels ratio).
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-		public double Zoom { get; set; }
+		public double? Zoom { get; set; }
 	}
 }

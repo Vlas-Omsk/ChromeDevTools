@@ -31,6 +31,6 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Version13.CSS
 		/// Computed length of media query expression (if applicable).
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-		public double ComputedLength { get; set; }
+		public double? ComputedLength { get; set; }
 	}
 }

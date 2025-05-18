@@ -27,11 +27,11 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Version13.WebAudio
 		/// SourceOutputIndex
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-		public double SourceOutputIndex { get; set; }
+		public double? SourceOutputIndex { get; set; }
 		/// <summary>
 		/// DestinationInputIndex
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-		public double DestinationInputIndex { get; set; }
+		public double? DestinationInputIndex { get; set; }
 	}
 }

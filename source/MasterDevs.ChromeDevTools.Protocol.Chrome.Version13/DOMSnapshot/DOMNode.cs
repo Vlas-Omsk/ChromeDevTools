@@ -146,11 +146,11 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Version13.DOMSnapshot
 		/// Scroll offsets, set when this node is a Document.
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-		public double ScrollOffsetX { get; set; }
+		public double? ScrollOffsetX { get; set; }
 		/// <summary>
 		/// ScrollOffsetY
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-		public double ScrollOffsetY { get; set; }
+		public double? ScrollOffsetY { get; set; }
 	}
 }

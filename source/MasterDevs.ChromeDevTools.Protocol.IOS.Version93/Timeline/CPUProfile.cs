@@ -18,6 +18,6 @@ namespace MasterDevs.ChromeDevTools.Protocol.IOS.Version93.Timeline
 		/// IdleTime
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-		public double IdleTime { get; set; }
+		public double? IdleTime { get; set; }
 	}
 }

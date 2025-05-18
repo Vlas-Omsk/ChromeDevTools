@@ -31,6 +31,6 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Version13.LayerTree
 		/// The scale to apply while replaying (defaults to 1).
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-		public double Scale { get; set; }
+		public double? Scale { get; set; }
 	}
 }

@@ -36,7 +36,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Version13.Emulation
 		/// Scale to apply to resulting view image.
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-		public double Scale { get; set; }
+		public double? Scale { get; set; }
 		/// <summary>
 		/// Overriding screen width value in pixels (minimum 0, maximum 10000000).
 		/// </summary>

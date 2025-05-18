@@ -13,17 +13,17 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Version13.Tracing
 		/// total size.
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-		public double PercentFull { get; set; }
+		public double? PercentFull { get; set; }
 		/// <summary>
 		/// An approximate number of events in the trace log.
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-		public double EventCount { get; set; }
+		public double? EventCount { get; set; }
 		/// <summary>
 		/// A number in range [0..1] that indicates the used size of event buffer as a fraction of its
 		/// total size.
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-		public double Value { get; set; }
+		public double? Value { get; set; }
 	}
 }

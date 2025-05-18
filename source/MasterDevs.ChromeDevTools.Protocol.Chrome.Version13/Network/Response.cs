@@ -96,7 +96,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Version13.Network
 		/// The time at which the returned response was generated.
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-		public double ResponseTime { get; set; }
+		public double? ResponseTime { get; set; }
 		/// <summary>
 		/// Cache Storage Cache Name.
 		/// </summary>

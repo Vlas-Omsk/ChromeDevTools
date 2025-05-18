@@ -23,7 +23,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Version13.Emulation
 		/// virtualTimeBudgetExpired event is sent.
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-		public double Budget { get; set; }
+		public double? Budget { get; set; }
 		/// <summary>
 		/// If set this specifies the maximum number of tasks that can be run before virtual is forced
 		/// forwards to prevent deadlock.
@@ -34,6 +34,6 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Version13.Emulation
 		/// If set, base::Time::Now will be overridden to initially return this value.
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-		public double InitialVirtualTime { get; set; }
+		public double? InitialVirtualTime { get; set; }
 	}
 }

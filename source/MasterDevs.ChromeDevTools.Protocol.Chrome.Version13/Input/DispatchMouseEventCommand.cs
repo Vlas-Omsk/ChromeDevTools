@@ -36,7 +36,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Version13.Input
 		/// Time at which the event occurred.
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-		public double Timestamp { get; set; }
+		public double? Timestamp { get; set; }
 		/// <summary>
 		/// Mouse button (default: "none").
 		/// </summary>
@@ -57,12 +57,12 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Version13.Input
 		/// The normalized pressure, which has a range of [0,1] (default: 0).
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-		public double Force { get; set; }
+		public double? Force { get; set; }
 		/// <summary>
 		/// The normalized tangential pressure, which has a range of [-1,1] (default: 0).
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-		public double TangentialPressure { get; set; }
+		public double? TangentialPressure { get; set; }
 		/// <summary>
 		/// The plane angle between the Y-Z plane and the plane containing both the stylus axis and the Y axis, in degrees of the range [-90,90], a positive tiltX is to the right (default: 0).
 		/// </summary>
@@ -82,12 +82,12 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Version13.Input
 		/// X delta in CSS pixels for mouse wheel event (default: 0).
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-		public double DeltaX { get; set; }
+		public double? DeltaX { get; set; }
 		/// <summary>
 		/// Y delta in CSS pixels for mouse wheel event (default: 0).
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-		public double DeltaY { get; set; }
+		public double? DeltaY { get; set; }
 		/// <summary>
 		/// Pointer type (default: "mouse").
 		/// </summary>

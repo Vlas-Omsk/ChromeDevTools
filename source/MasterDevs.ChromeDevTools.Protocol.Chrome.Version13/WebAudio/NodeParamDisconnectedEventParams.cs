@@ -27,6 +27,6 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Version13.WebAudio
 		/// SourceOutputIndex
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-		public double SourceOutputIndex { get; set; }
+		public double? SourceOutputIndex { get; set; }
 	}
 }

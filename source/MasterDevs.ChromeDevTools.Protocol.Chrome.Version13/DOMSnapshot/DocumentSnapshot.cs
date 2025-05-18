@@ -58,21 +58,21 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Version13.DOMSnapshot
 		/// Horizontal scroll offset.
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-		public double ScrollOffsetX { get; set; }
+		public double? ScrollOffsetX { get; set; }
 		/// <summary>
 		/// Vertical scroll offset.
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-		public double ScrollOffsetY { get; set; }
+		public double? ScrollOffsetY { get; set; }
 		/// <summary>
 		/// Document content width.
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-		public double ContentWidth { get; set; }
+		public double? ContentWidth { get; set; }
 		/// <summary>
 		/// Document content height.
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-		public double ContentHeight { get; set; }
+		public double? ContentHeight { get; set; }
 	}
 }

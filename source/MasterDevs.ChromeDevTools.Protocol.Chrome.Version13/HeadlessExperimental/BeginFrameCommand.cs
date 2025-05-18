@@ -21,13 +21,13 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Version13.HeadlessExperiment
 		/// the current time will be used.
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-		public double FrameTimeTicks { get; set; }
+		public double? FrameTimeTicks { get; set; }
 		/// <summary>
 		/// The interval between BeginFrames that is reported to the compositor, in milliseconds.
 		/// Defaults to a 60 frames/second interval, i.e. about 16.666 milliseconds.
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-		public double Interval { get; set; }
+		public double? Interval { get; set; }
 		/// <summary>
 		/// Whether updates should not be committed and drawn onto the display. False by default. If
 		/// true, only side effects of the BeginFrame will be run, such as layout and animations, but

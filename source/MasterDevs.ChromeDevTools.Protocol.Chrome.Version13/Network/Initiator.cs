@@ -29,13 +29,13 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Version13.Network
 		/// module) (0-based).
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-		public double LineNumber { get; set; }
+		public double? LineNumber { get; set; }
 		/// <summary>
 		/// Initiator column number, set for Parser type or for Script type (when script is importing
 		/// module) (0-based).
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-		public double ColumnNumber { get; set; }
+		public double? ColumnNumber { get; set; }
 		/// <summary>
 		/// Set if another request triggered this request (e.g. preflight).
 		/// </summary>

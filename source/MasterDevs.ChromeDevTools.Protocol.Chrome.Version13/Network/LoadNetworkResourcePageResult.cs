@@ -18,7 +18,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Version13.Network
 		/// Optional values used for error reporting.
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-		public double NetError { get; set; }
+		public double? NetError { get; set; }
 		/// <summary>
 		/// NetErrorName
 		/// </summary>
@@ -28,7 +28,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Version13.Network
 		/// HttpStatusCode
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-		public double HttpStatusCode { get; set; }
+		public double? HttpStatusCode { get; set; }
 		/// <summary>
 		/// If successful, one of the following two fields holds the result.
 		/// </summary>

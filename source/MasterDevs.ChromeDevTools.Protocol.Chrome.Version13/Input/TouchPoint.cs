@@ -20,27 +20,27 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Version13.Input
 		/// X radius of the touch area (default: 1.0).
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-		public double RadiusX { get; set; }
+		public double? RadiusX { get; set; }
 		/// <summary>
 		/// Y radius of the touch area (default: 1.0).
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-		public double RadiusY { get; set; }
+		public double? RadiusY { get; set; }
 		/// <summary>
 		/// Rotation angle (default: 0.0).
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-		public double RotationAngle { get; set; }
+		public double? RotationAngle { get; set; }
 		/// <summary>
 		/// Force (default: 1.0).
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-		public double Force { get; set; }
+		public double? Force { get; set; }
 		/// <summary>
 		/// The normalized tangential pressure, which has a range of [-1,1] (default: 0).
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-		public double TangentialPressure { get; set; }
+		public double? TangentialPressure { get; set; }
 		/// <summary>
 		/// The plane angle between the Y-Z plane and the plane containing both the stylus axis and the Y axis, in degrees of the range [-90,90], a positive tiltX is to the right (default: 0)
 		/// </summary>
@@ -60,6 +60,6 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Version13.Input
 		/// Identifier used to track touch sources between events, must be unique within an event.
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-		public double Id { get; set; }
+		public double? Id { get; set; }
 	}
 }

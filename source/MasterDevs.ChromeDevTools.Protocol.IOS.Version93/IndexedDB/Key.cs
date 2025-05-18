@@ -18,7 +18,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.IOS.Version93.IndexedDB
 		/// Number value.
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-		public double Number { get; set; }
+		public double? Number { get; set; }
 		/// <summary>
 		/// String value.
 		/// </summary>
@@ -28,7 +28,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.IOS.Version93.IndexedDB
 		/// Date value.
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-		public double Date { get; set; }
+		public double? Date { get; set; }
 		/// <summary>
 		/// Array value.
 		/// </summary>

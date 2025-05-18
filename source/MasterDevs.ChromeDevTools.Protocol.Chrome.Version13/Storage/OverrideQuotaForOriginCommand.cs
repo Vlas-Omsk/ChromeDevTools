@@ -27,6 +27,6 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Version13.Storage
 		/// disabled (called without a quotaSize).
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-		public double QuotaSize { get; set; }
+		public double? QuotaSize { get; set; }
 	}
 }

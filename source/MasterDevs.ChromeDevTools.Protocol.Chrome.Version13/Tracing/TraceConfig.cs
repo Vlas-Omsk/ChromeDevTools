@@ -17,7 +17,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Version13.Tracing
 		/// of 200 MB would be used.
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-		public double TraceBufferSizeInKb { get; set; }
+		public double? TraceBufferSizeInKb { get; set; }
 		/// <summary>
 		/// Turns on JavaScript stack sampling.
 		/// </summary>

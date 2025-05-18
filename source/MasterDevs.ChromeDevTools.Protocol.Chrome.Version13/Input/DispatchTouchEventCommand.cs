@@ -34,6 +34,6 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Version13.Input
 		/// Time at which the event occurred.
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-		public double Timestamp { get; set; }
+		public double? Timestamp { get; set; }
 	}
 }

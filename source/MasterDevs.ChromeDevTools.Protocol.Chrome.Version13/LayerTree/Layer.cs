@@ -49,17 +49,17 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Version13.LayerTree
 		/// Transform anchor point X, absent if no transform specified
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-		public double AnchorX { get; set; }
+		public double? AnchorX { get; set; }
 		/// <summary>
 		/// Transform anchor point Y, absent if no transform specified
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-		public double AnchorY { get; set; }
+		public double? AnchorY { get; set; }
 		/// <summary>
 		/// Transform anchor point Z, absent if no transform specified
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-		public double AnchorZ { get; set; }
+		public double? AnchorZ { get; set; }
 		/// <summary>
 		/// Indicates how many time this layer has painted.
 		/// </summary>

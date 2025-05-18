@@ -18,16 +18,16 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Version13.Emulation
 		/// Mock latitude
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-		public double Latitude { get; set; }
+		public double? Latitude { get; set; }
 		/// <summary>
 		/// Mock longitude
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-		public double Longitude { get; set; }
+		public double? Longitude { get; set; }
 		/// <summary>
 		/// Mock accuracy
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-		public double Accuracy { get; set; }
+		public double? Accuracy { get; set; }
 	}
 }

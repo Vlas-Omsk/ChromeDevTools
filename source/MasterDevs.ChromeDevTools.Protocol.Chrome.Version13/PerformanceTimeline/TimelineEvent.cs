@@ -28,7 +28,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Version13.PerformanceTimelin
 		/// Event duration, if applicable.
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-		public double Duration { get; set; }
+		public double? Duration { get; set; }
 		/// <summary>
 		/// LcpDetails
 		/// </summary>

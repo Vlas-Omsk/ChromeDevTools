@@ -25,24 +25,24 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Version13.Input
 		/// The distance to scroll along the X axis (positive to scroll left).
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-		public double XDistance { get; set; }
+		public double? XDistance { get; set; }
 		/// <summary>
 		/// The distance to scroll along the Y axis (positive to scroll up).
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-		public double YDistance { get; set; }
+		public double? YDistance { get; set; }
 		/// <summary>
 		/// The number of additional pixels to scroll back along the X axis, in addition to the given
 		/// distance.
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-		public double XOverscroll { get; set; }
+		public double? XOverscroll { get; set; }
 		/// <summary>
 		/// The number of additional pixels to scroll back along the Y axis, in addition to the given
 		/// distance.
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-		public double YOverscroll { get; set; }
+		public double? YOverscroll { get; set; }
 		/// <summary>
 		/// Prevent fling (default: true).
 		/// </summary>

@@ -34,13 +34,13 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Version13.ServiceWorker
 		/// The Last-Modified header value of the main script.
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-		public double ScriptLastModified { get; set; }
+		public double? ScriptLastModified { get; set; }
 		/// <summary>
 		/// The time at which the response headers of the main script were received from the server.
 		/// For cached script it is the last time the cache entry was validated.
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-		public double ScriptResponseTime { get; set; }
+		public double? ScriptResponseTime { get; set; }
 		/// <summary>
 		/// ControlledClients
 		/// </summary>

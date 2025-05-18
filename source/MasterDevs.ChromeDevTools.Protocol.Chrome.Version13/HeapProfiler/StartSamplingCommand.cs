@@ -15,7 +15,7 @@ namespace MasterDevs.ChromeDevTools.Protocol.Chrome.Version13.HeapProfiler
 		/// default value is 32768 bytes.
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-		public double SamplingInterval { get; set; }
+		public double? SamplingInterval { get; set; }
 		/// <summary>
 		/// By default, the sampling heap profiler reports only objects which are
 		/// still alive when the profile is returned via getSamplingProfile or

@@ -28,6 +28,6 @@ namespace MasterDevs.ChromeDevTools.Protocol.IOS.Version93.Network
 		/// Initiator line number, set for Parser type only.
 		/// </summary>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-		public double LineNumber { get; set; }
+		public double? LineNumber { get; set; }
 	}
 }
